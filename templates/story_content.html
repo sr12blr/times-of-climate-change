@@ -1,0 +1,72 @@
+{# Reusable story block — used by both index.html and story pages #}
+<article class="story">
+    <p class="story-date">{{ story.date_display }}</p>
+    <h2>{% if link_title %}<a href="{{ root_path }}story/{{ story.slug }}/">{{ story.title }}</a>{% else %}{{ story.title }}{% endif %}</h2>
+
+    <div class="story-layout{% if related %} story-layout--with-sidebar{% endif %}">
+        <div class="story-main">
+            <div class="story-section">
+                <h3>What are we talking about?</h3>
+                <ul>
+                    {% for point in story.what_talking_about %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="story-section">
+                <h3>Why should you care?</h3>
+                <ul>
+                    {% for point in story.why_care %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% if story.why_now %}
+            <div class="story-section">
+                <h3>Why now?</h3>
+                <ul>
+                    {% for point in story.why_now %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if story.what_can_we_do %}
+            <div class="story-section">
+                <h3>What can we do about it?</h3>
+                <ul>
+                    {% for point in story.what_can_we_do %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            <div class="story-sources">
+                <h3>Sources</h3>
+                <ul>
+                    {% for source in story.sources %}
+                    <li><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        {% if related %}
+        <aside class="story-sidebar">
+            <h3>More Threads to Tug On</h3>
+            <div class="related-list">
+                {% for rel in related %}
+                <div class="related-card">
+                    <a href="{{ root_path }}story/{{ rel.slug }}/">{{ rel.title }}</a>
+                    <p class="related-date">{{ rel.date_display }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </aside>
+        {% endif %}
+    </div>
+</article>

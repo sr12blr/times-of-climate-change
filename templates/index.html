@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}The Times of Climate Change{% endblock %}
+
+{% block content %}
+{% include "story_content.html" %}
+
+<div class="archive-link">
+    <a href="{{ root_path }}archive/">Browse all stories &rarr;</a>
+</div>
+{% endblock %}

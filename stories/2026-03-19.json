@@ -1,0 +1,34 @@
+{
+  "date": "2026-03-19",
+  "slug": "local-solution-global-lpg-crisis",
+  "title": "The Local Solution to the Global LPG Crisis",
+  "what_talking_about": [
+    "We’ve all read about the LPG crisis in India — global supply disruptions have made cooking gas harder to get. Households are worried, restaurants have had to cut down their menu.",
+    "But there are some who’ve found a solution. Akshaya Patra serves 23.5 lakh school meals daily through 78 kitchens — only 6 run on LPG. The rest use briquettes from crop waste, biogas from food waste, piped gas, and solar energy.",
+    "Tirumala’s temple runs on solar steam cooking. Shirdi saves 200 kg LPG daily through solar. Golden Temple uses piped gas."
+  ],
+  "why_care": [
+    "Every household felt the LPG pinch. These kitchens show alternatives already exist and work at massive scale.",
+    "Biogas turns food waste into fuel. Briquettes use crop stubble farmers would otherwise burn.",
+    "India imports over half its LPG. Moving away from LPG not just good for the environment but practical for energy security."
+  ],
+  "tags": [
+    "LPG",
+    "Energy",
+    "Biogas",
+    "Solar",
+    "FoodSecurity",
+    "CleanCooking"
+  ],
+  "sources": [
+    {
+      "title": "The Hindu: LPG crisis — Akshaya Patra Foundation switches to biogas, diesel",
+      "url": "https://www.thehindu.com/news/cities/Visakhapatnam/lpg-crisis-akshaya-patra-foundation-switches-to-biogas-diesel/article70735034.ece"
+    },
+    {
+      "title": "VSK Telangana: Why Bharat’s largest temple kitchens are unaffected by the reported LPG crisis",
+      "url": "https://www.vsktelangana.org/Encyc/2026/3/14/bharats-largest-temple-kitchens-unaffected-reported-lpg.html"
+    }
+  ],
+  "related_stories": []
+}

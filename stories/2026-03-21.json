@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-21",
+  "slug": "end-of-spring-india-winter-to-summer",
+  "title": "The end of Spring: India Jumps Straight from Winter to Summer",
+  "what_talking_about": [
+    "Instead of spring, summer arrived overnight. Mumbai was already at 40°C and Shimla 25°C in March."
+  ],
+  "why_care": [
+    "Food prices may go up: Wheat needs cool weather before harvest. This year’s heat hit Punjab and Haryana’s crop at exactly that stage, and farmers are predicting a weaker harvest.",
+    "An El Nino may be coming: Scientists are predicting there’s an 80% chance of El Niño this year, which usually means higher than average temperatures and a weaker monsoon. Dry winter + weak monsoon = water shortages."
+  ],
+  "tags": [
+    "Weather",
+    "HeatWave",
+    "Agriculture",
+    "Wheat",
+    "ElNino",
+    "Monsoon",
+    "WesternDisturbance"
+  ],
+  "sources": [
+    {
+      "title": "Down To Earth: It feels as if the spring never arrived",
+      "url": "https://www.downtoearth.org.in/climate-change/it-feels-as-if-the-spring-never-arrived"
+    },
+    {
+      "title": "The Statesman: Climate Change Overrides La Niña, Driving Early Heatwaves and a Shrinking Indian Winter",
+      "url": "https://www.thestatesman.com/supplements/climate-change-overrides-la-nina-driving-early-heatwaves-and-a-shrinking-indian-winter"
+    },
+    {
+      "title": "Down To Earth: Death of winter — Heat arrives early, threatens to shrink Punjab and Haryana’s wheat harvest",
+      "url": "https://www.downtoearth.org.in/agriculture/death-of-winter-heat-arrives-early-threatens-to-shrink-punjab-and-haryanas-wheat-harvest"
+    }
+  ],
+  "related_stories": [
+    "rising-heat-india-sicker-2050"
+  ]
+}
