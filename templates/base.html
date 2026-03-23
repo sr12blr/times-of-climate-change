@@ -6,19 +6,23 @@
     <title>{% block title %}The Times of Climate Change{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ css_path }}">
 </head>
 <body>
     <div class="container">
+        <div class="top-bar">
+            <span>{{ top_bar_date }}</span>
+        </div>
+
         <header class="site-header">
             <h1><a href="{{ root_path }}">The Times of Climate Change</a></h1>
             <p class="site-tagline">One climate story that matters, every day</p>
             <nav class="header-nav">
-                <a href="{{ root_path }}">Today</a>
-                <a href="{{ root_path }}explore/">What's At Stake</a>
-                <a href="{{ root_path }}archive/">Archive</a>
-                <a href="{{ root_path }}about/">About</a>
+                <a href="{{ root_path }}"{% if active_nav == 'today' %} class="active"{% endif %}>Today</a>
+                <a href="{{ root_path }}explore/"{% if active_nav == 'explore' %} class="active"{% endif %}>What's At Stake</a>
+                <a href="{{ root_path }}archive/"{% if active_nav == 'archive' %} class="active"{% endif %}>Archive</a>
+                <a href="{{ root_path }}about/"{% if active_nav == 'about' %} class="active"{% endif %}>About</a>
             </nav>
         </header>
 
@@ -27,7 +31,8 @@
         </main>
 
         <footer class="site-footer">
-            The Times of Climate Change
+            <span class="footer-title">The Times of Climate Change</span>
+            <span class="footer-tagline">One climate story that matters, every day</span>
         </footer>
     </div>
 </body>

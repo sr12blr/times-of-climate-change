@@ -3,6 +3,20 @@
     <p class="story-date">{{ story.date_display }}</p>
     <h2>{% if link_title %}<a href="{{ root_path }}story/{{ story.slug }}/">{{ story.title }}</a>{% else %}{{ story.title }}{% endif %}</h2>
 
+    {% if story.deck %}
+    <p class="story-deck">{{ story.deck }}</p>
+    {% elif story.what_talking_about %}
+    <p class="story-deck">{{ story.what_talking_about[0] }}</p>
+    {% endif %}
+
+    {% if story.tag_impact %}
+    <div class="story-tags">
+        {% for tag in story.tag_impact %}
+        <span class="tag-pill tag-pill--{{ tag | lower | replace(' ', '-') }}">{{ tag }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
     <div class="story-layout{% if related %} story-layout--with-sidebar{% endif %}">
         <div class="story-main">
             <div class="story-section">

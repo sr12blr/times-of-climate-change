@@ -1,0 +1,15 @@
+{# What's at Stake — inline category grid #}
+{% if categories %}
+<div class="stake-section">
+    <p class="stake-section-title">What's At Stake</p>
+    <div class="category-grid">
+        {% for cat in categories %}
+        <a href="{{ root_path }}explore/{{ cat.slug }}/" class="category-card">
+            <span class="category-icon">{{ cat.icon }}</span>
+            <span class="category-name">{{ cat.name }}</span>
+            <span class="category-count">{{ cat.count }} {{ "story" if cat.count == 1 else "stories" }}</span>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

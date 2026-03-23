@@ -13,7 +13,7 @@ import json
 import re
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
@@ -148,6 +148,13 @@ def generate(full_rebuild=False):
     css_file = SITE_DIR / "static" / "style.css"
     css_version = int(css_file.stat().st_mtime) if css_file.exists() else 0
 
+    # Build date for top bar
+    top_bar_date = date.today().strftime("%A, %B %d, %Y")
+
+    # Impact categories for the "What's at Stake" grid
+    impact_map = group_by_impact(stories)
+    categories = [impact_map[cat["slug"]] for cat in IMPACT_CATEGORIES]
+
     generated = 0
 
     # 1. Generate individual story pages
@@ -165,7 +172,10 @@ def generate(full_rebuild=False):
         html = template.render(
             story=story,
             related=related,
+            categories=categories,
             link_title=False,
+            active_nav="today",
+            top_bar_date=top_bar_date,
             root_path="../../",
             css_path=f"../../static/style.css?v={css_version}",
         )
@@ -183,7 +193,10 @@ def generate(full_rebuild=False):
     html = template.render(
         story=latest,
         related=related,
+        categories=categories,
         link_title=False,
+        active_nav="today",
+        top_bar_date=top_bar_date,
         root_path="",
         css_path=f"static/style.css?v={css_version}",
     )
@@ -197,6 +210,8 @@ def generate(full_rebuild=False):
     template = env.get_template("archive.html")
     html = template.render(
         months=months,
+        active_nav="archive",
+        top_bar_date=top_bar_date,
         root_path="../",
         css_path=f"../static/style.css?v={css_version}",
     )
@@ -206,14 +221,11 @@ def generate(full_rebuild=False):
     print(f"  Generated: archive/ ({len(stories)} stories)")
 
     # 4. Generate explore pages (always)
-    impact_map = group_by_impact(stories)
-
-    # Build category list with counts for the main explore page
-    categories = [impact_map[cat["slug"]] for cat in IMPACT_CATEGORIES]
-
     template = env.get_template("explore.html")
     html = template.render(
         categories=categories,
+        active_nav="explore",
+        top_bar_date=top_bar_date,
         root_path="../",
         css_path=f"../static/style.css?v={css_version}",
     )
@@ -231,6 +243,8 @@ def generate(full_rebuild=False):
         html = template.render(
             category=cat_data,
             stories=cat_data["stories"],
+            active_nav="explore",
+            top_bar_date=top_bar_date,
             root_path="../../",
             css_path=f"../../static/style.css?v={css_version}",
         )
@@ -242,6 +256,8 @@ def generate(full_rebuild=False):
     # 5. Generate about page (always)
     template = env.get_template("about.html")
     html = template.render(
+        active_nav="about",
+        top_bar_date=top_bar_date,
         root_path="../",
         css_path=f"../static/style.css?v={css_version}",
     )
