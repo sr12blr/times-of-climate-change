@@ -20,7 +20,7 @@ from jinja2 import Environment, FileSystemLoader
 
 BASE_DIR = Path(__file__).parent
 STORIES_DIR = BASE_DIR / "stories"
-SITE_DIR = BASE_DIR / "site"
+SITE_DIR = BASE_DIR / "docs"
 TEMPLATES_DIR = BASE_DIR / "templates"
 
 
