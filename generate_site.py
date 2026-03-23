@@ -97,6 +97,34 @@ def group_by_month(stories):
     return result
 
 
+# Impact categories: name, slug, icon
+IMPACT_CATEGORIES = [
+    {"name": "Food", "slug": "food", "icon": "\U0001F33E"},
+    {"name": "Water", "slug": "water", "icon": "\U0001F4A7"},
+    {"name": "Air quality", "slug": "air-quality", "icon": "\U0001F32C\uFE0F"},
+    {"name": "Health", "slug": "health", "icon": "\U0001FA7A"},
+    {"name": "Heat", "slug": "heat", "icon": "\U0001F321\uFE0F"},
+    {"name": "Inflation", "slug": "inflation", "icon": "\U0001F4B8"},
+    {"name": "Mobility", "slug": "mobility", "icon": "\U0001F6A6"},
+    {"name": "Biodiversity", "slug": "biodiversity", "icon": "\U0001F33F"},
+]
+
+
+def group_by_impact(stories):
+    """Group stories by impact tag categories."""
+    impact_map = {}
+    for cat in IMPACT_CATEGORIES:
+        matching = [s for s in stories if cat["name"] in s.get("tag_impact", [])]
+        impact_map[cat["slug"]] = {
+            "name": cat["name"],
+            "slug": cat["slug"],
+            "icon": cat["icon"],
+            "count": len(matching),
+            "stories": matching,
+        }
+    return impact_map
+
+
 def generate(full_rebuild=False):
     """Generate the static site."""
     STORIES_DIR.mkdir(parents=True, exist_ok=True)
@@ -113,6 +141,7 @@ def generate(full_rebuild=False):
     (SITE_DIR / "story").mkdir(parents=True, exist_ok=True)
     (SITE_DIR / "archive").mkdir(parents=True, exist_ok=True)
     (SITE_DIR / "about").mkdir(parents=True, exist_ok=True)
+    (SITE_DIR / "explore").mkdir(parents=True, exist_ok=True)
     (SITE_DIR / "static").mkdir(parents=True, exist_ok=True)
 
     # Cache-busting: use CSS file modification time
@@ -176,7 +205,41 @@ def generate(full_rebuild=False):
         f.write(html)
     print(f"  Generated: archive/ ({len(stories)} stories)")
 
-    # 4. Generate about page (always)
+    # 4. Generate explore pages (always)
+    impact_map = group_by_impact(stories)
+
+    # Build category list with counts for the main explore page
+    categories = [impact_map[cat["slug"]] for cat in IMPACT_CATEGORIES]
+
+    template = env.get_template("explore.html")
+    html = template.render(
+        categories=categories,
+        root_path="../",
+        css_path=f"../static/style.css?v={css_version}",
+    )
+
+    with open(SITE_DIR / "explore" / "index.html", "w") as f:
+        f.write(html)
+    print("  Generated: explore/")
+
+    # Generate individual category pages
+    template = env.get_template("explore_category.html")
+    for cat_slug, cat_data in impact_map.items():
+        cat_dir = SITE_DIR / "explore" / cat_slug
+        cat_dir.mkdir(parents=True, exist_ok=True)
+
+        html = template.render(
+            category=cat_data,
+            stories=cat_data["stories"],
+            root_path="../../",
+            css_path=f"../../static/style.css?v={css_version}",
+        )
+
+        with open(cat_dir / "index.html", "w") as f:
+            f.write(html)
+        print(f"  Generated: explore/{cat_slug}/ ({cat_data['count']} stories)")
+
+    # 5. Generate about page (always)
     template = env.get_template("about.html")
     html = template.render(
         root_path="../",

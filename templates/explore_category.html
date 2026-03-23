@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }} — Explore — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="explore-category-page">
+    <p class="explore-breadcrumb"><a href="{{ root_path }}explore/">&larr; All categories</a></p>
+    <h2><span class="category-icon-inline">{{ category.icon }}</span> {{ category.name }}</h2>
+
+    <div class="story-grid">
+        {% for s in stories %}
+        <a href="{{ root_path }}story/{{ s.slug }}/" class="story-card">
+            <span class="story-card-date">{{ s.date_short }}</span>
+            <h3>{{ s.title }}</h3>
+            {% if s.what_talking_about %}
+            <p class="story-card-excerpt">{{ s.what_talking_about[0][:120] }}{% if s.what_talking_about[0]|length > 120 %}...{% endif %}</p>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+
+    {% if not stories %}
+    <p>No stories in this category yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

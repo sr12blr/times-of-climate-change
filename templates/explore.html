@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Explore — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="explore-page">
+    <h2>Explore by Impact</h2>
+    <p class="explore-intro">Climate change touches everything. Pick a thread to see how.</p>
+
+    <div class="category-grid">
+        {% for cat in categories %}
+        <a href="{{ root_path }}explore/{{ cat.slug }}/" class="category-card">
+            <span class="category-icon">{{ cat.icon }}</span>
+            <h3>{{ cat.name }}</h3>
+            <p class="category-count">{{ cat.count }} {{ "story" if cat.count == 1 else "stories" }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
