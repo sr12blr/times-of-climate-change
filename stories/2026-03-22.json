@@ -12,16 +12,6 @@
     "Chennai, Bengaluru, and Delhi have all faced acute shortages in recent years, not because of one bad monsoon, but because demand has structurally outgrown supply. Most cities are extracting ground water at a rate that far exceeds the rate of replenishment.",
     "Today is World Water Day, and this year's theme is water and gender, to bring attention to how water scarcity and gender are closely linked. Women and girls globally spend 250 million hours a day collecting water — three times more than men. In rural India, women still walk kilometres in the heat for a single bucket."
   ],
-  "tags": [
-    "Water",
-    "WorldWaterDay",
-    "Groundwater",
-    "WaterScarcity",
-    "Himalayas",
-    "Agriculture",
-    "Gender",
-    "UnitedNations"
-  ],
   "sources": [
     {
       "title": "UN News: World enters era of 'global water bankruptcy'",
@@ -42,5 +32,13 @@
   ],
   "related_stories": [
     "end-of-spring-india-winter-to-summer"
+  ],
+  "tag_cause": [
+    "GroundwaterDepletion",
+    "ClimateChange"
+  ],
+  "tag_impact": [
+    "Water",
+    "Food"
   ]
 }

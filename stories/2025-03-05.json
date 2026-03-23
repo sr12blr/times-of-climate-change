@@ -11,15 +11,6 @@
     "These trends threaten more frequent and intense flash floods, avalanches, landslides, and glacier retreat across the Himalayas.",
     "Glacier retreat has consequences far beyond the mountains — it affects water security for the entire Indo-Gangetic plain that depends on glacier-fed rivers."
   ],
-  "tags": [
-    "Himalayas",
-    "Snowfall",
-    "Glaciers",
-    "Floods",
-    "JammuKashmir",
-    "Uttarakhand",
-    "WaterSecurity"
-  ],
   "sources": [
     {
       "title": "Down To Earth: Dry winter, late snow and rain — How climate change fits into the picture of the Chamoli avalanche",
@@ -28,5 +19,12 @@
   ],
   "related_stories": [
     "valley-of-flowers-fire-dry-winter-uttarakhand"
+  ],
+  "tag_cause": [
+    "ClimateChange",
+    "ShiftingWeatherPatterns"
+  ],
+  "tag_impact": [
+    "Water"
   ]
 }

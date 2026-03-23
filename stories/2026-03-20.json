@@ -16,20 +16,19 @@
     "Supreme Court has directed proper oran mapping; faster action needed.",
     "When courts stepped in, it worked — Adani returned land allotted to a solar project in Baiya in 2025."
   ],
-  "tags": [
-    "RenewableEnergy",
-    "Solar",
-    "Rajasthan",
-    "Livelihoods",
-    "Conservation",
-    "SacredGroves",
-    "LandRights"
-  ],
   "sources": [
     {
       "title": "Mongabay India: Villagers set on a 700 km-long foot march to save sacred groves from solar projects in Rajasthan",
       "url": "https://india.mongabay.com/2026/03/villagers-set-on-a-700-km-long-foot-march-to-save-sacred-groves-from-solar-projects-in-rajasthan/"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "LandAcquisition",
+    "RenewableExpansion"
+  ],
+  "tag_impact": [
+    "Biodiversity",
+    "Food"
+  ]
 }

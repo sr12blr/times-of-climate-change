@@ -15,18 +15,20 @@
     "The failure by multiple state governments to take concrete action against air pollution means it has often been met with apathy. The deathly air pollution in the winter months has almost been normalised. But I guess, this year people thought they had finally had enough and it resulted in a rare protest where anger and frustration came to the surface.",
     "Recent news reports that showed air quality data being manipulated by either not publishing data at all on certain days (e.g. Diwali when air pollution tends to be at its worse due to fire crackers) or sprinkling of water on air quality sensors may have contributed further to citizen anger."
   ],
-  "tags": [
-    "AirPollution",
-    "Delhi",
-    "Protest",
-    "PublicHealth",
-    "AQI"
-  ],
   "sources": [
     {
       "title": "The Guardian: 'I can't breathe in this city': inaction over Delhi's suffocating pollution sparks rare protest",
       "url": "https://www.theguardian.com/environment/2025/nov/09/delhi-air-pollution-protest"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "AirPollution",
+    "StubbleBurning",
+    "Emissions"
+  ],
+  "tag_impact": [
+    "Air quality",
+    "Health"
+  ]
 }

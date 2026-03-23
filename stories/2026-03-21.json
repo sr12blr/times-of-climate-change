@@ -9,15 +9,6 @@
     "Food prices may go up: Wheat needs cool weather before harvest. This year’s heat hit Punjab and Haryana’s crop at exactly that stage, and farmers are predicting a weaker harvest.",
     "An El Nino may be coming: Scientists are predicting there’s an 80% chance of El Niño this year, which usually means higher than average temperatures and a weaker monsoon. Dry winter + weak monsoon = water shortages."
   ],
-  "tags": [
-    "Weather",
-    "HeatWave",
-    "Agriculture",
-    "Wheat",
-    "ElNino",
-    "Monsoon",
-    "WesternDisturbance"
-  ],
   "sources": [
     {
       "title": "Down To Earth: It feels as if the spring never arrived",
@@ -34,5 +25,14 @@
   ],
   "related_stories": [
     "rising-heat-india-sicker-2050"
+  ],
+  "tag_cause": [
+    "ClimateChange",
+    "ElNino"
+  ],
+  "tag_impact": [
+    "Heat",
+    "Food",
+    "Inflation"
   ]
 }

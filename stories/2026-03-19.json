@@ -12,14 +12,6 @@
     "Biogas turns food waste into fuel. Briquettes use crop stubble farmers would otherwise burn.",
     "India imports over half its LPG. Moving away from LPG not just good for the environment but practical for energy security."
   ],
-  "tags": [
-    "LPG",
-    "Energy",
-    "Biogas",
-    "Solar",
-    "FoodSecurity",
-    "CleanCooking"
-  ],
   "sources": [
     {
       "title": "The Hindu: LPG crisis — Akshaya Patra Foundation switches to biogas, diesel",
@@ -30,5 +22,13 @@
       "url": "https://www.vsktelangana.org/Encyc/2026/3/14/bharats-largest-temple-kitchens-unaffected-reported-lpg.html"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "FossilFuelDependence",
+    "SupplyShock"
+  ],
+  "tag_impact": [
+    "Food",
+    "Health"
+  ]
 }

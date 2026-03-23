@@ -14,14 +14,6 @@
   "what_can_we_do": [
     "The findings signal that India needs to plan for indoor public spaces, covered walkways, and cooled community areas — not just as comfort, but as public health infrastructure."
   ],
-  "tags": [
-    "Health",
-    "ClimateChange",
-    "HeatWave",
-    "PublicHealth",
-    "India",
-    "Urbanisation"
-  ],
   "sources": [
     {
       "title": "Rising temperatures and future physical inactivity: a global modelling study (The Lancet Planetary Health)",
@@ -32,5 +24,14 @@
       "url": "https://www.downtoearth.org.in"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "GlobalWarming",
+    "Urbanisation"
+  ],
+  "tag_impact": [
+    "Heat",
+    "Health",
+    "Mobility"
+  ]
 }

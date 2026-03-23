@@ -11,14 +11,6 @@
     "A weak monsoon means less water for kharif crops like rice, soybean, and pulses, and that means higher food prices by the end of the year.",
     "El Nino years also bring more intense and longer heat waves. India is already seeing temperatures cross 40°C in March. If El Nino strengthens through summer, the heat could be brutal."
   ],
-  "tags": [
-    "ElNino",
-    "Monsoon",
-    "HeatWave",
-    "FoodPrices",
-    "WaterSecurity",
-    "Agriculture"
-  ],
   "sources": [
     {
       "title": "Down To Earth: Equatorial Pacific shows early signals of El Nino return in 2026",
@@ -32,5 +24,14 @@
   "related_stories": [
     "end-of-spring-india-winter-to-summer",
     "world-water-day-india-global-water-bankruptcy"
+  ],
+  "tag_cause": [
+    "ElNino"
+  ],
+  "tag_impact": [
+    "Heat",
+    "Water",
+    "Food",
+    "Health"
   ]
 }

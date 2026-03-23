@@ -10,18 +10,19 @@
     "This is a textbook example of how climate impacts on agricultural commodities show up as food inflation in your daily life.",
     "India's Economic Survey 2024-25 confirmed food inflation reached 8.8%, among the world's highest."
   ],
-  "tags": [
-    "FoodPrices",
-    "Coffee",
-    "Bangalore",
-    "Agriculture",
-    "Inflation"
-  ],
   "sources": [
     {
       "title": "The Hindu: Bengaluru's favourite filter coffee to get costlier from next month",
       "url": "https://www.thehindu.com/news/cities/bangalore/bengalurus-favourite-filter-coffee-to-get-costlier-from-next-month/article69234874.ece"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "ExtremeWeather",
+    "GlobalWarming"
+  ],
+  "tag_impact": [
+    "Food",
+    "Inflation"
+  ]
 }

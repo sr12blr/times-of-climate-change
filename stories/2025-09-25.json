@@ -17,16 +17,15 @@
     "The causes are a combination of unusually intense rainfall and poor planning — excessive concretization, unaccounted natural flows, green cover removal, and construction in ecologically sensitive zones.",
     "With climate change intensifying extreme rainfall and urbanization increasing, such incidents will become more frequent. Building community and infrastructure resilience is critical."
   ],
-  "tags": [
-    "Floods",
-    "Monsoon",
-    "Uttarakhand",
-    "Punjab",
-    "Kolkata",
-    "Marathwada",
-    "UrbanPlanning",
-    "Infrastructure"
-  ],
   "sources": [],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "ExtremeRainfall",
+    "Urbanisation",
+    "PoorPlanning"
+  ],
+  "tag_impact": [
+    "Mobility",
+    "Food"
+  ]
 }

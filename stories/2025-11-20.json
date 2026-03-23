@@ -10,18 +10,18 @@
     "Infrastructure projects routinely begin without prior environmental clearance. Once partially built, abandoning the project becomes economically unjustifiable, so post-facto clearances often end up legalizing projects that should never have been approved.",
     "The May ruling was a deterrent against this practice. Revoking it means projects can start without clearance, knowing they can get approval later — weakening one of the few legal safeguards for the environment."
   ],
-  "tags": [
-    "SupremeCourt",
-    "EnvironmentalLaw",
-    "Governance",
-    "Infrastructure",
-    "Policy"
-  ],
   "sources": [
     {
       "title": "Mongabay India: Supreme Court rolls back order banning post-facto environmental clearance",
       "url": "https://india.mongabay.com/2025/11/supreme-court-rolls-back-order-banning-post-facto-environmental-clearance/"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "Governance",
+    "Policy"
+  ],
+  "tag_impact": [
+    "Biodiversity"
+  ]
 }

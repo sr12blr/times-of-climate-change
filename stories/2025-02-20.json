@@ -10,18 +10,17 @@
     "Her work demonstrates how local action sparks global change while protecting vulnerable populations.",
     "It's a rare story of a conservation effort that is led by women, empowers women economically, and has measurably improved the status of an endangered species."
   ],
-  "tags": [
-    "Conservation",
-    "Wildlife",
-    "Assam",
-    "Women",
-    "CommunityAction"
-  ],
   "sources": [
     {
       "title": "TIME: This Conservationist Is Saving One of the World's Most Endangered Storks",
       "url": "https://time.com/7216405/purnima-devi-barman-hargila-storks/"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "HabitatLoss"
+  ],
+  "tag_impact": [
+    "Biodiversity"
+  ]
 }

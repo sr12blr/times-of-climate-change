@@ -11,15 +11,6 @@
     "Informal workers are on the frontlines of extreme heat — they can't work from home or sit in air-conditioned offices. When it's too hot to work, they lose their daily wage.",
     "This provides essential safety nets for vulnerable workers facing income loss during dangerous heat, representing a crucial adaptation solution for marginalized communities."
   ],
-  "tags": [
-    "HeatWave",
-    "Insurance",
-    "Ahmedabad",
-    "InformalWorkers",
-    "Adaptation",
-    "Women",
-    "Innovation"
-  ],
   "sources": [
     {
       "title": "CEEW: How Indian cities are fighting back against extreme heat",
@@ -28,5 +19,13 @@
   ],
   "related_stories": [
     "rising-heat-india-sicker-2050"
+  ],
+  "tag_cause": [
+    "HeatWave",
+    "GlobalWarming"
+  ],
+  "tag_impact": [
+    "Heat",
+    "Health"
   ]
 }

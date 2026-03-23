@@ -13,19 +13,17 @@
     "India’s biodiversity law requires profit-sharing, but most villages don’t know it exists.",
     "This could be a way to incentivise communities to adopt better conservation practices, natural farming etc."
   ],
-  "tags": [
-    "Biodiversity",
-    "Maharashtra",
-    "Conservation",
-    "Livelihoods",
-    "Law",
-    "Probiotics"
-  ],
   "sources": [
     {
       "title": "Down To Earth: Two kilos of soil with a Rs 68 lakh return — the Maharashtra village that struck biodiversity gold",
       "url": "https://www.downtoearth.org.in/wildlife-biodiversity/two-kilos-of-soil-with-a-rs-68-lakh-return-the-maharashtra-village-that-struck-biodiversity-gold"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "SoilDegradation"
+  ],
+  "tag_impact": [
+    "Biodiversity"
+  ]
 }

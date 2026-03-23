@@ -12,20 +12,19 @@
     "Forest fires are one of the most immediate consequences of the dry winter, but it also results in crop losses and raises concerns about long-term impacts on glaciers and consequently water security for the region.",
     "Scientists warn that the lack of snow could push the mass balance of glaciers in Uttarakhand into negative territory, meaning they lose more ice than they gain. This means that glacier cover reduces and it can have severe consequences on the water security of the Indo-gangetic plains that depends on glacier-fed rivers."
   ],
-  "tags": [
-    "ForestFire",
-    "Uttarakhand",
-    "Himalayas",
-    "Glaciers",
-    "WaterSecurity",
-    "Drought",
-    "ValleyOfFlowers"
-  ],
   "sources": [
     {
       "title": "Down To Earth: Uttarakhand faces snow drought and forest fires as lack of rain hits crops",
       "url": "https://www.downtoearth.org.in/climate-change/uttarakhand-faces-snow-drought-and-forest-fires-as-lack-of-rain-hits-crops"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "Drought",
+    "ClimateChange"
+  ],
+  "tag_impact": [
+    "Biodiversity",
+    "Water"
+  ]
 }

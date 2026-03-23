@@ -10,19 +10,19 @@
     "The High Court and later Supreme Court intervened, ordering work stoppage and forest restoration and protection.",
     "This is a story of citizens standing up and winning. It shows that when communities mobilise, courts listen, and forests can be saved."
   ],
-  "tags": [
-    "Forests",
-    "Hyderabad",
-    "CitizenAction",
-    "UrbanEcology",
-    "LandRights",
-    "Courts"
-  ],
   "sources": [
     {
       "title": "Indian Express: Kancha Gachibowli forest issue explained",
       "url": "https://indianexpress.com/article/explained/kancha-gachibowli-forest-issue-9926884/"
     }
   ],
-  "related_stories": []
+  "related_stories": [],
+  "tag_cause": [
+    "Deforestation",
+    "Urbanisation"
+  ],
+  "tag_impact": [
+    "Air quality",
+    "Biodiversity"
+  ]
 }

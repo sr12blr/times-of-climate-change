@@ -1,0 +1,89 @@
+Date: 2025-01-10
+Title: More than 1,100 Dead Olive Ridley Turtles Washed Ashore
+Tag-cause: Fishing, Enforcement
+Tag-impact: Biodiversity
+
+Date: 2025-02-10
+Title: Climate Change Made Bangalore's Filter Coffee More Expensive
+Tag-cause: ExtremeWeather, GlobalWarming
+Tag-impact: Food, Inflation
+
+Date: 2025-02-20
+Title: Purnima Devi Barman Named in TIME's 2025 Women of the Year
+Tag-cause: HabitatLoss
+Tag-impact: Biodiversity
+
+Date: 2025-03-05
+Title: Dry Winter Followed by Late, Heavy Snowfall — Recipe for Disaster
+Tag-cause: ClimateChange, ShiftingWeatherPatterns
+Tag-impact: Water
+
+Date: 2025-04-15
+Title: Citizen Action Saved a Forest in Hyderabad
+Tag-cause: Deforestation, Urbanisation
+Tag-impact: Air quality, Biodiversity
+
+Date: 2025-05-15
+Title: Ahmedabad Using Heat Insurance for Informal Workers
+Tag-cause: HeatWave, GlobalWarming
+Tag-impact: Heat, Health
+
+Date: 2025-09-25
+Title: Monsoon Became the Season of Devastating Floods
+Tag-cause: ExtremeRainfall, Urbanisation, PoorPlanning
+Tag-impact: Mobility, Food
+
+Date: 2025-10-10
+Title: India Marked a Renewable Energy Milestone
+Tag-cause: EnergyTransition, Policy
+Tag-impact: Air quality
+
+Date: 2025-11-12
+Title: 'I just want to breathe': Rare protests over air pollution in New Delhi
+Tag-cause: AirPollution, StubbleBurning, Emissions
+Tag-impact: Air quality, Health
+
+Date: 2025-11-20
+Title: Supreme Court Reversed Post-Facto Environmental Clearance Ban
+Tag-cause: Governance, Policy
+Tag-impact: Biodiversity
+
+Date: 2026-01-15
+Title: Devastating fire in the Valley of flowers, triggered by an unusually dry winter
+Tag-cause: Drought, ClimateChange
+Tag-impact: Biodiversity, Water
+
+Date: 2026-03-17
+Title: Two Kilos of Soil, Rs 68 Lakh: The Maharashtra Village That Struck Biodiversity Gold
+Tag-cause: SoilDegradation
+Tag-impact: Biodiversity
+
+Date: 2026-03-18
+Title: Too Hot to Move: How Rising Heat Could Make India Sicker by 2050
+Tag-cause: GlobalWarming, Urbanisation
+Tag-impact: Heat, Health, Mobility
+
+Date: 2026-03-19
+Title: The Local Solution to the Global LPG Crisis
+Tag-cause: FossilFuelDependence, SupplyShock
+Tag-impact: Food, Health
+
+Date: 2026-03-20
+Title: The Dark Side of Solar: Why Rajasthan's Villagers are fighting to Stop a Solar Project
+Tag-cause: LandAcquisition, RenewableExpansion
+Tag-impact: Biodiversity, Food
+
+Date: 2026-03-21
+Title: The end of Spring: India Jumps Straight from Winter to Summer
+Tag-cause: ClimateChange, ElNino
+Tag-impact: Heat, Food, Inflation
+
+Date: 2026-03-22
+Title: The World Is Water-Bankrupt. India Is One of the Worst Hit.
+Tag-cause: GroundwaterDepletion, ClimateChange
+Tag-impact: Water, Food
+
+Date: 2026-03-23
+Title: El Nino is likely in 2026: India's monsoon is at risk.
+Tag-cause: ElNino
+Tag-impact: Heat, Water, Food, Health
