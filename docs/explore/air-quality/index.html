@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The air you breathe — The Times of Climate Change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style.css?v=1774383087">
+</head>
+<body>
+    
+    <!-- Burger menu -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+    <nav class="burger-menu" id="burgerMenu">
+        <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
+        <a href="../../today/">Today's Story</a>
+        <a href="../../archive/">Archive</a>
+        <a href="../../explore/" class="active">Getting Real</a>
+        <a href="../../about/">About</a>
+    </nav>
+    <div class="burger-overlay" id="burgerOverlay"></div>
+
+    <header class="site-masthead">
+        <div class="container">
+            <h1 class="masthead-title"><a href="../../">The Times of <em>Climate Change</em></a></h1>
+            <p class="masthead-subtitle">One climate story that affects India, every day</p>
+        </div>
+    </header>
+    
+
+    <div class="container">
+        
+<div class="explore-category-page">
+    <p class="explore-breadcrumb"><a href="../../explore/">Getting Real</a> ›</p>
+    <h2><span class="category-icon-inline">😷</span>The air you breathe</h2>
+    <div class="story-grid">
+        
+        <a href="../../story/delhi-air-pollution-protest-right-to-breathe/" class="story-card">
+            <p class="story-card-date">November 12, 2025</p>
+            <h3>'I just want to breathe': Rare protests over air pollution in New Delhi</h3>
+            
+            <p class="story-card-excerpt">Hundreds of Delhi citizens took to the streets on Sunday Nov 9 to protest against the toxic levels of air pollution in t…</p>
+            
+        </a>
+        
+        <a href="../../story/india-renewable-energy-500gw-milestone/" class="story-card">
+            <p class="story-card-date">October 10, 2025</p>
+            <h3>India Marked a Renewable Energy Milestone</h3>
+            
+            <p class="story-card-excerpt">As of September 30, 2025, India's total installed power capacity exceeded 500 GW (500.89 GW), with 256.09 GW — over 51% …</p>
+            
+        </a>
+        
+        <a href="../../story/citizen-action-saved-forest-hyderabad/" class="story-card">
+            <p class="story-card-date">April 15, 2025</p>
+            <h3>Citizen Action Saved a Forest in Hyderabad</h3>
+            
+            <p class="story-card-excerpt">The government proposed auctioning 400 acres of forested Kancha Gachibowli land in Hyderabad, triggering massive student…</p>
+            
+        </a>
+        
+    </div>
+</div>
+
+    </div>
+
+    
+    <footer class="site-footer">
+        <div class="container">
+            <span class="footer-title">The Times of Climate Change</span>
+            <span class="footer-tagline">One climate story, every day</span>
+        </div>
+    </footer>
+    
+
+    <script>
+    (function() {
+        var btn = document.getElementById('burgerBtn');
+        var menu = document.getElementById('burgerMenu');
+        var close = document.getElementById('burgerClose');
+        var overlay = document.getElementById('burgerOverlay');
+        if (!btn) return;
+        function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+        function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+        btn.addEventListener('click', open);
+        close.addEventListener('click', shut);
+        overlay.addEventListener('click', shut);
+    })();
+    </script>
+</body>
+</html>

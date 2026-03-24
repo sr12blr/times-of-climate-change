@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Tell Me Why — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="why-page">
+    <h2 class="why-title">Why you should give a Sh*t?</h2>
+    <div class="domino-meme">
+        <img src="{{ root_path }}static/domino-meme.JPG" alt="Domino meme: Average global temperature rises by 1°C topples into coffee is expensive, heat gives you headaches, and water cuts in your city" class="domino-img">
+    </div>
+    <div class="why-explainer">
+        <p>Climate change may seem distant — something that will happen in the future, to somebody else, living on some remote island in the Pacific. But its impacts are already here, closer than you think. It's turning up in the price of your food, your electricity bill, whether you decide to skip that run, and your insurance premiums.</p>
+        <p>We pick one climate story every day and show you how it touches your life.</p>
+        <p class="why-tip">Tip: If you'd like to dive into a particular aspect (say how it impacts your food) check out the <a href="{{ root_path }}explore/">'Getting Real'</a> tab</p>
+    </div>
+    <div class="why-buttons">
+        <a href="{{ root_path }}today/" class="btn btn--primary">Read today's story</a>
+        <a href="{{ root_path }}pass/" class="btn btn--secondary">Nah I'll pass</a>
+    </div>
+</div>
+{% endblock %}

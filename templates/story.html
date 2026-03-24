@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}{{ story.title }} — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="story-page">
+    {% include "story_content.html" %}
+</div>
+{% endblock %}

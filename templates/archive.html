@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Archive — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="archive-page">
+    <h2>Archive</h2>
+    {% for month_label, month_stories in months %}
+    <div class="archive-section">
+        <h3>{{ month_label }}</h3>
+        {% for story in month_stories %}
+        <div class="archive-item">
+            <span class="archive-date">{{ story.date_short }}</span>
+            <a href="{{ root_path }}story/{{ story.slug }}/" class="archive-title">{{ story.title }}</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

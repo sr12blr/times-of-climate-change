@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.label }} — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="explore-category-page">
+    <p class="explore-breadcrumb"><a href="{{ root_path }}explore/">Getting Real</a> ›</p>
+    <h2><span class="category-icon-inline">{{ category.icon }}</span>{{ category.label }}</h2>
+    <div class="story-grid">
+        {% for story in stories %}
+        <a href="{{ root_path }}story/{{ story.slug }}/" class="story-card">
+            <p class="story-card-date">{{ story.date_display }}</p>
+            <h3>{{ story.title }}</h3>
+            {% if story.what_talking_about %}
+            <p class="story-card-excerpt">{{ story.what_talking_about[0][:120] }}{% if story.what_talking_about[0]|length > 120 %}…{% endif %}</p>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

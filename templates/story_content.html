@@ -1,0 +1,82 @@
+{# Reusable story block — no nav arrows in v2 #}
+<article class="story">
+    <div class="story-header">
+        <p class="story-date">{{ story.date_display }}</p>
+        <h2>{% if link_title %}<a href="{{ root_path }}story/{{ story.slug }}/">{{ story.title }}</a>{% else %}{{ story.title }}{% endif %}</h2>
+    </div>
+
+    <div class="story-layout">
+        <div class="story-main">
+            <div class="story-section">
+                <h3>What's happening?</h3>
+                <ul>
+                    {% for point in story.what_talking_about %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="story-section story-section--care">
+                <h3>Why should you care?</h3>
+                <ul>
+                    {% for point in story.why_care %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% if story.why_now %}
+            <div class="story-section">
+                <h3>Why now?</h3>
+                <ul>
+                    {% for point in story.why_now %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if story.what_can_we_do %}
+            <div class="story-section">
+                <h3>What can we do about it?</h3>
+                <ul>
+                    {% for point in story.what_can_we_do %}
+                    <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if story.tag_impact %}
+            <div class="story-tags">
+                {% for tag in story.tag_impact %}
+                <a href="{{ root_path }}explore/{{ tag | lower | replace(' ', '-') }}/" class="tag-pill tag-pill--{{ tag | lower | replace(' ', '-') }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="story-sources">
+                <h3>Sources</h3>
+                <ul>
+                    {% for source in story.sources %}
+                    <li><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% if related %}
+    <div class="related-bottom">
+        <h3>More Threads to Tug On</h3>
+        <div class="related-cards-row">
+            {% for rel in related[:3] %}
+            <a href="{{ root_path }}story/{{ rel.slug }}/" class="related-card-horizontal">
+                <p class="related-date">{{ rel.date_display }}</p>
+                <h4>{{ rel.title }}</h4>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</article>
