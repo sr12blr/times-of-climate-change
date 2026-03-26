@@ -839,6 +839,15 @@ a.tag-pill:hover {
         font-size: 22px;
     }
 
+    .burger-btn {
+        position: static;
+        margin: 12px 0 0 24px;
+    }
+
+    .site-masthead {
+        margin-bottom: 0;
+    }
+
     .archive-item {
         flex-direction: column;
         gap: 2px;

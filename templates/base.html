@@ -12,9 +12,6 @@
 <body{% if is_landing %} class="landing-body"{% endif %}>
     {% if not is_landing %}
     <!-- Burger menu -->
-    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
-        <span></span><span></span><span></span>
-    </button>
     <nav class="burger-menu" id="burgerMenu">
         <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
         <a href="{{ root_path }}today/"{% if active_nav == 'today' %} class="active"{% endif %}>Today's Story</a>
@@ -30,6 +27,9 @@
             <p class="masthead-subtitle">One climate story that affects India, every day</p>
         </div>
     </header>
+    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
     {% endif %}
 
     <div class="container">
