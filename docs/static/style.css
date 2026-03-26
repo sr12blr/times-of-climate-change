@@ -534,6 +534,29 @@ a.tag-pill:hover {
 }
 
 /* Related stories — bottom cards */
+.story-bottom-nav {
+    text-align: center;
+    padding: 24px 0 8px;
+    margin-top: 24px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.story-bottom-nav a {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-teal);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.story-bottom-nav a:hover {
+    color: var(--color-text);
+}
+
 .related-bottom {
     margin-top: 36px;
     padding-top: 24px;
