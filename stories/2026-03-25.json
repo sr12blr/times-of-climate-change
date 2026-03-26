@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-25",
+  "slug": "india-5-of-10-most-polluted-cities-iqair-2025",
+  "title": "India is the 6th most polluted country globally (2025 World Air Quality Report)",
+  "what_talking_about": [
+    "IQAir\u2019s 2025 World Air Quality Report is out \u2014 India is the 6th most polluted country in the world. This is not new, it\u2019s been in the top 10 every single year since IQAir started tracking.",
+    "Loni in Ghaziabad, UP topped the list as the most polluted city on the planet, with PM2.5 levels at 112.5 \u2014 nearly 20 times the WHO safe limit. Four more Indian cities made the global top 10: Byrnihat (Meghalaya), Delhi, Ghaziabad (UP), and Ula/Birnagar (West Bengal). Delhi has now been the world\u2019s most polluted capital for 8 years running.",
+    "The silver lining? India\u2019s average PM2.5 has been slowly dropping \u2014 from 54.4 in 2023 to 48.9 in 2025. But that\u2019s still nearly 10x what the WHO considers safe."
+  ],
+  "why_care": [
+    "This is not a distant issue. The severe levels of air pollution are already affecting your everyday life.",
+    "Your health: persistent coughs, fatigue, headaches, weaker lungs \u2014 even if you feel \u201cfine.\u201d",
+    "Your money: more spending on healthcare, purifiers, electricity.",
+    "Your family: kids and elderly face higher risks from the same air.",
+    "Your lifestyle: fewer walks, worse winters, more time indoors."
+  ],
+  "tag_impact": ["Air Quality", "Health"],
+  "sources": [
+    {"title": "The Wire: India is Sixth Most-Polluted Country, Loni in Ghaziabad is World\u2019s Most Polluted City", "url": "https://thewire.in/environment/india-is-sixth-most-polluted-country-loni-in-ghaziabad-is-worlds-most-polluted-city-report"},
+    {"title": "The Hindu: India 6th most polluted country in the world: World Air Quality Report", "url": "https://www.thehindu.com/sci-tech/energy-and-environment/india-sixth-most-polluted-country-world-air-quality-report/article69374783.ece"},
+    {"title": "IQAir: 2025 World Air Quality Report", "url": "https://www.iqair.com/newsroom/waqr-2025-pr"}
+  ],
+  "related_stories": ["delhi-air-pollution-protest-right-to-breathe"]
+}
