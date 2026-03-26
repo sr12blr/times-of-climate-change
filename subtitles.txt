@@ -1,0 +1,40 @@
+## Story Subtitles — Edit here, then tell Claude to apply
+## Format: DATE | TITLE | SUBTITLE
+
+2025-01-10 | More than 1,100 Dead Olive Ridley Turtles Washed Ashore | It's a wake-up call for  stricter fishing regulations 
+
+2025-02-10 | Climate Change Made Bangalore's Filter Coffee More Expensive | Climate change may affect your daily cup of coffee
+
+2025-02-20 | Purnima Devi Barman Named in TIME's 2025 Women of the Year | Proof that one person, with a community behind them, can actually turn things around
+
+2025-03-05 | Dry Winter Followed by Late, Heavy Snowfall — Recipe for Disaster | No snow -> No glaciers -> No rivers -> No water for millions downstream
+
+2025-04-15 | Citizen Action Saved a Forest in Hyderabad | When communities mobilise, courts listen, and forests can be saved
+
+2025-05-15 | Ahmedabad Using Heat Insurance for Informal Workers | When it's too hot to work, informal workers lose their daily wage. But now there is a solution!  
+
+2025-09-25 | Monsoon Became the Season of Devastating Floods | This is not one bad monsoon in one region — it's a pattern showing up across India
+
+2025-10-10 | India Marked a Renewable Energy Milestone | A rare piece of good news — India is now adding 5x more renewable capacity than fossil fuel
+
+2025-11-12 | 'I just want to breathe': Rare protests over air pollution in New Delhi | Breathing Delhi's air can cut as much as 12 years off your life expectancy
+
+2025-11-20 | Supreme Court Reversed Post-Facto Environmental Clearance Ban | The one legal safeguard that stopped projects from bulldozing forests first and asking permission later is now gone
+
+2026-01-15 | Devastating fire in the Valley of flowers, triggered by an unusually dry winter | No snow -> No glaciers -> No rivers -> No water for millions downstream
+
+2026-03-17 | Two Kilos of Soil worth Rs 68 Lakh: The Maharashtra Village That Struck Biodiversity Gold | A village now has money to spend on protecting nature
+
+2026-03-18 | Too Hot to Move: How Rising Heat Could Make India Sicker by 2050 | The window of weather that allows you to exercise outdoors is shrinking every year
+
+2026-03-19 | The Local Solution to the Global LPG Crisis | India imports over half its LPG, but cheaper, cleaner alternatives already exist and work at scale
+
+2026-03-21 | The end of Spring: India Jumps Straight from Winter to Summer | Affecting crops like wheat — expect higher prices next year
+
+2026-03-22 | We are in the era of 'Water bankruptcy'| Chennai, Bengaluru, Delhi have already faced acute water shortage, where are we headed?
+
+2026-03-23 | El Nino likely in 2026; Hotter summer and weak monsoon for India | This will show up in your food prices and water cuts next summer
+
+2026-03-24 | Navi Mumbai's lakes turn too toxic for Flamingos | If it's too toxic for flamingos, how healthy is it for the people living nearby?
+
+2026-03-25 | India is the 6th most polluted country globally (2025 World Air Quality Report) | Persistent coughs, higher bills, kids stuck at home — air pollution is already part of your daily life

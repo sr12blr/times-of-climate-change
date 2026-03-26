@@ -29,5 +29,6 @@
     "Water",
     "Food",
     "Health"
-  ]
+  ],
+  "subtitle": "This will show up in your food prices and water cuts next summer"
 }

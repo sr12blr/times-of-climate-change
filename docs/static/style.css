@@ -397,6 +397,16 @@ a:hover {
     margin-bottom: 8px;
 }
 
+.story-subtitle {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-style: italic;
+    color: #C8602A;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
 .story-date {
     font-size: 15px;
     font-weight: 700;
