@@ -12,11 +12,30 @@
     "The fuelwood shift is a health crisis in the making. Indoor air pollution from burning wood kills lakhs of Indians every year and the burden falls mostly on women and children who collect and cook with it.",
     "The bus and metro story may actually be good news. When fuel gets expensive, people switch to public transport and it may just prove that public transport works and nudge more people to make that choice."
   ],
-  "tag_impact": ["Inflation", "Health", "Mobility"],
-  "sources": [
-    {"title": "Down to Earth: Re-discovery of fuelwood", "url": "https://www.downtoearth.org.in/energy/re-discovery-of-fuelwood"},
-    {"title": "Times of India: Amid fuel crisis, Aapli Bus ridership jumps to 1.78 lakh", "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX2tXekVNZGMxUUFOS0hscnItUFpFNjBoN2t3c"},
-    {"title": "Nagpur Today: Aapli Bus sets new ridership record with 1.82 lakh passengers in a day", "url": "https://www.nagpurtoday.in/nagpurs-aapli-bus-sets-new-ridership-record-with-1-82-lakh-passengers-in-a-day/10111738"}
+  "tag_impact": [
+    "Inflation",
+    "Health",
+    "Mobility"
   ],
-  "related_stories": ["local-solution-global-lpg-crisis", "delhi-air-pollution-protest-right-to-breathe"]
+  "sources": [
+    {
+      "title": "Down to Earth: Re-discovery of fuelwood",
+      "url": "https://www.downtoearth.org.in/energy/re-discovery-of-fuelwood"
+    },
+    {
+      "title": "Times of India: Amid fuel crisis, Aapli Bus ridership jumps to 1.78 lakh",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNX2tXekVNZGMxUUFOS0hscnItUFpFNjBoN2t3c"
+    },
+    {
+      "title": "Nagpur Today: Aapli Bus sets new ridership record with 1.82 lakh passengers in a day",
+      "url": "https://www.nagpurtoday.in/nagpurs-aapli-bus-sets-new-ridership-record-with-1-82-lakh-passengers-in-a-day/10111738"
+    }
+  ],
+  "related_stories": [
+    "local-solution-global-lpg-crisis",
+    "delhi-air-pollution-protest-right-to-breathe"
+  ],
+  "image": "static/images/fuel-crisis-fuelwood-rural-public-transport-urban.jpg",
+  "image_credit": "Hiki Liu",
+  "image_credit_url": "https://unsplash.com/@hikiliu?utm_source=times_of_climate_change&utm_medium=referral"
 }
