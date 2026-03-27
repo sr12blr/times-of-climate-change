@@ -3,3 +3,4 @@ __pycache__/
 .claude/
 *.log
 .DS_Store
+.unsplash_key

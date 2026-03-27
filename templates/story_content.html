@@ -6,6 +6,15 @@
         {% if story.subtitle %}<p class="story-subtitle">{{ story.subtitle }}</p>{% endif %}
     </div>
 
+    {% if story.image %}
+    <div class="story-image">
+        <img src="{{ root_path }}{{ story.image }}" alt="{{ story.title }}">
+        {% if story.image_credit %}
+        <p class="story-image-credit">Photo: <a href="{{ story.image_credit_url or '#' }}" target="_blank" rel="noopener">{{ story.image_credit }}</a>{% if story.image_credit_url and 'unsplash.com' in story.image_credit_url %} / Unsplash{% endif %}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
     <div class="story-layout">
         <div class="story-main">
             <div class="story-section">

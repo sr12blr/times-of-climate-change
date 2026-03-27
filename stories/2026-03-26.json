@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-26",
+  "slug": "india-new-climate-targets-2035-ndc",
+  "title": "India's New Climate Targets for 2035",
+  "subtitle": "Good news: India is already on track to meet most of them. Not so good news: They may not be enough.",
+  "what_talking_about": [
+    "India just announced its climate commitments for 2031-2035. The key points are:",
+    "Achieve 60% of power capacity from clean energy: We are currently at 50% power capacity from renewables (solar, wind, hydro) and we want to take that up to 60% by 2035.",
+    "Cut emissions intensity by 47% (v/s 2005 baseline). Emission intensity is the amount of emissions per unit of GDP. Cutting that essentially means we want to achieve the same production but by using lesser energy.",
+    "Expand forest and tree cover, which will serve as major carbon sinks.",
+    "Sounds ambitious? Well, India already hit its previous targets years early. For e.g. we hit our 2030 targets 5 years ahead of schedule and are expected to hit the 60% clean energy capacity target by 2035."
+  ],
+  "why_care": [
+    "These targets will set mandates that will translate to action on ground — movement towards cleaner energy, electrification, protection of green spaces.",
+    "While they sound ambitious, they are quite modest. And according to some experts, \"insufficient.\"",
+    "Setting easy targets means we lose another decade. The heat waves, floods, and water shortages hitting India right now need bolder action, not targets we've already met."
+  ],
+  "tag_impact": ["Biodiversity", "Heat"],
+  "sources": [
+    {"title": "Mongabay India: India's updated climate plan targets 47% emissions cut and 60% clean power capacity by 2035", "url": "https://india.mongabay.com/2026/03/indias-updated-climate-plan-targets-47-emissions-cut-and-60-clean-power-capacity-by-2035/"},
+    {"title": "Mint: Do India's climate targets for 2035 place GDP growth above emission reduction?", "url": "https://www.livemint.com/opinion/quick-edit/indias-climate-targets-for-2035-gdp-growth-emission-reduction-11711500000000.html"}
+  ],
+  "related_stories": ["india-renewable-energy-500gw-milestone", "local-solution-lpg-crisis-cow-dung-biogas"]
+}
