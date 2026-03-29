@@ -1,0 +1,43 @@
+{
+  "date": "2026-03-30",
+  "slug": "kerala-election-heat-candidates-campaigning-scorching-weather",
+  "title": "Kerala elections: Campaigning in 38°C Heat (Feels Like 50°C)",
+  "subtitle": "Kerala's election candidates are rearranging their entire schedule to avoid deadly heat. 2024's national elections showed how dangerous it can get—33 poll workers died in a single day.",
+  "what_talking_about": [
+    "Kerala's assembly elections (scheduled April 9) are happening during a severe heat wave, with temperatures hitting 38°C in districts like Kollam, Kottayam, and Palakkad.",
+    "Combined with high humidity, the heat index feels like more than 50°C. Political parties have scrapped daytime campaign events and restructured schedules to early morning (7-10 am) and evening (4-9 pm).",
+    "The 890 candidates competing across 140 seats are dealing with dehydration, exhaustion, and heat stress while trying to reach voters.",
+    "The India Meteorological Department has issued yellow alerts across 12 districts due to UV radiation and high temperatures. The state government has directed outdoor workers to avoid work between 11 am and 3 pm."
+  ],
+  "why_care": [
+    "This kind of heat is not a minor inconvenience—it can be lethal. In June 2024, as the final phase of Lok Sabha voting wrapped up, at least 33 poll workers died in a single day in Uttar Pradesh alone, all from heat exposure. Across India, at least 61 election-related deaths occurred, with 43 being election workers.",
+    "If politicians are rescheduling rallies to avoid the heat, think about what's happening to factory workers, construction workers, farmers, and street vendors who don't get to reschedule their heat exposure.",
+    "The big question: why does a hot country like India continue to hold elections in its hottest months? And what precautions are actually in place to protect the ones most vulnerable to the heat?"
+  ],
+  "what_can_we_do": [
+    "For policymakers: Schedule elections in cooler months, install more cooling centers at voting booths, and provide mandatory heat safety training for poll workers.",
+    "For candidates: Avoid scheduling rallies in daytime and take adequate precautions—water, cooling in venues, shade, and medical support on standby.",
+    "For voters: Stay hydrated, check on people around you, especially the elderly and outdoor workers during heat waves."
+  ],
+  "image": "static/images/kerala-election-heat-candidates-campaigning-scorching-weather.jpg",
+  "image_credit": "George Chandrinos",
+  "image_credit_url": "https://unsplash.com/@georgechandrinos?utm_source=times_of_climate_change&utm_medium=referral",
+  "tag_impact": [
+    "Heat",
+    "Health"
+  ],
+  "sources": [
+    {
+      "title": "Deccan Herald: Kerala poll trail sizzles as candidates turn to hydration, simple diets to beat the heat",
+      "url": "https://www.deccanherald.com/india/kerala/kerala-poll-trail-sizzles-as-candidates-turn-to-hydration-simple-diets-to-beat-the-heat-3945130"
+    },
+    {
+      "title": "CNN: India heat: Dozens killed by extreme temperatures as polls close in world's largest election",
+      "url": "https://www.cnn.com/2024/06/02/india/india-heatwave-poll-worker-deaths-intl-hnk/index.html"
+    }
+  ],
+  "related_stories": [
+    "rising-heat-india-sicker-2050",
+    "el-nino-2026-india-monsoon-at-risk"
+  ]
+}
