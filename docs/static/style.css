@@ -499,6 +499,10 @@ a:hover {
     margin-bottom: 10px;
 }
 
+.story-section p {
+    margin-bottom: 16px;
+}
+
 /* Tag pills */
 .story-tags {
     display: flex;

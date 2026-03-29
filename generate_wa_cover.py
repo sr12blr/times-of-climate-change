@@ -92,7 +92,7 @@ def generate_cover(date_str):
 
   .site-title {{
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: 700;
     color: #ffffff;
     letter-spacing: -0.01em;
@@ -105,7 +105,7 @@ def generate_cover(date_str):
 
   .cover-date {{
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 600;
     color: #aaaaaa;
     letter-spacing: 0.04em;
@@ -149,7 +149,7 @@ def generate_cover(date_str):
     left: 0;
     right: 0;
     height: 50%;
-    background: linear-gradient(to bottom, rgba(26,26,24,0) 0%, rgba(26,26,24,0.85) 100%);
+    background: linear-gradient(to bottom, rgba(26,26,24,0) 0%, rgba(26,26,24,0.95) 100%);
     pointer-events: none;
   }}
 
@@ -165,7 +165,7 @@ def generate_cover(date_str):
 
   .story-title {{
     font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 54px;
+    font-size: 56px;
     font-weight: 700;
     color: #ffffff;
     line-height: 1.2;
@@ -174,7 +174,7 @@ def generate_cover(date_str):
 
   .story-subtitle {{
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 30px;
+    font-size: 32px;
     font-style: italic;
     color: #FFD9B8;
     line-height: 1.45;
@@ -198,7 +198,7 @@ def generate_cover(date_str):
 
   .title-below .story-title {{
     color: #1A1A18;
-    font-size: 50px;
+    font-size: 52px;
   }}
 
   .title-below .story-subtitle {{
