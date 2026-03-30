@@ -5,16 +5,25 @@
 {% block content %}
 <div class="archive-page">
     <h2>Archive</h2>
-    {% for month_label, month_stories in months %}
-    <div class="archive-section">
-        <h3>{{ month_label }}</h3>
-        {% for story in month_stories %}
-        <div class="archive-item">
-            <span class="archive-date">{{ story.date_short }}</span>
-            <a href="{{ root_path }}story/{{ story.slug }}/" class="archive-title">{{ story.title }}</a>
+    <div class="archive-grid">
+        {% for year, stories in stories_by_year %}
+        <h3 class="archive-year-header">{{ year }}</h3>
+        <div class="archive-year-group">
+            {% for story in stories %}
+            <a href="{{ root_path }}story/{{ story.slug }}/" class="archive-card">
+                <div class="card-header">
+                    <div class="card-date">{{ story.date_display.split(',')[0] }}</div>
+                    <h3 class="card-title">{{ story.title }}</h3>
+                </div>
+                <div class="card-tags">
+                    {% for tag in story.get('tag_impact', []) %}
+                    <a href="{{ root_path }}explore/{{ tag | lower | replace(' ', '-') }}/" class="tag-pill tag-pill--{{ tag | lower | replace(' ', '-') }}">{{ tag }}</a>
+                    {% endfor %}
+                </div>
+            </a>
+            {% endfor %}
         </div>
         {% endfor %}
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

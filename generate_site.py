@@ -91,6 +91,18 @@ def group_by_month(stories):
     return result
 
 
+def group_by_year(stories):
+    """Group stories by year for archive display"""
+    from collections import OrderedDict
+    grouped = OrderedDict()
+    for story in stories:
+        year = story["date"][:4]
+        if year not in grouped:
+            grouped[year] = []
+        grouped[year].append(story)
+    return list(grouped.items())
+
+
 def group_by_impact(stories):
     impact_map = {}
     for cat in IMPACT_CATEGORIES:
@@ -201,10 +213,10 @@ def generate(full_rebuild=False):
         print(f"  Generated: story/{story['slug']}/")
 
     # 6. Archive
-    months = group_by_month(stories)
+    stories_by_year = group_by_year(stories)
     template = env.get_template("archive.html")
     html = template.render(
-        months=months,
+        stories_by_year=stories_by_year,
         active_nav="archive",
         root_path="../",
         css_path=f"../static/style.css?v={css_version}",

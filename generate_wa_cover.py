@@ -117,12 +117,14 @@ def generate_cover(date_str):
     overflow: hidden;
     position: relative;
     min-height: 0;
+    object-position: center 20%;
   }}
 
   .cover-image {{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
     display: block;
   }}
 
