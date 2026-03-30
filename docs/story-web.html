@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Web — The Times of Climate Change</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0f1117;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    color: #e8e8e8;
+    overflow: hidden;
+  }
+
+  #header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15,17,23,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  #header h1 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #f0c070;
+  }
+
+  #header p {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  #legend {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #aaa;
+  }
+
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+
+  .legend-line {
+    width: 24px; height: 2px;
+  }
+
+  #canvas {
+    width: 100vw;
+    height: 100vh;
+    cursor: grab;
+  }
+
+  #canvas:active { cursor: grabbing; }
+
+  /* Tooltip */
+  #tooltip {
+    position: fixed;
+    pointer-events: none;
+    z-index: 200;
+    max-width: 280px;
+    background: rgba(20, 22, 30, 0.97);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  #tooltip.visible { opacity: 1; }
+
+  #tooltip .tt-category {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  #tooltip .tt-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #f0f0f0;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  #tooltip .tt-articles {
+    font-size: 11px;
+    color: #aaa;
+    line-height: 1.5;
+  }
+
+  #tooltip .tt-articles div::before {
+    content: '↳ ';
+    color: #666;
+  }
+
+  /* Edge tooltip */
+  #edge-tooltip {
+    position: fixed;
+    pointer-events: none;
+    z-index: 200;
+    max-width: 220px;
+    background: rgba(20, 22, 30, 0.97);
+    border: 1px solid rgba(255,200,50,0.25);
+    border-radius: 8px;
+    padding: 10px 13px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  #edge-tooltip.visible { opacity: 1; }
+
+  #edge-tooltip .et-hidden {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f0c070;
+    margin-bottom: 4px;
+  }
+
+  #edge-tooltip .et-label {
+    font-size: 12px;
+    color: #ddd;
+    line-height: 1.45;
+  }
+
+  #instructions {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    color: #555;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  /* Node labels in SVG */
+  .node-label {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    fill: #e8e8e8;
+    text-anchor: middle;
+    pointer-events: none;
+    dominant-baseline: central;
+  }
+
+  .edge-label {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 9.5px;
+    fill: #888;
+    text-anchor: middle;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<div id="header">
+  <div>
+    <h1>Story Web — March 24–27, 2026</h1>
+    <p>Hidden connections between climate news stories</p>
+  </div>
+  <div id="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#3aafa9"></div> Policy</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#52b788"></div> Environment</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e76f51"></div> Weather</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4cc9f0"></div> Water</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f4a261"></div> Food</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9d4edd"></div> Energy</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e63946"></div> Health</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#6c757d"></div> Economy</div>
+    <div style="width:1px;height:16px;background:#333;margin:0 4px;"></div>
+    <div class="legend-item">
+      <svg width="26" height="10"><line x1="0" y1="5" x2="26" y2="5" stroke="#f0c070" stroke-width="1.5" stroke-dasharray="4,3"/></svg>
+      Hidden connection
+    </div>
+    <div class="legend-item">
+      <svg width="26" height="10"><line x1="0" y1="5" x2="26" y2="5" stroke="#555" stroke-width="1.5"/></svg>
+      Direct link
+    </div>
+  </div>
+</div>
+
+<svg id="canvas"></svg>
+<div id="tooltip"></div>
+<div id="edge-tooltip"></div>
+<div id="instructions">Drag to pan · Scroll to zoom · Hover nodes and edges for details</div>
+
+<script>
+const nodes = [
+  {
+    id: "ndc",
+    label: "India's 2035\nClimate Targets",
+    category: "policy",
+    color: "#3aafa9",
+    articles: [
+      "Cabinet clears 47% emissions intensity cut by 2035",
+      "60% non-fossil power capacity goal",
+      "Experts: targets achievable but modest"
+    ]
+  },
+  {
+    id: "air",
+    label: "India 6th Most\nPolluted Nation",
+    category: "environment",
+    color: "#52b788",
+    articles: [
+      "Loni (UP) ranked world's most polluted city",
+      "India has 5 of 10 most polluted cities globally",
+      "IQAir 2025: only 14% cities meet WHO guidelines"
+    ]
+  },
+  {
+    id: "heat",
+    label: "March Heatwave\nArrives Early",
+    category: "weather",
+    color: "#e76f51",
+    articles: [
+      "Kerala yellow alert as temperatures soar",
+      "Chhattisgarh crosses 42°C in March",
+      "IMD: above-normal heatwave season confirmed"
+    ]
+  },
+  {
+    id: "water",
+    label: "Water Crisis\nDeepens",
+    category: "water",
+    color: "#4cc9f0",
+    articles: [
+      "Pune water costs could rise sharply by 2050",
+      "Cauvery river predicted to dry until 2050",
+      "World Water Day: India one of worst hit nations"
+    ]
+  },
+  {
+    id: "wheat",
+    label: "Wheat Under\nSiege",
+    category: "food",
+    color: "#f4a261",
+    articles: [
+      "Climate crisis threatens India's wheat supply",
+      "Studies: 15% reduction in crop yields by 2035",
+      "Roti prices at risk"
+    ]
+  },
+  {
+    id: "iran",
+    label: "Iran-US War\n& Fuel Shock",
+    category: "economy",
+    color: "#6c757d",
+    articles: [
+      "Plastic input costs jump 50–60% in March",
+      "Brewers warn of glass bottle shortages",
+      "IEA odd-even scheme playbook activated in India"
+    ]
+  },
+  {
+    id: "renewables",
+    label: "Renewable\nEnergy Boom",
+    category: "energy",
+    color: "#9d4edd",
+    articles: [
+      "India adds 547 MWh battery storage in 2025",
+      "26 lakh rooftop solar installations under PM Surya Ghar",
+      "Blueleaf Energy commissions 300MW hybrid project"
+    ]
+  },
+  {
+    id: "buses",
+    label: "Electric Bus\nSurge",
+    category: "energy",
+    color: "#7b5ea7",
+    articles: [
+      "915 e-buses ordered for Hyderabad",
+      "10,000 e-buses planned for 116 cities by 2027",
+      "Aapli Bus ridership jumps amid fuel crisis"
+    ]
+  },
+  {
+    id: "plastic",
+    label: "Plastic Ban\nFailing",
+    category: "environment",
+    color: "#52b788",
+    articles: [
+      "84% of surveyed sites still have single-use plastic",
+      "Delhi among worst performers in compliance",
+      "Survey confirms: India's plastic ban isn't working"
+    ]
+  },
+  {
+    id: "fish",
+    label: "Freshwater Fish\nAt Risk",
+    category: "environment",
+    color: "#43aa8b",
+    articles: [
+      "Global report flags risks to migratory fish in India's rivers",
+      "Dams and temperature change block migration routes"
+    ]
+  },
+  {
+    id: "leopard",
+    label: "Leopard\nContraception",
+    category: "environment",
+    color: "#74c69d",
+    articles: [
+      "Maharashtra pilots contraception to manage leopard conflict",
+      "Human-wildlife conflict rising as habitat shrinks"
+    ]
+  },
+  {
+    id: "microplastic",
+    label: "Microplastics\nin Water",
+    category: "health",
+    color: "#e63946",
+    articles: [
+      "Chennai's microplastic problem bigger than it looks",
+      "Invisible plastic particles in drinking water",
+      "Single-use plastics still rampant: health risk"
+    ]
+  },
+  {
+    id: "ai_power",
+    label: "AI & Data\nCenters",
+    category: "energy",
+    color: "#c77dff",
+    articles: [
+      "AI and data centers could raise peak power demand by 30 GW",
+      "Cooling data centers during heat spikes energy use",
+      "NTPC partners with Nxtra data centers for renewable supply"
+    ]
+  },
+  {
+    id: "co2",
+    label: "CO₂ Growth\nSlows Down",
+    category: "policy",
+    color: "#3aafa9",
+    articles: [
+      "India's carbon emissions grew at slowest pace in 2 decades",
+      "But: absolute emissions still rising",
+      "Experts: NDC targets may still fall short"
+    ]
+  },
+  {
+    id: "thar",
+    label: "Thar Dust\nReaches Himalayas",
+    category: "environment",
+    color: "#b7b065",
+    articles: [
+      "Study: Thar desert dust carries bacteria to the Himalayas",
+      "Dust transport linked to drying desert conditions"
+    ]
+  },
+  {
+    id: "malnutrition",
+    label: "Climate Worsens\nMalnutrition",
+    category: "health",
+    color: "#e63946",
+    articles: [
+      "UNICEF: Climate change deepens malnutrition crisis in Maharashtra",
+      "Heat stress reduces agricultural productivity"
+    ]
+  }
+];
+
+const edges = [
+  // Hidden connections (dashed gold)
+  {
+    source: "ndc", target: "air", hidden: true,
+    label: "NDC promises clean energy, but coal still fills India's power gap — making air worse before it gets better"
+  },
+  {
+    source: "heat", target: "air", hidden: true,
+    label: "More AC demand → more coal-fired power → more particulate pollution (the AC paradox)"
+  },
+  {
+    source: "ai_power", target: "air", hidden: true,
+    label: "30 GW of new AI/data center demand could undo years of clean energy progress if coal fills the gap"
+  },
+  {
+    source: "water", target: "fish", hidden: true,
+    label: "Rivers drying and changing temperature disrupts migratory fish routes that evolved over millennia"
+  },
+  {
+    source: "microplastic", target: "water", hidden: true,
+    label: "Failing plastic ban → rivers choked with plastic → breaks into microplastics that enter drinking water"
+  },
+  {
+    source: "renewables", target: "leopard", hidden: true,
+    label: "Solar farms expanding into scrubland that leopards use — clean energy at the cost of wildlife habitat"
+  },
+  {
+    source: "thar", target: "water", hidden: true,
+    label: "Desert dust loaded with bacteria alters glacial microbiomes that feed Himalayan rivers — affects India's freshwater supply"
+  },
+  {
+    source: "co2", target: "ndc", hidden: true,
+    label: "CO₂ growth slowing is good news — but absolute emissions still rising, raising doubts about whether NDC targets are ambitious enough"
+  },
+  {
+    source: "heat", target: "ai_power", hidden: true,
+    label: "Hotter cities need more cooling → data centers in summer = energy demand spiral no one is accounting for"
+  },
+  {
+    source: "iran", target: "renewables", hidden: true,
+    label: "Oil price shock makes renewable energy suddenly more cost-competitive — crisis as accelerant for transition"
+  },
+  {
+    source: "plastic", target: "microplastic", hidden: true,
+    label: "Every piece of plastic that escapes the ban will fragment into microplastics over decades — today's policy failure = tomorrow's health crisis"
+  },
+  {
+    source: "wheat", target: "malnutrition", hidden: true,
+    label: "A 15% crop yield drop hits the poorest first — farmers growing food they can no longer afford to eat"
+  },
+  {
+    source: "heat", target: "malnutrition", hidden: true,
+    label: "Extreme heat stress during growing season directly shrinks nutritional content of crops, not just yield"
+  },
+
+  // Direct / visible connections (solid)
+  {
+    source: "iran", target: "air", hidden: false,
+    label: "Fuel crisis forces odd-even car rationing — an ironic, unplanned improvement in city air quality"
+  },
+  {
+    source: "iran", target: "plastic", hidden: false,
+    label: "Crude oil price spike raises plastic production costs by 50–60%, making single-use plastic more expensive"
+  },
+  {
+    source: "heat", target: "water", hidden: false,
+    label: "Heatwave speeds up evaporation and dries rivers — Cauvery predicted dry until 2050"
+  },
+  {
+    source: "water", target: "wheat", hidden: false,
+    label: "Irrigation-dependent wheat farming directly threatened by river drying and groundwater depletion"
+  },
+  {
+    source: "ndc", target: "renewables", hidden: false,
+    label: "NDC targets mandate 60% non-fossil power by 2035 — driving record solar and wind investment"
+  },
+  {
+    source: "ai_power", target: "renewables", hidden: false,
+    label: "Data center operators signing renewable PPAs to avoid reputational and cost risk of coal power"
+  },
+  {
+    source: "buses", target: "air", hidden: false,
+    label: "10,000 electric buses replacing diesel directly cuts PM2.5 in the most polluted corridors"
+  },
+  {
+    source: "iran", target: "buses", hidden: false,
+    label: "Fuel crisis makes public e-transport economically irresistible — Aapli Bus ridership jumps immediately"
+  }
+];
+
+// ─── D3 setup ───────────────────────────────────────────────────────────────
+const w = window.innerWidth;
+const h = window.innerHeight;
+
+const svg = d3.select("#canvas")
+  .attr("width", w)
+  .attr("height", h);
+
+// Arrow markers
+const defs = svg.append("defs");
+
+function addMarker(id, color) {
+  defs.append("marker")
+    .attr("id", id)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 28)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("d", "M0,-5L10,0L0,5")
+    .attr("fill", color)
+    .attr("opacity", 0.7);
+}
+
+addMarker("arrow-hidden", "#f0c070");
+addMarker("arrow-direct", "#666");
+
+// Glow filter
+const filter = defs.append("filter").attr("id", "glow");
+filter.append("feGaussianBlur").attr("stdDeviation", "3").attr("result", "coloredBlur");
+const feMerge = filter.append("feMerge");
+feMerge.append("feMergeNode").attr("in", "coloredBlur");
+feMerge.append("feMergeNode").attr("in", "SourceGraphic");
+
+const g = svg.append("g");
+
+// Zoom
+const zoom = d3.zoom()
+  .scaleExtent([0.3, 3])
+  .on("zoom", e => g.attr("transform", e.transform));
+
+svg.call(zoom);
+svg.call(zoom.transform, d3.zoomIdentity.translate(w * 0.5, h * 0.5).scale(0.85));
+
+// Simulation
+const simulation = d3.forceSimulation(nodes)
+  .force("link", d3.forceLink(edges).id(d => d.id).distance(d => d.hidden ? 220 : 180).strength(0.4))
+  .force("charge", d3.forceManyBody().strength(-600))
+  .force("center", d3.forceCenter(0, 0))
+  .force("collision", d3.forceCollide().radius(65));
+
+// Draw edges
+const edgeGroup = g.append("g").attr("class", "edges");
+const edgePaths = edgeGroup.selectAll("path.edge-path")
+  .data(edges)
+  .join("path")
+  .attr("class", "edge-path")
+  .attr("fill", "none")
+  .attr("stroke", d => d.hidden ? "#f0c070" : "#555")
+  .attr("stroke-width", d => d.hidden ? 1.5 : 1.5)
+  .attr("stroke-dasharray", d => d.hidden ? "5,4" : "none")
+  .attr("opacity", d => d.hidden ? 0.55 : 0.35)
+  .attr("marker-end", d => d.hidden ? "url(#arrow-hidden)" : "url(#arrow-direct)")
+  .style("cursor", "pointer");
+
+// Edge hover
+const edgeTooltip = document.getElementById("edge-tooltip");
+
+edgePaths
+  .on("mouseenter", function(event, d) {
+    d3.select(this)
+      .attr("opacity", 1)
+      .attr("stroke-width", 2.5);
+
+    edgeTooltip.innerHTML = `
+      <div class="et-hidden">${d.hidden ? "Hidden connection" : "Direct link"}</div>
+      <div class="et-label">${d.label}</div>
+    `;
+    edgeTooltip.classList.add("visible");
+    moveEdgeTooltip(event);
+  })
+  .on("mousemove", moveEdgeTooltip)
+  .on("mouseleave", function(event, d) {
+    d3.select(this)
+      .attr("opacity", d.hidden ? 0.55 : 0.35)
+      .attr("stroke-width", 1.5);
+    edgeTooltip.classList.remove("visible");
+  });
+
+function moveEdgeTooltip(event) {
+  const tw = edgeTooltip.offsetWidth;
+  const th = edgeTooltip.offsetHeight;
+  let x = event.clientX + 14;
+  let y = event.clientY - 14;
+  if (x + tw > window.innerWidth - 10) x = event.clientX - tw - 14;
+  if (y + th > window.innerHeight - 10) y = window.innerHeight - th - 10;
+  edgeTooltip.style.left = x + "px";
+  edgeTooltip.style.top = y + "px";
+}
+
+// Draw nodes
+const nodeGroup = g.append("g").attr("class", "nodes");
+const nodeEls = nodeGroup.selectAll("g.node")
+  .data(nodes)
+  .join("g")
+  .attr("class", "node")
+  .style("cursor", "pointer")
+  .call(d3.drag()
+    .on("start", (event, d) => {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x; d.fy = d.y;
+    })
+    .on("drag", (event, d) => { d.fx = event.x; d.fy = event.y; })
+    .on("end", (event, d) => {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null; d.fy = null;
+    })
+  );
+
+// Node circles
+nodeEls.append("circle")
+  .attr("r", 36)
+  .attr("fill", d => d.color + "22")
+  .attr("stroke", d => d.color)
+  .attr("stroke-width", 2)
+  .style("filter", "url(#glow)");
+
+// Inner pulse ring (just aesthetic)
+nodeEls.append("circle")
+  .attr("r", 28)
+  .attr("fill", d => d.color + "15")
+  .attr("stroke", d => d.color + "55")
+  .attr("stroke-width", 1);
+
+// Node labels (multi-line via tspan)
+nodeEls.each(function(d) {
+  const el = d3.select(this);
+  const lines = d.label.split("\n");
+  const text = el.append("text")
+    .attr("class", "node-label")
+    .attr("y", lines.length === 2 ? -7 : 0);
+
+  lines.forEach((line, i) => {
+    text.append("tspan")
+      .attr("x", 0)
+      .attr("dy", i === 0 ? 0 : "1.3em")
+      .text(line);
+  });
+});
+
+// Node tooltip
+const tooltip = document.getElementById("tooltip");
+
+nodeEls
+  .on("mouseenter", function(event, d) {
+    d3.select(this).select("circle").attr("r", 42).attr("stroke-width", 3);
+
+    // Highlight connected edges
+    edgePaths
+      .attr("opacity", e =>
+        (e.source.id === d.id || e.target.id === d.id)
+          ? 1
+          : 0.1
+      )
+      .attr("stroke-width", e =>
+        (e.source.id === d.id || e.target.id === d.id) ? 2.5 : 1.5
+      );
+
+    // Dim unconnected nodes
+    const connectedIds = new Set(
+      edges
+        .filter(e => e.source.id === d.id || e.target.id === d.id)
+        .flatMap(e => [e.source.id, e.target.id])
+    );
+    nodeEls.attr("opacity", n => connectedIds.has(n.id) || n.id === d.id ? 1 : 0.2);
+
+    const articlesHtml = d.articles.map(a => `<div>${a}</div>`).join("");
+    tooltip.innerHTML = `
+      <div class="tt-category" style="color:${d.color}">${d.category}</div>
+      <div class="tt-title">${d.label.replace("\n", " ")}</div>
+      <div class="tt-articles">${articlesHtml}</div>
+    `;
+    tooltip.classList.add("visible");
+    moveTooltip(event);
+  })
+  .on("mousemove", moveTooltip)
+  .on("mouseleave", function() {
+    d3.select(this).select("circle").attr("r", 36).attr("stroke-width", 2);
+    edgePaths
+      .attr("opacity", d => d.hidden ? 0.55 : 0.35)
+      .attr("stroke-width", 1.5);
+    nodeEls.attr("opacity", 1);
+    tooltip.classList.remove("visible");
+  });
+
+function moveTooltip(event) {
+  const tw = tooltip.offsetWidth;
+  const th = tooltip.offsetHeight;
+  let x = event.clientX + 16;
+  let y = event.clientY - 20;
+  if (x + tw > window.innerWidth - 10) x = event.clientX - tw - 16;
+  if (y + th > window.innerHeight - 10) y = window.innerHeight - th - 10;
+  tooltip.style.left = x + "px";
+  tooltip.style.top = y + "px";
+}
+
+// Tick
+simulation.on("tick", () => {
+  edgePaths.attr("d", d => {
+    const dx = d.target.x - d.source.x;
+    const dy = d.target.y - d.source.y;
+    const dr = Math.sqrt(dx * dx + dy * dy) * 1.4;
+    return `M${d.source.x},${d.source.y} A${dr},${dr} 0 0,1 ${d.target.x},${d.target.y}`;
+  });
+
+  nodeEls.attr("transform", d => `translate(${d.x},${d.y})`);
+});
+
+// Resize
+window.addEventListener("resize", () => {
+  svg.attr("width", window.innerWidth).attr("height", window.innerHeight);
+});
+</script>
+</body>
+</html>
