@@ -33,3 +33,19 @@ python3 -m http.server 8081 -d /Users/sailee/climate-v2/docs
 ```
 
 Then open: http://localhost:8081
+
+## Generate WhatsApp Cover
+Generate a WhatsApp channel cover image (1080x1080) for stories:
+
+```bash
+# Latest story
+python3 /Users/sailee/climate-v2/generate_wa_cover.py
+
+# Specific story by date
+python3 /Users/sailee/climate-v2/generate_wa_cover.py 2026-03-27
+
+# Generate and open in browser
+python3 /Users/sailee/climate-v2/generate_wa_cover.py --open
+```
+
+Output: `wa_cover.html` (screenshot at 1080x1080 for best results)
