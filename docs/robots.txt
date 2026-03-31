@@ -1,0 +1,9 @@
+# Times of Climate Change - Robot access rules
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://timesofclimatechange.com/sitemap.xml
+
+# Crawl delay (be nice to servers)
+Crawl-delay: 1
