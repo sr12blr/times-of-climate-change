@@ -672,95 +672,58 @@ a.tag-pill:hover {
     margin-bottom: 12px;
 }
 
-.archive-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 32px;
-}
-
-.archive-year-header {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--color-border);
+.archive-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
     margin-bottom: 12px;
-    margin-top: 32px;
-    grid-column: 1 / -1;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.archive-grid > .archive-year-header:first-of-type {
-    margin-top: 0;
+.archive-item:last-of-type {
+    border-bottom: none;
 }
 
-.archive-year-group {
-    display: contents;
-}
-
-.archive-card {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    background: white;
-    border-radius: 2px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.archive-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.card-header {
+.archive-item-left {
     flex: 1;
+    min-width: 0;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
+    gap: 16px;
+    align-items: baseline;
 }
 
-.card-date {
-    font-size: 11px;
+.archive-date {
+    font-size: 12px;
     color: var(--color-text-muted);
     letter-spacing: 0.04em;
-    margin-bottom: 6px;
+    flex-shrink: 0;
+    min-width: 52px;
     font-weight: 600;
 }
 
-.card-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
+.archive-title {
+    font-size: 16px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.15s;
 }
 
-.card-title {
-    font-family: var(--font-serif);
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0;
-    color: var(--color-text);
+.archive-title:hover {
+    color: var(--color-link);
+    text-decoration: none;
 }
 
-.card-tags {
+.archive-item-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: auto;
-    padding-top: 12px;
-    border-top: 1px solid var(--color-border);
+    flex-shrink: 0;
+    justify-content: flex-end;
 }
 
-.archive-card .card-tags {
-    gap: 4px;
-}
-
-.archive-card .tag-pill {
+.archive-item-tags .tag-pill {
     display: inline-block;
     font-size: 10px;
     font-weight: 600;
@@ -771,19 +734,19 @@ a.tag-pill:hover {
     transition: opacity 0.15s;
 }
 
-.archive-card .tag-pill:hover {
+.archive-item-tags .tag-pill:hover {
     opacity: 0.85;
     text-decoration: none;
 }
 
-.archive-card .tag-pill--heat { background: var(--color-alert); }
-.archive-card .tag-pill--water { background: var(--color-link); }
-.archive-card .tag-pill--food { background: var(--color-tag-green); }
-.archive-card .tag-pill--biodiversity { background: var(--color-tag-green); }
-.archive-card .tag-pill--air-quality { background: #8B7355; }
-.archive-card .tag-pill--health { background: #C77D58; }
-.archive-card .tag-pill--inflation { background: #6B4423; }
-.archive-card .tag-pill--mobility { background: #5A6F7D; }
+.tag-pill--heat { background: var(--color-alert); }
+.tag-pill--water { background: var(--color-link); }
+.tag-pill--food { background: var(--color-tag-green); }
+.tag-pill--biodiversity { background: var(--color-tag-green); }
+.tag-pill--air-quality { background: #8B7355; }
+.tag-pill--health { background: #C77D58; }
+.tag-pill--inflation { background: #6B4423; }
+.tag-pill--mobility { background: #5A6F7D; }
 
 .tag-badge {
     display: inline-block;
@@ -982,13 +945,6 @@ a.tag-pill:hover {
 }
 
 /* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-    .archive-year-group {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
-}
-
 @media (max-width: 640px) {
     .landing-page h1 {
         font-size: 30px;
@@ -1028,9 +984,21 @@ a.tag-pill:hover {
         margin-bottom: 0;
     }
 
-    .archive-year-group {
-        grid-template-columns: 1fr;
-        gap: 16px;
+    .archive-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .archive-item-left {
+        flex-direction: column;
+        gap: 2px;
+        width: 100%;
+    }
+
+    .archive-item-tags {
+        justify-content: flex-start;
+        width: 100%;
     }
 
     .related-cards-row {
