@@ -264,6 +264,19 @@ def generate(full_rebuild=False):
         f.write(html)
     print("  Generated: about/")
 
+    # 9. April Fools quiz page
+    april_fools_dir = SITE_DIR / "april-fools"
+    april_fools_dir.mkdir(parents=True, exist_ok=True)
+    template = env.get_template("april-fools.html")
+    html = template.render(
+        active_nav="",
+        root_path="../",
+        css_path=f"../static/style.css?v={css_version}",
+    )
+    with open(april_fools_dir / "index.html", "w") as f:
+        f.write(html)
+    print("  Generated: april-fools/")
+
     print(f"\nDone. {generated} new story page(s) generated.")
     print(f"Site ready at: {SITE_DIR}/")
 

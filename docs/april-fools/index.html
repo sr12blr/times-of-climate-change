@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Too Wild to Be True? — The Times of Climate Change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css?v=1774928573">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HLBR3CY28D');
+    </script>
+</head>
+<body>
+    
+    <!-- Burger menu -->
+    <nav class="burger-menu" id="burgerMenu">
+        <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
+        <a href="../today/">Today's Story</a>
+        <a href="../archive/">Archive</a>
+        <a href="../explore/">Getting Real</a>
+        <a href="../about/">About</a>
+    </nav>
+    <div class="burger-overlay" id="burgerOverlay"></div>
+
+    <header class="site-masthead">
+        <div class="container">
+            <h1 class="masthead-title"><a href="../">The Times of <em>Climate Change</em></a></h1>
+            <p class="masthead-subtitle">One climate story that affects India, every day</p>
+        </div>
+    </header>
+    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+    
+
+    <div class="container">
+        
+<div class="quiz-container" id="quiz">
+
+    <!-- SCREEN 1: Splash -->
+    <div class="quiz-screen quiz-splash" id="screen-splash">
+        <div class="quiz-splash-inner">
+            <p class="quiz-date">April 1, 2026</p>
+            <h2 class="quiz-title">Too Wild to Be True?</h2>
+            <p class="quiz-subtitle">5 real stories. 5 made-up ones.<br>Can you spot the pranks?</p>
+            <button class="quiz-btn quiz-btn--play" onclick="startQuiz()">Play</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2-6: Questions -->
+    <div class="quiz-screen quiz-question" id="screen-question" style="display:none;">
+        <p class="quiz-progress" id="quiz-progress">1 of 5</p>
+        <p class="quiz-prompt">Choose which one is true:</p>
+        <div class="quiz-options">
+            <button class="quiz-option" id="option-a" onclick="selectAnswer('a')">
+                <span class="quiz-option-label">A</span>
+                <span class="quiz-option-text" id="option-a-text"></span>
+            </button>
+            <button class="quiz-option" id="option-b" onclick="selectAnswer('b')">
+                <span class="quiz-option-label">B</span>
+                <span class="quiz-option-text" id="option-b-text"></span>
+            </button>
+        </div>
+        <div class="quiz-reveal" id="quiz-reveal" style="display:none;">
+            <div class="quiz-reveal-icon" id="quiz-reveal-icon"></div>
+            <p class="quiz-reveal-text" id="quiz-reveal-text"></p>
+            <a class="quiz-story-link" id="quiz-story-link" href="#" target="_blank">Read the full story →</a>
+            <button class="quiz-btn quiz-btn--next" id="quiz-next-btn" onclick="nextQuestion()">Next →</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 7: Score -->
+    <div class="quiz-screen quiz-score" id="screen-score" style="display:none;">
+        <div class="quiz-score-inner">
+            <p class="quiz-score-number" id="quiz-score-number"></p>
+            <p class="quiz-score-tagline" id="quiz-score-tagline"></p>
+            <div class="quiz-score-cta">
+                <p>Truth is indeed stranger than fiction. Especially so in the times of climate change.</p>
+                <p>If you'd like to know more stories:</p>
+                <div class="quiz-cta-links">
+                    <a href="../archive/" class="quiz-btn quiz-btn--cta">Read our stories</a>
+                    <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" class="quiz-btn quiz-btn--whatsapp" target="_blank">Follow on WhatsApp</a>
+                </div>
+            </div>
+            <button class="quiz-btn quiz-btn--play quiz-btn--replay" onclick="restartQuiz()">Play again</button>
+        </div>
+    </div>
+
+</div>
+
+<style>
+/* Quiz styles */
+.quiz-container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 20px 0 40px;
+}
+
+/* Splash screen */
+.quiz-splash-inner {
+    text-align: center;
+    padding: 60px 20px 80px;
+}
+
+.quiz-date {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+}
+
+.quiz-title {
+    font-family: var(--font-title);
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.quiz-subtitle {
+    font-size: 18px;
+    color: var(--color-text-mid);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.quiz-btn {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+}
+
+.quiz-btn:hover {
+    transform: translateY(-1px);
+}
+
+.quiz-btn--play {
+    padding: 14px 48px;
+    color: #fff;
+    background: var(--color-teal);
+}
+
+.quiz-btn--play:hover {
+    background: #0a5f5e;
+}
+
+.quiz-btn--next {
+    display: block;
+    margin: 24px auto 0;
+    padding: 12px 36px;
+    color: #fff;
+    background: var(--color-text-mid);
+}
+
+.quiz-btn--next:hover {
+    background: var(--color-text);
+}
+
+.quiz-btn--cta {
+    display: inline-block;
+    padding: 12px 28px;
+    color: #fff;
+    background: var(--color-teal);
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.quiz-btn--cta:hover {
+    background: #0a5f5e;
+    text-decoration: none;
+}
+
+.quiz-btn--whatsapp {
+    display: inline-block;
+    padding: 12px 28px;
+    color: #fff;
+    background: #25D366;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.quiz-btn--whatsapp:hover {
+    background: #1da851;
+    text-decoration: none;
+}
+
+.quiz-btn--replay {
+    margin-top: 32px;
+    padding: 10px 32px;
+    font-size: 14px;
+    background: var(--color-surface);
+    color: var(--color-text-mid);
+    border: 1px solid var(--color-border);
+}
+
+.quiz-btn--replay:hover {
+    background: var(--color-border);
+}
+
+/* Question screen */
+.quiz-progress {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.quiz-prompt {
+    font-family: var(--font-title);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 24px;
+}
+
+/* Options */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--color-text);
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.quiz-option:hover:not(.quiz-option--locked) {
+    border-color: var(--color-text-mid);
+}
+
+.quiz-option-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    background: var(--color-border);
+    color: var(--color-text-mid);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.quiz-option-text {
+    flex: 1;
+}
+
+/* Answer states */
+.quiz-option--correct {
+    border-color: #2D6A1A;
+    background: #f0f7ec;
+}
+
+.quiz-option--correct .quiz-option-label {
+    background: #2D6A1A;
+    color: #fff;
+}
+
+.quiz-option--wrong {
+    border-color: var(--color-alert);
+    background: #fdf2ef;
+}
+
+.quiz-option--wrong .quiz-option-label {
+    background: var(--color-alert);
+    color: #fff;
+}
+
+.quiz-option--dimmed {
+    opacity: 0.5;
+}
+
+.quiz-option--locked {
+    cursor: default;
+}
+
+/* Reveal */
+.quiz-reveal {
+    margin-top: 24px;
+    padding: 24px;
+    background: var(--color-surface);
+    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    text-align: center;
+}
+
+.quiz-reveal-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.quiz-reveal-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-text-mid);
+    margin-bottom: 12px;
+}
+
+.quiz-story-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-teal);
+}
+
+.quiz-story-link:hover {
+    text-decoration: underline;
+}
+
+/* Score screen */
+.quiz-score-inner {
+    text-align: center;
+    padding: 40px 20px 60px;
+}
+
+.quiz-score-number {
+    font-family: var(--font-title);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.quiz-score-tagline {
+    font-size: 20px;
+    color: var(--color-teal);
+    font-weight: 600;
+    margin-bottom: 36px;
+}
+
+.quiz-score-cta {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-mid);
+}
+
+.quiz-score-cta p {
+    margin-bottom: 8px;
+}
+
+.quiz-cta-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .quiz-title {
+        font-size: 30px;
+    }
+
+    .quiz-subtitle {
+        font-size: 16px;
+    }
+
+    .quiz-prompt {
+        font-size: 20px;
+    }
+
+    .quiz-option {
+        padding: 14px 16px;
+        font-size: 15px;
+    }
+
+    .quiz-score-number {
+        font-size: 40px;
+    }
+
+    .quiz-cta-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+<script>
+var questions = [
+    {
+        optionA: "Scientists in Kerala discovered a species of earthworm that can break down microplastics.",
+        optionB: "A village in Maharashtra got paid Rs 68 lakh for just 2 kg of their soil.",
+        correct: "b",
+        reveal: "Dapur village in Maharashtra earned Rs 68 lakh from microorganisms found in just 2 kg of their soil \u2014 under India's biodiversity profit-sharing laws.",
+        storyUrl: "../story/maharashtra-village-soil-biodiversity-gold/"
+    },
+    {
+        optionA: "Pollutant levels in Navi Mumbai's flamingo wetlands are 3\u20134 times above safe limits, and flamingo numbers are declining.",
+        optionB: "Mumbai's migrant flamingo population has grown so much that the city declared the flamingo its official city bird.",
+        correct: "a",
+        reveal: "Navi Mumbai's flamingo wetlands have pollutant levels 3\u20134 times above safe limits \u2014 and it's driving the flamingos away.",
+        storyUrl: "../story/navi-mumbai-flamingo-lakes-toxic/"
+    },
+    {
+        optionA: "Rajasthan's largest solar park now powers a 24/7 air-conditioned cattle shed for 5,000 cows.",
+        optionB: "Villagers in Rajasthan walked 700 km from Jaisalmer to Jaipur to protest against solar parks.",
+        correct: "b",
+        reveal: "Villagers walked 700 km to protest solar parks being built on 5.8 lakh hectares of sacred community groves that were reclassified as 'wasteland.'",
+        storyUrl: "../story/rajasthan-villagers-march-700km-save-sacred-groves-from-solar/"
+    },
+    {
+        optionA: "Mumbai's Sanjay Gandhi National Park has so many leopards that the forest department now runs a 'Leopard Alert' SMS service for residents living near the park boundary.",
+        optionB: "Junnar, a town near Pune, has a leopard density of 7 per 100 sq km \u2014 the same as Tadoba, India's premier tiger reserve.",
+        correct: "b",
+        reveal: "Junnar's leopard density matches premier tiger reserves. In just 5 years, leopard-human conflict killed 22 people and over 16,000 cattle.",
+        storyUrl: "../story/maharashtra-leopard-contraception-human-wildlife-conflict/"
+    },
+    {
+        optionA: "A new insurance product pays informal workers automatically when temperatures cross a dangerous threshold \u2014 no claim filing needed.",
+        optionB: "After a Zomato delivery rider collapsed from heatstroke in Nagpur, FSSAI issued guidelines requiring all food delivery apps to pause outdoor deliveries when temperatures cross 44\u00b0C.",
+        correct: "a",
+        reveal: "In Ahmedabad, informal workers pay just Rs 354/year and get automatic payouts when it gets dangerously hot \u2014 no paperwork required.",
+        storyUrl: "../story/ahmedabad-heat-insurance-informal-workers/"
+    }
+];
+
+var currentQuestion = 0;
+var score = 0;
+var answered = false;
+
+function startQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    document.getElementById('screen-splash').style.display = 'none';
+    document.getElementById('screen-score').style.display = 'none';
+    document.getElementById('screen-question').style.display = 'block';
+    showQuestion();
+}
+
+function restartQuiz() {
+    startQuiz();
+}
+
+function showQuestion() {
+    answered = false;
+    var q = questions[currentQuestion];
+
+    document.getElementById('quiz-progress').textContent = (currentQuestion + 1) + ' of ' + questions.length;
+    document.getElementById('option-a-text').textContent = q.optionA;
+    document.getElementById('option-b-text').textContent = q.optionB;
+
+    // Reset option styles
+    var optA = document.getElementById('option-a');
+    var optB = document.getElementById('option-b');
+    optA.className = 'quiz-option';
+    optB.className = 'quiz-option';
+
+    // Hide reveal
+    document.getElementById('quiz-reveal').style.display = 'none';
+}
+
+function selectAnswer(choice) {
+    if (answered) return;
+    answered = true;
+
+    var q = questions[currentQuestion];
+    var isCorrect = choice === q.correct;
+    if (isCorrect) score++;
+
+    var optA = document.getElementById('option-a');
+    var optB = document.getElementById('option-b');
+
+    // Lock both buttons
+    optA.classList.add('quiz-option--locked');
+    optB.classList.add('quiz-option--locked');
+
+    // Highlight correct answer green
+    if (q.correct === 'a') {
+        optA.classList.add('quiz-option--correct');
+        if (choice === 'b') optB.classList.add('quiz-option--wrong');
+    } else {
+        optB.classList.add('quiz-option--correct');
+        if (choice === 'a') optA.classList.add('quiz-option--wrong');
+    }
+
+    // Dim the non-selected, non-correct option
+    if (choice === 'a' && q.correct === 'a') {
+        optB.classList.add('quiz-option--dimmed');
+    } else if (choice === 'b' && q.correct === 'b') {
+        optA.classList.add('quiz-option--dimmed');
+    }
+
+    // Show reveal
+    var reveal = document.getElementById('quiz-reveal');
+    var revealIcon = document.getElementById('quiz-reveal-icon');
+    var revealText = document.getElementById('quiz-reveal-text');
+    var storyLink = document.getElementById('quiz-story-link');
+    var nextBtn = document.getElementById('quiz-next-btn');
+
+    revealIcon.textContent = isCorrect ? '\u2713' : '\u2717';
+    revealIcon.style.color = isCorrect ? '#2D6A1A' : 'var(--color-alert)';
+    revealText.textContent = q.reveal;
+    storyLink.href = q.storyUrl;
+
+    nextBtn.textContent = currentQuestion < questions.length - 1 ? 'Next \u2192' : 'See your score \u2192';
+
+    reveal.style.display = 'block';
+    reveal.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        showQuestion();
+        document.getElementById('screen-question').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        showScore();
+    }
+}
+
+function showScore() {
+    document.getElementById('screen-question').style.display = 'none';
+    document.getElementById('screen-score').style.display = 'block';
+
+    document.getElementById('quiz-score-number').textContent = score + ' out of ' + questions.length;
+
+    var tagline = '';
+    if (score <= 1) tagline = 'April got you good!';
+    else if (score <= 2) tagline = 'Tricky, isn\'t it?';
+    else if (score <= 3) tagline = 'Not bad at all!';
+    else if (score === 4) tagline = 'Sharp eye! Almost perfect.';
+    else tagline = 'Perfect score! You\'re a climate detective.';
+
+    document.getElementById('quiz-score-tagline').textContent = tagline;
+
+    document.getElementById('screen-score').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+    </div>
+
+    
+    <footer class="site-footer">
+        <div class="container">
+            <span class="footer-title">The Times of Climate Change</span>
+            <span class="footer-tagline">One climate story, every day</span>
+        </div>
+    </footer>
+    
+
+    <script>
+    (function() {
+        var btn = document.getElementById('burgerBtn');
+        var menu = document.getElementById('burgerMenu');
+        var close = document.getElementById('burgerClose');
+        var overlay = document.getElementById('burgerOverlay');
+        if (!btn) return;
+        function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+        function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+        btn.addEventListener('click', open);
+        close.addEventListener('click', shut);
+        overlay.addEventListener('click', shut);
+    })();
+    </script>
+</body>
+</html>
