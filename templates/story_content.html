@@ -8,7 +8,11 @@
 
     {% if story.image %}
     <div class="story-image">
+        {% if story.image.startswith('http') %}
+        <img src="{{ story.image }}" alt="{{ story.title }}">
+        {% else %}
         <img src="{{ root_path }}{{ story.image }}?v={{ range(100000, 999999) | random }}" alt="{{ story.title }}">
+        {% endif %}
         {% if story.image_credit %}
         <p class="story-image-credit">Image by <a href="{{ story.image_credit_url or '#' }}" target="_blank" rel="noopener">{{ story.image_credit }}</a>{% if story.image_credit_url and 'unsplash.com' in story.image_credit_url %} on Unsplash{% endif %}</p>
         {% endif %}

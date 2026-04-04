@@ -1,0 +1,29 @@
+{
+  "date": "2026-04-04",
+  "slug": "meghalaya-solar-rescue-healthcare-24x7",
+  "title": "Meghalaya's Solar Rescue: From Candlelight deliveries to 24X7 power",
+  "subtitle": "Solar works because it's local and doesn't rely on massive grids. Decentralisation builds resilience. And it may be needed more than ever - even for those not living in remote hills!",
+  "what_talking_about": [
+    "In Meghalaya's hilly regions, healthcare centers were suffering from unreliable grid electricity: night deliveries by candlelight, vaccines spoiling due to lack of refrigeration, sterilizing equipment in boiling water using coal and turning patients away because the tools needed to treat them wouldn't work without electricity.",
+    "A state-wide solar mission has now solarized ~530 health centers across the state. Clinics that were treating 10-20 patients daily now see 40-50. Equipment that once sat idle, like oxygen concentrators, sterilisers, radiant warmers, and vaccine refrigerators, now runs reliably, bringing life and light back into the clinic. The health centers can now operate round the clock and their availability has meant that people can trust these centers and rely on them.",
+    "One health center in West Khasi Hills, which couldn't properly treat a newborn's jaundice in 2023 due to no electricity, now conducts night deliveries under bright lights."
+  ],
+  "why_care": [
+    "This is a good example of the power of decentralised solutions. A big part of why this works is because it's local. It doesn't rely on massive grids that may take weeks to repair once damaged in an extreme weather event and distant coal plants that get overburdened in peak summer.",
+    "The lesson of building local solutions for resilience applies to everyone - even if you are not living in distant remote hills. Switching to solar for at least part of your energy needs (e.g. rooftop solar, or solar powered car charging) can make you more resilient to grid failures, which we should prepare for as our energy demand peaks every summer in the rising heat.",
+    "The current energy crisis triggered by the war in the Middle-East is a reminder of the risks of disproportionate dependence on a single source, especially when it's far away. This story shows that local, small-scale solutions aren't just inspiring—they may be essential."
+  ],
+  "tags": ["Health", "Energy", "Infrastructure", "Meghalaya"],
+  "sources": [
+    {
+      "title": "Mongabay India: Solar energy supports healthcare in outage-prone hilly districts",
+      "url": "https://india.mongabay.com/2026/03/solar-energy-supports-healthcare-in-outage-prone-hilly-districts/"
+    }
+  ],
+  "image": "https://images.unsplash.com/photo-1566126147170-7d78352fab5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixlib=rb-4.1.0&q=80&w=1080",
+  "image_credit": "Michu Đăng Quang",
+  "image_credit_url": "https://unsplash.com/@michu_dangquang",
+  "related_stories": [
+    "india-renewable-energy-500gw-milestone"
+  ]
+}
