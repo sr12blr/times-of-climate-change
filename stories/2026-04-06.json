@@ -1,0 +1,41 @@
+{
+  "date": "2026-04-06",
+  "slug": "mumbai-mangroves-coastal-road-45000-trees",
+  "title": "Mumbai plans to cut 45,000 Mangroves for phase 2 of the Coastal Road. SC refuses to intervene.",
+  "subtitle": "The road promises to save a select few Mumbai residents time. But the trees it will replace have been quietly protecting all of Mumbai from floods, storms, and rising seas — for free.",
+  "what_talking_about": [
+    "45,000+ mangroves across 103 hectares will need to be affected for the 26-km Versova–Mira Bhayandar coastal road, which promises to cut commute time for cars.",
+    "A PIL was filed in the SC to halt the HC order from December that allowed the cutting of Mangroves. The SC cleared it last month. The cutting has already begun at two locations – in Malad and Versova.",
+    "BMC supposedly plans 1.3L replacement saplings — but a 2025 study found 52% of mangrove restoration sites have failed."
+  ],
+  "why_care": [
+    "Mumbai's air quality is already among the worst in the world and deteriorates every winter. Mangroves act as a natural filter, absorbing CO₂ at rates 3-4X higher than a regular tree. Cutting them when the city is already struggling to breathe makes an already bad situation worse.",
+    "Mumbai's sea levels are rising at 4.5mm per year. Over 10% of the city could be submerged by 2040. Mangrove root networks are the city's most effective natural defense against storm surges and flooding — protection that will be irreversibly lost, in a city where millions of residents live in low-lying, flood-vulnerable homes.",
+    "Koli fishing communities, who have lived along this coastline for generations, say 90% of their daily catch comes from these mangrove-associated waters."
+  ],
+  "what_can_we_do": [
+    "Active citizens are still trying to stop this. They are coming together, doing protests and marches, and sharing information. Follow and support their efforts on Instagram: <a href=\"https://www.instagram.com/savemumbaimangroves/\" target=\"_blank\">@savemumbaimangroves</a>"
+  ],
+  "tags": ["Biodiversity", "Water", "Mobility"],
+  "sources": [
+    {
+      "title": "Indian Express: SC on mangrove cutting for Versova-Bhayandar coastal road",
+      "url": "https://indianexpress.com/article/legal-news/sc-mangrove-cutting-versova-bhayandar-coastal-road-10593039/"
+    },
+    {
+      "title": "Mongabay India: The environmental costs of replacing mangroves with a road",
+      "url": "https://india.mongabay.com/2026/01/the-environmental-costs-of-replacing-mangroves-with-a-road/"
+    },
+    {
+      "title": "Free Press Journal: BMC begins mangrove cutting for Coastal Road North project",
+      "url": "https://www.freepressjournal.in/mumbai/mumbai-news-bmc-begins-mangrove-cutting-for-coastal-road-north-project-over-45000-trees-to-be-affected"
+    }
+  ],
+  "image": "static/images/mumbai-mangroves-coastal-road-45000-trees.jpg",
+  "image_credit": "Rudo (Wikimedia Commons)",
+  "image_credit_url": "https://commons.wikimedia.org/wiki/File:%27Vashi_Creek_and_the_Mangrove_forests%27..JPG",
+  "related_stories": [
+    "galathea-bay-leatherback-turtle-nesting-great-nicobar",
+    "navi-mumbai-flamingo-lakes-toxic"
+  ]
+}

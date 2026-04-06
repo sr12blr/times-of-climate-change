@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Weekly Digest — March 30 – April 4, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:wght@700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: 1080px 1080px;
+    margin: 0;
+  }
+
+  @media print {
+    html, body {
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    body {
+      display: block;
+      background: none;
+      gap: 0;
+      padding: 0;
+    }
+    .slide-label { display: none; }
+    .slide {
+      page-break-after: always;
+      page-break-inside: avoid;
+    }
+    .slide:first-child {
+      page-break-before: avoid;
+    }
+    .slide:last-child {
+      page-break-after: auto;
+    }
+  }
+
+  body {
+    background: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 0;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .slide-label {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+    color: #999;
+    text-align: center;
+    margin-bottom: -40px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== Each slide is 1080x1080 ===== */
+  .slide {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  /* ===== COVER SLIDE ===== */
+  .cover-slide {
+    background: #1A1A18;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .cover-slide .badge {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #0E7C7B;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 48px;
+  }
+
+  .cover-slide .cover-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 72px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    max-width: 860px;
+    margin-bottom: 20px;
+  }
+
+  .cover-slide .cover-title em {
+    color: #D4380D;
+    font-style: italic;
+  }
+
+  .cover-slide .cover-subtitle {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: #cccccc;
+    line-height: 1.35;
+    max-width: 780px;
+    margin-bottom: 60px;
+  }
+
+  .cover-slide .cover-dates {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #aaaaaa;
+    letter-spacing: 0.04em;
+  }
+
+  .cover-slide .accent-line {
+    width: 120px;
+    height: 5px;
+    background: #0E7C7B;
+    margin: 48px auto 0;
+  }
+
+  .cover-slide .story-count {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 22px;
+    color: #777;
+    margin-top: 24px;
+  }
+
+  /* ===== WA COVER SLIDES ===== */
+  .wa-slide {
+    display: flex;
+    flex-direction: column;
+    background: #F8F8F6;
+  }
+
+  .top-bar {
+    background: #1A1A18;
+    padding: 36px 60px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-shrink: 0;
+  }
+
+  .site-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 45px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+  }
+
+  .site-title em {
+    color: #D4380D;
+    font-style: italic;
+  }
+
+  .cover-date {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #aaaaaa;
+    letter-spacing: 0.04em;
+  }
+
+  .accent-strip {
+    height: 6px;
+    background: #0E7C7B;
+    flex-shrink: 0;
+  }
+
+  .image-section {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    min-height: 0;
+  }
+
+  .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 80%;
+    display: block;
+  }
+
+  .no-image {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0E7C7B 0%, #2D6A1A 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .no-image span {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 120px;
+    color: rgba(255,255,255,0.15);
+  }
+
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 55%;
+    background: linear-gradient(to bottom, rgba(26,26,24,0) 0%, rgba(26,26,24,0.95) 100%);
+    pointer-events: none;
+  }
+
+  .title-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 60px 44px;
+    z-index: 2;
+  }
+
+  .story-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .story-subtitle {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 32px;
+    font-style: italic;
+    color: #FFD9B8;
+    line-height: 1.45;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== SLIDE 0: COVER ==================== -->
+<div class="slide-label">SLIDE 1 — COVER</div>
+<div class="slide cover-slide">
+  <div class="badge">Weekly Digest</div>
+  <div class="cover-title">The Times of <em>Climate Change</em></div>
+  <div class="cover-subtitle">This week's stories on climate and daily life in India</div>
+  <div class="cover-dates">March 30 – April 4, 2026</div>
+  <div class="accent-line"></div>
+  <div class="story-count">6 stories</div>
+</div>
+
+<!-- ==================== SLIDE 1: Mar 30 ==================== -->
+<div class="slide-label">SLIDE 2 — March 30</div>
+<div class="slide wa-slide">
+  <div class="top-bar">
+    <div class="site-title">The Times of <em>Climate Change</em></div>
+    <div class="cover-date">March 30, 2026</div>
+  </div>
+  <div class="accent-strip"></div>
+  <div class="image-section">
+    <img src="docs/static/images/kerala-election-heat-candidates-campaigning-scorching-weather.jpg" alt="" class="cover-image">
+    <div class="image-overlay"></div>
+    <div class="title-section">
+      <div class="story-title">Kerala elections: Campaigning in 38°C Heat (Feels Like 50°C)</div>
+      <div class="story-subtitle">Kerala's election candidates are rearranging their campaign schedule to avoid the deadly heat. 2024's national elections showed how dangerous it can get—33 poll workers died in a single day on account of heat. So why does a hot country like India keep having elections in its summer?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 2: Mar 31 ==================== -->
+<div class="slide-label">SLIDE 3 — March 31</div>
+<div class="slide wa-slide">
+  <div class="top-bar">
+    <div class="site-title">The Times of <em>Climate Change</em></div>
+    <div class="cover-date">March 31, 2026</div>
+  </div>
+  <div class="accent-strip"></div>
+  <div class="image-section">
+    <img src="docs/static/images/great-indian-bustard-chick-born-gujarat-decade.jpg" alt="" class="cover-image">
+    <div class="image-overlay"></div>
+    <div class="title-section">
+      <div class="story-title">Badhai Ho! A Great Indian Bustard Is Born</div>
+      <div class="story-subtitle">First GIB chick hatched in a decade is a victory for India's conservation efforts</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 3: Apr 1 ==================== -->
+<div class="slide-label">SLIDE 4 — April 1</div>
+<div class="slide wa-slide">
+  <div class="top-bar">
+    <div class="site-title">The Times of <em>Climate Change</em></div>
+    <div class="cover-date">April 1, 2026</div>
+  </div>
+  <div class="accent-strip"></div>
+  <div class="image-section">
+    <img src="docs/static/images/galathea-bay-leatherback-turtle-nesting-great-nicobar.jpg" alt="" class="cover-image">
+    <div class="image-overlay"></div>
+    <div class="title-section">
+      <div class="story-title">Galathea Bay on the Great Nicobar Island has seen record nesting of Leatherback turtles; then why are environmentalists not celebrating?</div>
+      <div class="story-subtitle">Record turtle nesting proves this bay should be protected. Yet a ₹80,000 crore mega-project got approved for 'defence priorities and economic growth'. But at what cost?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 4: Apr 2 ==================== -->
+<div class="slide-label">SLIDE 5 — April 2</div>
+<div class="slide wa-slide">
+  <div class="top-bar">
+    <div class="site-title">The Times of <em>Climate Change</em></div>
+    <div class="cover-date">April 2, 2026</div>
+  </div>
+  <div class="accent-strip"></div>
+  <div class="image-section">
+    <img src="docs/static/images/mango-climate-change-india-yields-dropping.jpg" alt="" class="cover-image">
+    <div class="image-overlay"></div>
+    <div class="title-section">
+      <div class="story-title">The King of Fruits Is in Trouble</div>
+      <div class="story-subtitle">Unseasonal rain, extreme heat, and new pests are squeezing India's mango harvests. It'll make your wallets lighter and the mango farmers' lives more precarious.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 5: Apr 3 ==================== -->
+<div class="slide-label">SLIDE 6 — April 3</div>
+<div class="slide wa-slide">
+  <div class="top-bar">
+    <div class="site-title">The Times of <em>Climate Change</em></div>
+    <div class="cover-date">April 3, 2026</div>
+  </div>
+  <div class="accent-strip"></div>
+  <div class="image-section">
+    <img src="docs/static/images/india-weather-chaos-march-hailstorms-april-heatwaves.jpg" alt="" class="cover-image">
+    <div class="image-overlay"></div>
+    <div class="title-section">
+      <div class="story-title">Why is India's weather behaving like a Rohit Shetty climax?</div>
+      <div class="story-subtitle">Hailstorms, heatwaves, unseasonal rain all at once — India's weather in March was chaos personified. April looks worse. And it's coming for your food bill and your health.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SLIDE 6: Apr 4 ==================== -->
+<div class="slide-label">SLIDE 7 — April 4</div>
+<div class="slide wa-slide">
+  <div class="top-bar">
+    <div class="site-title">The Times of <em>Climate Change</em></div>
+    <div class="cover-date">April 4, 2026</div>
+  </div>
+  <div class="accent-strip"></div>
+  <div class="image-section">
+    <img src="docs/static/images/meghalaya-solar-rescue-healthcare-24x7.jpg" alt="" class="cover-image">
+    <div class="image-overlay"></div>
+    <div class="title-section">
+      <div class="story-title">Meghalaya's Solar Rescue: From Candlelight deliveries to 24X7 power</div>
+      <div class="story-subtitle">Solar works because it's local and doesn't rely on massive grids. Decentralisation builds resilience. And it may be needed more than ever - even for those not living in remote hills!</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

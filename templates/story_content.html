@@ -55,7 +55,7 @@
                 <h3>What can we do about it?</h3>
                 <ul>
                     {% for point in story.what_can_we_do %}
-                    <li>{{ point }}</li>
+                    <li>{{ point | safe }}</li>
                     {% endfor %}
                 </ul>
             </div>
