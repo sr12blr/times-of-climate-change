@@ -1,7 +1,29 @@
 import logging
+from datetime import date, timedelta
 from urllib.parse import urlparse
 
 logger = logging.getLogger(__name__)
+
+
+def filter_by_age(articles, max_age_days=5):
+    """Remove articles older than max_age_days. Articles with no date are kept."""
+    cutoff = date.today() - timedelta(days=max_age_days)
+    fresh = []
+    stale_count = 0
+    for article in articles:
+        pub = article.get("published_date", "")
+        if pub:
+            try:
+                pub_date = date.fromisoformat(pub[:10])
+                if pub_date < cutoff:
+                    stale_count += 1
+                    continue
+            except ValueError:
+                pass
+        fresh.append(article)
+    if stale_count > 0:
+        logger.info(f"Date filter: removed {stale_count} articles older than {max_age_days} days")
+    return fresh
 
 
 def matches_keywords(text, keywords):

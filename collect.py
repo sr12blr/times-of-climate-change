@@ -21,7 +21,7 @@ from config import (
     CLIMATE_KEYWORDS,
 )
 from sources import fetch_rss, fetch_google_news, scrape_scroll
-from filters import filter_articles, deduplicate
+from filters import filter_articles, deduplicate, filter_by_age
 
 
 def setup_logging():
@@ -117,6 +117,9 @@ def main():
 
     # 4. Deduplicate across all sources (within today)
     all_articles = deduplicate(all_articles)
+
+    # 4b. Drop stale articles (older than 5 days)
+    all_articles = filter_by_age(all_articles, max_age_days=5)
 
     # 5. Remove articles already seen in previous days
     prev_urls, prev_titles = load_previous_days(DATA_DIR, today)

@@ -207,6 +207,17 @@ a:hover {
     flex-wrap: wrap;
 }
 
+.landing-browse {
+    margin-top: 32px;
+}
+
+.landing-browse a {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--color-teal);
+    text-decoration: underline;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;

@@ -1,0 +1,38 @@
+{
+  "date": "2026-04-07",
+  "slug": "ekauni-village-biogas-lpg-chandauli-up",
+  "title": "While India Scrambles for LPG, This UP Village Has Solved It",
+  "subtitle": "125 houses in Ekauni village, Chandauli run on biogas from cow dung — it's cheaper, good for the climate and has shielded them from the current energy crisis!",
+  "what_talking_about": [
+    "In Ekauni village in Chandauli district, eastern Uttar Pradesh, 125+ households cook on biogas, paying no more than ₹400 a month for it. That's roughly half what an LPG cylinder costs.",
+    "The gas comes from a plant in the village that processes 3,000 kg of cow dung every day, mixed with water, and pipes methane directly into homes through a network covering up to 4 km. Gas is supplied twice a day — 2.5 hours in the morning and 2.5 in the evening. Stoves and pipelines were installed free of cost for users.",
+    "The plant was set up with the support of Pune-based Sustain Plus Foundation, which invested ₹85 lakh. The cow dung comes from a shed of 200 cows run by local farmer Nagendra Pratap Singh, who had long struggled with what to do with the waste.",
+    "Word has spread: 25 more households from nearby villages have recently taken connections. Almost everyone in the village still has an LPG connection, but they only use it when the biogas supply is not available."
+  ],
+  "why_care": [
+    "A local biogas model like this doesn't depend on global oil markets, tanker routes, or government subsidies. It runs on what the village already has.",
+    "Cow dung left to decompose releases methane (a greenhouse gas 80X more potent than CO2). Capturing it for cooking cuts emissions while solving an energy problem. And also reduces cost for the users.",
+    "As LPG costs keep rising across the country, models like Ekauni's are worth watching."
+  ],
+  "tags": [
+    "Food",
+    "Air quality",
+    "Inflation"
+  ],
+  "sources": [
+    {
+      "title": "Hindustan Times: Amid LPG crisis, biogas powers hundreds of kitchens in UP village",
+      "url": "https://www.hindustantimes.com/cities/lucknow-news/amid-lpg-crisis-biogas-powers-hundreds-of-kitchens-in-up-village-101775487373139.html"
+    },
+    {
+      "title": "Indian Express: In UP, this village of 500 residents is untouched by LPG crisis",
+      "url": "https://indianexpress.com/article/cities/lucknow/in-up-this-village-of-500-residents-is-untouched-by-lpg-crisis-10620269/"
+    }
+  ],
+  "related_stories": [
+    "local-solution-global-lpg-crisis"
+  ],
+  "image": "static/images/ekauni-village-biogas-lpg-chandauli-up.jpg",
+  "image_credit": "Lyndsay Abel",
+  "image_credit_url": "https://unsplash.com/@artsyabel?utm_source=times_of_climate_change&utm_medium=referral"
+}
