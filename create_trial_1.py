@@ -23,7 +23,7 @@ PUZZLE = {
             "items": ["Air", "Water", "Noise", "Light"]
         },
         {
-            "name": "Urban Transportation",
+            "name": "Ways to get around without a car",
             "bg": "#F5F5F5",
             "text": "#1A1A18",
             "border": "#CCCCCC",
@@ -32,20 +32,20 @@ PUZZLE = {
             "items": ["Bus", "Train", "Metro", "Cycle"]
         },
         {
-            "name": "Ways to Protect from Air Pollution",
+            "name": "Brands that make electric scooters",
             "bg": "#F4A582",
             "text": "#1A1A18",
             "emoji": "🟧",
             "difficulty": 3,
-            "items": ["Smog tower", "Air purifier", "Masks", "Water sprinkler"]
+            "items": ["Ather", "Ola", "Chetak", "TVC iQube"]
         },
         {
-            "name": "Crops Affected by Climate Change",
+            "name": "Solar ____",
             "bg": "#B2182B",
             "text": "#ffffff",
             "emoji": "🟥",
             "difficulty": 4,
-            "items": ["Coffee", "Cocoa", "Rice", "Olive oil"]
+            "items": ["Farm", "Panel", "Cooker", "Energy"]
         }
     ]
 }
