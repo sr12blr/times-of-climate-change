@@ -536,6 +536,7 @@
 
       <div class="modal-footer">
         <button class="modal-start-btn" onclick="closeModal()">Let's play!</button>
+        <button class="modal-start-btn" style="background: #0E7C7B; margin-top: 10px;" onclick="startDemo()">Try a demo</button>
       </div>
     </div>
   </div>
@@ -579,7 +580,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const PUZZLE = {
+let PUZZLE = {
   categories: [
     {
       name: "Non-fossil fuel based energy sources",
@@ -620,6 +621,46 @@ const PUZZLE = {
     }
   ]
 };
+
+// Demo puzzle
+const DEMO_PUZZLE = {
+  categories: [
+    {
+      name: "Colors",
+      bg: "#FF6B6B",
+      text: "#ffffff",
+      emoji: "🔴",
+      difficulty: 1,
+      items: ["Red", "Blue", "Green", "Yellow"]
+    },
+    {
+      name: "Flowers",
+      bg: "#FFD93D",
+      text: "#1A1A18",
+      emoji: "🟨",
+      difficulty: 2,
+      items: ["Rose", "Tulip", "Hibiscus", "Sunflower"]
+    },
+    {
+      name: "Birds",
+      bg: "#6BCB77",
+      text: "#ffffff",
+      emoji: "🟢",
+      difficulty: 3,
+      items: ["Sparrow", "Myna", "Crow", "Dove"]
+    },
+    {
+      name: "Cities",
+      bg: "#4D96FF",
+      text: "#ffffff",
+      emoji: "🔵",
+      difficulty: 4,
+      items: ["Delhi", "Mumbai", "Bangalore", "Chennai"]
+    }
+  ]
+};
+
+let isDemo = false;
 
 // State
 let selected = [];
@@ -791,6 +832,22 @@ function showEndScreen(won) {
 
   // Show emoji squares for solved categories
   document.getElementById('endSquares').textContent = solveOrder.join(' ');
+
+  // Handle demo mode end screen
+  if (isDemo && won) {
+    // Hide WhatsApp button
+    const whatsappBtn = document.querySelector('.btn-whatsapp');
+    if (whatsappBtn) whatsappBtn.style.display = 'none';
+
+    // Replace "Read today's story" with "Play today's game"
+    const storyLink = endScreen.querySelector('a');
+    if (storyLink) {
+      storyLink.textContent = 'Play today\'s game →';
+      storyLink.href = '../torchlight/';
+      storyLink.style.marginTop = '24px';
+      storyLink.style.display = 'block';
+    }
+  }
 }
 
 function shareOnWhatsApp() {
@@ -841,6 +898,37 @@ function closeModal() {
 
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function startDemo() {
+  isDemo = true;
+
+  // Switch to demo puzzle
+  PUZZLE = DEMO_PUZZLE;
+
+  // Reset game state
+  selected = [];
+  solved = [];
+  solveOrder = [];
+  mistakes = 0;
+  hintedCategories = [];
+
+  // Rebuild grid with demo items
+  allItems = DEMO_PUZZLE.categories.flatMap(c => c.items);
+  for (let i = allItems.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+  }
+
+  // Close modal and show demo toast
+  closeModal();
+  showToast("🎓 Demo mode! Try to find the 4 groups (easier puzzle)");
+
+  // Reset and render
+  document.getElementById('solvedCategories').innerHTML = '';
+  renderGrid();
+  updateDots();
+  document.getElementById('submitBtn').disabled = true;
 }
 
 // Init
