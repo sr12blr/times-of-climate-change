@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-08",
+  "categories": [
+    {
+      "name": "Types of Pollution",
+      "bg": "#2171B5",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe6",
+      "difficulty": 1,
+      "items": [
+        "Air",
+        "Water",
+        "Noise",
+        "Light"
+      ]
+    },
+    {
+      "name": "Urban Transportation",
+      "bg": "#F5F5F5",
+      "text": "#1A1A18",
+      "border": "#CCCCCC",
+      "emoji": "\u2b1c",
+      "difficulty": 2,
+      "items": [
+        "Bus",
+        "Train",
+        "Metro",
+        "Cycle"
+      ]
+    },
+    {
+      "name": "Ways to Protect from Air Pollution",
+      "bg": "#F4A582",
+      "text": "#1A1A18",
+      "emoji": "\ud83d\udfe7",
+      "difficulty": 3,
+      "items": [
+        "Smog tower",
+        "Air purifier",
+        "Masks",
+        "Water sprinkler"
+      ]
+    },
+    {
+      "name": "Crops Affected by Climate Change",
+      "bg": "#B2182B",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe5",
+      "difficulty": 4,
+      "items": [
+        "Coffee",
+        "Cocoa",
+        "Rice",
+        "Olive oil"
+      ]
+    }
+  ]
+}
