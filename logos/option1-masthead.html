@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Logo Options — The Times of Climate Change</title>
+<style>
+  body { background: #f5f5f5; font-family: sans-serif; padding: 40px; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+  .logo-card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; }
+  .logo-card h3 { margin: 20px 0 5px; color: #333; }
+  .logo-card p { color: #777; font-size: 14px; max-width: 280px; }
+  .circle-preview { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 2px solid #eee; }
+  .circle-preview svg { width: 100%; height: 100%; }
+</style>
+</head>
+<body>
+
+<!-- OPTION 1: Newspaper Masthead -->
+<div class="logo-card">
+  <div class="circle-preview">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#1a3a2a"/>
+          <stop offset="100%" stop-color="#2c5f4a"/>
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="100" fill="url(#bg1)"/>
+      <!-- Decorative line top -->
+      <line x1="30" y1="42" x2="170" y2="42" stroke="#C8602A" stroke-width="1.5"/>
+      <!-- THE TIMES OF -->
+      <text x="100" y="62" text-anchor="middle" fill="#e8d5b0" font-family="Georgia, serif" font-size="13" letter-spacing="4">THE TIMES OF</text>
+      <!-- CLIMATE -->
+      <text x="100" y="92" text-anchor="middle" fill="#ffffff" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700">CLIMATE</text>
+      <!-- CHANGE -->
+      <text x="100" y="120" text-anchor="middle" fill="#ffffff" font-family="'Playfair Display', Georgia, serif" font-size="30" font-weight="700">CHANGE</text>
+      <!-- Decorative line bottom -->
+      <line x1="30" y1="132" x2="170" y2="132" stroke="#C8602A" stroke-width="1.5"/>
+      <!-- Leaf icon -->
+      <g transform="translate(88, 140) scale(0.5)">
+        <path d="M12 2C6 8 2 14 2 20c0 4 3 6 6 6 2 0 3-1 4-3 1 2 2 3 4 3 3 0 6-2 6-6C22 14 18 8 12 2z" fill="#4CAF50" opacity="0.8"/>
+      </g>
+      <!-- Tagline -->
+      <text x="100" y="162" text-anchor="middle" fill="#C8602A" font-family="Georgia, serif" font-size="8.5" font-style="italic">India's daily climate digest</text>
+    </svg>
+  </div>
+  <h3>Option 1: Classic Masthead</h3>
+  <p>Dark green background with serif type. Newspaper-inspired, authoritative feel.</p>
+</div>
+
+<!-- OPTION 2: Earth & Leaf -->
+<div class="logo-card">
+  <div class="circle-preview">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="100" fill="#ffffff"/>
+      <!-- Outer ring -->
+      <circle cx="100" cy="100" r="92" fill="none" stroke="#2c5f4a" stroke-width="2"/>
+      <!-- Stylized globe/leaf hybrid -->
+      <g transform="translate(100,78)">
+        <!-- Globe circle -->
+        <circle cx="0" cy="0" r="35" fill="none" stroke="#2c5f4a" stroke-width="2.5"/>
+        <!-- Globe lines -->
+        <ellipse cx="0" cy="0" rx="15" ry="35" fill="none" stroke="#2c5f4a" stroke-width="1.2"/>
+        <line x1="-35" y1="0" x2="35" y2="0" stroke="#2c5f4a" stroke-width="1.2"/>
+        <ellipse cx="0" cy="0" rx="35" ry="12" fill="none" stroke="#2c5f4a" stroke-width="0.8" transform="translate(0,-14)"/>
+        <ellipse cx="0" cy="0" rx="35" ry="12" fill="none" stroke="#2c5f4a" stroke-width="0.8" transform="translate(0,14)"/>
+        <!-- Leaf overlaying globe -->
+        <path d="M18,-38 C30,-20 28,5 10,18 C8,10 6,0 8,-10 C10,-20 14,-30 18,-38z" fill="#4CAF50" opacity="0.6"/>
+        <path d="M18,-38 C14,-20 12,-5 10,18" fill="none" stroke="#2c5f4a" stroke-width="0.8"/>
+      </g>
+      <!-- Text -->
+      <text x="100" y="132" text-anchor="middle" fill="#2c5f4a" font-family="'Playfair Display', Georgia, serif" font-size="11" font-weight="700" letter-spacing="1">THE TIMES OF</text>
+      <text x="100" y="150" text-anchor="middle" fill="#2c5f4a" font-family="'Playfair Display', Georgia, serif" font-size="16" font-weight="700" letter-spacing="1.5">CLIMATE CHANGE</text>
+      <!-- Orange accent line -->
+      <line x1="50" y1="157" x2="150" y2="157" stroke="#C8602A" stroke-width="1"/>
+      <!-- Tagline -->
+      <text x="100" y="170" text-anchor="middle" fill="#888" font-family="sans-serif" font-size="7.5">INDIA'S DAILY CLIMATE DIGEST</text>
+    </svg>
+  </div>
+  <h3>Option 2: Globe & Leaf</h3>
+  <p>White background with green globe-leaf icon. Clean, modern, works well at small sizes.</p>
+</div>
+
+<!-- OPTION 3: Bold Initials -->
+<div class="logo-card">
+  <div class="circle-preview">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="100" fill="#2c5f4a"/>
+      <!-- Large T -->
+      <text x="68" y="115" text-anchor="middle" fill="#ffffff" font-family="'Playfair Display', Georgia, serif" font-size="80" font-weight="700">T</text>
+      <!-- Overlapping smaller CC -->
+      <text x="128" y="125" text-anchor="middle" fill="#C8602A" font-family="'Playfair Display', Georgia, serif" font-size="50" font-weight="700" opacity="0.9">CC</text>
+      <!-- Subtle subtitle -->
+      <text x="100" y="160" text-anchor="middle" fill="#e8d5b0" font-family="Georgia, serif" font-size="8" letter-spacing="2">TIMES OF CLIMATE CHANGE</text>
+      <!-- Thin line -->
+      <line x1="40" y1="148" x2="160" y2="148" stroke="#e8d5b0" stroke-width="0.5" opacity="0.5"/>
+    </svg>
+  </div>
+  <h3>Option 3: TCC Monogram</h3>
+  <p>Bold initials — T for Times, CC for Climate Change. Compact, recognizable at tiny sizes.</p>
+</div>
+
+<!-- OPTION 4: Thermometer/Newspaper -->
+<div class="logo-card">
+  <div class="circle-preview">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="warm" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#C8602A"/>
+          <stop offset="100%" stop-color="#e8913a"/>
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="100" fill="#faf6f0"/>
+      <!-- Newspaper fold lines -->
+      <line x1="20" y1="35" x2="180" y2="35" stroke="#2c5f4a" stroke-width="1.5"/>
+      <line x1="20" y1="38" x2="180" y2="38" stroke="#2c5f4a" stroke-width="0.5"/>
+      <!-- Title -->
+      <text x="100" y="58" text-anchor="middle" fill="#2c5f4a" font-family="'Playfair Display', Georgia, serif" font-size="10" letter-spacing="3" font-weight="400">THE TIMES OF</text>
+      <text x="100" y="78" text-anchor="middle" fill="#2c5f4a" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" letter-spacing="1">CLIMATE</text>
+      <text x="100" y="98" text-anchor="middle" fill="#2c5f4a" font-family="'Playfair Display', Georgia, serif" font-size="20" font-weight="700" letter-spacing="1">CHANGE</text>
+      <line x1="35" y1="105" x2="165" y2="105" stroke="#C8602A" stroke-width="1"/>
+      <!-- Rising temperature bar chart -->
+      <g transform="translate(50, 170) scale(1,-1)">
+        <rect x="0" y="0" width="12" height="20" rx="2" fill="#2c5f4a" opacity="0.3"/>
+        <rect x="18" y="0" width="12" height="28" rx="2" fill="#2c5f4a" opacity="0.4"/>
+        <rect x="36" y="0" width="12" height="35" rx="2" fill="#2c5f4a" opacity="0.5"/>
+        <rect x="54" y="0" width="12" height="40" rx="2" fill="#C8602A" opacity="0.6"/>
+        <rect x="72" y="0" width="12" height="48" rx="2" fill="#C8602A" opacity="0.8"/>
+        <rect x="90" y="0" width="12" height="55" rx="2" fill="url(#warm)"/>
+      </g>
+    </svg>
+  </div>
+  <h3>Option 4: Warming Stripes</h3>
+  <p>Newspaper style with rising temperature bars. Data-driven, tells a story at a glance.</p>
+</div>
+
+</body>
+</html>
