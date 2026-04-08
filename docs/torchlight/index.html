@@ -529,9 +529,9 @@
       <div class="modal-section-label">Each group is colour-coded, revealed as you solve</div>
       <div class="modal-colors">
         <div class="modal-color-chip" style="background:#2171B5; color:#fff;">Straightforward</div>
-        <div class="modal-color-chip" style="background:#F4A582; color:#1A1A18;">Medium</div>
-        <div class="modal-color-chip" style="background:#F5F5F5; color:#1A1A18; border:1px solid #CCC;">Tricky</div>
-        <div class="modal-color-chip" style="background:#B2182B; color:#fff;">Devious</div>
+        <div class="modal-color-chip" style="background:#87CEEB; color:#1A1A18;">Medium</div>
+        <div class="modal-color-chip" style="background:#FF69B4; color:#fff;">Tricky</div>
+        <div class="modal-color-chip" style="background:#FF8C00; color:#fff;">Devious</div>
       </div>
 
       <div class="modal-footer">
@@ -594,28 +594,27 @@ let PUZZLE = {
     {
       name: "Greenhouse gases",
       description: "",
-      bg: "#F5F5F5",
+      bg: "#87CEEB",
       text: "#1A1A18",
-      border: "#CCCCCC",
-      emoji: "⬜",
+      emoji: "🟦",
       difficulty: 2,
       items: ["METHANE", "CO₂", "NITROUS OXIDE", "OZONE"]
     },
     {
       name: "Alternatives to LPG",
       description: "",
-      bg: "#F4A582",
-      text: "#1A1A18",
-      emoji: "🟧",
+      bg: "#FF69B4",
+      text: "#ffffff",
+      emoji: "🩷",
       difficulty: 3,
       items: ["BIOGAS", "ELECTRIC COOKER", "FIREWOOD", "INDUCTION STOVE"]
     },
     {
       name: "Signs of an Indian summer",
       description: "",
-      bg: "#B2182B",
+      bg: "#FF8C00",
       text: "#ffffff",
-      emoji: "🟥",
+      emoji: "🟧",
       difficulty: 4,
       items: ["MANGO", "POWER CUT", "AC", "HEATWAVE"]
     }
@@ -747,7 +746,7 @@ function checkGuess() {
     setTimeout(() => el.classList.remove('shake'), 400);
   });
 
-  showToast(oneAway ? "One away! 👀" : "Not quite — try again");
+  showToast(oneAway ? "One away! 👀" : "Oops. Try again!");
 
   if (mistakes >= MAX_MISTAKES) {
     setTimeout(() => showEndScreen(false), 700);
