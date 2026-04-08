@@ -277,6 +277,49 @@ def generate(full_rebuild=False):
         f.write(html)
     print("  Generated: april-fools/")
 
+    # 10. Sitemap
+    BASE_URL = "https://timesofclimatechange.com"
+    today = date.today().isoformat()
+    static_pages = [
+        ("", "daily", "1.0"),
+        ("today/", "daily", "1.0"),
+        ("archive/", "daily", "0.9"),
+        ("torchlight/", "daily", "0.9"),
+        ("explore/", "weekly", "0.8"),
+        ("explore/food/", "weekly", "0.7"),
+        ("explore/water/", "weekly", "0.7"),
+        ("explore/air-quality/", "weekly", "0.7"),
+        ("explore/health/", "weekly", "0.7"),
+        ("explore/heat/", "weekly", "0.7"),
+        ("explore/inflation/", "weekly", "0.7"),
+        ("explore/mobility/", "weekly", "0.7"),
+        ("explore/biodiversity/", "weekly", "0.7"),
+        ("about/", "monthly", "0.6"),
+        ("why/", "monthly", "0.6"),
+    ]
+    urls = []
+    for path, freq, pri in static_pages:
+        urls.append(f"""  <url>
+    <loc>{BASE_URL}/{path}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>{freq}</changefreq>
+    <priority>{pri}</priority>
+  </url>""")
+    for s in sorted(stories, key=lambda x: x["date"], reverse=True):
+        urls.append(f"""  <url>
+    <loc>{BASE_URL}/story/{s['slug']}/</loc>
+    <lastmod>{s['date']}</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.8</priority>
+  </url>""")
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap += "\n".join(urls) + "\n"
+    sitemap += "</urlset>\n"
+    with open(SITE_DIR / "sitemap.xml", "w") as f:
+        f.write(sitemap)
+    print("  Generated: sitemap.xml")
+
     print(f"\nDone. {generated} new story page(s) generated.")
     print(f"Site ready at: {SITE_DIR}/")
 
