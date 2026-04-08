@@ -580,7 +580,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const PUZZLE = {
+let PUZZLE = {
   categories: [
     {
       name: "Types of fossil fuels",
@@ -888,8 +888,7 @@ function startDemo() {
   isDemo = true;
 
   // Switch to demo puzzle
-  const currentPuzzle = PUZZLE;
-  window.PUZZLE = DEMO_PUZZLE;
+  PUZZLE = DEMO_PUZZLE;
 
   // Reset game state
   selected = [];
