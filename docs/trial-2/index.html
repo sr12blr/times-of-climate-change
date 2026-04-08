@@ -832,6 +832,22 @@ function showEndScreen(won) {
 
   // Show emoji squares for solved categories
   document.getElementById('endSquares').textContent = solveOrder.join(' ');
+
+  // Handle demo mode end screen
+  if (isDemo && won) {
+    // Hide WhatsApp button
+    const whatsappBtn = document.querySelector('.btn-whatsapp');
+    if (whatsappBtn) whatsappBtn.style.display = 'none';
+
+    // Replace "Read today's story" with "Play today's game"
+    const storyLink = endScreen.querySelector('a');
+    if (storyLink) {
+      storyLink.textContent = 'Play today\'s game →';
+      storyLink.href = '../torchlight/';
+      storyLink.style.marginTop = '24px';
+      storyLink.style.display = 'block';
+    }
+  }
 }
 
 function shareOnWhatsApp() {
