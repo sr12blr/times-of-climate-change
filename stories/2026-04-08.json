@@ -1,0 +1,35 @@
+{
+  "date": "2026-04-08",
+  "slug": "iran-war-fertiliser-kharif-fossil-fuel-farming",
+  "title": "It's not just your cooking gas; the war may also affect the Kharif crops",
+  "subtitle": "India's farms run on fertilisers. Those fertilisers run on gas. That gas comes through the Hormuz Strait — now blocked by war.",
+  "what_talking_about": [
+    "India imports LNG from Qatar — the raw material for making fertilisers domestically — and finished fertilisers from Gulf nations, all through the Hormuz Strait. Both are now disrupted.",
+    "GAIL (the state gas supplier) has cut LNG supply by 40%, forcing two National Fertilizers plants in Punjab to halt operations. A plant in Gujarat has also cut urea production.",
+    "The government says India has 18 million tonnes of fertiliser in stock. The problem: kharif season demand is 39 million tonnes — more than double.",
+    "Farmers in Punjab are already panic-buying. \"Neither the government nor cooperative societies seem prepared,\" one farmer told Scroll.in."
+  ],
+  "why_care": [
+    "Kharif crops — rice, pulses, cotton, soybean — are major food crops. Fertiliser shortages mid-season mean lower yields, which means higher food prices at your local market.",
+    "But there's the climate angle too: synthetic fertilisers are a major source of nitrous oxide (N₂O) — a greenhouse gas nearly 300 times more potent than CO₂. India's farms are already overusing them; studies show 55% of rice farmers apply more nitrogen than their soil needs. Could this be an opportunity to nudge farmers towards a more measured approach towards fertiliser application?",
+    "This is also a revelation of our food system's high dependence on fossil-fuels, which often remains unseen.",
+    "While we may need to solve this by finding alternative sources to fertilizers in the short term, the long-term fix experts recommend — crop diversification, soil health, precision farming — is exactly what climate-resilient agriculture looks like too."
+  ],
+  "tag_impact": [
+    "Food",
+    "Inflation"
+  ],
+  "sources": [
+    {
+      "title": "Scroll.in: Does India have enough fertiliser stocks to tide over Iran war shock?",
+      "url": "https://scroll.in/article/1091915/does-india-have-enough-fertiliser-stocks-to-tide-over-iran-war-shock"
+    }
+  ],
+  "related_stories": [
+    "ekauni-village-biogas-lpg-chandauli-up",
+    "local-solution-global-lpg-crisis"
+  ],
+  "image": "static/images/iran-war-fertiliser-kharif-fossil-fuel-farming.jpg",
+  "image_credit": "Deepak kumar",
+  "image_credit_url": "https://unsplash.com/@story_from_slowman?utm_source=times_of_climate_change&utm_medium=referral"
+}
