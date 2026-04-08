@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-08",
+  "categories": [
+    {
+      "name": "Renewable Energy Sources",
+      "bg": "#2171B5",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe6",
+      "difficulty": 1,
+      "items": [
+        "Solar",
+        "Wind",
+        "Hydro",
+        "Geothermal"
+      ]
+    },
+    {
+      "name": "Climate Impacts on Food",
+      "bg": "#F5F5F5",
+      "text": "#1A1A18",
+      "border": "#CCCCCC",
+      "emoji": "\u2b1c",
+      "difficulty": 2,
+      "items": [
+        "Drought",
+        "Flood",
+        "Pest",
+        "Frost"
+      ]
+    },
+    {
+      "name": "Carbon Reduction Methods",
+      "bg": "#F4A582",
+      "text": "#1A1A18",
+      "emoji": "\ud83d\udfe7",
+      "difficulty": 3,
+      "items": [
+        "Reforestation",
+        "Energy efficiency",
+        "Electric vehicle",
+        "Plant-based diet"
+      ]
+    },
+    {
+      "name": "Weather Patterns in India",
+      "bg": "#B2182B",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe5",
+      "difficulty": 4,
+      "items": [
+        "Monsoon",
+        "Heat wave",
+        "Cold wave",
+        "Cyclone"
+      ]
+    }
+  ]
+}
