@@ -15,37 +15,37 @@ PUZZLE = {
     "date": today,
     "categories": [
         {
-            "name": "Renewable Energy Sources",
+            "name": "Types of fossil fuels",
             "bg": "#2171B5",
             "text": "#ffffff",
             "emoji": "🟦",
             "difficulty": 1,
-            "items": ["Solar", "Wind", "Hydro", "Geothermal"]
+            "items": ["Coal", "Oil", "Natural Gas", "Petroleum"]
         },
         {
-            "name": "Climate Impacts on Food",
+            "name": "Migratory birds that visit India",
             "bg": "#F5F5F5",
             "text": "#1A1A18",
             "border": "#CCCCCC",
             "emoji": "⬜",
             "difficulty": 2,
-            "items": ["Drought", "Flood", "Pest", "Frost"]
+            "items": ["Greater Flamingo", "Rosy Pelican", "Siberian Crane", "Amur Falcon"]
         },
         {
-            "name": "Carbon Reduction Methods",
+            "name": "Parts of IPL team names",
             "bg": "#F4A582",
             "text": "#1A1A18",
             "emoji": "🟧",
             "difficulty": 3,
-            "items": ["Reforestation", "Energy efficiency", "Electric vehicle", "Plant-based diet"]
+            "items": ["Superkings", "Knight Riders", "Royals", "Super Giants"]
         },
         {
-            "name": "Weather Patterns in India",
+            "name": "New years festivals",
             "bg": "#B2182B",
             "text": "#ffffff",
             "emoji": "🟥",
             "difficulty": 4,
-            "items": ["Monsoon", "Heat wave", "Cold wave", "Cyclone"]
+            "items": ["Gudi Padwa", "Ugadi", "Vishu", "Puthandu"]
         }
     ]
 }
