@@ -23,6 +23,7 @@
     <nav class="burger-menu" id="burgerMenu">
         <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
         <a href="{{ root_path }}today/"{% if active_nav == 'today' %} class="active"{% endif %}>Today's Story</a>
+        <a href="{{ root_path }}connections/"{% if active_nav == 'connections' %} class="active"{% endif %}>Today's Game 🔦</a>
         <a href="{{ root_path }}archive/"{% if active_nav == 'archive' %} class="active"{% endif %}>Archive</a>
         <a href="{{ root_path }}explore/"{% if active_nav == 'explore' %} class="active"{% endif %}>Getting Real</a>
         <a href="{{ root_path }}april-fools/"{% if active_nav == 'quiz' %} class="active"{% endif %}>April Fools Quiz</a>

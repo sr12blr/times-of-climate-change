@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Torchlight — The Times of Climate Change</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      background: #F8F8F6;
+      color: #1A1A18;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .site-header {
+      border-bottom: 2px solid #1A1A18;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #1A1A18;
+      text-decoration: none;
+    }
+
+    .site-title em { color: #D4380D; font-style: italic; }
+
+    .nav-links { display: flex; gap: 20px; font-size: 14px; font-weight: 600; }
+    .nav-links a { color: #1A1A18; text-decoration: none; }
+    .nav-links a:hover { color: #0E7C7B; }
+
+    /* Game container */
+    .game-container {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+
+    .game-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .game-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #1A1A18;
+      margin-bottom: 4px;
+    }
+
+    .game-date {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .game-instructions {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Solved banners */
+    .solved-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .solved-category {
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-align: center;
+      animation: popIn 0.3s ease;
+    }
+
+    .solved-category .cat-name {
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .solved-category .cat-items {
+      font-size: 13px;
+      margin-top: 3px;
+      opacity: 0.85;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tile {
+      aspect-ratio: 1;
+      background: #E0DED8;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 800;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background 0.12s ease, transform 0.1s ease;
+      padding: 8px;
+      line-height: 1.3;
+      user-select: none;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .tile:hover { background: #CCCAC3; }
+
+    .tile.selected {
+      background: #4A4840;
+      color: #ffffff;
+    }
+
+    .tile.shake {
+      animation: shake 0.4s ease;
+    }
+
+    /* Controls */
+    .controls-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mistakes-label {
+      font-size: 13px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mistake-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #4A4840;
+      transition: background 0.3s ease;
+    }
+
+    .dot.used { background: #D0CEC8; }
+
+    .btn {
+      padding: 10px 22px;
+      border-radius: 24px;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 2px solid #1A1A18;
+      transition: all 0.15s ease;
+    }
+
+    .btn-deselect {
+      background: transparent;
+      color: #1A1A18;
+    }
+
+    .btn-deselect:hover { background: #E0DED8; }
+
+    .btn-submit {
+      background: #1A1A18;
+      color: white;
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .btn-submit:not(:disabled):hover {
+      background: #0E7C7B;
+      border-color: #0E7C7B;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      top: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1A1A18;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      z-index: 100;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .toast.show { opacity: 1; }
+
+    /* End screen */
+    .end-screen {
+      display: none;
+      text-align: center;
+      padding: 24px 0 0;
+    }
+
+    .end-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .end-message {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .story-link {
+      display: inline-block;
+      background: #0E7C7B;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      transition: background 0.15s ease;
+    }
+
+    .story-link:hover { background: #0a5f5e; }
+
+    /* Animations */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+
+    @keyframes popIn {
+      from { opacity: 0; transform: scaleY(0.85); }
+      to { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* Mobile */
+    @media (max-width: 440px) {
+      .tile { font-size: 10px; }
+      .game-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../" class="site-title">The Times of <em>Climate Change</em></a>
+  <nav class="nav-links">
+    <a href="../today/">Today</a>
+    <a href="../archive/">Archive</a>
+    <a href="../about/">About</a>
+  </nav>
+</header>
+
+<div class="game-container">
+
+  <div class="game-header">
+    <div class="game-title">🔦 Torchlight</div>
+    <div class="game-date">April 8, 2026</div>
+    <div class="game-instructions">Shedding light on invisible connections.</div>
+  </div>
+
+  <div class="solved-categories" id="solvedCategories"></div>
+  <div class="grid" id="grid"></div>
+
+  <div class="controls-row" id="mistakeRow">
+    <span class="mistakes-label">
+      Mistakes remaining:
+      <span class="mistake-dots" id="mistakeDots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </span>
+    </span>
+  </div>
+
+  <div class="controls-row" id="btnRow">
+    <button class="btn btn-deselect" onclick="deselectAll()">Deselect All</button>
+    <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
+  </div>
+
+  <div class="end-screen" id="endScreen">
+    <div class="end-title" id="endTitle"></div>
+    <div class="end-message" id="endMessage"></div>
+    <a href="../story/iran-war-fertiliser-kharif-fossil-fuel-farming/" class="story-link">Read today's story →</a>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PUZZLE = {
+  categories: [
+    {
+      name: "Parts of a solar energy system",
+      description: "",
+      bg: "#2171B5",
+      text: "#ffffff",
+      items: ["PANEL", "INVERTER", "BATTERY", "CABLE"]
+    },
+    {
+      name: "Greenhouse gases",
+      description: "",
+      bg: "#F5F5F5",
+      text: "#1A1A18",
+      border: "#CCCCCC",
+      items: ["METHANE", "CO₂", "NITROUS OXIDE", "OZONE"]
+    },
+    {
+      name: "Signs of an Indian summer",
+      description: "",
+      bg: "#F4A582",
+      text: "#1A1A18",
+      items: ["POWER CUT", "COOLER", "TANKER", "LOO"]
+    },
+    {
+      name: "Carbon ___",
+      description: "Each word follows 'Carbon'",
+      bg: "#B2182B",
+      text: "#ffffff",
+      items: ["CREDIT", "SINK", "TAX", "CYCLE"]
+    }
+  ]
+};
+
+// State
+let selected = [];
+let solved = [];
+let mistakes = 0;
+const MAX_MISTAKES = 4;
+
+// Build shuffled item list
+let allItems = PUZZLE.categories.flatMap(c => c.items);
+for (let i = allItems.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+}
+
+function itemSolved(item) {
+  return solved.some(cat => cat.items.includes(item));
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  allItems.forEach(item => {
+    if (itemSolved(item)) return;
+    const tile = document.createElement('div');
+    tile.className = 'tile' + (selected.includes(item) ? ' selected' : '');
+    tile.textContent = item;
+    tile.dataset.item = item;
+    tile.onclick = () => toggleSelect(item);
+    grid.appendChild(tile);
+  });
+}
+
+function toggleSelect(item) {
+  if (selected.includes(item)) {
+    selected = selected.filter(i => i !== item);
+  } else {
+    if (selected.length >= 4) return;
+    selected.push(item);
+  }
+  document.getElementById('submitBtn').disabled = selected.length !== 4;
+  renderGrid();
+}
+
+function deselectAll() {
+  selected = [];
+  document.getElementById('submitBtn').disabled = true;
+  renderGrid();
+}
+
+function checkGuess() {
+  if (selected.length !== 4) return;
+
+  const correctCat = PUZZLE.categories.find(cat =>
+    !solved.includes(cat) && selected.every(item => cat.items.includes(item))
+  );
+
+  if (correctCat) {
+    solved.push(correctCat);
+    showSolvedBanner(correctCat);
+    selected = [];
+    renderGrid();
+    document.getElementById('submitBtn').disabled = true;
+    if (solved.length === PUZZLE.categories.length) {
+      setTimeout(() => showEndScreen(true), 400);
+    }
+    return;
+  }
+
+  // Check one away
+  const oneAway = PUZZLE.categories.some(cat => {
+    const matches = selected.filter(i => cat.items.includes(i)).length;
+    return matches === 3;
+  });
+
+  mistakes++;
+  updateDots();
+
+  // Shake selected tiles
+  document.querySelectorAll('.tile.selected').forEach(el => {
+    el.classList.add('shake');
+    setTimeout(() => el.classList.remove('shake'), 400);
+  });
+
+  showToast(oneAway ? "One away! 👀" : "Not quite — try again");
+
+  if (mistakes >= MAX_MISTAKES) {
+    setTimeout(() => showEndScreen(false), 700);
+  } else {
+    setTimeout(() => {
+      selected = [];
+      document.getElementById('submitBtn').disabled = true;
+      renderGrid();
+    }, 500);
+  }
+}
+
+function showSolvedBanner(cat) {
+  const container = document.getElementById('solvedCategories');
+  const div = document.createElement('div');
+  div.className = 'solved-category';
+  div.style.background = cat.bg;
+  div.style.color = cat.text;
+  if (cat.border) div.style.border = `1px solid ${cat.border}`;
+  div.innerHTML = `
+    <div class="cat-name">${cat.name}</div>
+    <div class="cat-items">${cat.items.join(' · ')}</div>
+  `;
+  container.appendChild(div);
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  const remaining = MAX_MISTAKES - mistakes;
+  dots.forEach((dot, i) => dot.classList.toggle('used', i >= remaining));
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function showEndScreen(won) {
+  // Reveal any unsolved categories
+  PUZZLE.categories.forEach(cat => {
+    if (!solved.includes(cat)) showSolvedBanner(cat);
+  });
+
+  document.getElementById('grid').style.display = 'none';
+  document.getElementById('mistakeRow').style.display = 'none';
+  document.getElementById('btnRow').style.display = 'none';
+
+  const endScreen = document.getElementById('endScreen');
+  endScreen.style.display = 'block';
+
+  if (won) {
+    document.getElementById('endTitle').textContent = mistakes === 0 ? '🌿 Perfect!' : '🌿 Well done!';
+    document.getElementById('endMessage').textContent =
+      `Solved with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}.`;
+  } else {
+    document.getElementById('endTitle').textContent = 'Better luck tomorrow';
+    document.getElementById('endMessage').textContent =
+      "The groups are revealed above. Read today's story to dig deeper.";
+  }
+}
+
+// Init
+renderGrid();
+</script>
+</body>
+</html>
