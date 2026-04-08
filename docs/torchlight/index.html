@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Torchlight — The Times of Climate Change</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HLBR3CY28D');
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -522,6 +530,13 @@ function showToast(msg) {
 }
 
 function showEndScreen(won) {
+  // Fire GA4 event
+  gtag('event', 'torchlight_complete', {
+    'won': won,
+    'mistakes': mistakes,
+    'puzzle_date': '2026-04-08'
+  });
+
   // Reveal any unsolved categories
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
