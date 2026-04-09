@@ -487,6 +487,22 @@
 </head>
 <body>
 
+<!-- Burger menu -->
+<nav class="burger-menu" id="burgerMenu">
+    <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
+    <a href="../today/">Today's Story</a>
+    <a href="../torchlight/" class="active">Today's Game 🔦</a>
+    <a href="../archive/">Archive</a>
+    <a href="../explore/">Getting Real</a>
+    <a href="../april-fools/">April Fools Quiz</a>
+    <a href="../about/">About</a>
+</nav>
+<div class="burger-overlay" id="burgerOverlay"></div>
+
+<button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+    <span></span><span></span><span></span>
+</button>
+
 <header class="site-header">
   <a href="../" class="site-title">The Times of <em>Climate Change</em></a>
   <nav class="nav-links">
@@ -584,6 +600,20 @@
 <div class="toast" id="toast"></div>
 
 <script>
+// Burger menu functionality
+(function() {
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('burgerMenu');
+    var close = document.getElementById('burgerClose');
+    var overlay = document.getElementById('burgerOverlay');
+    if (!btn) return;
+    function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+    function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+    btn.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    overlay.addEventListener('click', shut);
+})();
+
 let PUZZLE = {
   categories: [
     {
