@@ -1,0 +1,42 @@
+{
+  "date": "2026-04-09",
+  "slug": "mumbai-april-heatwave-gut-infections",
+  "title": "Mumbai's April heatwave is leading to surge in gut infections",
+  "subtitle": "As heat accelerates bacterial growth, food spoils faster, gut infections rise and dehydration makes it worse.",
+  "what_talking_about": [
+    "Hospital emergency wards across Mumbai are seeing a 50% surge in gut infections. Heat speeds up bacterial reproduction in food and water — leftovers and street food become dangerous in 40°C heat. Tanker water supplied during shortages isn't always clean; heat accelerates contamination. Dehydration weakens your immune system, making you more vulnerable to infections."
+  ],
+  "why_care": [
+    "Summer is here and will get worse — IMD forecasts above-normal heatwaves through June. Everyone in your family is at risk, but young children, elderly people, and outdoor workers are most vulnerable. These infections are preventable with simple daily habits."
+  ],
+  "what_can_we_do": [
+    "Drink smart: 3-4 liters of water daily plus electrolyte drinks (ORS packets) to stay hydrated",
+    "Keep food safe: Store cooked food in the fridge within 2 hours; avoid street food during peak heat hours",
+    "Clean water matters: Filter or boil drinking water, don't trust tanker water without testing",
+    "Hygiene first: Wash hands regularly, especially before eating and after using the toilet",
+    "Watch for warning signs: Persistent loose stools, severe cramping, dizziness — don't self-medicate, get to a doctor before dehydration sets in"
+  ],
+  "tag_impact": [
+    "Health",
+    "Heat",
+    "Water",
+    "Food"
+  ],
+  "sources": [
+    {
+      "title": "Economic Times: Why are so many people having stomach issues right now — top doctors expose what this heat-rain mix is doing to your gut",
+      "url": "https://economictimes.indiatimes.com/news/new-updates/why-are-so-many-people-having-stomach-issues-right-now-top-doctors-expose-what-this-heat-rain-mix-is-doing-to-your-gut-check-what-you-should-do/articleshow/129943934.cms"
+    },
+    {
+      "title": "The Indian Express: Mumbai heatwave triggers 50% surge in gut infections",
+      "url": "https://indianexpress.com/article/health-wellness/mumbai-heatwave-gut-infections/"
+    }
+  ],
+  "related_stories": [
+    "rising-heat-india-sicker-2050",
+    "end-of-spring-india-winter-to-summer"
+  ],
+  "image": "static/images/mumbai-april-heatwave-gut-infections.jpg",
+  "image_credit": "Rahul Kashyap",
+  "image_credit_url": "https://unsplash.com/@rahulka5hyap?utm_source=times_of_climate_change&utm_medium=referral"
+}

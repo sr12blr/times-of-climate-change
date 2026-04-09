@@ -23,20 +23,16 @@
         <div class="story-main">
             <div class="story-section">
                 <h3>What's happening?</h3>
-                <ul>
-                    {% for point in story.what_talking_about %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
-                </ul>
+                {% for point in story.what_talking_about %}
+                <p>{{ point }}</p>
+                {% endfor %}
             </div>
 
             <div class="story-section story-section--care">
                 <h3>Why should you care?</h3>
-                <ul>
-                    {% for point in story.why_care %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
-                </ul>
+                {% for point in story.why_care %}
+                <p>{{ point }}</p>
+                {% endfor %}
             </div>
 
             {% if story.why_now %}
