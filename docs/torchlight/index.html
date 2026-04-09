@@ -811,6 +811,7 @@ let isDemo = false;
 let selected = [];
 let solved = [];
 let solveOrder = []; // tracks emoji sequence
+let attempts = []; // tracks all attempts chronologically (emojis and X's)
 let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = []; // tracks which categories have been hinted
@@ -867,6 +868,7 @@ function checkGuess() {
   if (correctCat) {
     solved.push(correctCat);
     solveOrder.push(correctCat.emoji);
+    attempts.push(correctCat.emoji); // track attempt chronologically
     showSolvedBanner(correctCat);
     selected = [];
     renderGrid();
@@ -884,6 +886,7 @@ function checkGuess() {
   });
 
   mistakes++;
+  attempts.push('❌'); // track wrong guess chronologically
   updateDots();
 
   // Shake selected tiles
@@ -996,16 +999,31 @@ function showEndScreen(won) {
 }
 
 function shareOnWhatsApp() {
-  const date = 'April 9, 2026';
-  const squares = solveOrder.join(' ');
-  const mistakeText = mistakes === 0
-    ? 'No mistakes! 🎉'
-    : `${mistakes} mistake${mistakes !== 1 ? 's' : ''}`;
+  // Build pattern from attempts array (chronological)
+  const pattern = attempts.join(' ');
+
+  // Determine if player won (all 4 categories solved)
+  const won = solved.length === PUZZLE.categories.length;
+
+  let message;
+  if (won) {
+    // Message for winning
+    message = mistakes === 0
+      ? 'I solved it with 0 mistakes!'
+      : `I solved it with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}!`;
+  } else {
+    // Message for losing (show how many categories they got)
+    const catCount = solved.length;
+    message = catCount === 1
+      ? 'I got 1 category'
+      : `I got ${catCount} categories`;
+  }
+
   const text =
-    `🔦 Torchlight — ${date}\n` +
-    `${mistakeText}\n\n` +
-    `${squares}\n\n` +
-    `Play at: https://timesofclimatechange.com/torchlight/`;
+    `${pattern}\n` +
+    `${message}\n\n` +
+    `https://timesofclimatechange.com/torchlight/`;
+
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
