@@ -46,6 +46,118 @@
     .nav-links a { color: #1A1A18; text-decoration: none; }
     .nav-links a:hover { color: #0E7C7B; }
 
+    /* Burger menu */
+    .burger-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      background: #F8F8F6;
+      border: 1px solid #D4D4CE;
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      padding: 0;
+      transition: border-color 0.15s;
+    }
+
+    .burger-btn:hover {
+      border-color: #1A1A18;
+    }
+
+    .burger-btn span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #1A1A18;
+      border-radius: 1px;
+    }
+
+    .burger-menu {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px;
+      height: 100vh;
+      background: #F8F8F6;
+      border-right: 1px solid #D4D4CE;
+      z-index: 2000;
+      padding: 60px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: left 0.25s ease;
+    }
+
+    .burger-menu.open {
+      left: 0;
+    }
+
+    .burger-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #888880;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .burger-close:hover {
+      color: #1A1A18;
+    }
+
+    .burger-menu a {
+      display: block;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #3A3A36;
+      padding: 14px 0;
+      border-bottom: 1px solid #D4D4CE;
+      text-decoration: none;
+    }
+
+    .burger-menu a:first-of-type {
+      border-top: 1px solid #D4D4CE;
+    }
+
+    .burger-menu a:hover {
+      color: #0E7C7B;
+      text-decoration: none;
+    }
+
+    .burger-menu a.active {
+      color: #1A1A18;
+      font-weight: 700;
+    }
+
+    .burger-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 1500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .burger-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     /* Game container */
     .game-container {
       max-width: 440px;
