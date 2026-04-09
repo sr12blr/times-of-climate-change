@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-09",
+  "categories": [
+    {
+      "name": "Indian millets - need less water to grow!",
+      "bg": "#2171B5",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe6",
+      "difficulty": 1,
+      "items": [
+        "Ragi",
+        "Bajra",
+        "Jowar",
+        "Sorghum"
+      ]
+    },
+    {
+      "name": "Sugarcane products",
+      "bg": "#F5F5F5",
+      "text": "#1A1A18",
+      "border": "#CCCCCC",
+      "emoji": "\u2b1c",
+      "difficulty": 2,
+      "items": [
+        "Sugar",
+        "Jaggery",
+        "Molasses",
+        "Ethanol"
+      ]
+    },
+    {
+      "name": "Coconut ______",
+      "bg": "#F4A582",
+      "text": "#1A1A18",
+      "emoji": "\ud83d\udfe7",
+      "difficulty": 3,
+      "items": [
+        "Oil",
+        "Husk",
+        "Water",
+        "Milk"
+      ]
+    },
+    {
+      "name": "Cash crops that are affected by climate change",
+      "bg": "#B2182B",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe5",
+      "difficulty": 4,
+      "items": [
+        "Coffee",
+        "Cocoa",
+        "Mango",
+        "Olive"
+      ]
+    }
+  ]
+}
