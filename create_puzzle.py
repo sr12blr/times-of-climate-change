@@ -19,37 +19,36 @@ PUZZLE = {
     "date": today,
     "categories": [
         {
-            "name": "Types of Pollution",
+            "name": "Popular EV models in India",
             "bg": "#2171B5",
             "text": "#ffffff",
             "emoji": "🟦",
             "difficulty": 1,
-            "items": ["Air", "Water", "Noise", "Light"]
+            "items": ["Nexon", "Tigor", "Comet", "Ioniq5"]
         },
         {
-            "name": "Urban Transportation",
-            "bg": "#F5F5F5",
-            "text": "#1A1A18",
-            "border": "#CCCCCC",
-            "emoji": "⬜",
+            "name": "Types of Pollution",
+            "bg": "#4CAF50",
+            "text": "#ffffff",
+            "emoji": "🟩",
             "difficulty": 2,
-            "items": ["Bus", "Train", "Metro", "Cycle"]
+            "items": ["Air", "Water", "Light", "Noise"]
         },
         {
-            "name": "Ways to Protect from Air Pollution",
-            "bg": "#F4A582",
-            "text": "#1A1A18",
+            "name": "Non-car (and climate friendly) ways of getting around!",
+            "bg": "#FF8C00",
+            "text": "#ffffff",
             "emoji": "🟧",
             "difficulty": 3,
-            "items": ["Smog tower", "Air purifier", "Masks", "Water sprinkler"]
+            "items": ["Train", "Bus", "Cycle", "Metro"]
         },
         {
-            "name": "Crops Affected by Climate Change",
-            "bg": "#B2182B",
+            "name": "Fuels that come from Petroleum (oil)",
+            "bg": "#8B4513",
             "text": "#ffffff",
-            "emoji": "🟥",
+            "emoji": "🟫",
             "difficulty": 4,
-            "items": ["Coffee", "Cocoa", "Rice", "Olive oil"]
+            "items": ["Petrol", "Diesel", "Kerosene", "LPG"]
         }
     ]
 }

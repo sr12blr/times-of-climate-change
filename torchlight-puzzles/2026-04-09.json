@@ -1,0 +1,57 @@
+{
+  "date": "2026-04-09",
+  "categories": [
+    {
+      "name": "Popular EV models in India",
+      "bg": "#2171B5",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe6",
+      "difficulty": 1,
+      "items": [
+        "Nexon",
+        "Tigor",
+        "Comet",
+        "Ioniq5"
+      ]
+    },
+    {
+      "name": "Types of Pollution",
+      "bg": "#4CAF50",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe9",
+      "difficulty": 2,
+      "items": [
+        "Air",
+        "Water",
+        "Light",
+        "Noise"
+      ]
+    },
+    {
+      "name": "Non-car (and climate friendly) ways of getting around!",
+      "bg": "#FF8C00",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfe7",
+      "difficulty": 3,
+      "items": [
+        "Train",
+        "Bus",
+        "Cycle",
+        "Metro"
+      ]
+    },
+    {
+      "name": "Fuels that come from Petroleum (oil)",
+      "bg": "#8B4513",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udfeb",
+      "difficulty": 4,
+      "items": [
+        "Petrol",
+        "Diesel",
+        "Kerosene",
+        "LPG"
+      ]
+    }
+  ]
+}

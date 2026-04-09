@@ -500,7 +500,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 8, 2026</div>
+    <div class="game-date">April 9, 2026</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
   </div>
@@ -587,40 +587,40 @@
 let PUZZLE = {
   categories: [
     {
-      name: "Non-fossil fuel based energy sources",
+      name: "Popular EV models in India",
       description: "",
       bg: "#2171B5",
       text: "#ffffff",
       emoji: "🟦",
       difficulty: 1,
-      items: ["SOLAR", "WIND", "HYDRO", "NUCLEAR"]
+      items: ["NEXON", "TIGOR", "COMET", "IONIQ5"]
     },
     {
-      name: "Greenhouse gases",
+      name: "Types of Pollution",
       description: "",
       bg: "#4CAF50",
       text: "#ffffff",
       emoji: "🟩",
       difficulty: 2,
-      items: ["METHANE", "CO₂", "NITROUS OXIDE", "OZONE"]
+      items: ["AIR", "WATER", "LIGHT", "NOISE"]
     },
     {
-      name: "Alternatives to LPG",
+      name: "Non-car (and climate friendly) ways of getting around!",
       description: "",
       bg: "#FF8C00",
       text: "#ffffff",
       emoji: "🟧",
       difficulty: 3,
-      items: ["BIOGAS", "ELECTRIC COOKER", "FIREWOOD", "INDUCTION STOVE"]
+      items: ["TRAIN", "BUS", "CYCLE", "METRO"]
     },
     {
-      name: "Signs of an Indian summer",
+      name: "Fuels that come from Petroleum (oil)",
       description: "",
       bg: "#8B4513",
       text: "#ffffff",
       emoji: "🟫",
       difficulty: 4,
-      items: ["MANGO", "POWER CUT", "AC", "HEATWAVE"]
+      items: ["PETROL", "DIESEL", "KEROSENE", "LPG"]
     }
   ]
 };
@@ -808,7 +808,7 @@ function showEndScreen(won) {
   gtag('event', 'torchlight_complete', {
     'won': won,
     'mistakes': mistakes,
-    'puzzle_date': '2026-04-08'
+    'puzzle_date': '2026-04-09'
   });
 
   // Reveal any unsolved categories
@@ -854,7 +854,7 @@ function showEndScreen(won) {
 }
 
 function shareOnWhatsApp() {
-  const date = 'April 8, 2026';
+  const date = 'April 9, 2026';
   const squares = solveOrder.join(' ');
   const mistakeText = mistakes === 0
     ? 'No mistakes! 🎉'
@@ -936,7 +936,7 @@ function startDemo() {
 
 // Init
 gtag('event', 'torchlight_start', {
-  'puzzle_date': '2026-04-08'
+  'puzzle_date': '2026-04-09'
 });
 renderGrid();
 </script>
