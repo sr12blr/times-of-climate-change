@@ -15,7 +15,7 @@ PUZZLE = {
     "date": tomorrow,
     "categories": [
         {
-            "name": "Indian millets - need less water to grow!",
+            "name": "Millets - need less water to grow!",
             "bg": "#2171B5",
             "text": "#ffffff",
             "emoji": "🟦",
