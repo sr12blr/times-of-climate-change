@@ -421,7 +421,6 @@
     .story-link:hover { background: #0a5f5e; }
 
     .btn-share {
-      background: #1A1A18;
       color: white;
       border: none;
       padding: 10px 18px;
@@ -433,13 +432,35 @@
       transition: all 0.15s ease;
     }
 
-    .btn-share:hover {
-      background: #0E7C7B;
+    .btn-share:active {
+      transform: translateY(0);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebe5d;
       transform: translateY(-1px);
     }
 
-    .btn-share:active {
-      transform: translateY(0);
+    .btn-linkedin {
+      background: #0A66C2;
+    }
+
+    .btn-linkedin:hover {
+      background: #084b94;
+      transform: translateY(-1px);
+    }
+
+    .btn-twitter {
+      background: #000000;
+    }
+
+    .btn-twitter:hover {
+      background: #1a1a1a;
+      transform: translateY(-1px);
     }
 
     .end-squares {
@@ -588,10 +609,9 @@
     <div class="end-squares" id="endSquares"></div>
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
       <div style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
-        <button class="btn-share" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
-        <button class="btn-share" onclick="shareOnLinkedIn()">🔗 LinkedIn</button>
-        <button class="btn-share" onclick="shareOnTwitter()">𝕏 Twitter</button>
-        <button class="btn-share" onclick="copyToClipboard()">📋 Copy</button>
+        <button class="btn-share btn-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+        <button class="btn-share btn-linkedin" onclick="shareOnLinkedIn()">🔗 LinkedIn</button>
+        <button class="btn-share btn-twitter" onclick="shareOnTwitter()">𝕏 Twitter</button>
       </div>
     </div>
     <div style="margin-top: 24px;">
