@@ -777,7 +777,12 @@ function checkGuess() {
     setTimeout(() => el.classList.remove('shake'), 400);
   });
 
-  showToast(oneAway ? "One away! 👀" : "Not quite — try again");
+  // Prompt for hint after 2 mistakes
+  if (mistakes === 2) {
+    showToast(oneAway ? "One away! 💡 Try a hint?" : "Stuck? 💡 Use a hint to see a category name");
+  } else {
+    showToast(oneAway ? "One away! 👀" : "Not quite — try again");
+  }
 
   if (mistakes >= MAX_MISTAKES) {
     setTimeout(() => showEndScreen(false), 700);
