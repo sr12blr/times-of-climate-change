@@ -4,7 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Torchlight — The Times of Climate Change</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/style.css?v=1775700006">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
   <script>
@@ -23,146 +26,12 @@
       min-height: 100vh;
     }
 
-    /* Header */
-    .site-header {
-      border-bottom: 2px solid #1A1A18;
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .site-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #1A1A18;
-      text-decoration: none;
-    }
-
-    .site-title em { color: #D4380D; font-style: italic; }
-
-    .nav-links { display: flex; gap: 20px; font-size: 14px; font-weight: 600; }
-    .nav-links a { color: #1A1A18; text-decoration: none; }
-    .nav-links a:hover { color: #0E7C7B; }
-
-    /* Burger menu */
-    .burger-btn {
-      position: fixed;
-      top: 75px;
-      left: 20px;
-      z-index: 1000;
-      background: #F8F8F6;
-      border: 1px solid #D4D4CE;
-      border-radius: 4px;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 0;
-      transition: border-color 0.15s;
-    }
-
-    .burger-btn:hover {
-      border-color: #1A1A18;
-    }
-
-    .burger-btn span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: #1A1A18;
-      border-radius: 1px;
-    }
-
-    .burger-menu {
-      position: fixed;
-      top: 0;
-      left: -280px;
-      width: 280px;
-      height: 100vh;
-      background: #F8F8F6;
-      border-right: 1px solid #D4D4CE;
-      z-index: 2000;
-      padding: 60px 32px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      transition: left 0.25s ease;
-    }
-
-    .burger-menu.open {
-      left: 0;
-    }
-
-    .burger-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 28px;
-      color: #888880;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    .burger-close:hover {
-      color: #1A1A18;
-    }
-
-    .burger-menu a {
-      display: block;
-      font-family: 'Nunito Sans', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      color: #3A3A36;
-      padding: 14px 0;
-      border-bottom: 1px solid #D4D4CE;
-      text-decoration: none;
-    }
-
-    .burger-menu a:first-of-type {
-      border-top: 1px solid #D4D4CE;
-    }
-
-    .burger-menu a:hover {
-      color: #0E7C7B;
-      text-decoration: none;
-    }
-
-    .burger-menu a.active {
-      color: #1A1A18;
-      font-weight: 700;
-    }
-
-    .burger-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 1500;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s ease;
-    }
-
-    .burger-overlay.open {
-      opacity: 1;
-      pointer-events: auto;
-    }
 
     /* Game container */
     .game-container {
       max-width: 440px;
-      margin: 0 auto;
-      padding: 16px 12px 24px;
+      margin: 32px auto;
+      padding: 0 12px;
     }
 
     .game-header {
@@ -592,10 +461,32 @@
       to { opacity: 1; transform: scaleY(1); }
     }
 
+    /* Bottom nav alignment */
+    .story-bottom-nav {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .story-bottom-nav a {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+
+    .story-bottom-nav a:hover {
+      color: var(--color-teal);
+    }
+
     /* Mobile */
     @media (max-width: 440px) {
       .tile { font-size: 10px; }
       .game-title { font-size: 22px; }
+      .story-bottom-nav { gap: 16px; }
     }
   </style>
 </head>
@@ -617,15 +508,14 @@
     <span></span><span></span><span></span>
 </button>
 
-<header class="site-header">
-  <a href="../" class="site-title">The Times of <em>Climate Change</em></a>
-  <nav class="nav-links">
-    <a href="../today/">Today</a>
-    <a href="../archive/">Archive</a>
-    <a href="../about/">About</a>
-  </nav>
+<header class="site-masthead">
+    <div class="container">
+        <h1 class="masthead-title"><a href="../">The Times of <em>Climate Change</em></a></h1>
+        <p class="masthead-subtitle">One climate story that affects India, every day</p>
+    </div>
 </header>
 
+<div class="container">
 <div class="game-container">
 
   <div class="game-header">
@@ -712,7 +602,21 @@
     </div>
   </div>
 
+  <div class="story-bottom-nav">
+    <a href="../archive/">Browse all stories</a>
+    <a href="../about/">About this project</a>
+    <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" target="_blank" rel="noopener">Follow on WhatsApp</a>
+  </div>
+
 </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <span class="footer-title">The Times of Climate Change</span>
+        <span class="footer-tagline">One climate story, every day</span>
+    </div>
+</footer>
 
 <div class="toast" id="toast"></div>
 
