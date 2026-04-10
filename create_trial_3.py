@@ -24,26 +24,25 @@ PUZZLE = {
         },
         {
             "name": "Sugarcane products",
-            "bg": "#F5F5F5",
-            "text": "#1A1A18",
-            "border": "#CCCCCC",
-            "emoji": "⬜",
+            "bg": "#4CAF50",
+            "text": "#ffffff",
+            "emoji": "🟩",
             "difficulty": 2,
             "items": ["Sugar", "Jaggery", "Molasses", "Ethanol"]
         },
         {
             "name": "Coconut ______",
-            "bg": "#F4A582",
+            "bg": "#FFD700",
             "text": "#1A1A18",
-            "emoji": "🟧",
+            "emoji": "🟨",
             "difficulty": 3,
             "items": ["Oil", "Coir", "Water", "Milk"]
         },
         {
             "name": "Cash crops that are affected by climate change",
-            "bg": "#B2182B",
+            "bg": "#8B4513",
             "text": "#ffffff",
-            "emoji": "🟥",
+            "emoji": "🟫",
             "difficulty": 4,
             "items": ["Coffee", "Cocoa", "Mango", "Olive"]
         }
