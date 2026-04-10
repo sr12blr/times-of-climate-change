@@ -37,7 +37,7 @@ PUZZLE = {
             "text": "#1A1A18",
             "emoji": "🟧",
             "difficulty": 3,
-            "items": ["Oil", "Husk", "Water", "Milk"]
+            "items": ["Oil", "Coir", "Water", "Milk"]
         },
         {
             "name": "Cash crops that are affected by climate change",
