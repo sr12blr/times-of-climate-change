@@ -1,0 +1,57 @@
+{
+  "date": "2026-04-11",
+  "categories": [
+    {
+      "name": "Express trains \u2014 Great alternatives to flying!",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "\ud83d\ude86",
+      "difficulty": 1,
+      "items": [
+        "Shatabdi",
+        "Duronto",
+        "Rajdhani",
+        "Vande bharat"
+      ]
+    },
+    {
+      "name": "Ticket status",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "\ud83c\udfab",
+      "difficulty": 2,
+      "items": [
+        "Waiting",
+        "Confirmed",
+        "Cancelled",
+        "RAC"
+      ]
+    },
+    {
+      "name": "Types of coaches in a train",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "\ud83d\ude82",
+      "difficulty": 3,
+      "items": [
+        "Sleeper",
+        "General",
+        "Pantry",
+        "AC 3 tier"
+      ]
+    },
+    {
+      "name": "Fields on a train ticket",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "\ud83d\udccb",
+      "difficulty": 4,
+      "items": [
+        "PNR",
+        "Name",
+        "Status",
+        "Train name"
+      ]
+    }
+  ]
+}
