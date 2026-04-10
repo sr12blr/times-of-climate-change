@@ -1,0 +1,34 @@
+{
+  "date": "2026-04-10",
+  "slug": "delhi-drowns-vehicles-public-transport",
+  "title": "Delhi Drowns in Vehicles; Adds 1,800 New Cars Every Day",
+  "subtitle": "15 million cars on the road already and it's only increasing. More cars -> More emissions -> Poor air -> Bad health.",
+  "what_talking_about": [
+    "Delhi has 15 million registered vehicles — matching the combined total of vehicles in Mumbai, Kolkata, and Chennai put together",
+    "1,800 new vehicles are added to the city's roads every single day, even as traffic becomes unbearable in peak hours.",
+    "Delhi does have public transport in the form of its metro and buses, but it is clearly not adequate for a city of its size. The result is people defaulting to private cars and bumper-to-bumper gridlock that keep getting worse."
+  ],
+  "why_care": [
+    "Your time: Private vehicles clogging Delhi's roads mean longer commutes for everyone. What should be a 30-minute commute becomes an hour or more",
+    "The air you're breathing gets worse every year. More cars pumping exhaust = more pollution. Delhi's air is already a health crisis, and traffic congestion is a big contributor to the smog that chokes the city",
+    "Building more roads won't solve this. Actually research shows it will make it worse. Studies show that adding road capacity just encourages more driving. The real answer is getting people to shift to buses, metros, and shared transport. Until we change our behavior and prefer public transport over private cars, our traffic nightmares will only get worse. And while this article may be about Delhi, the situation is the same or worse in all Indian metros."
+  ],
+  "tag_impact": [
+    "Mobility",
+    "Air quality",
+    "Health",
+    "Pollution"
+  ],
+  "sources": [
+    {
+      "title": "Down to Earth: Delhi Drowns in Vehicles",
+      "url": "https://www.downtoearth.org.in/governance/delhi-drowns-in-vehicles"
+    }
+  ],
+  "related_stories": [
+    "india-5-of-10-most-polluted-cities-iqair-2025"
+  ],
+  "image": "static/images/delhi-drowns-vehicles-public-transport.jpg",
+  "image_credit": "Akansha Deshmukh",
+  "image_credit_url": "https://unsplash.com/@akansha_deshmukh?utm_source=times_of_climate_change&utm_medium=referral"
+}
