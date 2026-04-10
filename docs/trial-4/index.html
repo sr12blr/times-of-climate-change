@@ -933,10 +933,19 @@ function shareOnLinkedIn() {
   const { shortText } = getShareText();
   const shareText = shortText + '\n\nhttps://timesofclimatechange.com/torchlight/';
   navigator.clipboard.writeText(shareText).then(() => {
-    window.open('https://www.linkedin.com', '_blank');
-    showHintToast('📋 Results copied! Paste in your LinkedIn post');
+    // Show persistent instruction toast
+    const toast = document.getElementById('toast');
+    toast.innerHTML = '📋 Results copied!<br/>1. Click "Start a post" on LinkedIn<br/>2. Paste (Cmd+V or Ctrl+V)<br/>3. Post!';
+    toast.classList.add('show');
+    toast.style.whiteSpace = 'pre-wrap';
+    toast.style.lineHeight = '1.5';
+    setTimeout(() => {
+      window.open('https://www.linkedin.com', '_blank');
+    }, 500);
+    // Keep toast visible for longer
+    setTimeout(() => toast.classList.remove('show'), 5000);
   }).catch(() => {
-    showToast('Could not copy. Try the Copy button instead!');
+    showToast('Could not copy. Try again!');
   });
 }
 
