@@ -1,0 +1,42 @@
+{
+  "date": "2026-04-11",
+  "fun_fact": "According to the IEA, rail travel emits about 80% less CO₂ per passenger-km than flying. <a href=\"https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030\" target=\"_blank\" rel=\"noopener\">Read more →</a>",
+  "categories": [
+    {
+      "name": "Express trains — Great alternatives to flying!",
+      "description": "",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "🚆",
+      "difficulty": 1,
+      "items": ["Shatabdi", "Duronto", "Rajdhani", "Vande bharat"]
+    },
+    {
+      "name": "Ticket status",
+      "description": "",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "🎫",
+      "difficulty": 2,
+      "items": ["Waiting", "Confirmed", "Cancelled", "RAC"]
+    },
+    {
+      "name": "Types of coaches in a train",
+      "description": "",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "🚂",
+      "difficulty": 3,
+      "items": ["Sleeper", "General", "Pantry", "AC 3 tier"]
+    },
+    {
+      "name": "Fields on a train ticket",
+      "description": "",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "📋",
+      "difficulty": 4,
+      "items": ["PNR", "Name", "Status", "Train name"]
+    }
+  ]
+}

@@ -1,54 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Times of Climate Change</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HLBR3CY28D');
-    </script>
-</head>
-<body>
-    
-    <!-- Burger menu -->
-    <nav class="burger-menu" id="burgerMenu">
-        <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
-        <a href="../today/">Today's Story</a>
-        <a href="../torchlight/">Today's Game 🔦</a>
-        <a href="../archive/">Archive</a>
-        <a href="../explore/">Getting Real</a>
-        <a href="../april-fools/">April Fools Quiz</a>
-        <a href="../about/">About</a>
-    </nav>
-    <div class="burger-overlay" id="burgerOverlay"></div>
+{% extends "base.html" %}
 
-    <header class="site-masthead">
-        <div class="container">
-            <h1 class="masthead-title"><a href="../">The Times of <em>Climate Change</em></a></h1>
-            <p class="masthead-subtitle">One climate story that affects India, every day</p>
-        </div>
-    </header>
-    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
-        <span></span><span></span><span></span>
-    </button>
-    
-
-    <div class="container">
-        
+{% block content %}
 <div class="game-container">
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 11, 2026</div>
+    <div class="game-date">{{ puzzle.date_display }}</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
   </div>
@@ -130,7 +87,7 @@
           </div>
         </div>
         <div style="margin-top: 16px;">
-          <a href="../explore/" class="story-link" style="display: block; text-align: center;">Learn more →</a>
+          <a href="{{ root_path }}explore/" class="story-link" style="display: block; text-align: center;">Learn more →</a>
         </div>
         <div style="margin-top: 16px; text-align: center;">
           <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" style="color: #0E7C7B; text-decoration: underline; font-size: 14px; font-weight: 600;">Join WhatsApp Channel to get daily puzzle</a>
@@ -148,8 +105,8 @@
   </div>
 
   <div class="story-bottom-nav">
-    <a href="../archive/">Browse all stories</a>
-    <a href="../about/">About this project</a>
+    <a href="{{ root_path }}archive/">Browse all stories</a>
+    <a href="{{ root_path }}about/">About this project</a>
     <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" target="_blank" rel="noopener">Follow on WhatsApp</a>
   </div>
 
@@ -710,7 +667,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#C8602A", "description": "", "difficulty": 1, "emoji": "\ud83d\ude86", "items": ["Shatabdi", "Duronto", "Rajdhani", "Vande bharat"], "name": "Express trains \u2014 Great alternatives to flying!", "text": "#ffffff"}, {"bg": "#2C5F4A", "description": "", "difficulty": 2, "emoji": "\ud83c\udfab", "items": ["Waiting", "Confirmed", "Cancelled", "RAC"], "name": "Ticket status", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 3, "emoji": "\ud83d\ude82", "items": ["Sleeper", "General", "Pantry", "AC 3 tier"], "name": "Types of coaches in a train", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 4, "emoji": "\ud83d\udccb", "items": ["PNR", "Name", "Status", "Train name"], "name": "Fields on a train ticket", "text": "#ffffff"}], "date": "2026-04-11", "fun_fact": "According to the IEA, rail travel emits about 80% less CO\u2082 per passenger-km than flying. \u003ca href=\"https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {{ puzzle_json | tojson }};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
@@ -902,7 +859,7 @@ function showEndScreen(won) {
   gtag('event', 'torchlight_complete', {
     'won': won,
     'mistakes': mistakes,
-    'puzzle_date': '2026-04-11'
+    'puzzle_date': '{{ puzzle.date }}'
   });
 
   PUZZLE.categories.forEach(cat => {
@@ -935,7 +892,7 @@ function showEndScreen(won) {
     const storyLink = endScreenCardFront.querySelector('a.story-link');
     if (storyLink) {
       storyLink.textContent = 'Play today\'s game →';
-      storyLink.href = '../torchlight/';
+      storyLink.href = '{{ root_path }}torchlight/';
       storyLink.style.marginTop = '24px';
     }
   }
@@ -1079,37 +1036,10 @@ function startDemo() {
 
 // Init
 gtag('event', 'torchlight_start', {
-  'puzzle_date': '2026-04-11'
+  'puzzle_date': '{{ puzzle.date }}'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `According to the IEA, rail travel emits about 80% less CO₂ per passenger-km than flying. <a href="https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030" target="_blank" rel="noopener">Read more →</a>`;
+document.getElementById('funFactText').innerHTML = `{{ puzzle.fun_fact }}`;
 renderGrid();
 </script>
-
-    </div>
-
-    
-    <footer class="site-footer">
-        <div class="container">
-            <span class="footer-title">The Times of Climate Change</span>
-            <span class="footer-tagline">One climate story, every day</span>
-        </div>
-    </footer>
-    
-
-    <script>
-    (function() {
-        var btn = document.getElementById('burgerBtn');
-        var menu = document.getElementById('burgerMenu');
-        var close = document.getElementById('burgerClose');
-        var overlay = document.getElementById('burgerOverlay');
-        if (!btn) return;
-        function open() { menu.classList.add('open'); overlay.classList.add('open'); }
-        function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
-        btn.addEventListener('click', open);
-        close.addEventListener('click', shut);
-        overlay.addEventListener('click', shut);
-    })();
-    </script>
-</body>
-</html>
+{% endblock %}

@@ -14,10 +14,11 @@ from collections import defaultdict
 from datetime import date, datetime
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, pass_context
 
 BASE_DIR = Path(__file__).parent
 STORIES_DIR = BASE_DIR / "stories"
+PUZZLES_DIR = BASE_DIR / "puzzles"
 SITE_DIR = BASE_DIR / "docs"
 TEMPLATES_DIR = BASE_DIR / "templates"
 
@@ -118,6 +119,36 @@ def group_by_impact(stories):
     return impact_map
 
 
+def load_all_puzzles():
+    """Load all puzzle JSON files from puzzles/ directory"""
+    puzzles = []
+    PUZZLES_DIR.mkdir(parents=True, exist_ok=True)
+
+    for f in sorted(PUZZLES_DIR.glob("*.json"), reverse=True):
+        try:
+            with open(f, "r") as fh:
+                puzzle = json.load(fh)
+
+            # Parse date and create archive title
+            try:
+                dt = datetime.strptime(puzzle["date"], "%Y-%m-%d")
+                puzzle["date_display"] = dt.strftime("%B %d, %Y")
+                # Create archive number from date (YYMMDD)
+                puzzle["archive_number"] = dt.strftime("%y%m%d")
+                puzzle["archive_title"] = f"Torchlight - {puzzle['archive_number']}"
+                puzzle["slug"] = puzzle["archive_number"]
+            except ValueError:
+                puzzle["date_display"] = puzzle.get("date", "Unknown")
+                puzzle["archive_title"] = "Unknown"
+                puzzle["slug"] = "unknown"
+
+            puzzles.append(puzzle)
+        except (json.JSONDecodeError, KeyError) as e:
+            print(f"  Warning: skipping puzzle {f.name} ({e})")
+
+    return puzzles
+
+
 def generate(full_rebuild=False):
     STORIES_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -130,7 +161,7 @@ def generate(full_rebuild=False):
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
 
     # Ensure output directories
-    for d in ["story", "today", "archive", "about", "explore", "why", "pass", "static"]:
+    for d in ["story", "today", "archive", "about", "explore", "why", "pass", "static", "torchlight"]:
         (SITE_DIR / d).mkdir(parents=True, exist_ok=True)
 
     # CSS cache-busting
@@ -277,7 +308,62 @@ def generate(full_rebuild=False):
         f.write(html)
     print("  Generated: april-fools/")
 
-    # 10. Sitemap
+    # 10. Torchlight - today's puzzle
+    puzzles = load_all_puzzles()
+    if puzzles:
+        today_puzzle = puzzles[0]  # Most recent puzzle
+        puzzle_json = {
+            "date": today_puzzle["date"],
+            "categories": today_puzzle["categories"],
+            "fun_fact": today_puzzle.get("fun_fact", "")
+        }
+        template = env.get_template("torchlight.html")
+        html = template.render(
+            puzzle=today_puzzle,
+            puzzle_json=puzzle_json,
+            active_nav="",
+            root_path="../",
+            css_path=f"../static/style.css?v={css_version}",
+        )
+        with open(SITE_DIR / "torchlight" / "index.html", "w") as f:
+            f.write(html)
+        print("  Generated: torchlight/")
+
+        # Torchlight archive page
+        (SITE_DIR / "torchlight" / "archive").mkdir(parents=True, exist_ok=True)
+        template = env.get_template("torchlight_archive.html")
+        html = template.render(
+            puzzles=puzzles,
+            active_nav="",
+            root_path="../",
+            css_path=f"../static/style.css?v={css_version}",
+        )
+        with open(SITE_DIR / "torchlight" / "archive" / "index.html", "w") as f:
+            f.write(html)
+        print("  Generated: torchlight/archive/")
+
+        # Individual archive puzzle pages
+        for puzzle in puzzles[1:]:  # Skip today's puzzle, it's already generated
+            puzzle_dir = SITE_DIR / "torchlight" / "archive" / puzzle["slug"]
+            puzzle_dir.mkdir(parents=True, exist_ok=True)
+            puzzle_json = {
+                "date": puzzle["date"],
+                "categories": puzzle["categories"],
+                "fun_fact": puzzle.get("fun_fact", "")
+            }
+            template = env.get_template("torchlight.html")
+            html = template.render(
+                puzzle=puzzle,
+                puzzle_json=puzzle_json,
+                active_nav="",
+                root_path="../../../",
+                css_path=f"../../../static/style.css?v={css_version}",
+            )
+            with open(puzzle_dir / "index.html", "w") as f:
+                f.write(html)
+        print(f"  Generated: torchlight/archive/ ({len(puzzles)-1} archive puzzles)")
+
+    # 11. Sitemap
     BASE_URL = "https://timesofclimatechange.com"
     today = date.today().isoformat()
     static_pages = [
@@ -285,6 +371,7 @@ def generate(full_rebuild=False):
         ("today/", "daily", "1.0"),
         ("archive/", "daily", "0.9"),
         ("torchlight/", "daily", "0.9"),
+        ("torchlight/archive/", "weekly", "0.8"),
         ("explore/", "weekly", "0.8"),
         ("explore/food/", "weekly", "0.7"),
         ("explore/water/", "weekly", "0.7"),

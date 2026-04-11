@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="archive-container">
+  <div class="archive-header">
+    <h2>🔦 Torchlight Archive</h2>
+    <p>Replay previous puzzles and explore climate connections</p>
+  </div>
+
+  <div class="puzzle-grid">
+    {% for puzzle_info in puzzles|reverse %}
+    <a href="./{{ puzzle_info.slug }}/" class="puzzle-card">
+      <div class="puzzle-card-date">{{ puzzle_info.archive_title }}</div>
+      <div class="puzzle-card-preview">
+        <div class="puzzle-emoji-row">
+          {% for cat in puzzle_info.categories %}
+          <div class="puzzle-emoji" style="background-color: {{ cat.bg }}; color: {{ cat.text }};">
+            {{ cat.emoji }}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="puzzle-card-hint">{{ puzzle_info.categories|length }} categories</div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .archive-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .archive-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .archive-header h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin-bottom: 8px;
+  }
+
+  .archive-header p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  .puzzle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #FAFAF8;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #E0DED8;
+    cursor: pointer;
+  }
+
+  .puzzle-card:hover {
+    background: #F5F5F2;
+    border-color: #0E7C7B;
+    transform: translateY(-2px);
+  }
+
+  .puzzle-card-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0E7C7B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .puzzle-card-preview {
+    width: 100%;
+  }
+
+  .puzzle-emoji-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .puzzle-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .puzzle-card-hint {
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .puzzle-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .archive-header h2 {
+      font-size: 24px;
+    }
+  }
+</style>
+{% endblock %}

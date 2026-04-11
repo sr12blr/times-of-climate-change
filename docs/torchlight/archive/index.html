@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Times of Climate Change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HLBR3CY28D');
+    </script>
+</head>
+<body>
+    
+    <!-- Burger menu -->
+    <nav class="burger-menu" id="burgerMenu">
+        <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
+        <a href="../today/">Today's Story</a>
+        <a href="../torchlight/">Today's Game 🔦</a>
+        <a href="../archive/">Archive</a>
+        <a href="../explore/">Getting Real</a>
+        <a href="../april-fools/">April Fools Quiz</a>
+        <a href="../about/">About</a>
+    </nav>
+    <div class="burger-overlay" id="burgerOverlay"></div>
+
+    <header class="site-masthead">
+        <div class="container">
+            <h1 class="masthead-title"><a href="../">The Times of <em>Climate Change</em></a></h1>
+            <p class="masthead-subtitle">One climate story that affects India, every day</p>
+        </div>
+    </header>
+    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+    
+
+    <div class="container">
+        
+<div class="archive-container">
+  <div class="archive-header">
+    <h2>🔦 Torchlight Archive</h2>
+    <p>Replay previous puzzles and explore climate connections</p>
+  </div>
+
+  <div class="puzzle-grid">
+    
+    <a href="./260411/" class="puzzle-card">
+      <div class="puzzle-card-date">Torchlight - 260411</div>
+      <div class="puzzle-card-preview">
+        <div class="puzzle-emoji-row">
+          
+          <div class="puzzle-emoji" style="background-color: #C8602A; color: #ffffff;">
+            🚆
+          </div>
+          
+          <div class="puzzle-emoji" style="background-color: #2C5F4A; color: #ffffff;">
+            🎫
+          </div>
+          
+          <div class="puzzle-emoji" style="background-color: #6B1C2A; color: #ffffff;">
+            🚂
+          </div>
+          
+          <div class="puzzle-emoji" style="background-color: #1A5F7A; color: #ffffff;">
+            📋
+          </div>
+          
+        </div>
+      </div>
+      <div class="puzzle-card-hint">4 categories</div>
+    </a>
+    
+  </div>
+</div>
+
+<style>
+  .archive-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .archive-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .archive-header h2 {
+    font-family: 'Source Serif 4', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin-bottom: 8px;
+  }
+
+  .archive-header p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+
+  .puzzle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #FAFAF8;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid #E0DED8;
+    cursor: pointer;
+  }
+
+  .puzzle-card:hover {
+    background: #F5F5F2;
+    border-color: #0E7C7B;
+    transform: translateY(-2px);
+  }
+
+  .puzzle-card-date {
+    font-size: 12px;
+    font-weight: 700;
+    color: #0E7C7B;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-align: center;
+  }
+
+  .puzzle-card-preview {
+    width: 100%;
+  }
+
+  .puzzle-emoji-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    width: 100%;
+  }
+
+  .puzzle-emoji {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .puzzle-card-hint {
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    .puzzle-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .archive-header h2 {
+      font-size: 24px;
+    }
+  }
+</style>
+
+    </div>
+
+    
+    <footer class="site-footer">
+        <div class="container">
+            <span class="footer-title">The Times of Climate Change</span>
+            <span class="footer-tagline">One climate story, every day</span>
+        </div>
+    </footer>
+    
+
+    <script>
+    (function() {
+        var btn = document.getElementById('burgerBtn');
+        var menu = document.getElementById('burgerMenu');
+        var close = document.getElementById('burgerClose');
+        var overlay = document.getElementById('burgerOverlay');
+        if (!btn) return;
+        function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+        function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+        btn.addEventListener('click', open);
+        close.addEventListener('click', shut);
+        overlay.addEventListener('click', shut);
+    })();
+    </script>
+</body>
+</html>
