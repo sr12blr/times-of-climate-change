@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 11, 2026</div>
+    <div class="game-date">April 12, 2026</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
   </div>
@@ -740,7 +740,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#C8602A", "description": "", "difficulty": 1, "emoji": "\ud83d\ude86", "items": ["Shatabdi", "Duronto", "Rajdhani", "Vande bharat"], "name": "Express trains \u2014 Great alternatives to flying!", "text": "#ffffff"}, {"bg": "#2C5F4A", "description": "", "difficulty": 2, "emoji": "\ud83c\udfab", "items": ["Waiting", "Confirmed", "Cancelled", "RAC"], "name": "Ticket status", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 3, "emoji": "\ud83d\ude82", "items": ["Sleeper", "General", "Pantry", "AC 3 tier"], "name": "Types of coaches in a train", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 4, "emoji": "\ud83d\udccb", "items": ["PNR", "Name", "Status", "Train name"], "name": "Fields on a train ticket", "text": "#ffffff"}], "date": "2026-04-11", "fun_fact": "According to the IEA, rail travel emits about 80% less CO\u2082 per passenger-km than flying. \u003ca href=\"https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🥥", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "☀️", "items": ["Sunny", "40 deg C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🚫", "items": ["Soft drinks", "Alcohol", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌡️", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\">Read: Mumbai\u2019s heatwave surge in gut infections \u2192</a>"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
@@ -932,7 +932,7 @@ function showEndScreen(won) {
   gtag('event', 'torchlight_complete', {
     'won': won,
     'mistakes': mistakes,
-    'puzzle_date': '2026-04-11'
+    'puzzle_date': '2026-04-12'
   });
 
   PUZZLE.categories.forEach(cat => {
@@ -1111,7 +1111,7 @@ gtag('event', 'torchlight_start', {
   'puzzle_date': '2026-04-11'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `According to the IEA, rail travel emits about 80% less CO₂ per passenger-km than flying. <a href="https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030" target="_blank" rel="noopener">Read more →</a>`;
+document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener">Read: Mumbai's heatwave surge in gut infections →</a>`;
 renderGrid();
 </script>
 

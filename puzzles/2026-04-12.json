@@ -1,0 +1,42 @@
+{
+  "date": "2026-04-12",
+  "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\">Read: Mumbai's heatwave surge in gut infections →</a>",
+  "categories": [
+    {
+      "name": "Drink or eat to stay cool",
+      "description": "",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "🥥",
+      "difficulty": 1,
+      "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"]
+    },
+    {
+      "name": "Things you may see on a weather app",
+      "description": "",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "☀️",
+      "difficulty": 2,
+      "items": ["Sunny", "40 deg C", "Feels like", "Humidity"]
+    },
+    {
+      "name": "Avoid these in a heatwave",
+      "description": "",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "🚫",
+      "difficulty": 3,
+      "items": ["Soft drinks", "Alcohol", "Coffee", "Fried food"]
+    },
+    {
+      "name": "Heat ____",
+      "description": "",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "🌡️",
+      "difficulty": 4,
+      "items": ["Wave", "Stress", "Alert", "Stroke"]
+    }
+  ]
+}
