@@ -861,11 +861,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
+  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: 'TODO: YYYY-MM-DD' });
   const { text } = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
+  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: 'TODO: YYYY-MM-DD' });
   const { shortText } = getShareText();
   const shareText = shortText + '\n\nhttps://timesofclimatechange.com/torchlight/';
   navigator.clipboard.writeText(shareText).then(() => {
@@ -880,6 +882,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
+  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: 'TODO: YYYY-MM-DD' });
   const { shortText } = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(shortText + '\n\nhttps://timesofclimatechange.com/torchlight/'), '_blank');
 }

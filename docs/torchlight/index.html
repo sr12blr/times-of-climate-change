@@ -1016,11 +1016,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
+  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-12' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
+  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-12' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1038,6 +1040,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
+  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-12' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1120,7 +1123,7 @@ gtag('event', 'torchlight_start', {
   'puzzle_date': '2026-04-11'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener">Read: Mumbai's heatwave surge in gut infections →</a>`;
+document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-12', story_slug: 'mumbai-april-heatwave-gut-infections' })">Read: Mumbai's heatwave surge in gut infections →</a>`;
 renderGrid();
 </script>
 
