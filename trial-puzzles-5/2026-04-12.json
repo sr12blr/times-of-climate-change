@@ -1,0 +1,37 @@
+{
+  "date": "2026-04-12",
+  "categories": [
+    {
+      "name": "Drink or eat to stay cool",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "🥥",
+      "difficulty": 1,
+      "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"]
+    },
+    {
+      "name": "What you see on a weather app during a heatwave",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "☀️",
+      "difficulty": 2,
+      "items": ["Sunny", "40 deg C", "Feels like", "Humidity"]
+    },
+    {
+      "name": "Avoid these in a heatwave",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "🚫",
+      "difficulty": 3,
+      "items": ["Soft drinks", "Alcohol", "Coffee", "Fried food"]
+    },
+    {
+      "name": "Heat ____",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "🌡️",
+      "difficulty": 4,
+      "items": ["Wave", "Stress", "Alert", "Stroke"]
+    }
+  ]
+}
