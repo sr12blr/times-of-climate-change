@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torchlight 260413 — The Times of Climate Change</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../static/style.css?v=1775848226">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HLBR3CY28D');
+    </script>
+</head>
+<body>
+
+    <!-- Burger menu -->
+    <nav class="burger-menu" id="burgerMenu">
+        <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
+        <a href="../../../today/">Today's Story</a>
+        <a href="../../../torchlight/">Today's Game 🔦</a>
+        <a href="../../../archive/">Archive</a>
+        <a href="../../../explore/">Getting Real</a>
+        <a href="../../../april-fools/">April Fools Quiz</a>
+        <a href="../../../about/">About</a>
+    </nav>
+    <div class="burger-overlay" id="burgerOverlay"></div>
+
+    <header class="site-masthead">
+        <div class="container">
+            <h1 class="masthead-title"><a href="../../../">The Times of <em>Climate Change</em></a></h1>
+            <p class="masthead-subtitle">One climate story that affects India, every day</p>
+        </div>
+    </header>
+    <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+    </button>
+
+
+    <div class="container">
+
+<div class="game-container">
+
+  <div class="game-header">
+    <div class="game-title">🔦 Torchlight</div>
+    <div class="game-date">April 13, 2026</div>
+    <div class="game-instructions">Shedding light on invisible connections.</div>
+    <button class="how-to-play-link" onclick="openModal()">How to play</button>
+  </div>
+
+  <!-- How to Play modal -->
+  <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="modal-title">How to Play</div>
+
+      <p class="modal-rule">The 16 words you can see can be divided into 4 groups of 4 words each.</p>
+      <p class="modal-rule">Every puzzle is themed on the environment and climate change.</p>
+      <p class="modal-rule">Select four items that belong to the same group/category and tap <strong>Submit</strong> to check your answer.</p>
+      <p class="modal-rule">You can click on hint to see what the category is.</p>
+      <p class="modal-rule">You can make up to 4 mistakes!</p>
+
+      <hr class="modal-divider">
+
+      <div class="modal-section-label">Category Examples</div>
+      <p class="modal-example"><strong>Season:</strong> Summer, Winter, Spring, Autumn</p>
+      <p class="modal-example"><strong>Carbon ____:</strong> Tax, Credit, Sink, Cycle</p>
+      <p class="modal-example" style="margin-top:8px;">Each puzzle has exactly one solution. Watch out for words that seem to fit more than one group!</p>
+
+      <hr class="modal-divider">
+
+      <div class="modal-section-label">Each group is colour-coded, revealed as you solve</div>
+      <div class="modal-colors">
+        <div class="modal-color-chip" style="background:#2C5F4A; color:#fff;">Straightforward</div>
+        <div class="modal-color-chip" style="background:#1A5F7A; color:#fff;">Medium</div>
+        <div class="modal-color-chip" style="background:#C8602A; color:#fff;">Tricky</div>
+        <div class="modal-color-chip" style="background:#6B1C2A; color:#fff;">Devious</div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="modal-start-btn" onclick="closeModal()">Let's play!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Solved categories with Fun Fact flip card -->
+  <div class="solved-flipper">
+    <div class="solved-flipper-inner" id="solvedFlipperInner">
+      <div class="solved-flipper-front">
+        <div class="solved-categories" id="solvedCategories"></div>
+      </div>
+      <div class="solved-flipper-back">
+        <div class="fun-fact-content">
+          <p id="funFactText"></p>
+        </div>
+        <button class="btn-back-to-results" onclick="goBackToResults()">Go back to results</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="controls-row" id="mistakeRow">
+    <span class="mistakes-label">
+      Mistakes remaining:
+      <span class="mistake-dots" id="mistakeDots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </span>
+    </span>
+  </div>
+
+  <div class="controls-row" id="btnRow">
+    <button class="btn btn-hint" id="hintBtn" onclick="getHint()">💡 Hint</button>
+    <button class="btn btn-deselect" onclick="deselectAll()">Deselect All</button>
+    <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
+  </div>
+
+  <div style="text-align: center; font-size: 12px; color: #888; margin-top: 16px; padding: 0 12px;">
+    Inspired by The Wall from the popular quiz show Only Connect, this is 'Earth Edition' of the game
+  </div>
+
+  <!-- End Screen (static, below the flipper) -->
+  <div class="end-screen" id="endScreen">
+    <div class="end-title" id="endTitle"></div>
+    <div class="end-message" id="endMessage"></div>
+    <div class="end-squares" id="endSquares"></div>
+    <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
+      <div class="end-share-row" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
+        <button class="btn-share btn-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
+        <button class="btn-share btn-linkedin" onclick="shareOnLinkedIn()">🔗 LinkedIn</button>
+        <button class="btn-share btn-twitter" onclick="shareOnTwitter()">𝕏 Twitter</button>
+      </div>
+    </div>
+    <div style="margin-top: 16px;">
+      <a href="../../../explore/" class="story-link" style="display: block; text-align: center;">Learn more →</a>
+    </div>
+    <div style="margin-top: 16px; text-align: center;">
+      <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" style="color: #0E7C7B; text-decoration: underline; font-size: 14px; font-weight: 600;">Join WhatsApp Channel to get daily puzzle</a>
+    </div>
+  </div>
+
+  <div class="story-bottom-nav">
+    <a href="../">Torchlight Archive</a>
+    <a href="../../../about/">About this project</a>
+    <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" target="_blank" rel="noopener">Follow on WhatsApp</a>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+</div>
+
+<style>
+  /* Torchlight-specific styles */
+  .game-container {
+    max-width: 440px;
+    margin: 32px auto;
+    padding: 0 12px;
+  }
+
+  .game-header {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .game-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin-bottom: 2px;
+  }
+
+  .game-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 4px;
+  }
+
+  .game-instructions {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 2px;
+  }
+
+  .how-to-play-link {
+    display: inline-block;
+    margin-top: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0E7C7B;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .how-to-play-link:hover { color: #0a5f5e; }
+
+  /* Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: #FAFAF8;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px 24px 24px;
+    position: relative;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+  }
+
+  .modal-close:hover { color: #1A1A18; }
+
+  .modal-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .modal-rule {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.55;
+  }
+
+  .modal-divider {
+    border: none;
+    border-top: 1px solid #E0DED8;
+    margin: 16px 0;
+  }
+
+  .modal-section-label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #888;
+    margin-bottom: 10px;
+  }
+
+  .modal-example {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .modal-example strong {
+    font-weight: 800;
+    color: #1A1A18;
+  }
+
+  .modal-colors {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .modal-color-chip {
+    flex: 1;
+    min-width: 80px;
+    border-radius: 6px;
+    padding: 8px 6px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .modal-footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .modal-start-btn {
+    background: #1A1A18;
+    color: white;
+    border: none;
+    padding: 12px 36px;
+    border-radius: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .modal-start-btn:hover { background: #0E7C7B; }
+
+  /* Solved banners */
+  .solved-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .solved-category {
+    border-radius: 8px;
+    padding: 14px 16px;
+    text-align: center;
+    animation: popIn 0.3s ease;
+  }
+
+  .solved-category .cat-name {
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .solved-category .cat-items {
+    font-size: 13px;
+    margin-top: 3px;
+    opacity: 0.85;
+  }
+
+  /* Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+
+  .tile {
+    aspect-ratio: 1;
+    background: #E0DED8;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 800;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.12s ease, transform 0.1s ease;
+    padding: 4px;
+    line-height: 1.2;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+
+  .tile:hover { background: #CCCAC3; }
+
+  .tile.selected {
+    background: #4A4840;
+    color: #ffffff;
+  }
+
+  .tile.shake {
+    animation: shake 0.4s ease;
+  }
+
+  /* Controls */
+  .controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mistakes-label {
+    font-size: 12px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mistake-dots {
+    display: flex;
+    gap: 4px;
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #4A4840;
+    transition: background 0.3s ease;
+  }
+
+  .dot.used { background: #D0CEC8; }
+
+  .btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 2px solid #1A1A18;
+    transition: all 0.15s ease;
+  }
+
+  .btn-deselect {
+    background: transparent;
+    color: #1A1A18;
+  }
+
+  .btn-deselect:hover { background: #E0DED8; }
+
+  .btn-submit {
+    background: #1A1A18;
+    color: white;
+  }
+
+  .btn-submit:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .btn-submit:not(:disabled):hover {
+    background: #0E7C7B;
+    border-color: #0E7C7B;
+  }
+
+  .btn-hint {
+    background: transparent;
+    color: #1A1A18;
+    border: 2px solid #0E7C7B;
+    cursor: pointer;
+  }
+
+  .btn-hint:hover { background: #E8F5F4; }
+
+  .btn-hint:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    border-color: #CCC;
+  }
+
+  .hint-toast {
+    background: #0E7C7B;
+    color: white;
+    top: 72px;
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    top: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1A1A18;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .toast.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .toast-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 12px;
+    padding: 0;
+    line-height: 1;
+    font-weight: 700;
+  }
+
+  .toast-close:hover {
+    opacity: 0.8;
+  }
+
+  /* Solved categories flip card (front = banners, back = fun fact) */
+  .solved-flipper {
+    perspective: 1000px;
+    margin-bottom: 8px;
+  }
+
+  .solved-flipper-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .solved-flipper-inner.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .solved-flipper-front,
+  .solved-flipper-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .solved-flipper-front {
+    width: 100%;
+  }
+
+  .solved-flipper-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    background: #1A1A18;
+    color: #A7E8E6;
+    border-radius: 12px;
+    padding: 20px 20px 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    overflow-y: auto;
+  }
+
+  .solved-flipper-back .fun-fact-content p {
+    color: #A7E8E6;
+  }
+
+  .solved-flipper-back .fun-fact-content a {
+    color: #A7E8E6;
+  }
+
+  .solved-flipper-back .fun-fact-content a:hover {
+    color: #ffffff;
+  }
+
+  .solved-flipper-back .btn-back-to-results {
+    color: #A7E8E6;
+    border-color: #A7E8E6;
+  }
+
+  .solved-flipper-back .btn-back-to-results:hover {
+    background: rgba(167, 232, 230, 0.12);
+  }
+
+  /* Static end screen (title, message, squares, share buttons, links) */
+  .end-screen {
+    display: none;
+    text-align: center;
+    padding: 24px 0 0;
+  }
+
+  .end-screen.show {
+    display: block;
+  }
+
+  .end-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .end-message {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .story-link {
+    display: inline-flex;
+    align-items: center;
+    background: #0E7C7B;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.15s ease;
+    height: 44px;
+  }
+
+  .story-link:hover { background: #0a5f5e; }
+
+  .btn-share {
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .btn-share:active {
+    transform: translateY(0);
+  }
+
+  .btn-whatsapp {
+    background: #25D366;
+  }
+
+  .btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: translateY(-1px);
+  }
+
+  .btn-linkedin {
+    background: #0A66C2;
+  }
+
+  .btn-linkedin:hover {
+    background: #084b94;
+    transform: translateY(-1px);
+  }
+
+  .btn-twitter {
+    background: #000000;
+  }
+
+  .btn-twitter:hover {
+    background: #1a1a1a;
+    transform: translateY(-1px);
+  }
+
+  .end-squares {
+    font-size: 28px;
+    letter-spacing: 4px;
+    margin: 12px 0;
+  }
+
+  /* Fun Fact Content */
+  .fun-fact-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .fun-fact-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+  }
+
+  .fun-fact-content a {
+    color: #0E7C7B;
+    text-decoration: underline;
+    transition: color 0.15s ease;
+  }
+
+  .fun-fact-content a:hover {
+    color: #0a5f5e;
+  }
+
+  .btn-back-to-results {
+    background: transparent;
+    color: #0E7C7B;
+    border: 2px solid #0E7C7B;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    align-self: flex-end;
+  }
+
+  .btn-back-to-results:hover {
+    background: #E8F5F4;
+  }
+
+  /* Animations */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scaleY(0.85); }
+    to { opacity: 1; transform: scaleY(1); }
+  }
+
+  /* Mobile */
+  @media (max-width: 440px) {
+    .tile { font-size: 10px; }
+    .game-title { font-size: 22px; }
+  }
+</style>
+
+<script>
+// Puzzle data loaded from JSON
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🦩", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "🌿", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🌊", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌴", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are indeed amazing. They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our much polluted air. A city like Mumbai is indeed lucky to have the protection of mangroves, but we are losing, at least some of it. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>"};
+
+let PUZZLE = {
+  categories: PUZZLE_DATA.categories
+};
+
+// State
+let selected = [];
+let solved = [];
+let solveOrder = [];
+let attempts = [];
+let attemptsDisplay = [];
+let mistakes = 0;
+const MAX_MISTAKES = 4;
+let hintedCategories = [];
+
+// Maps category bg colour → coloured circle emoji for share text
+function bgToEmoji(bg) {
+  const map = {
+    '#2C5F4A': '🟢',
+    '#1A5F7A': '🔵',
+    '#C8602A': '🟠',
+    '#6B1C2A': '🔴'
+  };
+  return map[bg] || '⬜';
+}
+
+// Build shuffled item list
+let allItems = PUZZLE.categories.flatMap(c => c.items);
+for (let i = allItems.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1));
+  [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+}
+
+function itemSolved(item) {
+  return solved.some(cat => cat.items.includes(item));
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  allItems.forEach(item => {
+    if (itemSolved(item)) return;
+    const tile = document.createElement('div');
+    tile.className = 'tile' + (selected.includes(item) ? ' selected' : '');
+    tile.textContent = item;
+    tile.dataset.item = item;
+    tile.onclick = () => toggleSelect(item);
+    grid.appendChild(tile);
+  });
+}
+
+function toggleSelect(item) {
+  if (selected.includes(item)) {
+    selected = selected.filter(i => i !== item);
+  } else {
+    if (selected.length >= 4) return;
+    selected.push(item);
+  }
+  document.getElementById('submitBtn').disabled = selected.length !== 4;
+  renderGrid();
+}
+
+function deselectAll() {
+  selected = [];
+  document.getElementById('submitBtn').disabled = true;
+  renderGrid();
+}
+
+function checkGuess() {
+  if (selected.length !== 4) return;
+
+  const correctCat = PUZZLE.categories.find(cat =>
+    !solved.includes(cat) && selected.every(item => cat.items.includes(item))
+  );
+
+  if (correctCat) {
+    solved.push(correctCat);
+    solveOrder.push(correctCat.emoji);
+    attempts.push(bgToEmoji(correctCat.bg));
+    attemptsDisplay.push(correctCat.bg);
+    showSolvedBanner(correctCat);
+    selected = [];
+    renderGrid();
+    document.getElementById('submitBtn').disabled = true;
+    if (solved.length === PUZZLE.categories.length) {
+      setTimeout(() => showEndScreen(true), 400);
+    }
+    return;
+  }
+
+  const oneAway = PUZZLE.categories.some(cat => {
+    const matches = selected.filter(i => cat.items.includes(i)).length;
+    return matches === 3;
+  });
+
+  mistakes++;
+  attempts.push('❌');
+  attemptsDisplay.push('❌');
+  updateDots();
+
+  document.querySelectorAll('.tile.selected').forEach(el => {
+    el.classList.add('shake');
+    setTimeout(() => el.classList.remove('shake'), 400);
+  });
+
+  if (mistakes === 2) {
+    showToast(oneAway ? "One away! 💡 Try a hint?" : "Stuck? 💡 Use a hint to see a category name");
+  } else {
+    showToast(oneAway ? "One away! 👀" : "Oops. Try again!");
+  }
+
+  if (mistakes >= MAX_MISTAKES) {
+    setTimeout(() => showEndScreen(false), 700);
+  } else {
+    setTimeout(() => {
+      selected = [];
+      document.getElementById('submitBtn').disabled = true;
+      renderGrid();
+    }, 500);
+  }
+}
+
+function showSolvedBanner(cat) {
+  const container = document.getElementById('solvedCategories');
+  const div = document.createElement('div');
+  div.className = 'solved-category';
+  div.style.background = cat.bg;
+  div.style.color = cat.text;
+  if (cat.border) div.style.border = `1px solid ${cat.border}`;
+  div.innerHTML = `
+    <div class="cat-name">${cat.name}</div>
+    <div class="cat-items">${cat.items.join(' · ')}</div>
+  `;
+  container.appendChild(div);
+}
+
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  const remaining = MAX_MISTAKES - mistakes;
+  dots.forEach((dot, i) => dot.classList.toggle('used', i >= remaining));
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = msg;
+  toast.classList.add('show');
+  toast.classList.remove('closeable');
+  setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function showHintToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = `${msg} <button class="toast-close" onclick="closeToast()">✕</button>`;
+  toast.classList.add('show', 'closeable');
+}
+
+function closeToast() {
+  const toast = document.getElementById('toast');
+  toast.classList.remove('show');
+}
+
+function showEndScreen(won) {
+  gtag('event', 'torchlight_complete', {
+    'won': won,
+    'mistakes': mistakes,
+    'puzzle_date': '2026-04-13'
+  });
+
+  PUZZLE.categories.forEach(cat => {
+    if (!solved.includes(cat)) showSolvedBanner(cat);
+  });
+
+  document.getElementById('grid').style.display = 'none';
+  document.getElementById('mistakeRow').style.display = 'none';
+  document.getElementById('btnRow').style.display = 'none';
+
+  const endScreen = document.getElementById('endScreen');
+  endScreen.classList.add('show');
+
+  if (won) {
+    document.getElementById('endTitle').textContent = mistakes === 0 ? '🌿 Perfect!' : '🌿 Well done!';
+    document.getElementById('endMessage').textContent =
+      `Solved with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}.`;
+  } else {
+    document.getElementById('endTitle').textContent = 'Better luck tomorrow';
+    document.getElementById('endMessage').textContent = '';
+  }
+
+  document.getElementById('endSquares').innerHTML = attemptsDisplay
+    .map(item => item === '❌'
+      ? `<span style="font-size:18px;">❌</span>`
+      : `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${item};"></span>`)
+    .join(' ');
+
+  // Flip the solved-categories area to fun fact after 3 seconds
+  setTimeout(() => flipToFunFact(), 3000);
+}
+
+function flipToFunFact() {
+  const cardInner = document.getElementById('solvedFlipperInner');
+  if (cardInner) cardInner.classList.add('flipped');
+}
+
+function goBackToResults() {
+  const cardInner = document.getElementById('solvedFlipperInner');
+  if (cardInner) cardInner.classList.remove('flipped');
+}
+
+function getShareText() {
+  const pattern = attempts.join(' ');
+  const won = solved.length === PUZZLE.categories.length;
+
+  let message;
+  if (won) {
+    message = mistakes === 0
+      ? 'I solved it with 0 mistakes!'
+      : `I solved it with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}!`;
+  } else {
+    const catCount = solved.length;
+    message = catCount === 1
+      ? 'I got 1 category'
+      : `I got ${catCount} categories`;
+  }
+
+  const text =
+    `Have you tried today's Torchlight? 🔦\n` +
+    `${pattern}\n` +
+    `${message}\n\n` +
+    `https://timesofclimatechange.com/torchlight/`;
+
+  return text;
+}
+
+function shareOnWhatsApp() {
+  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-13' });
+  const text = getShareText();
+  window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
+}
+
+function shareOnLinkedIn() {
+  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-13' });
+  const text = getShareText();
+  navigator.clipboard.writeText(text).then(() => {
+    const toast = document.getElementById('toast');
+    toast.innerHTML = '📋 Results copied!<br/>1. Click "Start a post" on LinkedIn<br/>2. Paste (Cmd+V or Ctrl+V)<br/>3. Post!';
+    toast.classList.add('show');
+    toast.style.whiteSpace = 'pre-wrap';
+    toast.style.lineHeight = '1.5';
+    setTimeout(() => {
+      window.open('https://www.linkedin.com', '_blank');
+    }, 500);
+    setTimeout(() => toast.classList.remove('show'), 5000);
+  }).catch(() => {
+    showToast('Could not copy. Try again!');
+  });
+}
+
+function shareOnTwitter() {
+  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-13' });
+  const text = getShareText();
+  window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
+}
+
+function getHint() {
+  const unsolvedUnhinted = PUZZLE.categories.filter(cat =>
+    !solved.includes(cat) && !hintedCategories.includes(cat)
+  );
+
+  if (unsolvedUnhinted.length === 0) {
+    showToast('No more hints available!');
+    return;
+  }
+
+  const hintCat = unsolvedUnhinted.sort((a, b) => a.difficulty - b.difficulty)[0];
+  hintedCategories.push(hintCat);
+
+  showHintToast(`💡 ${hintCat.name}`);
+
+  if (PUZZLE.categories.every(cat => solved.includes(cat) || hintedCategories.includes(cat))) {
+    document.getElementById('hintBtn').disabled = true;
+  }
+}
+
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+// Burger menu functionality
+(function() {
+    var btn = document.getElementById('burgerBtn');
+    var menu = document.getElementById('burgerMenu');
+    var close = document.getElementById('burgerClose');
+    var overlay = document.getElementById('burgerOverlay');
+    if (!btn) return;
+    function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+    function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+    btn.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    overlay.addEventListener('click', shut);
+})();
+
+// Init
+gtag('event', 'torchlight_start', {
+  'puzzle_date': '2026-04-13'
+});
+// Set fun fact content with HTML support
+document.getElementById('funFactText').innerHTML = `Mangroves are indeed amazing. They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our much polluted air. A city like Mumbai is indeed lucky to have the protection of mangroves, but we are losing, at least some of it. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-13', story_slug: 'mumbai-mangroves-coastal-road-45000-trees' })">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>`;
+renderGrid();
+</script>
+
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="container">
+            <span class="footer-title">The Times of Climate Change</span>
+            <span class="footer-tagline">One climate story, every day</span>
+        </div>
+    </footer>
+
+
+</body>
+</html>
