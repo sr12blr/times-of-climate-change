@@ -932,11 +932,13 @@ function closeToast() {
 }
 
 function showEndScreen(won) {
-  gtag('event', 'torchlight_complete', {
-    'won': won,
-    'mistakes': mistakes,
-    'puzzle_date': '2026-04-12'
-  });
+  if (!isDemo) {
+    gtag('event', 'torchlight_complete', {
+      'won': won,
+      'mistakes': mistakes,
+      'puzzle_date': '2026-04-12'
+    });
+  }
 
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);

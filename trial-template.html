@@ -804,11 +804,13 @@ function closeToast() {
 }
 
 function showEndScreen(won) {
-  gtag('event', 'torchlight_complete', {
-    'won': won,
-    'mistakes': mistakes,
-    'puzzle_date': 'TODO: YYYY-MM-DD' // TODO: puzzle date
-  });
+  if (!isDemo) {
+    gtag('event', 'torchlight_complete', {
+      'won': won,
+      'mistakes': mistakes,
+      'puzzle_date': 'TODO: YYYY-MM-DD' // TODO: puzzle date
+    });
+  }
 
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
