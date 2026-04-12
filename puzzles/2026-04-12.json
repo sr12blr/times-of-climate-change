@@ -18,7 +18,7 @@
       "text": "#ffffff",
       "emoji": "☀️",
       "difficulty": 2,
-      "items": ["Sunny", "40 deg C", "Feels like", "Humidity"]
+      "items": ["Sunny", "42 °C", "Feels like", "Humidity"]
     },
     {
       "name": "Avoid these in a heatwave",
@@ -27,7 +27,7 @@
       "text": "#ffffff",
       "emoji": "🚫",
       "difficulty": 3,
-      "items": ["Soft drinks", "Alcohol", "Coffee", "Fried food"]
+      "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"]
     },
     {
       "name": "Heat ____",
