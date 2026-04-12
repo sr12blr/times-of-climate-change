@@ -662,6 +662,17 @@ const DEMO_PUZZLE = {
 
 let isDemo = false;
 
+// Maps category bg colour → coloured circle emoji for share text
+function bgToEmoji(bg) {
+  const map = {
+    '#2C5F4A': '🟢',
+    '#1A5F7A': '🔵',
+    '#C8602A': '🟠',
+    '#6B1C2A': '🔴'
+  };
+  return map[bg] || '⬜';
+}
+
 // State
 let selected = [];
 let solved = [];
@@ -853,12 +864,13 @@ function showEndScreen(won) {
 
 function getShareText() {
   const date = 'TODO: Month DD, YYYY'; // TODO: puzzle date
+  const pattern = attemptsDisplay.map(item => item === '❌' ? '❌' : bgToEmoji(item)).join(' ');
   const mistakeText = mistakes === 0
     ? 'No mistakes! 🎉'
     : `${mistakes} mistake${mistakes !== 1 ? 's' : ''}`;
   return {
-    text: `Have you tried today's Torchlight? 🔦\n${date}\n${mistakeText}\n\nhttps://timesofclimatechange.com/torchlight/`,
-    shortText: `Have you tried today's Torchlight? 🔦\n${date} | ${mistakeText}`
+    text: `Have you tried today's Torchlight? 🔦\n${pattern}\n${mistakeText}\n\nhttps://timesofclimatechange.com/torchlight/`,
+    shortText: `Have you tried today's Torchlight? 🔦\n${pattern} | ${mistakeText}`
   };
 }
 

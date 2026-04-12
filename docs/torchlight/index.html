@@ -786,6 +786,17 @@ const DEMO_PUZZLE = {
 
 let isDemo = false;
 
+// Maps category bg colour → coloured circle emoji for share text
+function bgToEmoji(bg) {
+  const map = {
+    '#2C5F4A': '🟢',
+    '#1A5F7A': '🔵',
+    '#C8602A': '🟠',
+    '#6B1C2A': '🔴'
+  };
+  return map[bg] || '⬜';
+}
+
 // State
 let selected = [];
 let solved = [];
@@ -848,7 +859,7 @@ function checkGuess() {
   if (correctCat) {
     solved.push(correctCat);
     solveOrder.push(correctCat.emoji);
-    attempts.push(correctCat.emoji);
+    attempts.push(bgToEmoji(correctCat.bg));
     attemptsDisplay.push(correctCat.bg);
     showSolvedBanner(correctCat);
     selected = [];

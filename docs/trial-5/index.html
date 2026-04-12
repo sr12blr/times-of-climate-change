@@ -719,10 +719,22 @@ const DEMO_PUZZLE = {
 
 let isDemo = false;
 
+// Maps category bg colour → coloured circle emoji for share text
+function bgToEmoji(bg) {
+  const map = {
+    '#2C5F4A': '🟢',
+    '#1A5F7A': '🔵',
+    '#C8602A': '🟠',
+    '#6B1C2A': '🔴'
+  };
+  return map[bg] || '⬜';
+}
+
 // State
 let selected = [];
 let solved = [];
-let solveOrder = []; // tracks emoji sequence
+let solveOrder = []; // tracks bg colours for end screen dots
+let attemptsDisplay = []; // tracks bg colours + ❌ for end screen
 let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = []; // tracks which categories have been hinted
@@ -779,6 +791,7 @@ function checkGuess() {
   if (correctCat) {
     solved.push(correctCat);
     solveOrder.push(correctCat.bg);
+    attemptsDisplay.push(correctCat.bg);
     showSolvedBanner(correctCat);
     selected = [];
     renderGrid();
@@ -796,6 +809,7 @@ function checkGuess() {
   });
 
   mistakes++;
+  attemptsDisplay.push('❌');
   updateDots();
 
   // Shake selected tiles
@@ -892,9 +906,11 @@ function showEndScreen(won) {
       "The groups are revealed above. Read today's story to dig deeper.";
   }
 
-  // Show colored dots for solved categories
-  document.getElementById('endSquares').innerHTML = solveOrder
-    .map(color => `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${color};"></span>`)
+  // Show colored dots + ❌ for all attempts
+  document.getElementById('endSquares').innerHTML = attemptsDisplay
+    .map(item => item === '❌'
+      ? `<span style="font-size:18px;">❌</span>`
+      : `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${item};"></span>`)
     .join(' ');
 
   // Handle demo mode end screen
@@ -916,12 +932,13 @@ function showEndScreen(won) {
 
 function getShareText() {
   const date = 'April 12, 2026';
+  const pattern = attemptsDisplay.map(item => item === '❌' ? '❌' : bgToEmoji(item)).join(' ');
   const mistakeText = mistakes === 0
     ? 'No mistakes! 🎉'
     : `${mistakes} mistake${mistakes !== 1 ? 's' : ''}`;
   return {
-    text: `Have you tried today's Torchlight? 🔦\n${date}\n${mistakeText}\n\nhttps://timesofclimatechange.com/torchlight/`,
-    shortText: `Have you tried today's Torchlight? 🔦\n${date} | ${mistakeText}`
+    text: `Have you tried today's Torchlight? 🔦\n${pattern}\n${mistakeText}\n\nhttps://timesofclimatechange.com/torchlight/`,
+    shortText: `Have you tried today's Torchlight? 🔦\n${pattern} | ${mistakeText}`
   };
 }
 
@@ -1010,6 +1027,7 @@ function startDemo() {
   selected = [];
   solved = [];
   solveOrder = [];
+  attemptsDisplay = [];
   mistakes = 0;
   hintedCategories = [];
 
