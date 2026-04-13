@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 13, 2026</div>
+    <div class="game-date">April 12, 2026</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
   </div>
@@ -60,7 +60,7 @@
       <div class="modal-title">How to Play</div>
 
       <p class="modal-rule">The 16 words you can see can be divided into 4 groups of 4 words each.</p>
-      <p class="modal-rule">Every puzzle is themed on the environment and climate change.</p>
+      <p class="modal-rule">The theme of this puzzle is Indian Railways.</p>
       <p class="modal-rule">Select four items that belong to the same group/category and tap <strong>Submit</strong> to check your answer.</p>
       <p class="modal-rule">You can click on hint to see what the category is.</p>
       <p class="modal-rule">You can make up to 4 mistakes!</p>
@@ -76,10 +76,10 @@
 
       <div class="modal-section-label">Each group is colour-coded, revealed as you solve</div>
       <div class="modal-colors">
-        <div class="modal-color-chip" style="background:#2C5F4A; color:#fff;">Straightforward</div>
-        <div class="modal-color-chip" style="background:#1A5F7A; color:#fff;">Medium</div>
-        <div class="modal-color-chip" style="background:#C8602A; color:#fff;">Tricky</div>
-        <div class="modal-color-chip" style="background:#6B1C2A; color:#fff;">Devious</div>
+        <div class="modal-color-chip" style="background:#2171B5; color:#fff;">Straightforward</div>
+        <div class="modal-color-chip" style="background:#4CAF50; color:#fff;">Medium</div>
+        <div class="modal-color-chip" style="background:#FF8C00; color:#fff;">Tricky</div>
+        <div class="modal-color-chip" style="background:#8B4513; color:#fff;">Devious</div>
       </div>
 
       <div class="modal-footer">
@@ -740,7 +740,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🦩", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "🌿", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🌊", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌴", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udd65", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\u2600\ufe0f", "items": ["Sunny", "42 \u00b0C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83d\udeab", "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf21\ufe0f", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\"\u003eRead: Mumbai\u0027s heatwave surge in gut infections \u2192\u003c/a\u003e"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
@@ -786,23 +786,11 @@ const DEMO_PUZZLE = {
 
 let isDemo = false;
 
-// Maps category bg colour → coloured circle emoji for share text
-function bgToEmoji(bg) {
-  const map = {
-    '#2C5F4A': '🟢',
-    '#1A5F7A': '🔵',
-    '#C8602A': '🟠',
-    '#6B1C2A': '🔴'
-  };
-  return map[bg] || '⬜';
-}
-
 // State
 let selected = [];
 let solved = [];
 let solveOrder = [];
 let attempts = [];
-let attemptsDisplay = [];
 let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = [];
@@ -859,8 +847,7 @@ function checkGuess() {
   if (correctCat) {
     solved.push(correctCat);
     solveOrder.push(correctCat.emoji);
-    attempts.push(bgToEmoji(correctCat.bg));
-    attemptsDisplay.push(correctCat.bg);
+    attempts.push(correctCat.emoji);
     showSolvedBanner(correctCat);
     selected = [];
     renderGrid();
@@ -878,7 +865,6 @@ function checkGuess() {
 
   mistakes++;
   attempts.push('❌');
-  attemptsDisplay.push('❌');
   updateDots();
 
   document.querySelectorAll('.tile.selected').forEach(el => {
@@ -886,7 +872,7 @@ function checkGuess() {
     setTimeout(() => el.classList.remove('shake'), 400);
   });
 
-  if (mistakes === 2 || mistakes === 3) {
+  if (mistakes === 2) {
     showToast(oneAway ? "One away! 💡 Try a hint?" : "Stuck? 💡 Use a hint to see a category name");
   } else {
     showToast(oneAway ? "One away! 👀" : "Oops. Try again!");
@@ -943,13 +929,11 @@ function closeToast() {
 }
 
 function showEndScreen(won) {
-  if (!isDemo) {
-    gtag('event', 'torchlight_complete', {
-      'won': won,
-      'mistakes': mistakes,
-      'puzzle_date': '2026-04-13'
-    });
-  }
+  gtag('event', 'torchlight_complete', {
+    'won': won,
+    'mistakes': mistakes,
+    'puzzle_date': '2026-04-12'
+  });
 
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
@@ -971,11 +955,7 @@ function showEndScreen(won) {
     document.getElementById('endMessage').textContent = '';
   }
 
-  document.getElementById('endSquares').innerHTML = attemptsDisplay
-    .map(item => item === '❌'
-      ? `<span style="font-size:18px;">❌</span>`
-      : `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${item};"></span>`)
-    .join(' ');
+  document.getElementById('endSquares').textContent = solveOrder.join(' ');
 
   if (isDemo && won) {
     const shareButtons = endScreen.querySelector('.end-share-row');
@@ -989,8 +969,8 @@ function showEndScreen(won) {
     }
   }
 
-  // Flip the solved-categories area to fun fact after 2 seconds
-  setTimeout(() => flipToFunFact(), 2000);
+  // Flip the solved-categories area to fun fact after 3 seconds
+  setTimeout(() => flipToFunFact(), 3000);
 }
 
 function flipToFunFact() {
@@ -1029,13 +1009,11 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1053,7 +1031,6 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1097,8 +1074,6 @@ function startDemo() {
   selected = [];
   solved = [];
   solveOrder = [];
-  attempts = [];
-  attemptsDisplay = [];
   mistakes = 0;
   hintedCategories = [];
 
@@ -1133,12 +1108,10 @@ function startDemo() {
 
 // Init
 gtag('event', 'torchlight_start', {
-  'puzzle_date': '2026-04-13'
+  'puzzle_date': '2026-04-12'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-13', story_slug: 'mumbai-mangroves-coastal-road-45000-trees' })">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>
-
-Also if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!`;
+document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener">Read: Mumbai's heatwave surge in gut infections →</a>`;
 renderGrid();
 </script>
 
