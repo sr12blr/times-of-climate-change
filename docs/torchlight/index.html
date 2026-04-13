@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 12, 2026</div>
+    <div class="game-date">April 13, 2026</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
   </div>
@@ -740,7 +740,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🥥", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "☀️", "items": ["Sunny", "42 °C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🚫", "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌡️", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\">Read: Mumbai\u2019s heatwave surge in gut infections \u2192</a>"};
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🦩", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "🌿", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🌊", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌴", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
@@ -947,7 +947,7 @@ function showEndScreen(won) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-12'
+      'puzzle_date': '2026-04-13'
     });
   }
 
@@ -989,8 +989,8 @@ function showEndScreen(won) {
     }
   }
 
-  // Flip the solved-categories area to fun fact after 3 seconds
-  setTimeout(() => flipToFunFact(), 3000);
+  // Flip the solved-categories area to fun fact after 2 seconds
+  setTimeout(() => flipToFunFact(), 2000);
 }
 
 function flipToFunFact() {
@@ -1029,13 +1029,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-12' });
+  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-12' });
+  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1053,7 +1053,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-12' });
+  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1133,10 +1133,12 @@ function startDemo() {
 
 // Init
 gtag('event', 'torchlight_start', {
-  'puzzle_date': '2026-04-11'
+  'puzzle_date': '2026-04-13'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-12', story_slug: 'mumbai-april-heatwave-gut-infections' })">Read: Mumbai's heatwave surge in gut infections →</a>`;
+document.getElementById('funFactText').innerHTML = `Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-13', story_slug: 'mumbai-mangroves-coastal-road-45000-trees' })">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>
+
+Also if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!`;
 renderGrid();
 </script>
 

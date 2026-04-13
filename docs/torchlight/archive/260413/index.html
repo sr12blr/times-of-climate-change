@@ -739,7 +739,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🦩", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "🌿", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🌊", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌴", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are indeed amazing. They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our much polluted air. A city like Mumbai is indeed lucky to have the protection of mangroves, but we are losing, at least some of it. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>"};
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🦩", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "🌿", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🌊", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌴", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
@@ -934,8 +934,8 @@ function showEndScreen(won) {
       : `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${item};"></span>`)
     .join(' ');
 
-  // Flip the solved-categories area to fun fact after 3 seconds
-  setTimeout(() => flipToFunFact(), 3000);
+  // Flip the solved-categories area to fun fact after 2 seconds
+  setTimeout(() => flipToFunFact(), 2000);
 }
 
 function flipToFunFact() {
@@ -1054,7 +1054,9 @@ gtag('event', 'torchlight_start', {
   'puzzle_date': '2026-04-13'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `Mangroves are indeed amazing. They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our much polluted air. A city like Mumbai is indeed lucky to have the protection of mangroves, but we are losing, at least some of it. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-13', story_slug: 'mumbai-mangroves-coastal-road-45000-trees' })">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>`;
+document.getElementById('funFactText').innerHTML = `Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-13', story_slug: 'mumbai-mangroves-coastal-road-45000-trees' })">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>
+
+Also if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!`;
 renderGrid();
 </script>
 

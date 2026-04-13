@@ -44,136 +44,74 @@
 
     <div class="container">
         
-<div class="archive-container">
+<div class="archive-page">
   <div class="archive-header">
-    <h2>🔦 Torchlight Archive</h2>
+    <h2>Torchlight Archive</h2>
     <p>Replay previous puzzles and explore climate connections</p>
   </div>
 
-  <div class="puzzle-grid">
-    
-    <a href="./260411/" class="puzzle-card">
-      <div class="puzzle-card-date">Torchlight - 260411</div>
-      <div class="puzzle-card-preview">
-        <div class="puzzle-emoji-row">
-          
-          <div class="puzzle-emoji" style="background-color: #C8602A; color: #ffffff;">
-            🚆
-          </div>
-          
-          <div class="puzzle-emoji" style="background-color: #2C5F4A; color: #ffffff;">
-            🎫
-          </div>
-          
-          <div class="puzzle-emoji" style="background-color: #6B1C2A; color: #ffffff;">
-            🚂
-          </div>
-          
-          <div class="puzzle-emoji" style="background-color: #1A5F7A; color: #ffffff;">
-            📋
-          </div>
-          
-        </div>
-      </div>
-      <div class="puzzle-card-hint">4 categories</div>
-    </a>
-    
+  <div class="puzzle-list">
+    <a href="./260412/" class="puzzle-link">Torchlight - 260412</a>
+    <a href="./260411/" class="puzzle-link">Torchlight - 260411</a>
   </div>
 </div>
 
 <style>
-  .archive-container {
+  .archive-page {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 0 20px;
   }
 
   .archive-header {
     text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid #E0DED8;
     margin-bottom: 40px;
   }
 
   .archive-header h2 {
     font-family: 'Source Serif 4', serif;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 700;
     color: #1A1A18;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    line-height: 1.3;
   }
 
   .archive-header p {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
+    line-height: 1.5;
   }
 
-  .puzzle-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 16px;
-  }
-
-  .puzzle-card {
+  .puzzle-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 12px;
-    padding: 16px;
+  }
+
+  .puzzle-link {
+    display: block;
+    padding: 14px 20px;
     background: #FAFAF8;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.2s ease;
     border: 1px solid #E0DED8;
-    cursor: pointer;
-  }
-
-  .puzzle-card:hover {
-    background: #F5F5F2;
-    border-color: #0E7C7B;
-    transform: translateY(-2px);
-  }
-
-  .puzzle-card-date {
-    font-size: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
     font-weight: 700;
     color: #0E7C7B;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: center;
+    letter-spacing: 0.03em;
+    transition: all 0.2s ease;
   }
 
-  .puzzle-card-preview {
-    width: 100%;
-  }
-
-  .puzzle-emoji-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-    width: 100%;
-  }
-
-  .puzzle-emoji {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .puzzle-card-hint {
-    font-size: 11px;
-    color: #999;
-    text-align: center;
+  .puzzle-link:hover {
+    background: #F5F5F2;
+    border-color: #0E7C7B;
+    transform: translateY(-1px);
   }
 
   @media (max-width: 600px) {
-    .puzzle-grid {
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 12px;
-    }
-
     .archive-header h2 {
       font-size: 24px;
     }
