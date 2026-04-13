@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torchlight 260412 — The Times of Climate Change</title>
+    <title>The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-
+    
     <!-- Burger menu -->
     <nav class="burger-menu" id="burgerMenu">
         <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
@@ -40,10 +40,10 @@
     <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
     </button>
-
+    
 
     <div class="container">
-
+        
 <div class="game-container">
 
   <div class="game-header">
@@ -60,7 +60,7 @@
       <div class="modal-title">How to Play</div>
 
       <p class="modal-rule">The 16 words you can see can be divided into 4 groups of 4 words each.</p>
-      <p class="modal-rule">Every puzzle is themed on the environment and climate change.</p>
+      <p class="modal-rule">The theme of this puzzle is Indian Railways.</p>
       <p class="modal-rule">Select four items that belong to the same group/category and tap <strong>Submit</strong> to check your answer.</p>
       <p class="modal-rule">You can click on hint to see what the category is.</p>
       <p class="modal-rule">You can make up to 4 mistakes!</p>
@@ -76,14 +76,15 @@
 
       <div class="modal-section-label">Each group is colour-coded, revealed as you solve</div>
       <div class="modal-colors">
-        <div class="modal-color-chip" style="background:#2C5F4A; color:#fff;">Straightforward</div>
-        <div class="modal-color-chip" style="background:#1A5F7A; color:#fff;">Medium</div>
-        <div class="modal-color-chip" style="background:#C8602A; color:#fff;">Tricky</div>
-        <div class="modal-color-chip" style="background:#6B1C2A; color:#fff;">Devious</div>
+        <div class="modal-color-chip" style="background:#2171B5; color:#fff;">Straightforward</div>
+        <div class="modal-color-chip" style="background:#4CAF50; color:#fff;">Medium</div>
+        <div class="modal-color-chip" style="background:#FF8C00; color:#fff;">Tricky</div>
+        <div class="modal-color-chip" style="background:#8B4513; color:#fff;">Devious</div>
       </div>
 
       <div class="modal-footer">
         <button class="modal-start-btn" onclick="closeModal()">Let's play!</button>
+        <button class="modal-start-btn" style="background: #0E7C7B; margin-top: 10px;" onclick="startDemo()">Try a demo</button>
       </div>
     </div>
   </div>
@@ -148,7 +149,7 @@
   </div>
 
   <div class="story-bottom-nav">
-    <a href="../">Torchlight Archive</a>
+    <a href="../../../archive/">Browse all stories</a>
     <a href="../../../about/">About this project</a>
     <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" target="_blank" rel="noopener">Follow on WhatsApp</a>
   </div>
@@ -739,32 +740,60 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\u{1F965}", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\u2600\uFE0F", "items": ["Sunny", "42 \u00B0C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\uD83D\uDEAB", "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\uD83C\uDF21\uFE0F", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\">Read: Mumbai\u2019s heatwave surge in gut infections \u2192</a>"};
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udd65", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\u2600\ufe0f", "items": ["Sunny", "42 \u00b0C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83d\udeab", "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf21\ufe0f", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\"\u003eRead: Mumbai\u0027s heatwave surge in gut infections \u2192\u003c/a\u003e"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
 };
+
+// Demo puzzle
+const DEMO_PUZZLE = {
+  categories: [
+    {
+      name: "Colors",
+      bg: "#FF6B6B",
+      text: "#ffffff",
+      emoji: "🔴",
+      difficulty: 1,
+      items: ["Red", "Blue", "Green", "Yellow"]
+    },
+    {
+      name: "Flowers",
+      bg: "#FFD93D",
+      text: "#1A1A18",
+      emoji: "🟨",
+      difficulty: 2,
+      items: ["Rose", "Tulip", "Hibiscus", "Sunflower"]
+    },
+    {
+      name: "Birds",
+      bg: "#6BCB77",
+      text: "#ffffff",
+      emoji: "🟢",
+      difficulty: 3,
+      items: ["Sparrow", "Myna", "Crow", "Dove"]
+    },
+    {
+      name: "Cities",
+      bg: "#4D96FF",
+      text: "#ffffff",
+      emoji: "🔵",
+      difficulty: 4,
+      items: ["Delhi", "Mumbai", "Bangalore", "Chennai"]
+    }
+  ]
+};
+
+let isDemo = false;
 
 // State
 let selected = [];
 let solved = [];
 let solveOrder = [];
 let attempts = [];
-let attemptsDisplay = [];
 let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = [];
-
-// Maps category bg colour → coloured circle emoji for share text
-function bgToEmoji(bg) {
-  const map = {
-    '#2C5F4A': '🟢',
-    '#1A5F7A': '🔵',
-    '#C8602A': '🟠',
-    '#6B1C2A': '🔴'
-  };
-  return map[bg] || '⬜';
-}
 
 // Build shuffled item list
 let allItems = PUZZLE.categories.flatMap(c => c.items);
@@ -818,8 +847,7 @@ function checkGuess() {
   if (correctCat) {
     solved.push(correctCat);
     solveOrder.push(correctCat.emoji);
-    attempts.push(bgToEmoji(correctCat.bg));
-    attemptsDisplay.push(correctCat.bg);
+    attempts.push(correctCat.emoji);
     showSolvedBanner(correctCat);
     selected = [];
     renderGrid();
@@ -837,7 +865,6 @@ function checkGuess() {
 
   mistakes++;
   attempts.push('❌');
-  attemptsDisplay.push('❌');
   updateDots();
 
   document.querySelectorAll('.tile.selected').forEach(el => {
@@ -928,11 +955,19 @@ function showEndScreen(won) {
     document.getElementById('endMessage').textContent = '';
   }
 
-  document.getElementById('endSquares').innerHTML = attemptsDisplay
-    .map(item => item === '❌'
-      ? `<span style="font-size:18px;">❌</span>`
-      : `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${item};"></span>`)
-    .join(' ');
+  document.getElementById('endSquares').textContent = solveOrder.join(' ');
+
+  if (isDemo && won) {
+    const shareButtons = endScreen.querySelector('.end-share-row');
+    if (shareButtons) shareButtons.style.display = 'none';
+
+    const storyLink = endScreen.querySelector('a.story-link');
+    if (storyLink) {
+      storyLink.textContent = 'Play today\'s game →';
+      storyLink.href = '../../../torchlight/';
+      storyLink.style.marginTop = '24px';
+    }
+  }
 
   // Flip the solved-categories area to fun fact after 3 seconds
   setTimeout(() => flipToFunFact(), 3000);
@@ -974,13 +1009,11 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-12' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-12' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -998,7 +1031,6 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-12' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1035,6 +1067,31 @@ function handleOverlayClick(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
 }
 
+function startDemo() {
+  isDemo = true;
+  PUZZLE = DEMO_PUZZLE;
+
+  selected = [];
+  solved = [];
+  solveOrder = [];
+  mistakes = 0;
+  hintedCategories = [];
+
+  allItems = DEMO_PUZZLE.categories.flatMap(c => c.items);
+  for (let i = allItems.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+  }
+
+  closeModal();
+  showToast("🎓 Demo mode! Try to find the 4 groups (easier puzzle)");
+
+  document.getElementById('solvedCategories').innerHTML = '';
+  renderGrid();
+  updateDots();
+  document.getElementById('submitBtn').disabled = true;
+}
+
 // Burger menu functionality
 (function() {
     var btn = document.getElementById('burgerBtn');
@@ -1054,20 +1111,34 @@ gtag('event', 'torchlight_start', {
   'puzzle_date': '2026-04-12'
 });
 // Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-12', story_slug: 'mumbai-april-heatwave-gut-infections' })">Read: Mumbai\u2019s heatwave surge in gut infections \u2192</a>`;
+document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener">Read: Mumbai's heatwave surge in gut infections →</a>`;
 renderGrid();
 </script>
 
     </div>
 
-
+    
     <footer class="site-footer">
         <div class="container">
             <span class="footer-title">The Times of Climate Change</span>
             <span class="footer-tagline">One climate story, every day</span>
         </div>
     </footer>
+    
 
-
+    <script>
+    (function() {
+        var btn = document.getElementById('burgerBtn');
+        var menu = document.getElementById('burgerMenu');
+        var close = document.getElementById('burgerClose');
+        var overlay = document.getElementById('burgerOverlay');
+        if (!btn) return;
+        function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+        function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+        btn.addEventListener('click', open);
+        close.addEventListener('click', shut);
+        overlay.addEventListener('click', shut);
+    })();
+    </script>
 </body>
 </html>

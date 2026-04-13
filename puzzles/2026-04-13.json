@@ -1,0 +1,62 @@
+{
+  "date": "2026-04-13",
+  "categories": [
+    {
+      "name": "Species associated with some Mangrove forests in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "\ud83e\udda9",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Flamingos",
+        "Bengal tiger",
+        "Mudskipper",
+        "Saltwater crocodiles"
+      ]
+    },
+    {
+      "name": "Mangrove based Products/ Services that provide income for locals",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "\ud83c\udf3f",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Honey",
+        "Timber",
+        "Fish",
+        "Eco-tourism"
+      ]
+    },
+    {
+      "name": "How mangroves help the ecosystem",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "\ud83c\udf0a",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Wave breaker",
+        "Carbon sink",
+        "Sediment traps",
+        "Air purifier"
+      ]
+    },
+    {
+      "name": "Sundar ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "\ud83c\udf34",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Bans",
+        "Pichai",
+        "Garh",
+        "Nursery"
+      ]
+    }
+  ],
+  "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"
+}
