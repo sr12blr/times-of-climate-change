@@ -845,7 +845,7 @@ function checkGuess() {
     setTimeout(() => el.classList.remove('shake'), 400);
   });
 
-  if (mistakes === 2) {
+  if (mistakes === 2 || mistakes === 3) {
     showToast(oneAway ? "One away! 💡 Try a hint?" : "Stuck? 💡 Use a hint to see a category name");
   } else {
     showToast(oneAway ? "One away! 👀" : "Oops. Try again!");
