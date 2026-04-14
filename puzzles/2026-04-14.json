@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-14",
+  "categories": [
+    {
+      "name": "Varieties of Rice",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Basmati",
+        "Kolam",
+        "Jeera Samba",
+        "Sona Masuri"
+      ]
+    },
+    {
+      "name": "Varieties of Mango",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Hapus",
+        "Kesar",
+        "Dassheri",
+        "Langda"
+      ]
+    },
+    {
+      "name": "Varieties of Indian Chilis",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Bhoot Jolokia",
+        "Guntur",
+        "Kashmiri",
+        "Bydagi"
+      ]
+    },
+    {
+      "name": "Varieties of Banana",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Nendran",
+        "Yelakki",
+        "Monthan",
+        "Cavendish"
+      ]
+    }
+  ],
+  "fun_fact": "India's crop diversity\u2014from rice to bananas\u2014isn't just tasty, it's climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."
+}

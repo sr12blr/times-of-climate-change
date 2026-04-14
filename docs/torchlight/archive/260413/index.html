@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Torchlight 260413 — The Times of Climate Change</title>
+    <title>The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-
+    
     <!-- Burger menu -->
     <nav class="burger-menu" id="burgerMenu">
         <button class="burger-close" id="burgerClose" aria-label="Close menu">&times;</button>
@@ -40,10 +40,10 @@
     <button class="burger-btn" id="burgerBtn" aria-label="Open menu">
         <span></span><span></span><span></span>
     </button>
-
+    
 
     <div class="container">
-
+        
 <div class="game-container">
 
   <div class="game-header">
@@ -60,7 +60,7 @@
       <div class="modal-title">How to Play</div>
 
       <p class="modal-rule">The 16 words you can see can be divided into 4 groups of 4 words each.</p>
-      <p class="modal-rule">Every puzzle is themed on the environment and climate change.</p>
+      <p class="modal-rule">The theme of this puzzle is Indian Railways.</p>
       <p class="modal-rule">Select four items that belong to the same group/category and tap <strong>Submit</strong> to check your answer.</p>
       <p class="modal-rule">You can click on hint to see what the category is.</p>
       <p class="modal-rule">You can make up to 4 mistakes!</p>
@@ -76,14 +76,15 @@
 
       <div class="modal-section-label">Each group is colour-coded, revealed as you solve</div>
       <div class="modal-colors">
-        <div class="modal-color-chip" style="background:#2C5F4A; color:#fff;">Straightforward</div>
-        <div class="modal-color-chip" style="background:#1A5F7A; color:#fff;">Medium</div>
-        <div class="modal-color-chip" style="background:#C8602A; color:#fff;">Tricky</div>
-        <div class="modal-color-chip" style="background:#6B1C2A; color:#fff;">Devious</div>
+        <div class="modal-color-chip" style="background:#2171B5; color:#fff;">Straightforward</div>
+        <div class="modal-color-chip" style="background:#4CAF50; color:#fff;">Medium</div>
+        <div class="modal-color-chip" style="background:#FF8C00; color:#fff;">Tricky</div>
+        <div class="modal-color-chip" style="background:#8B4513; color:#fff;">Devious</div>
       </div>
 
       <div class="modal-footer">
         <button class="modal-start-btn" onclick="closeModal()">Let's play!</button>
+        <button class="modal-start-btn" style="background: #0E7C7B; margin-top: 10px;" onclick="startDemo()">Try a demo</button>
       </div>
     </div>
   </div>
@@ -148,7 +149,7 @@
   </div>
 
   <div class="story-bottom-nav">
-    <a href="../">Torchlight Archive</a>
+    <a href="../../../archive/">Browse all stories</a>
     <a href="../../../about/">About this project</a>
     <a href="https://whatsapp.com/channel/0029Vb7eatWLCoWsCuCc8D41" target="_blank" rel="noopener">Follow on WhatsApp</a>
   </div>
@@ -739,31 +740,124 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "🦩", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "🌿", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "🌊", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "🌴", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
+const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udda9", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\ud83c\udf3f", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83c\udf0a", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf34", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\"\u003eRead about Mumbai\u2019s plan to cut 45,000 mangroves \u2192\u003c/a\u003e\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
 };
+
+// Demo puzzle
+const DEMO_PUZZLE = {
+  categories: [
+    {
+      name: "Colors",
+      bg: "#FF6B6B",
+      text: "#ffffff",
+      emoji: "🔴",
+      difficulty: 1,
+      items: ["Red", "Blue", "Green", "Yellow"]
+    },
+    {
+      name: "Flowers",
+      bg: "#FFD93D",
+      text: "#1A1A18",
+      emoji: "🟨",
+      difficulty: 2,
+      items: ["Rose", "Tulip", "Hibiscus", "Sunflower"]
+    },
+    {
+      name: "Birds",
+      bg: "#6BCB77",
+      text: "#ffffff",
+      emoji: "🟢",
+      difficulty: 3,
+      items: ["Sparrow", "Myna", "Crow", "Dove"]
+    },
+    {
+      name: "Cities",
+      bg: "#4D96FF",
+      text: "#ffffff",
+      emoji: "🔵",
+      difficulty: 4,
+      items: ["Delhi", "Mumbai", "Bangalore", "Chennai"]
+    }
+  ]
+};
+
+let isDemo = false;
 
 // State
 let selected = [];
 let solved = [];
 let solveOrder = [];
 let attempts = [];
-let attemptsDisplay = [];
 let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = [];
 
-// Maps category bg colour → coloured circle emoji for share text
-function bgToEmoji(bg) {
-  const map = {
-    '#2C5F4A': '🟢',
-    '#1A5F7A': '🔵',
-    '#C8602A': '🟠',
-    '#6B1C2A': '🔴'
-  };
-  return map[bg] || '⬜';
+function saveState() {
+  if (isDemo) return;
+  try {
+    const state = {
+      version: 1,
+      date: PUZZLE_DATA.date,
+      solvedNames: solved.map(cat => cat.name),
+      solveOrder: solveOrder,
+      attempts: attempts,
+      mistakes: mistakes,
+      hintedNames: hintedCategories.map(cat => cat.name),
+      completed: solved.length === PUZZLE.categories.length || mistakes >= MAX_MISTAKES
+    };
+    localStorage.setItem('torchlight_state_' + PUZZLE_DATA.date, JSON.stringify(state));
+  } catch (e) {}
+}
+
+function restoreState() {
+  try {
+    const raw = localStorage.getItem('torchlight_state_' + PUZZLE_DATA.date);
+    if (!raw) return false;
+
+    const state = JSON.parse(raw);
+    if (!state || state.version !== 1 || state.date !== PUZZLE_DATA.date) return false;
+    if (!Array.isArray(state.solvedNames) || typeof state.mistakes !== 'number') return false;
+
+    const restoredSolved = [];
+    for (const name of state.solvedNames) {
+      const cat = PUZZLE.categories.find(c => c.name === name);
+      if (!cat) return false;
+      restoredSolved.push(cat);
+    }
+
+    const restoredHinted = [];
+    for (const name of (state.hintedNames || [])) {
+      const cat = PUZZLE.categories.find(c => c.name === name);
+      if (cat) restoredHinted.push(cat);
+    }
+
+    solved = restoredSolved;
+    solveOrder = state.solveOrder || [];
+    attempts = state.attempts || [];
+    mistakes = state.mistakes;
+    hintedCategories = restoredHinted;
+
+    restoredSolved.forEach(cat => showSolvedBanner(cat));
+    updateDots();
+
+    if (PUZZLE.categories.every(cat => solved.includes(cat) || hintedCategories.includes(cat))) {
+      document.getElementById('hintBtn').disabled = true;
+    }
+
+    if (state.completed) {
+      const won = solved.length === PUZZLE.categories.length;
+      showEndScreen(won, true);
+    } else {
+      renderGrid();
+    }
+
+    return true;
+  } catch (e) {
+    return false;
+  }
 }
 
 // Build shuffled item list
@@ -817,13 +911,13 @@ function checkGuess() {
 
   if (correctCat) {
     solved.push(correctCat);
-    solveOrder.push(correctCat.emoji);
-    attempts.push(bgToEmoji(correctCat.bg));
-    attemptsDisplay.push(correctCat.bg);
+    solveOrder.push(correctCat.bg);
+    attempts.push(correctCat.bg);
     showSolvedBanner(correctCat);
     selected = [];
     renderGrid();
     document.getElementById('submitBtn').disabled = true;
+    saveState();
     if (solved.length === PUZZLE.categories.length) {
       setTimeout(() => showEndScreen(true), 400);
     }
@@ -837,7 +931,7 @@ function checkGuess() {
 
   mistakes++;
   attempts.push('❌');
-  attemptsDisplay.push('❌');
+  saveState();
   updateDots();
 
   document.querySelectorAll('.tile.selected').forEach(el => {
@@ -845,7 +939,7 @@ function checkGuess() {
     setTimeout(() => el.classList.remove('shake'), 400);
   });
 
-  if (mistakes === 2 || mistakes === 3) {
+  if (mistakes === 2) {
     showToast(oneAway ? "One away! 💡 Try a hint?" : "Stuck? 💡 Use a hint to see a category name");
   } else {
     showToast(oneAway ? "One away! 👀" : "Oops. Try again!");
@@ -901,12 +995,14 @@ function closeToast() {
   toast.classList.remove('show');
 }
 
-function showEndScreen(won) {
-  gtag('event', 'torchlight_complete', {
-    'won': won,
-    'mistakes': mistakes,
-    'puzzle_date': '2026-04-13'
-  });
+function showEndScreen(won, isRestore) {
+  if (!isRestore) {
+    gtag('event', 'torchlight_complete', {
+      'won': won,
+      'mistakes': mistakes,
+      'puzzle_date': '2026-04-13'
+    });
+  }
 
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
@@ -928,14 +1024,26 @@ function showEndScreen(won) {
     document.getElementById('endMessage').textContent = '';
   }
 
-  document.getElementById('endSquares').innerHTML = attemptsDisplay
-    .map(item => item === '❌'
-      ? `<span style="font-size:18px;">❌</span>`
-      : `<span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:${item};"></span>`)
-    .join(' ');
+  // Create colored dots from solved categories
+  const dotsHtml = solveOrder.map(color =>
+    `<span style="display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: ${color}; margin: 0 4px;"></span>`
+  ).join('');
+  document.getElementById('endSquares').innerHTML = dotsHtml;
 
-  // Flip the solved-categories area to fun fact (2 sec if won, 3 sec if lost)
-  setTimeout(() => flipToFunFact(), won ? 2000 : 3000);
+  if (isDemo && won) {
+    const shareButtons = endScreen.querySelector('.end-share-row');
+    if (shareButtons) shareButtons.style.display = 'none';
+
+    const storyLink = endScreen.querySelector('a.story-link');
+    if (storyLink) {
+      storyLink.textContent = 'Play today\'s game →';
+      storyLink.href = '../../../torchlight/';
+      storyLink.style.marginTop = '24px';
+    }
+  }
+
+  // Flip the solved-categories area to fun fact after 3 seconds
+  setTimeout(() => flipToFunFact(), 3000);
 }
 
 function flipToFunFact() {
@@ -974,13 +1082,11 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'share', { method: 'whatsapp', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'share', { method: 'linkedin', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -998,7 +1104,6 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'share', { method: 'twitter', content_type: 'puzzle', item_id: '2026-04-13' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1015,6 +1120,7 @@ function getHint() {
 
   const hintCat = unsolvedUnhinted.sort((a, b) => a.difficulty - b.difficulty)[0];
   hintedCategories.push(hintCat);
+  saveState();
 
   showHintToast(`💡 ${hintCat.name}`);
 
@@ -1035,6 +1141,31 @@ function handleOverlayClick(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
 }
 
+function startDemo() {
+  isDemo = true;
+  PUZZLE = DEMO_PUZZLE;
+
+  selected = [];
+  solved = [];
+  solveOrder = [];
+  mistakes = 0;
+  hintedCategories = [];
+
+  allItems = DEMO_PUZZLE.categories.flatMap(c => c.items);
+  for (let i = allItems.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [allItems[i], allItems[j]] = [allItems[j], allItems[i]];
+  }
+
+  closeModal();
+  showToast("🎓 Demo mode! Try to find the 4 groups (easier puzzle)");
+
+  document.getElementById('solvedCategories').innerHTML = '';
+  renderGrid();
+  updateDots();
+  document.getElementById('submitBtn').disabled = true;
+}
+
 // Burger menu functionality
 (function() {
     var btn = document.getElementById('burgerBtn');
@@ -1050,26 +1181,42 @@ function handleOverlayClick(e) {
 })();
 
 // Init
-gtag('event', 'torchlight_start', {
-  'puzzle_date': '2026-04-13'
-});
-// Set fun fact content with HTML support
-document.getElementById('funFactText').innerHTML = `Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener" onclick="gtag('event', 'fun_fact_click', { puzzle_date: '2026-04-13', story_slug: 'mumbai-mangroves-coastal-road-45000-trees' })">Read about Mumbai\u2019s plan to cut 45,000 mangroves \u2192</a>
+document.getElementById('funFactText').innerHTML = `Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener">Read about Mumbai’s plan to cut 45,000 mangroves →</a>
 
-Also if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!`;
-renderGrid();
+Also if you haven’t heard of Sundar Nursery in Delhi, do check it out when you’re there next!`;
+const wasRestored = restoreState();
+if (!wasRestored) {
+  gtag('event', 'torchlight_start', {
+    'puzzle_date': '2026-04-13'
+  });
+  renderGrid();
+}
 </script>
 
     </div>
 
-
+    
     <footer class="site-footer">
         <div class="container">
             <span class="footer-title">The Times of Climate Change</span>
             <span class="footer-tagline">One climate story, every day</span>
         </div>
     </footer>
+    
 
-
+    <script>
+    (function() {
+        var btn = document.getElementById('burgerBtn');
+        var menu = document.getElementById('burgerMenu');
+        var close = document.getElementById('burgerClose');
+        var overlay = document.getElementById('burgerOverlay');
+        if (!btn) return;
+        function open() { menu.classList.add('open'); overlay.classList.add('open'); }
+        function shut() { menu.classList.remove('open'); overlay.classList.remove('open'); }
+        btn.addEventListener('click', open);
+        close.addEventListener('click', shut);
+        overlay.addEventListener('click', shut);
+    })();
+    </script>
 </body>
 </html>

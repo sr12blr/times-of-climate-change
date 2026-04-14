@@ -55,9 +55,9 @@ PUZZLE = {
 }
 
 def save_puzzle_to_archive(puzzle):
-    """Save puzzle to archive folder."""
+    """Save puzzle to puzzles folder (read by generate_site.py)."""
     date = puzzle["date"]
-    filepath = f"torchlight-puzzles/{date}.json"
+    filepath = f"puzzles/{date}.json"
 
     with open(filepath, 'w') as f:
         json.dump(puzzle, f, indent=2)
