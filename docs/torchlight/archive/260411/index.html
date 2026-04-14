@@ -1056,8 +1056,23 @@ function goBackToResults() {
   if (cardInner) cardInner.classList.remove('flipped');
 }
 
+function colorToEmoji(color) {
+  const colorMap = {
+    '#2C5F4A': '🟢',
+    '#1A5F7A': '🔵',
+    '#C8602A': '🟠',
+    '#6B1C2A': '🔴'
+  };
+  return colorMap[color] || '⬜';
+}
+
 function getShareText() {
-  const pattern = attempts.join(' ');
+  // Convert color codes to emoji circles for sharing
+  const pattern = attempts.map(attempt => {
+    if (attempt === '❌') return '❌';
+    return colorToEmoji(attempt);
+  }).join(' ');
+
   const won = solved.length === PUZZLE.categories.length;
 
   let message;
