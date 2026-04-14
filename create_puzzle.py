@@ -48,7 +48,7 @@ PUZZLE = {
             "text": "#ffffff",
             "difficulty": 4,
             "description": "",
-            "items": ["Nendran", "Elaichi", "Monthan", "Cavendish"]
+            "items": ["Nendran", "Elaichi", "Red banana", "Cavendish"]
         }
     ],
     "fun_fact": "India's crop diversity—from rice to bananas—isn't just tasty, it's climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."
