@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../../../static/style.css?v=1776083926">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -795,6 +795,71 @@ let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = [];
 
+function saveState() {
+  if (isDemo) return;
+  try {
+    const state = {
+      version: 1,
+      date: PUZZLE_DATA.date,
+      solvedNames: solved.map(cat => cat.name),
+      solveOrder: solveOrder,
+      attempts: attempts,
+      mistakes: mistakes,
+      hintedNames: hintedCategories.map(cat => cat.name),
+      completed: solved.length === PUZZLE.categories.length || mistakes >= MAX_MISTAKES
+    };
+    localStorage.setItem('torchlight_state_' + PUZZLE_DATA.date, JSON.stringify(state));
+  } catch (e) {}
+}
+
+function restoreState() {
+  try {
+    const raw = localStorage.getItem('torchlight_state_' + PUZZLE_DATA.date);
+    if (!raw) return false;
+
+    const state = JSON.parse(raw);
+    if (!state || state.version !== 1 || state.date !== PUZZLE_DATA.date) return false;
+    if (!Array.isArray(state.solvedNames) || typeof state.mistakes !== 'number') return false;
+
+    const restoredSolved = [];
+    for (const name of state.solvedNames) {
+      const cat = PUZZLE.categories.find(c => c.name === name);
+      if (!cat) return false;
+      restoredSolved.push(cat);
+    }
+
+    const restoredHinted = [];
+    for (const name of (state.hintedNames || [])) {
+      const cat = PUZZLE.categories.find(c => c.name === name);
+      if (cat) restoredHinted.push(cat);
+    }
+
+    solved = restoredSolved;
+    solveOrder = state.solveOrder || [];
+    attempts = state.attempts || [];
+    mistakes = state.mistakes;
+    hintedCategories = restoredHinted;
+
+    restoredSolved.forEach(cat => showSolvedBanner(cat));
+    updateDots();
+
+    if (PUZZLE.categories.every(cat => solved.includes(cat) || hintedCategories.includes(cat))) {
+      document.getElementById('hintBtn').disabled = true;
+    }
+
+    if (state.completed) {
+      const won = solved.length === PUZZLE.categories.length;
+      showEndScreen(won, true);
+    } else {
+      renderGrid();
+    }
+
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
 // Build shuffled item list
 let allItems = PUZZLE.categories.flatMap(c => c.items);
 for (let i = allItems.length - 1; i > 0; i--) {
@@ -852,6 +917,7 @@ function checkGuess() {
     selected = [];
     renderGrid();
     document.getElementById('submitBtn').disabled = true;
+    saveState();
     if (solved.length === PUZZLE.categories.length) {
       setTimeout(() => showEndScreen(true), 400);
     }
@@ -865,6 +931,7 @@ function checkGuess() {
 
   mistakes++;
   attempts.push('❌');
+  saveState();
   updateDots();
 
   document.querySelectorAll('.tile.selected').forEach(el => {
@@ -928,12 +995,14 @@ function closeToast() {
   toast.classList.remove('show');
 }
 
-function showEndScreen(won) {
-  gtag('event', 'torchlight_complete', {
-    'won': won,
-    'mistakes': mistakes,
-    'puzzle_date': '2026-04-11'
-  });
+function showEndScreen(won, isRestore) {
+  if (!isRestore) {
+    gtag('event', 'torchlight_complete', {
+      'won': won,
+      'mistakes': mistakes,
+      'puzzle_date': '2026-04-11'
+    });
+  }
 
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
@@ -1047,6 +1116,7 @@ function getHint() {
 
   const hintCat = unsolvedUnhinted.sort((a, b) => a.difficulty - b.difficulty)[0];
   hintedCategories.push(hintCat);
+  saveState();
 
   showHintToast(`💡 ${hintCat.name}`);
 
@@ -1107,12 +1177,14 @@ function startDemo() {
 })();
 
 // Init
-gtag('event', 'torchlight_start', {
-  'puzzle_date': '2026-04-11'
-});
-// Set fun fact content with HTML support
 document.getElementById('funFactText').innerHTML = `According to the IEA, rail travel emits about 80% less CO₂ per passenger-km than flying. <a href="https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030" target="_blank" rel="noopener">Read more →</a>`;
-renderGrid();
+const wasRestored = restoreState();
+if (!wasRestored) {
+  gtag('event', 'torchlight_start', {
+    'puzzle_date': '2026-04-11'
+  });
+  renderGrid();
+}
 </script>
 
     </div>
