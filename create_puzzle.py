@@ -32,7 +32,7 @@ PUZZLE = {
             "text": "#ffffff",
             "difficulty": 2,
             "description": "",
-            "items": ["Hapus", "Kesar", "Dassheri", "Langda"]
+            "items": ["Alphonso", "Kesar", "Dassheri", "Langda"]
         },
         {
             "name": "Varieties of Indian Chilis",
@@ -48,7 +48,7 @@ PUZZLE = {
             "text": "#ffffff",
             "difficulty": 4,
             "description": "",
-            "items": ["Nendran", "Yelakki", "Monthan", "Cavendish"]
+            "items": ["Nendran", "Elaichi", "Monthan", "Cavendish"]
         }
     ],
     "fun_fact": "India's crop diversity—from rice to bananas—isn't just tasty, it's climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."
