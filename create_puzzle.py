@@ -16,41 +16,42 @@ today = datetime.now().strftime('%Y-%m-%d')
 
 # Define the puzzle
 PUZZLE = {
-    "date": today,
+    "date": "2026-04-14",
     "categories": [
         {
-            "name": "Popular EV models in India",
-            "bg": "#2171B5",
+            "name": "Varieties of Rice",
+            "bg": "#2C5F4A",
             "text": "#ffffff",
-            "emoji": "🟦",
             "difficulty": 1,
-            "items": ["Nexon", "Tigor", "Comet", "Ioniq5"]
+            "description": "",
+            "items": ["Basmati", "Kolam", "Jeera Samba", "Sona Masuri"]
         },
         {
-            "name": "Types of Pollution",
-            "bg": "#4CAF50",
+            "name": "Varieties of Mango",
+            "bg": "#1A5F7A",
             "text": "#ffffff",
-            "emoji": "🟩",
             "difficulty": 2,
-            "items": ["Air", "Water", "Light", "Noise"]
+            "description": "",
+            "items": ["Hapus", "Kesar", "Dassheri", "Langda"]
         },
         {
-            "name": "Non-car (and climate friendly) ways of getting around!",
-            "bg": "#FF8C00",
+            "name": "Varieties of Indian Chilis",
+            "bg": "#C8602A",
             "text": "#ffffff",
-            "emoji": "🟧",
             "difficulty": 3,
-            "items": ["Train", "Bus", "Cycle", "Metro"]
+            "description": "",
+            "items": ["Bhoot Jolokia", "Guntur", "Kashmiri", "Bydagi"]
         },
         {
-            "name": "Fuels that come from Petroleum (oil)",
-            "bg": "#8B4513",
+            "name": "Varieties of Banana",
+            "bg": "#6B1C2A",
             "text": "#ffffff",
-            "emoji": "🟫",
             "difficulty": 4,
-            "items": ["Petrol", "Diesel", "Kerosene", "LPG"]
+            "description": "",
+            "items": ["Nendran", "Yelakki", "Monthan", "Cavendish"]
         }
-    ]
+    ],
+    "fun_fact": "India's crop diversity—from rice to bananas—isn't just tasty, it's climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."
 }
 
 def save_puzzle_to_archive(puzzle):

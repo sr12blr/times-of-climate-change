@@ -868,8 +868,8 @@ function checkGuess() {
 
   if (correctCat) {
     solved.push(correctCat);
-    solveOrder.push(correctCat.emoji);
-    attempts.push(correctCat.emoji);
+    solveOrder.push(correctCat.bg);
+    attempts.push(correctCat.bg);
     showSolvedBanner(correctCat);
     selected = [];
     renderGrid();
@@ -981,7 +981,11 @@ function showEndScreen(won, isRestore) {
     document.getElementById('endMessage').textContent = '';
   }
 
-  document.getElementById('endSquares').textContent = solveOrder.join(' ');
+  // Create colored dots from solved categories
+  const dotsHtml = solveOrder.map(color =>
+    `<span style="display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: ${color}; margin: 0 4px;"></span>`
+  ).join('');
+  document.getElementById('endSquares').innerHTML = dotsHtml;
 
   if (isDemo && won) {
     const shareButtons = endScreen.querySelector('.end-share-row');
