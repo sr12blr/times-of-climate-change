@@ -1024,10 +1024,11 @@ function showEndScreen(won, isRestore) {
     document.getElementById('endMessage').textContent = '';
   }
 
-  // Create colored dots from solved categories
-  const dotsHtml = solveOrder.map(color =>
-    `<span style="display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: ${color}; margin: 0 4px;"></span>`
-  ).join('');
+  // Create colored dots from all attempts (including wrong guesses marked with ❌)
+  const dotsHtml = attempts.map(item => {
+    if (item === '❌') return '❌';
+    return `<span style="display: inline-block; width: 20px; height: 20px; border-radius: 50%; background-color: ${item}; margin: 0 4px;"></span>`;
+  }).join('');
   document.getElementById('endSquares').innerHTML = dotsHtml;
 
   if (isDemo && won) {

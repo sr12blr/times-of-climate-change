@@ -24,7 +24,7 @@ PUZZLE = {
             "text": "#ffffff",
             "difficulty": 1,
             "description": "",
-            "items": ["Basmati", "Kolam", "Jeera Samba", "Sona Masuri"]
+            "items": ["Basmati", "Matta (Red rice)", "Jeera Samba", "Sona Masuri"]
         },
         {
             "name": "Varieties of Mango",
