@@ -50,6 +50,7 @@
     <div class="game-title">🔦 Torchlight</div>
     <div class="game-date">April 15, 2026</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
+    <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
   </div>
 
@@ -189,6 +190,14 @@
     font-size: 13px;
     color: #555;
     margin-bottom: 2px;
+  }
+
+  .game-timer {
+    font-size: 13px;
+    color: #888;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
   }
 
   .how-to-play-link {
@@ -795,6 +804,37 @@ let mistakes = 0;
 const MAX_MISTAKES = 4;
 let hintedCategories = [];
 
+// Timer state
+let timerStartTime = null;  // epoch ms when timer effectively started
+let timerInterval = null;   // setInterval handle
+let timerFinalMs = null;    // frozen elapsed ms once game ends
+
+function formatTime(ms) {
+  const totalSec = Math.floor(ms / 1000);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+function startTimer(resumeFromMs = 0) {
+  if (isDemo) return;
+  timerStartTime = Date.now() - resumeFromMs;
+  document.getElementById('gameTimer').style.display = '';
+  timerInterval = setInterval(() => {
+    document.getElementById('gameTimer').textContent = formatTime(Date.now() - timerStartTime);
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+  if (timerStartTime !== null) {
+    timerFinalMs = Date.now() - timerStartTime;
+    timerStartTime = null;
+    document.getElementById('gameTimer').textContent = formatTime(timerFinalMs);
+  }
+}
+
 function saveState() {
   if (isDemo) return;
   try {
@@ -806,7 +846,8 @@ function saveState() {
       attempts: attempts,
       mistakes: mistakes,
       hintedNames: hintedCategories.map(cat => cat.name),
-      completed: solved.length === PUZZLE.categories.length || mistakes >= MAX_MISTAKES
+      completed: solved.length === PUZZLE.categories.length || mistakes >= MAX_MISTAKES,
+      timerElapsedMs: timerStartTime ? Date.now() - timerStartTime : (timerFinalMs || 0)
     };
     localStorage.setItem('torchlight_state_' + PUZZLE_DATA.date, JSON.stringify(state));
   } catch (e) {}
@@ -847,10 +888,16 @@ function restoreState() {
       document.getElementById('hintBtn').disabled = true;
     }
 
+    const savedMs = state.timerElapsedMs || 0;
     if (state.completed) {
+      timerFinalMs = savedMs;
+      const timerEl = document.getElementById('gameTimer');
+      timerEl.style.display = savedMs > 0 ? '' : 'none';
+      timerEl.textContent = formatTime(savedMs);
       const won = solved.length === PUZZLE.categories.length;
       showEndScreen(won, true);
     } else {
+      if (savedMs > 0) startTimer(savedMs);
       renderGrid();
     }
 
@@ -886,6 +933,7 @@ function renderGrid() {
 }
 
 function toggleSelect(item) {
+  if (timerStartTime === null && timerFinalMs === null && !isDemo) startTimer();
   if (selected.includes(item)) {
     selected = selected.filter(i => i !== item);
   } else {
@@ -996,6 +1044,7 @@ function closeToast() {
 }
 
 function showEndScreen(won, isRestore) {
+  if (!isRestore) stopTimer();
   if (!isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
@@ -1017,8 +1066,9 @@ function showEndScreen(won, isRestore) {
 
   if (won) {
     document.getElementById('endTitle').textContent = mistakes === 0 ? '🌿 Perfect!' : '🌿 Well done!';
+    const timeStr = timerFinalMs ? ` in ${formatTime(timerFinalMs)}` : '';
     document.getElementById('endMessage').textContent =
-      `Solved with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}.`;
+      `Solved${timeStr} with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}.`;
   } else {
     document.getElementById('endTitle').textContent = 'Better luck tomorrow';
     document.getElementById('endMessage').textContent = '';
@@ -1078,9 +1128,10 @@ function getShareText() {
 
   let message;
   if (won) {
+    const timeStr = timerFinalMs ? ` in ${formatTime(timerFinalMs)}` : '';
     message = mistakes === 0
-      ? 'I solved it with 0 mistakes!'
-      : `I solved it with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}!`;
+      ? `I solved it${timeStr} with 0 mistakes!`
+      : `I solved it${timeStr} with ${mistakes} mistake${mistakes !== 1 ? 's' : ''}!`;
   } else {
     const catCount = solved.length;
     message = catCount === 1
