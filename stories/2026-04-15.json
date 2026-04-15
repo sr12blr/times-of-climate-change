@@ -1,0 +1,40 @@
+{
+  "date": "2026-04-15",
+  "title": "India's 2026 Monsoon Could Be Below Normal — For the First Time in 11 Years",
+  "subtitle": "The IMD is forecasting weaker-than-usual rains this June–September, driven by returning El Niño conditions. Bad monsoon affects agriculture, food prices and water levels in rivers and reservoirs.",
+  "slug": "india-monsoon-below-normal-el-nino-2026",
+  "what_talking_about": [
+    "India’s Meteorological Department (IMD) has issued its April forecast projecting the 2026 monsoon will be “below normal” — meaning rainfall below 90% of the long-period average. It would be the first such forecast since 2015.",
+    "The driver is El Niño: warm Pacific Ocean conditions that typically suppress rainfall over South Asia. IMD expects El Niño to develop after June, right as the monsoon peaks.",
+    "Historically, 6 out of 10 El Niño years have brought below-average rainfall to India. The 2015 El Niño year saw widespread drought across Maharashtra, Telangana, and parts of Karnataka."
+  ],
+  "why_care": [
+    "<strong>This hits food prices first.</strong> Kharif crops — rice, pulses, oilseeds, sugarcane — are planted in June and need consistent monsoon rain. A weak monsoon raises the risk of lower yields, which pushes up food inflation.",
+    "<strong>It’s not just farming.</strong> Groundwater recharge, drinking water reservoirs, and hydropower all depend on a healthy monsoon. Cities like Chennai and Bengaluru have already faced acute water crises in recent years — a below-normal monsoon season compounds that vulnerability.",
+    "<strong>The forecast could still change.</strong> IMD will issue an updated forecast in May once El Niño patterns become clearer."
+  ],
+  "tag_impact": [
+    "Food",
+    "Water",
+    "Inflation"
+  ],
+  "tag_cause": [
+    "ElNino",
+    "ClimateChange",
+    "Drought"
+  ],
+  "sources": [
+    {
+      "title": "IMD’s April forecast projects monsoon to be ‘below normal’ for first time in 11 years",
+      "url": "https://www.thehindu.com/sci-tech/energy-and-environment/imd-forecasts-below-average-monsoon-rains-for-2026-amid-el-nino-concerns/article70857326.ece"
+    }
+  ],
+  "related_stories": [
+    "el-nino-2026-india-monsoon-at-risk",
+    "end-of-spring-india-winter-to-summer",
+    "iran-war-fertiliser-kharif-fossil-fuel-farming"
+  ],
+  "image": "static/images/india-monsoon-below-normal-el-nino-2026.jpg",
+  "image_credit": "Vivek Doshi",
+  "image_credit_url": "https://unsplash.com/@wildandbeyondbyvivek?utm_source=times_of_climate_change&utm_medium=referral"
+}
