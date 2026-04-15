@@ -1,0 +1,58 @@
+{
+  "date": "2026-04-15",
+  "categories": [
+    {
+      "name": "Coffee Species",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Arabica",
+        "Robusta",
+        "Liberica",
+        "Excelsa"
+      ]
+    },
+    {
+      "name": "Coffee Drinks",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Mocha",
+        "Latte",
+        "Americano",
+        "Cappuccino"
+      ]
+    },
+    {
+      "name": "Threats to Coffee",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Temperature rise",
+        "Erratic rainfall",
+        "Extreme weather",
+        "Pests"
+      ]
+    },
+    {
+      "name": "Coffee's Environmental Cost",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Deforestation",
+        "Biodiversity loss",
+        "Soil degradation",
+        "Water pollution"
+      ]
+    }
+  ],
+  "fun_fact": "Coffee is both a victim and a driver of climate change \u2014 rising temperatures threaten half of current coffee-growing regions, while large scale coffee plantations contribute to deforestation in some of the world\u2019s most biodiverse regions."
+}
