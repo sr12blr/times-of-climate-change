@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | April 12, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | April 16, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 12, 2026</div>
+    <div class="game-date">April 16, 2026</div>
     <div class="game-instructions">Shedding light on invisible connections.</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -125,6 +125,8 @@
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
 
+  
+  <div class="game-author">Puzzle by Sayesha D</div>
   
 
   <div style="text-align: center; font-size: 12px; color: #888; margin-top: 8px; padding: 0 12px;">
@@ -761,7 +763,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udd65", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\u2600\ufe0f", "items": ["Sunny", "42 \u00b0C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83d\udeab", "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf21\ufe0f", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\"\u003eRead: Mumbai\u0027s heatwave surge in gut infections \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "Sayesha D", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Commerce", "Fix", "Buck", "Question"], "name": "Quick _____", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Buy now", "50% off", "Free delivery above 99", "Offer ends in 10:59"], "name": "Things you\u0027ll read on a Q-comm app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Dark stores", "Bike fleet", "Demand forecasting", "Gig workers"], "name": "The backbone of Q-comm", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Packaging waste", "Impulsive buys", "Accidents", "Poor working conditions"], "name": "The perils of Q-comm", "text": "#ffffff"}], "date": "2026-04-16", "fun_fact": "India\u0027s quick commerce market \u2014 Blinkit, Zepto, Swiggy Instamart \u2014 is growing at 40% a year. It\u0027s brought in unimaginable convenience, but at a huge cost \u2014 labour conditions, the environment and of course your own health and wallet!\u003cbr\u003e\u003cbr\u003eOur favourite breakdown: \u003ca href=\"https://www.newslaundry.com/2026/01/10/get-your-milton-friedman-and-ayn-rand-right-zomato-and-blinkit-arent-capitalism\" target=\"_blank\"\u003eWhat Q-comm really means (Newslaundry) \u2192\u003c/a\u003e\u003cbr\u003eAlso read: \u003ca href=\"https://sunnyclimatestormyclimate.substack.com/p/zen-and-the-art-of-living-without\" target=\"_blank\"\u003eZen and the art of living without Blinkit \u2192\u003c/a\u003e"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
@@ -1061,7 +1063,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-12'
+      'puzzle_date': '2026-04-16'
     });
   }
 
@@ -1260,11 +1262,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. <a href="https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/" target="_blank" rel="noopener">Read: Mumbai's heatwave surge in gut infections →</a>`;
+document.getElementById('funFactText').innerHTML = `India's quick commerce market — Blinkit, Zepto, Swiggy Instamart — is growing at 40% a year. It's brought in unimaginable convenience, but at a huge cost — labour conditions, the environment and of course your own health and wallet!<br><br>Our favourite breakdown: <a href="https://www.newslaundry.com/2026/01/10/get-your-milton-friedman-and-ayn-rand-right-zomato-and-blinkit-arent-capitalism" target="_blank">What Q-comm really means (Newslaundry) →</a><br>Also read: <a href="https://sunnyclimatestormyclimate.substack.com/p/zen-and-the-art-of-living-without" target="_blank">Zen and the art of living without Blinkit →</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-04-12'
+    'puzzle_date': '2026-04-16'
   });
   renderGrid();
 }
