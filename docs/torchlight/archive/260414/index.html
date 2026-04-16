@@ -125,7 +125,9 @@
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
 
-  <div style="text-align: center; font-size: 12px; color: #888; margin-top: 16px; padding: 0 12px;">
+  
+
+  <div style="text-align: center; font-size: 12px; color: #888; margin-top: 8px; padding: 0 12px;">
     Inspired by The Wall from the popular quiz show Only Connect, this is 'Earth Edition' of the game
   </div>
 
@@ -198,6 +200,15 @@
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.05em;
     margin-top: 2px;
+  }
+
+  .game-author {
+    text-align: right;
+    font-size: 11px;
+    color: #aaa;
+    padding: 0 12px;
+    margin-top: 16px;
+    margin-bottom: 4px;
   }
 
   .how-to-play-link {
@@ -749,7 +760,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Basmati", "Matta (Red rice)", "Jeera Samba", "Sona Masuri"], "name": "Varieties of Rice", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Alphonso", "Kesar", "Dassheri", "Langda"], "name": "Varieties of Mango", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Bhoot Jolokia", "Guntur", "Kashmiri", "Bydagi"], "name": "Varieties of Indian Chilis", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Nendran", "Elaichi/Yelakki", "Red banana", "Cavendish"], "name": "Varieties of Banana", "text": "#ffffff"}], "date": "2026-04-14", "fun_fact": "India\u0027s crop diversity\u2014from rice to bananas\u2014isn\u0027t just tasty, it\u0027s climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Basmati", "Matta (Red rice)", "Jeera Samba", "Sona Masuri"], "name": "Varieties of Rice", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Alphonso", "Kesar", "Dassheri", "Langda"], "name": "Varieties of Mango", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Bhoot Jolokia", "Guntur", "Kashmiri", "Bydagi"], "name": "Varieties of Indian Chilis", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Nendran", "Elaichi/Yelakki", "Red banana", "Cavendish"], "name": "Varieties of Banana", "text": "#ffffff"}], "date": "2026-04-14", "fun_fact": "India\u0027s crop diversity\u2014from rice to bananas\u2014isn\u0027t just tasty, it\u0027s climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories

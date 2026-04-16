@@ -125,7 +125,9 @@
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
 
-  <div style="text-align: center; font-size: 12px; color: #888; margin-top: 16px; padding: 0 12px;">
+  
+
+  <div style="text-align: center; font-size: 12px; color: #888; margin-top: 8px; padding: 0 12px;">
     Inspired by The Wall from the popular quiz show Only Connect, this is 'Earth Edition' of the game
   </div>
 
@@ -198,6 +200,15 @@
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.05em;
     margin-top: 2px;
+  }
+
+  .game-author {
+    text-align: right;
+    font-size: 11px;
+    color: #aaa;
+    padding: 0 12px;
+    margin-top: 16px;
+    margin-bottom: 4px;
   }
 
   .how-to-play-link {
@@ -749,7 +760,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"categories": [{"bg": "#C8602A", "description": "", "difficulty": 1, "emoji": "\ud83d\ude86", "items": ["Shatabdi", "Duronto", "Rajdhani", "Vande bharat"], "name": "Express trains \u2014 Great alternatives to flying!", "text": "#ffffff"}, {"bg": "#2C5F4A", "description": "", "difficulty": 2, "emoji": "\ud83c\udfab", "items": ["Waiting", "Confirmed", "Cancelled", "RAC"], "name": "Ticket status", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 3, "emoji": "\ud83d\ude82", "items": ["Sleeper", "General", "Pantry", "AC 3 tier"], "name": "Types of coaches in a train", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 4, "emoji": "\ud83d\udccb", "items": ["PNR", "Name", "Status", "Train name"], "name": "Fields on a train ticket", "text": "#ffffff"}], "date": "2026-04-11", "fun_fact": "According to the IEA, rail travel emits about 80% less CO\u2082 per passenger-km than flying. \u003ca href=\"https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#C8602A", "description": "", "difficulty": 1, "emoji": "\ud83d\ude86", "items": ["Shatabdi", "Duronto", "Rajdhani", "Vande bharat"], "name": "Express trains \u2014 Great alternatives to flying!", "text": "#ffffff"}, {"bg": "#2C5F4A", "description": "", "difficulty": 2, "emoji": "\ud83c\udfab", "items": ["Waiting", "Confirmed", "Cancelled", "RAC"], "name": "Ticket status", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 3, "emoji": "\ud83d\ude82", "items": ["Sleeper", "General", "Pantry", "AC 3 tier"], "name": "Types of coaches in a train", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 4, "emoji": "\ud83d\udccb", "items": ["PNR", "Name", "Status", "Train name"], "name": "Fields on a train ticket", "text": "#ffffff"}], "date": "2026-04-11", "fun_fact": "According to the IEA, rail travel emits about 80% less CO\u2082 per passenger-km than flying. \u003ca href=\"https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
 
 let PUZZLE = {
   categories: PUZZLE_DATA.categories

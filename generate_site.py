@@ -315,7 +315,8 @@ def generate(full_rebuild=False):
         puzzle_json = {
             "date": today_puzzle["date"],
             "categories": today_puzzle["categories"],
-            "fun_fact": today_puzzle.get("fun_fact", "")
+            "fun_fact": today_puzzle.get("fun_fact", ""),
+            "author": today_puzzle.get("author", "")
         }
         template = env.get_template("torchlight.html")
         html = template.render(
@@ -349,7 +350,8 @@ def generate(full_rebuild=False):
             puzzle_json = {
                 "date": puzzle["date"],
                 "categories": puzzle["categories"],
-                "fun_fact": puzzle.get("fun_fact", "")
+                "fun_fact": puzzle.get("fun_fact", ""),
+                "author": puzzle.get("author", "")
             }
             template = env.get_template("torchlight.html")
             html = template.render(
