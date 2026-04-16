@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-17",
+  "categories": [
+    {
+      "name": "Tiger subspecies",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Sumatran",
+        "Bengal",
+        "Siberian",
+        "Malayan"
+      ]
+    },
+    {
+      "name": "Big cats",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Leopard",
+        "Puma",
+        "Jaguar",
+        "Lion"
+      ]
+    },
+    {
+      "name": "Wildlife tracking methods",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Radio collar",
+        "DNA",
+        "Camera traps",
+        "Pug marks"
+      ]
+    },
+    {
+      "name": "Things with stripes",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Pyjamas",
+        "Barcode",
+        "Zebra",
+        "Tiger"
+      ]
+    }
+  ],
+  "fun_fact": "India is home to about 75% of the world's wild tigers \u2014 but they're increasingly boxed in. Mining, roads and encroachments fragment their habitat into isolated pockets. Without wildlife corridors connecting these patches, tigers can't roam, hunt or find mates. Tracking methods like camera traps and pug marks help us monitor how many make it through.<br><br>Read: <a href=\"/story/lohardongri-iron-ore-mine-tiger-corridor-chandrapur/\" target=\"_blank\">When a mine threatens a tiger corridor \u2192</a>",
+  "author": ""
+}
