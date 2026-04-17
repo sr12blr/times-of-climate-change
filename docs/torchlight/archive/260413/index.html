@@ -1057,7 +1057,7 @@ function closeToast() {
 
 function showEndScreen(won, isRestore) {
   if (!isRestore) stopTimer();
-  if (!isRestore) {
+  if (!isRestore && !isDemo) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
