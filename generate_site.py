@@ -311,7 +311,11 @@ def generate(full_rebuild=False):
     # 10. Torchlight - today's puzzle
     puzzles = load_all_puzzles()
     if puzzles:
-        today_puzzle = puzzles[0]  # Most recent puzzle
+        today = date.today()
+        today_puzzle = next(
+            (p for p in puzzles if datetime.strptime(p["date"], "%Y-%m-%d").date() <= today),
+            puzzles[0]
+        )
         puzzle_json = {
             "date": today_puzzle["date"],
             "categories": today_puzzle["categories"],
@@ -331,10 +335,11 @@ def generate(full_rebuild=False):
         print("  Generated: torchlight/")
 
         # Torchlight archive page
+        past_puzzles = [p for p in puzzles if datetime.strptime(p["date"], "%Y-%m-%d").date() <= today]
         (SITE_DIR / "torchlight" / "archive").mkdir(parents=True, exist_ok=True)
         template = env.get_template("torchlight_archive.html")
         html = template.render(
-            puzzles=puzzles,
+            puzzles=past_puzzles,
             active_nav="",
             root_path="../",
             css_path=f"../static/style.css?v={css_version}",
@@ -344,7 +349,7 @@ def generate(full_rebuild=False):
         print("  Generated: torchlight/archive/")
 
         # Individual archive puzzle pages
-        for puzzle in puzzles[1:]:  # Skip today's puzzle, it's already generated
+        for puzzle in past_puzzles[1:]:  # Skip today's puzzle, it's already generated
             puzzle_dir = SITE_DIR / "torchlight" / "archive" / puzzle["slug"]
             puzzle_dir.mkdir(parents=True, exist_ok=True)
             puzzle_json = {
