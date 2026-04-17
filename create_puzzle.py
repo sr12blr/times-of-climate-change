@@ -16,43 +16,43 @@ today = datetime.now().strftime('%Y-%m-%d')
 
 # Define the puzzle
 PUZZLE = {
-    "date": "2026-04-16",
+    "date": "2026-04-17",
     "categories": [
         {
-            "name": "Quick _____",
+            "name": "Tiger subspecies",
             "bg": "#2C5F4A",
             "text": "#ffffff",
             "difficulty": 1,
             "description": "",
-            "items": ["Commerce", "Fix", "Buck", "Question"]
+            "items": ["Sumatran", "Bengal", "Siberian", "Malayan"]
         },
         {
-            "name": "Things you'll read on a Q-comm app",
+            "name": "Big cats",
             "bg": "#1A5F7A",
             "text": "#ffffff",
             "difficulty": 2,
             "description": "",
-            "items": ["Buy now", "50% off", "Free delivery above 99", "Offer ends in 10:59"]
+            "items": ["Leopard", "Puma", "Jaguar", "Lion"]
         },
         {
-            "name": "The backbone of Q-comm",
+            "name": "Wildlife tracking methods",
             "bg": "#C8602A",
             "text": "#ffffff",
             "difficulty": 3,
             "description": "",
-            "items": ["Dark stores", "Bike fleet", "Demand forecasting", "Gig workers"]
+            "items": ["Radio collar", "DNA", "Camera traps", "Pug marks"]
         },
         {
-            "name": "The perils of Q-comm",
+            "name": "Things with stripes",
             "bg": "#6B1C2A",
             "text": "#ffffff",
             "difficulty": 4,
             "description": "",
-            "items": ["Packaging waste", "Impulsive buys", "Accidents", "Poor working conditions"]
+            "items": ["Watermelon", "Barcode", "Zebra", "Tiger"]
         }
     ],
-    "fun_fact": "India's quick commerce market — Blinkit, Zepto, Swiggy Instamart — is growing at 40% a year. It's brought in unimaginable convenience, but at a huge cost — labour conditions, the environment and of course your own health and wallet!<br><br>Our favourite breakdown: <a href=\"https://www.newslaundry.com/2026/01/10/get-your-milton-friedman-and-ayn-rand-right-zomato-and-blinkit-arent-capitalism\" target=\"_blank\">What Q-comm really means (Newslaundry) →</a><br>Also read: <a href=\"https://sunnyclimatestormyclimate.substack.com/p/zen-and-the-art-of-living-without\" target=\"_blank\">Zen and the art of living without Blinkit →</a>",
-    "author": "Sayesha D"
+    "fun_fact": "India is home to about 75% of the world's wild tigers — but they're increasingly boxed in. Mining, roads and encroachments fragment their habitat into isolated pockets. Without wildlife corridors connecting these patches, tigers can't roam, hunt or find mates. Tracking methods like camera traps and pug marks help us monitor how many make it through.<br><br>Read: <a href=\"/story/lohardongri-iron-ore-mine-tiger-corridor-chandrapur/\" target=\"_blank\">When a mine threatens a tiger corridor →</a>",
+    "author": ""
 }
 
 def save_puzzle_to_archive(puzzle):
