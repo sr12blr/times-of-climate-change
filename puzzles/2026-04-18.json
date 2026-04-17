@@ -2,58 +2,58 @@
   "date": "2026-04-18",
   "categories": [
     {
-      "name": "Car types",
+      "name": "Have a monkey in the logo",
       "bg": "#2C5F4A",
       "text": "#ffffff",
       "difficulty": 1,
       "description": "",
       "items": [
-        "Petrol",
-        "Diesel",
-        "Hybrid",
-        "Electric"
+        "Bira 91",
+        "Mailchimp",
+        "Monkey Shoulder",
+        "Survey Monkey"
       ]
     },
     {
-      "name": "Benefits of EVs",
+      "name": "Have an owl in the logo",
       "bg": "#1A5F7A",
       "text": "#ffffff",
       "difficulty": 2,
       "description": "",
       "items": [
-        "No emissions",
-        "Quiet",
-        "Quick pick-up",
-        "Fuel cost saving"
+        "Duolingo",
+        "TripAdvisor",
+        "White Owl",
+        "Chumbak"
       ]
     },
     {
-      "name": "Concerns with EVs",
+      "name": "Have a big cat in the logo",
       "bg": "#C8602A",
       "text": "#ffffff",
       "difficulty": 3,
       "description": "",
       "items": [
-        "Range anxiety",
-        "Upfront cost",
-        "Battery degradation",
-        "Resale value"
+        "Jaguar",
+        "Puma",
+        "King XI Punjab",
+        "Govt of India"
       ]
     },
     {
-      "name": "Problems with ALL cars",
+      "name": "Have a horse in the logo",
       "bg": "#6B1C2A",
       "text": "#ffffff",
       "difficulty": 4,
       "description": "",
       "items": [
-        "Traffic jams",
-        "Parking",
-        "Space hogger",
-        "Accidents"
+        "US Polo",
+        "Ferrari",
+        "Hermes",
+        "Porsche"
       ]
     }
   ],
-  "fun_fact": "India added over 1.5 mn EVs in 2025 — but 90% were 2Ws. Electric cars remain out of reach for most, due to high upfront costs and patchy charging infra. Meanwhile, the inconvenient truth: even the cleanest car causes traffic jams and takes up space meant for people.<br><br>Read: <a href=\"/story/delhi-ev-policy-registration-waiver-2028/\" target=\"_blank\">Delhi's EV push: what's actually changing \u2192</a>",
+  "fun_fact": "So much of what we love — our brands, logos, even our language — is borrowed from the animal kingdom. Yet we're losing species at a staggering rate. Earth is currently in its Sixth Mass Extinction, with species disappearing up to 1,000 times faster than the natural background rate. And unlike the 5 extinctions before it, this one has a single cause: us.<br><br>Read: <a href=\"https://www.worldwildlife.org/resources/explainers/what-is-the-sixth-mass-extinction-and-what-can-we-do-about-it/\" target=\"_blank\">What is the sixth mass extinction and what can we do about it? \u2192</a>",
   "author": ""
 }
