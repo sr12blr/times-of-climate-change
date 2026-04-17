@@ -135,6 +135,7 @@
   <div class="end-screen" id="endScreen">
     <div class="end-title" id="endTitle"></div>
     <div class="end-message" id="endMessage"></div>
+    <div id="endStreak" style="display:none; font-size: 18px; font-weight: 600; margin: 8px 0;"></div>
     <div class="end-squares" id="endSquares"></div>
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
       <div class="end-share-row" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
@@ -763,6 +764,36 @@
 // Puzzle data loaded from JSON
 const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udda9", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\ud83c\udf3f", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83c\udf0a", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf34", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\"\u003eRead about Mumbai\u2019s plan to cut 45,000 mangroves \u2192\u003c/a\u003e\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
 
+// Puzzle number: April 9, 2026 = #1
+const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
+const PUZZLE_NUMBER = Math.round((new Date(PUZZLE_DATA.date + 'T00:00:00') - PUZZLE_ORIGIN) / 86400000) + 1;
+
+function getStreak() {
+  if (isDemo) return 0;
+  try {
+    const d = JSON.parse(localStorage.getItem('torchlight_streak') || '{}');
+    return d.current || 0;
+  } catch(e) { return 0; }
+}
+
+function updateStreak() {
+  if (isDemo) return;
+  let d = { current: 0, lastPlayedDate: null };
+  try { d = JSON.parse(localStorage.getItem('torchlight_streak') || '{}'); } catch(e) {}
+
+  const today = PUZZLE_DATA.date;
+  if (d.lastPlayedDate === today) return; // already updated today (restore safety)
+
+  const prev = new Date(today + 'T00:00:00');
+  prev.setDate(prev.getDate() - 1);
+  const yesterday = prev.toISOString().slice(0, 10);
+
+  d.current = (d.lastPlayedDate === yesterday) ? (d.current || 0) + 1 : 1;
+  d.lastPlayedDate = today;
+
+  try { localStorage.setItem('torchlight_streak', JSON.stringify(d)); } catch(e) {}
+}
+
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
 };
@@ -1065,6 +1096,15 @@ function showEndScreen(won, isRestore) {
     });
   }
 
+  // Streak
+  if (!isRestore && !isDemo) updateStreak();
+  const streak = getStreak();
+  const streakEl = document.getElementById('endStreak');
+  if (!isDemo && streak > 0) {
+    streakEl.textContent = streak === 1 ? '🔥 1-day streak — keep it going!' : `🔥 ${streak}-day streak`;
+    streakEl.style.display = '';
+  }
+
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
   });
@@ -1152,10 +1192,10 @@ function getShareText() {
   }
 
   const text =
-    `Have you tried today's Torchlight? 🔦\n` +
+    `Torchlight #${PUZZLE_NUMBER} 🔦\n` +
     `${pattern}\n` +
-    `${message}\n\n` +
-    `https://timesofclimatechange.com/torchlight/`;
+    `${message}\n` +
+    `\nhttps://timesofclimatechange.com/torchlight/`;
 
   return text;
 }

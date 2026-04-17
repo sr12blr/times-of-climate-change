@@ -135,6 +135,7 @@
   <div class="end-screen" id="endScreen">
     <div class="end-title" id="endTitle"></div>
     <div class="end-message" id="endMessage"></div>
+    <div id="endStreak" style="display:none; font-size: 18px; font-weight: 600; margin: 8px 0;"></div>
     <div class="end-squares" id="endSquares"></div>
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
       <div class="end-share-row" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
@@ -763,6 +764,36 @@
 // Puzzle data loaded from JSON
 const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udd65", "items": ["Coconut water", "Buttermilk", "Ice apple", "Cucumber"], "name": "Drink or eat to stay cool", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\u2600\ufe0f", "items": ["Sunny", "42 \u00b0C", "Feels like", "Humidity"], "name": "Things you may see on a weather app", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83d\udeab", "items": ["Soft drinks", "Chilled beer", "Coffee", "Fried food"], "name": "Avoid these in a heatwave", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf21\ufe0f", "items": ["Wave", "Stress", "Alert", "Stroke"], "name": "Heat ____", "text": "#ffffff"}], "date": "2026-04-12", "fun_fact": "In a heatwave, what you eat and drink matters more than you think. Cold aerated drinks may feel refreshing, but the sugar and soda worsen heat stress. The risk of gut infections from street foods rise as food spoils faster and dehydration weakens your immune system. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-april-heatwave-gut-infections/\" target=\"_blank\" rel=\"noopener\"\u003eRead: Mumbai\u0027s heatwave surge in gut infections \u2192\u003c/a\u003e"};
 
+// Puzzle number: April 9, 2026 = #1
+const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
+const PUZZLE_NUMBER = Math.round((new Date(PUZZLE_DATA.date + 'T00:00:00') - PUZZLE_ORIGIN) / 86400000) + 1;
+
+function getStreak() {
+  if (isDemo) return 0;
+  try {
+    const d = JSON.parse(localStorage.getItem('torchlight_streak') || '{}');
+    return d.current || 0;
+  } catch(e) { return 0; }
+}
+
+function updateStreak() {
+  if (isDemo) return;
+  let d = { current: 0, lastPlayedDate: null };
+  try { d = JSON.parse(localStorage.getItem('torchlight_streak') || '{}'); } catch(e) {}
+
+  const today = PUZZLE_DATA.date;
+  if (d.lastPlayedDate === today) return; // already updated today (restore safety)
+
+  const prev = new Date(today + 'T00:00:00');
+  prev.setDate(prev.getDate() - 1);
+  const yesterday = prev.toISOString().slice(0, 10);
+
+  d.current = (d.lastPlayedDate === yesterday) ? (d.current || 0) + 1 : 1;
+  d.lastPlayedDate = today;
+
+  try { localStorage.setItem('torchlight_streak', JSON.stringify(d)); } catch(e) {}
+}
+
 let PUZZLE = {
   categories: PUZZLE_DATA.categories
 };
@@ -1065,6 +1096,15 @@ function showEndScreen(won, isRestore) {
     });
   }
 
+  // Streak
+  if (!isRestore && !isDemo) updateStreak();
+  const streak = getStreak();
+  const streakEl = document.getElementById('endStreak');
+  if (!isDemo && streak > 0) {
+    streakEl.textContent = streak === 1 ? '🔥 1-day streak — keep it going!' : `🔥 ${streak}-day streak`;
+    streakEl.style.display = '';
+  }
+
   PUZZLE.categories.forEach(cat => {
     if (!solved.includes(cat)) showSolvedBanner(cat);
   });
@@ -1152,10 +1192,10 @@ function getShareText() {
   }
 
   const text =
-    `Have you tried today's Torchlight? 🔦\n` +
+    `Torchlight #${PUZZLE_NUMBER} 🔦\n` +
     `${pattern}\n` +
-    `${message}\n\n` +
-    `https://timesofclimatechange.com/torchlight/`;
+    `${message}\n` +
+    `\nhttps://timesofclimatechange.com/torchlight/`;
 
   return text;
 }
