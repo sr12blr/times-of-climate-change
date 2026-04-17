@@ -16,42 +16,42 @@ today = datetime.now().strftime('%Y-%m-%d')
 
 # Define the puzzle
 PUZZLE = {
-    "date": "2026-04-17",
+    "date": "2026-04-18",
     "categories": [
         {
-            "name": "Tiger subspecies",
+            "name": "Car types",
             "bg": "#2C5F4A",
             "text": "#ffffff",
             "difficulty": 1,
             "description": "",
-            "items": ["Sumatran", "Bengal", "Siberian", "Malayan"]
+            "items": ["Petrol", "Diesel", "Hybrid", "Electric"]
         },
         {
-            "name": "Big cats",
+            "name": "Benefits of EVs",
             "bg": "#1A5F7A",
             "text": "#ffffff",
             "difficulty": 2,
             "description": "",
-            "items": ["Leopard", "Puma", "Jaguar", "Lion"]
+            "items": ["No emissions", "Quiet", "Quick pick-up", "Fuel cost saving"]
         },
         {
-            "name": "Wildlife tracking methods",
+            "name": "Concerns with EVs",
             "bg": "#C8602A",
             "text": "#ffffff",
             "difficulty": 3,
             "description": "",
-            "items": ["Radio collar", "DNA", "Camera traps", "Pug marks"]
+            "items": ["Range anxiety", "Upfront cost", "Battery degradation", "Resale value"]
         },
         {
-            "name": "Things with stripes",
+            "name": "Problems with ALL cars",
             "bg": "#6B1C2A",
             "text": "#ffffff",
             "difficulty": 4,
             "description": "",
-            "items": ["Watermelon", "Barcode", "Zebra", "Tiger"]
+            "items": ["Traffic jams", "Parking", "Space hogger", "Accidents"]
         }
     ],
-    "fun_fact": "India is home to about 75% of the world's wild tigers — but they're increasingly boxed in. Mining, roads and encroachments fragment their habitat into isolated pockets. Without wildlife corridors connecting these patches, tigers can't roam, hunt or find mates. Tracking methods like camera traps and pug marks help us monitor how many make it through.<br><br>Read: <a href=\"/story/lohardongri-iron-ore-mine-tiger-corridor-chandrapur/\" target=\"_blank\">When a mine threatens a tiger corridor →</a>",
+    "fun_fact": "India added over 1.5 mn EVs in 2025 — but 90% were 2Ws. Electric cars remain out of reach for most, due to high upfront costs and patchy charging infra. Meanwhile, the inconvenient truth: even the cleanest car causes traffic jams and takes up space meant for people.<br><br>Read: <a href=\"/story/delhi-ev-policy-registration-waiver-2028/\" target=\"_blank\">Delhi's EV push: what's actually changing →</a>",
     "author": ""
 }
 
