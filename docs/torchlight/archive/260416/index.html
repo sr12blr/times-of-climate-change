@@ -1163,11 +1163,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-16' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-16' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1185,6 +1187,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-16' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }

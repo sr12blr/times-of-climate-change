@@ -159,7 +159,28 @@ def main():
 
     # ── 5. Share button clicks ────────────────────────────────────
     section("5. Share Button Clicks")
-    print("  Not yet tracked. (torchlight_share events not wired up)")
+    resp = run_report(
+        client, start_date, end_date,
+        dimensions=["customEvent:platform", "customEvent:puzzle_date"],
+        metrics=["eventCount"],
+        order_by=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="eventCount"), desc=True)],
+        dimension_filter=FilterExpression(
+            filter=Filter(
+                field_name="eventName",
+                string_filter=Filter.StringFilter(value="torchlight_share")
+            )
+        )
+    )
+    if resp.rows:
+        print(f"  {'Platform':<12} {'Puzzle Date':<15} {'Clicks'}")
+        print(f"  {'-'*12} {'-'*15} {'-'*6}")
+        for row in resp.rows:
+            platform = row.dimension_values[0].value
+            date = row.dimension_values[1].value
+            count = row.metric_values[0].value
+            print(f"  {platform:<12} {date:<15} {count}")
+    else:
+        print("  No share data yet.")
 
     # ── 6. Outbound link clicks ───────────────────────────────────
     section("6. Outbound Link Clicks")
