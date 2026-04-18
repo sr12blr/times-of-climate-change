@@ -311,7 +311,8 @@ def generate(full_rebuild=False):
     # 10. Torchlight - today's puzzle
     puzzles = load_all_puzzles()
     if puzzles:
-        today = date.today()
+        from zoneinfo import ZoneInfo
+        today = datetime.now(ZoneInfo("Asia/Kolkata")).date()
         today_puzzle = next(
             (p for p in puzzles if datetime.strptime(p["date"], "%Y-%m-%d").date() <= today),
             puzzles[0]
