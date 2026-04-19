@@ -786,7 +786,9 @@ function updateStreak() {
 
   const prev = new Date(today + 'T00:00:00');
   prev.setDate(prev.getDate() - 1);
-  const yesterday = prev.toISOString().slice(0, 10);
+  const yesterday = prev.getFullYear() + '-' +
+    String(prev.getMonth() + 1).padStart(2, '0') + '-' +
+    String(prev.getDate()).padStart(2, '0');
 
   d.current = (d.lastPlayedDate === yesterday) ? (d.current || 0) + 1 : 1;
   d.lastPlayedDate = today;
