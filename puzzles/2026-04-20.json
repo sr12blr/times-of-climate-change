@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-20",
+  "categories": [
+    {
+      "name": "Signs of India's LPG crisis",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "4 wk waiting for cylinder",
+        "Record sale of induction",
+        "Long lines for CNG",
+        "Reduced menus"
+      ]
+    },
+    {
+      "name": "Raw material for Biogas",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Animal manure",
+        "Food waste",
+        "Municipal sewage",
+        "Crop residue"
+      ]
+    },
+    {
+      "name": "Uses of Biogas",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Cooking",
+        "Heating",
+        "Transport fuel",
+        "Industrial fuel"
+      ]
+    },
+    {
+      "name": "Steps in Biogas supply chain",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Waste segregation",
+        "Collection",
+        "Biogas plant",
+        "Piped to industrial kitchen"
+      ]
+    }
+  ],
+  "fun_fact": "India has the ability to produce close to 62 million tonnes of biogas annually. But at present, we are tapping less than 1% of that. Biogas is a great solution \u2014 it gives us energy security, is cheaper and reduces emissions all at once!<br><br>Watch: <a href=\"https://www.youtube.com/watch?v=knHNXDCiiEg&t=308s\" target=\"_blank\">India NEEDS Biogas | Here's Why \u2192</a>",
+  "author": ""
+}
