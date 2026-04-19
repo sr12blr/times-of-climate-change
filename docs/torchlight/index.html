@@ -768,32 +768,37 @@ const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
 const PUZZLE_NUMBER = Math.round((new Date(PUZZLE_DATA.date + 'T00:00:00') - PUZZLE_ORIGIN) / 86400000) + 1;
 
+function getSolvedDates() {
+  try {
+    return new Set(JSON.parse(localStorage.getItem('torchlight_solved') || '[]'));
+  } catch(e) { return new Set(); }
+}
+
+function computeStreak(solved) {
+  if (!solved.size) return 0;
+  const latest = Array.from(solved).sort().pop();
+  let streak = 1;
+  const cur = new Date(latest + 'T00:00:00');
+  while (true) {
+    cur.setDate(cur.getDate() - 1);
+    const d = cur.getFullYear() + '-' +
+      String(cur.getMonth() + 1).padStart(2, '0') + '-' +
+      String(cur.getDate()).padStart(2, '0');
+    if (solved.has(d)) { streak++; } else { break; }
+  }
+  return streak;
+}
+
 function getStreak() {
   if (isDemo) return 0;
-  try {
-    const d = JSON.parse(localStorage.getItem('torchlight_streak') || '{}');
-    return d.current || 0;
-  } catch(e) { return 0; }
+  return computeStreak(getSolvedDates());
 }
 
 function updateStreak() {
   if (isDemo) return;
-  let d = { current: 0, lastPlayedDate: null };
-  try { d = JSON.parse(localStorage.getItem('torchlight_streak') || '{}'); } catch(e) {}
-
-  const today = PUZZLE_DATA.date;
-  if (d.lastPlayedDate === today) return; // already updated today (restore safety)
-
-  const prev = new Date(today + 'T00:00:00');
-  prev.setDate(prev.getDate() - 1);
-  const yesterday = prev.getFullYear() + '-' +
-    String(prev.getMonth() + 1).padStart(2, '0') + '-' +
-    String(prev.getDate()).padStart(2, '0');
-
-  d.current = (d.lastPlayedDate === yesterday) ? (d.current || 0) + 1 : 1;
-  d.lastPlayedDate = today;
-
-  try { localStorage.setItem('torchlight_streak', JSON.stringify(d)); } catch(e) {}
+  const solved = getSolvedDates();
+  solved.add(PUZZLE_DATA.date);
+  try { localStorage.setItem('torchlight_solved', JSON.stringify(Array.from(solved))); } catch(e) {}
 }
 
 let PUZZLE = {
