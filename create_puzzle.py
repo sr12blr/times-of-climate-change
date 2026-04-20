@@ -16,42 +16,42 @@ today = datetime.now().strftime('%Y-%m-%d')
 
 # Define the puzzle
 PUZZLE = {
-    "date": "2026-04-18",
+    "date": "2026-04-20",
     "categories": [
         {
-            "name": "Have a monkey in the logo",
+            "name": "Signs of India's LPG crisis",
             "bg": "#2C5F4A",
             "text": "#ffffff",
             "difficulty": 1,
             "description": "",
-            "items": ["Bira 91", "Mailchimp", "Monkey Shoulder", "Survey Monkey"]
+            "items": ["4 wks for LPG", "Record sale of induction", "Long lines for CNG", "Reduced menus"]
         },
         {
-            "name": "Have an owl in the logo",
+            "name": "Raw material for Biogas",
             "bg": "#1A5F7A",
             "text": "#ffffff",
             "difficulty": 2,
             "description": "",
-            "items": ["Duolingo", "TripAdvisor", "White Owl", "Chumbak"]
+            "items": ["Animal manure", "Food waste", "Municipal sewage", "Crop residue"]
         },
         {
-            "name": "Have a big cat in the logo",
+            "name": "Uses of Biogas",
             "bg": "#C8602A",
             "text": "#ffffff",
             "difficulty": 3,
             "description": "",
-            "items": ["Jaguar", "Puma", "King XI Punjab", "Govt of India"]
+            "items": ["Cooking", "Heating", "Transport fuel", "Industrial fuel"]
         },
         {
-            "name": "Have a horse in the logo",
+            "name": "Steps in Biogas supply chain",
             "bg": "#6B1C2A",
             "text": "#ffffff",
             "difficulty": 4,
             "description": "",
-            "items": ["US Polo", "Ferrari", "Hermes", "Porsche"]
+            "items": ["Waste segregation", "Collection", "Biogas plant", "Piped to kitchen"]
         }
     ],
-    "fun_fact": "So much of what we love — our brands, logos, even our language — is borrowed from the animal kingdom. Yet we're losing species at a staggering rate. Earth is currently in its Sixth Mass Extinction, with species disappearing up to 1,000 times faster than the natural background rate. And unlike the 5 extinctions before it, this one has a single cause: us.<br><br>Read: <a href=\"https://www.worldwildlife.org/resources/explainers/what-is-the-sixth-mass-extinction-and-what-can-we-do-about-it/\" target=\"_blank\">What is the sixth mass extinction and what can we do about it? →</a>",
+    "fun_fact": "India has the ability to produce close to 62 million tonnes of biogas annually. But at present, we are tapping less than 1% of that. Biogas is a great solution — it gives us energy security, is cheaper and reduces emissions all at once!<br><br>Watch: <a href=\"https://www.youtube.com/watch?v=knHNXDCiiEg&t=308s\" target=\"_blank\">India NEEDS Biogas | Here's Why →</a>",
     "author": ""
 }
 

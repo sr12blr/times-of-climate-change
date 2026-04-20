@@ -139,7 +139,7 @@ def main():
     section("4. Torchlight — Won vs Lost")
     resp_won = run_report(
         client, start_date, end_date,
-        dimensions=["customEvent:won"],
+        dimensions=["customEvent:puzzle_date", "customEvent:won"],
         metrics=["eventCount"],
         dimension_filter=FilterExpression(
             filter=Filter(
@@ -149,19 +149,35 @@ def main():
         )
     )
     if resp_won.rows:
+        # Aggregate by puzzle_date
+        wl = {}
         for row in resp_won.rows:
-            won = row.dimension_values[0].value
-            count = row.metric_values[0].value
-            emoji = "🏆" if won == "true" else "💀"
-            print(f"  {emoji} {'Won' if won == 'true' else 'Lost'}: {count}")
+            puzzle_date = row.dimension_values[0].value
+            won = row.dimension_values[1].value
+            count = int(row.metric_values[0].value)
+            if puzzle_date not in ("(not set)", ""):
+                if puzzle_date not in wl:
+                    wl[puzzle_date] = {"won": 0, "lost": 0}
+                if won == "true":
+                    wl[puzzle_date]["won"] += count
+                else:
+                    wl[puzzle_date]["lost"] += count
+        print(f"  {'Puzzle Date':<15} {'Won':<8} {'Lost':<8} {'Win Rate'}")
+        print(f"  {'-'*15} {'-'*8} {'-'*8} {'-'*8}")
+        for d in sorted(wl.keys(), reverse=True):
+            w = wl[d]["won"]
+            l = wl[d]["lost"]
+            total = w + l
+            pct = f"{w/total*100:.0f}%" if total > 0 else "—"
+            print(f"  {d:<15} {w:<8} {l:<8} {pct}")
     else:
-        print(f"  No completions yet today.")
+        print(f"  No completions yet.")
 
     # ── 5. Share button clicks ────────────────────────────────────
     section("5. Share Button Clicks")
     resp = run_report(
         client, start_date, end_date,
-        dimensions=["customEvent:platform", "customEvent:puzzle_date"],
+        dimensions=["customEvent:puzzle_date"],
         metrics=["eventCount"],
         order_by=[OrderBy(metric=OrderBy.MetricOrderBy(metric_name="eventCount"), desc=True)],
         dimension_filter=FilterExpression(
@@ -172,13 +188,12 @@ def main():
         )
     )
     if resp.rows:
-        print(f"  {'Platform':<12} {'Puzzle Date':<15} {'Clicks'}")
-        print(f"  {'-'*12} {'-'*15} {'-'*6}")
+        print(f"  {'Puzzle Date':<15} {'Clicks'}")
+        print(f"  {'-'*15} {'-'*6}")
         for row in resp.rows:
-            platform = row.dimension_values[0].value
-            date = row.dimension_values[1].value
+            date = row.dimension_values[0].value
             count = row.metric_values[0].value
-            print(f"  {platform:<12} {date:<15} {count}")
+            print(f"  {date:<15} {count}")
     else:
         print("  No share data yet.")
 
