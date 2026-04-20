@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | April 14, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | April 20, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 14, 2026</div>
+    <div class="game-date">April 20, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -762,7 +762,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Basmati", "Matta (Red rice)", "Jeera Samba", "Sona Masuri"], "name": "Varieties of Rice", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Alphonso", "Kesar", "Dassheri", "Langda"], "name": "Varieties of Mango", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Bhoot Jolokia", "Guntur", "Kashmiri", "Bydagi"], "name": "Varieties of Indian Chilis", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Nendran", "Elaichi/Yelakki", "Red banana", "Cavendish"], "name": "Varieties of Banana", "text": "#ffffff"}], "date": "2026-04-14", "fun_fact": "India\u0027s crop diversity\u2014from rice to bananas\u2014isn\u0027t just tasty, it\u0027s climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["4 wks for LPG", "Record sale of induction", "Long lines for CNG", "Reduced menus"], "name": "Signs of India\u0027s LPG crisis", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Animal manure", "Food waste", "Municipal sewage", "Crop residue"], "name": "Raw material for Biogas", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Cooking", "Heating", "Transport fuel", "Industrial fuel"], "name": "Uses of Biogas", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Waste segregation", "Collection", "Biogas plant", "Piped to kitchen"], "name": "Steps in Biogas supply chain", "text": "#ffffff"}], "date": "2026-04-20", "fun_fact": "India has the ability to produce close to 62 million tonnes of biogas annually. But at present, we are tapping less than 1% of that. Biogas is a great solution \u2014 it gives us energy security, is cheaper and reduces emissions all at once!\u003cbr\u003e\u003cbr\u003eWatch: \u003ca href=\"https://www.youtube.com/watch?v=knHNXDCiiEg\u0026t=308s\" target=\"_blank\"\u003eIndia NEEDS Biogas | Here\u0027s Why \u2192\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1099,7 +1099,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-14'
+      'puzzle_date': '2026-04-20'
     });
   }
 
@@ -1208,13 +1208,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-14' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-20' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-14' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-20' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1232,7 +1232,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-14' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-20' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1310,11 +1310,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `India's crop diversity—from rice to bananas—isn't just tasty, it's climate-smart. Local varieties are adapted to their regions, resilient to weather shifts, and better for both your health and the environment.`;
+document.getElementById('funFactText').innerHTML = `India has the ability to produce close to 62 million tonnes of biogas annually. But at present, we are tapping less than 1% of that. Biogas is a great solution — it gives us energy security, is cheaper and reduces emissions all at once!<br><br>Watch: <a href="https://www.youtube.com/watch?v=knHNXDCiiEg&t=308s" target="_blank">India NEEDS Biogas | Here's Why →</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-04-14'
+    'puzzle_date': '2026-04-20'
   });
   renderGrid();
 }
