@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-21",
+  "categories": [
+    {
+      "name": "Alternatives to plastics",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Steel bottle",
+        "Cloth bag",
+        "Glass containers",
+        "Banana leaf"
+      ]
+    },
+    {
+      "name": "Things that shed micro-plastics",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Polyester tshirt",
+        "Fishing nets",
+        "Synthetic carpets",
+        "Disposable plastic containers"
+      ]
+    },
+    {
+      "name": "Where micro-plastics have been detected",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Breast milk",
+        "Rainwater",
+        "Mariana Trench",
+        "Fruits and vegetables"
+      ]
+    },
+    {
+      "name": "MICRO _____",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Scope",
+        "Wave",
+        "Plastics",
+        "Phone"
+      ]
+    }
+  ],
+  "fun_fact": "Microplastics are now found literally everywhere — from the deepest point on Earth (the Mariana Trench) to clouds, and even inside the human body. The average person is estimated to consume about 5 grams of microplastics every week — roughly the weight of a credit card. Cutting single-use plastics and switching to alternatives like steel, glass, and cloth is one of the most direct ways to reduce plastic at the source.",
+  "author": ""
+}
