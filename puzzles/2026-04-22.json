@@ -1,0 +1,60 @@
+{
+  "date": "2026-04-22",
+  "theme": "Earth - our only home",
+  "categories": [
+    {
+      "name": "Words meaning \"Home\"",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Abode",
+        "Residence",
+        "Dwelling",
+        "Pad"
+      ]
+    },
+    {
+      "name": "Sci-fi movies beyond Earth",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Star Wars",
+        "Interstellar",
+        "Dune",
+        "Project Hail Mary"
+      ]
+    },
+    {
+      "name": "World's deadliest animals",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Mosquito",
+        "Saw-scaled Viper",
+        "Black Mamba",
+        "Humans"
+      ]
+    },
+    {
+      "name": "Our cosmic address",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Planet Earth",
+        "Solar System",
+        "Orion's Arm",
+        "Milky Way"
+      ]
+    }
+  ],
+  "fun_fact": "Earth is 1 of 8 planets in our Solar System, which sits in the Milky Way — a galaxy with 200–400 billion stars. We've detected over 5,500 exoplanets. Confirmed habitable ones: 0.\n\nAs of today, in the entire observable universe, Planet Earth is the only known address where life exists. There is no Plan B.",
+  "author": "Sailee"
+}
