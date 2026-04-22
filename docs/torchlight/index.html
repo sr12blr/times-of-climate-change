@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1776805705">
+    <link rel="stylesheet" href="../static/style.css?v=1775848226">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -125,8 +125,6 @@
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
 
-  
-  <div class="game-author">Puzzle by Sailee</div>
   
 
   <div style="text-align: center; font-size: 12px; color: #888; margin-top: 8px; padding: 0 12px;">
@@ -764,7 +762,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "Sailee", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Abode", "Residence", "Dwelling", "Pad"], "name": "Words meaning \"Home\"", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Star Wars", "Interstellar", "Dune", "Project Hail Mary"], "name": "Sci-fi movies beyond Earth", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Mosquito", "Saw-scaled Viper", "Black Mamba", "Humans"], "name": "World\u0027s deadliest animals", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Planet Earth", "Solar System", "Orion\u0027s Arm", "Milky Way"], "name": "Our cosmic address", "text": "#ffffff"}], "date": "2026-04-22", "fun_fact": "Earth is 1 of 8 planets in our Solar System, which sits in the Milky Way \u2014 a galaxy with 200\u2013400 billion stars. We\u0027ve detected over 5,500 exoplanets. Confirmed habitable ones: 0.\n\nAs of today, in the entire observable universe, Planet Earth is the only known address where life exists. There is no Plan B."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Abode", "Residence", "Dwelling", "Pad"], "name": "Words meaning \"Home\"", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Star Wars", "Interstellar", "Dune", "Project Hail Mary"], "name": "Sci-fi movies beyond Earth", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Mosquito", "Saw-scaled Viper", "Black Mamba", "Humans"], "name": "World\u0027s deadliest animals", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Planet Earth", "Solar System", "Orion\u0027s Arm", "Milky Way"], "name": "Our cosmic address", "text": "#ffffff"}], "date": "2026-04-22", "fun_fact": "April 22 is Earth Day. Earth is 1 of 8 planets in our Solar System, which sits in the Milky Way \u2014 a galaxy with 200\u2013400 billion stars. We\u0027ve detected over 5,500 exoplanets. Confirmed habitable ones: 0.\n\nAs of today, in the entire observable universe, Planet Earth is the only known address where life exists. There is no Plan B."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1312,7 +1310,7 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Earth is 1 of 8 planets in our Solar System, which sits in the Milky Way — a galaxy with 200–400 billion stars. We've detected over 5,500 exoplanets. Confirmed habitable ones: 0.
+document.getElementById('funFactText').innerHTML = `April 22 is Earth Day. Earth is 1 of 8 planets in our Solar System, which sits in the Milky Way — a galaxy with 200–400 billion stars. We've detected over 5,500 exoplanets. Confirmed habitable ones: 0.
 
 As of today, in the entire observable universe, Planet Earth is the only known address where life exists. There is no Plan B.`;
 const wasRestored = restoreState();
