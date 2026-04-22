@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-23",
+  "categories": [
+    {
+      "name": "Benefits of Solar Energy",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Renewable",
+        "Clean",
+        "Low_cost",
+        "Decentralised"
+      ]
+    },
+    {
+      "name": "Solar-Powered Appliances",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Cooker",
+        "Dryer",
+        "Water_heater",
+        "Pump"
+      ]
+    },
+    {
+      "name": "Places to Install Solar Panels",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Rooftop",
+        "Agricultural_Fields",
+        "Building_facade",
+        "Canals"
+      ]
+    },
+    {
+      "name": "Why Solar Panels May Underperform",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Shade",
+        "Heat",
+        "Dust",
+        "Poor_angle"
+      ]
+    }
+  ],
+  "fun_fact": "India's solar capacity has grown over 30x in a decade \u2014 from under 3 GW in 2014 to over 120 GW today. With a national target of 500 GW of renewable energy by 2030, solar is critical to India's clean energy future.<br><br>Rooftop is a small but growing part of this. It lowers emissions AND your electricity bills all at once! See: <a href=\"https://www.youtube.com/watch?app=desktop&v=6434TVrhDHE&ra=m\" target=\"_blank\">How Rooftop Solar can change your life \u2192</a>",
+  "author": ""
+}

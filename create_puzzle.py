@@ -16,42 +16,42 @@ today = datetime.now().strftime('%Y-%m-%d')
 
 # Define the puzzle
 PUZZLE = {
-    "date": "2026-04-20",
+    "date": "2026-04-23",
     "categories": [
         {
-            "name": "Signs of India's LPG crisis",
+            "name": "Benefits of Solar Energy",
             "bg": "#2C5F4A",
             "text": "#ffffff",
             "difficulty": 1,
             "description": "",
-            "items": ["4 wks for LPG", "Record sale of induction", "Long lines for CNG", "Reduced menus"]
+            "items": ["Renewable", "Clean", "Low_cost", "Decentralised"]
         },
         {
-            "name": "Raw material for Biogas",
+            "name": "Solar-Powered Appliances",
             "bg": "#1A5F7A",
             "text": "#ffffff",
             "difficulty": 2,
             "description": "",
-            "items": ["Animal manure", "Food waste", "Municipal sewage", "Crop residue"]
+            "items": ["Cooker", "Dryer", "Water_heater", "Pump"]
         },
         {
-            "name": "Uses of Biogas",
+            "name": "Places to Install Solar Panels",
             "bg": "#C8602A",
             "text": "#ffffff",
             "difficulty": 3,
             "description": "",
-            "items": ["Cooking", "Heating", "Transport fuel", "Industrial fuel"]
+            "items": ["Rooftop", "Agricultural_Fields", "Building_facade", "Canals"]
         },
         {
-            "name": "Steps in Biogas supply chain",
+            "name": "Why Solar Panels May Underperform",
             "bg": "#6B1C2A",
             "text": "#ffffff",
             "difficulty": 4,
             "description": "",
-            "items": ["Waste segregation", "Collection", "Biogas plant", "Piped to kitchen"]
+            "items": ["Shade", "Heat", "Dust", "Poor_angle"]
         }
     ],
-    "fun_fact": "India has the ability to produce close to 62 million tonnes of biogas annually. But at present, we are tapping less than 1% of that. Biogas is a great solution — it gives us energy security, is cheaper and reduces emissions all at once!<br><br>Watch: <a href=\"https://www.youtube.com/watch?v=knHNXDCiiEg&t=308s\" target=\"_blank\">India NEEDS Biogas | Here's Why →</a>",
+    "fun_fact": "India's solar capacity has grown over 30x in a decade — from under 3 GW in 2014 to over 120 GW today. With a national target of 500 GW of renewable energy by 2030, solar is critical to India's clean energy future.<br><br>Rooftop is a small but growing part of this. It lowers emissions AND your electricity bills all at once! See: <a href=\"https://www.youtube.com/watch?app=desktop&v=6434TVrhDHE&ra=m\" target=\"_blank\">How Rooftop Solar can change your life →</a>",
     "author": ""
 }
 
