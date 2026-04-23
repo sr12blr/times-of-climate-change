@@ -1,0 +1,59 @@
+{
+  "date": "2026-04-24",
+  "categories": [
+    {
+      "name": "Ways to preserve food (v/s throwing it)",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": [
+        "Ferment",
+        "Pickle",
+        "Dehydrate",
+        "Freeze and eat later"
+      ]
+    },
+    {
+      "name": "Kitchen scraps that can be repurposed",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": [
+        "Citrus peels",
+        "Banana peels",
+        "Egg shells",
+        "Used coffee ground"
+      ]
+    },
+    {
+      "name": "Harms of food waste in landfills",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": [
+        "Methane emissions",
+        "Contaminated ground water",
+        "Bad smell",
+        "Landfill fires"
+      ]
+    },
+    {
+      "name": "Regional Indian dishes made from leftover rice",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": [
+        "Pazhakanji",
+        "Panta Bhat",
+        "Pakhala Bhata",
+        "Phodnicha Bhat"
+      ]
+    }
+  ],
+  "fun_fact": "Indian households waste 78.2 million tons of food every year - and that's not good for climate change. But as Indians, the practice of not wasting food is already deep-rooted in our culture. It's time we re-embrace it. Avoiding food waste is one of the simplest switches we can make to help fight climate change. <a href=\"https://youtu.be/VAf5YAU7-Pg?si=SB07ZpswJnh_8Ho6\" target=\"_blank\">Watch \u2192</a>",
+  "author": "Shyamoli G"
+}
