@@ -10,7 +10,7 @@
       "items": [
         "Renewable",
         "Clean",
-        "Low_cost",
+        "Low cost",
         "Decentralised"
       ]
     },
@@ -23,7 +23,7 @@
       "items": [
         "Cooker",
         "Dryer",
-        "Water_heater",
+        "Water heater",
         "Pump"
       ]
     },
@@ -35,8 +35,8 @@
       "description": "",
       "items": [
         "Rooftop",
-        "Agricultural_Fields",
-        "Building_facade",
+        "Agricultural fields",
+        "Building facade",
         "Canals"
       ]
     },
@@ -50,7 +50,7 @@
         "Shade",
         "Heat",
         "Dust",
-        "Poor_angle"
+        "Poor angle"
       ]
     }
   ],
