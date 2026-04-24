@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | April 13, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | April 24, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 13, 2026</div>
+    <div class="game-date">April 24, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -125,6 +125,8 @@
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
 
+  
+  <div class="game-author">Puzzle by Shyamoli G</div>
   
 
   <div style="text-align: center; font-size: 12px; color: #888; margin-top: 8px; padding: 0 12px;">
@@ -762,7 +764,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "emoji": "\ud83e\udda9", "items": ["Flamingos", "Bengal tiger", "Mudskipper", "Saltwater crocodiles"], "name": "Species associated with some Mangrove forests in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "emoji": "\ud83c\udf3f", "items": ["Honey", "Timber", "Fish", "Eco-tourism"], "name": "Mangrove based Products/ Services that provide income for locals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "emoji": "\ud83c\udf0a", "items": ["Wave breaker", "Carbon sink", "Sediment traps", "Air purifier"], "name": "How mangroves help the ecosystem", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "emoji": "\ud83c\udf34", "items": ["Bans", "Pichai", "Garh", "Nursery"], "name": "Sundar ___", "text": "#ffffff"}], "date": "2026-04-13", "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. \u003ca href=\"https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/\" target=\"_blank\" rel=\"noopener\"\u003eRead about Mumbai\u2019s plan to cut 45,000 mangroves \u2192\u003c/a\u003e\n\nAlso if you haven\u2019t heard of Sundar Nursery in Delhi, do check it out when you\u2019re there next!"};
+const PUZZLE_DATA = {"author": "Shyamoli G", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Ferment", "Pickle", "Dehydrate", "Freeze and eat later"], "name": "Ways to preserve food (v/s throwing it)", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Citrus peels", "Banana peels", "Egg shells", "Used coffee ground"], "name": "Kitchen scraps that can be repurposed", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Methane emissions", "Contaminated ground water", "Bad smell", "Landfill fires"], "name": "Harms of food waste in landfills", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Pazhakanji", "Panta Bhat", "Pakhala Bhata", "Phodnicha Bhat"], "name": "Regional Indian dishes made from leftover rice", "text": "#ffffff"}], "date": "2026-04-24", "fun_fact": "Indian households waste 78.2 million tons of food every year - and that\u0027s not good for climate change. But as Indians, the practice of not wasting food is already deep-rooted in our culture. It\u0027s time we re-embrace it. Avoiding food waste is one of the simplest switches we can make to help fight climate change. \u003ca href=\"https://youtu.be/VAf5YAU7-Pg?si=SB07ZpswJnh_8Ho6\" target=\"_blank\"\u003eWatch \u2192\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1099,7 +1101,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-13'
+      'puzzle_date': '2026-04-24'
     });
   }
 
@@ -1208,13 +1210,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-13' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-24' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-13' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-24' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1232,7 +1234,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-13' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-24' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1310,13 +1312,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. A city like Mumbai is indeed lucky to have them, but they are at risk. <a href="https://timesofclimatechange.com/story/mumbai-mangroves-coastal-road-45000-trees/" target="_blank" rel="noopener">Read about Mumbai’s plan to cut 45,000 mangroves →</a>
-
-Also if you haven’t heard of Sundar Nursery in Delhi, do check it out when you’re there next!`;
+document.getElementById('funFactText').innerHTML = `Indian households waste 78.2 million tons of food every year - and that's not good for climate change. But as Indians, the practice of not wasting food is already deep-rooted in our culture. It's time we re-embrace it. Avoiding food waste is one of the simplest switches we can make to help fight climate change. <a href="https://youtu.be/VAf5YAU7-Pg?si=SB07ZpswJnh_8Ho6" target="_blank">Watch →</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-04-13'
+    'puzzle_date': '2026-04-24'
   });
   renderGrid();
 }
