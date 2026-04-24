@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-25",
+  "categories": [
+    {
+      "name": "Alternatives to buying new clothes",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Thrift", "Borrow", "Repurpose", "Repair"]
+    },
+    {
+      "name": "Natural fabrics",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Linen", "Jute", "Bamboo", "Wool"]
+    },
+    {
+      "name": "Traits of fast fashion",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Affordable", "Trendy", "Synthetic", "Short-lived"]
+    },
+    {
+      "name": "Synthetic fabrics (made from fossil fuels)",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Polyester", "Lycra", "Acrylic", "Nylon"]
+    }
+  ],
+  "fun_fact": "The fashion industry accounts for ~10% of global carbon emissions — more than aviation and shipping combined. Fast fashion is the worst part. Switching to natural fabrics helps, but even cotton and linen need land, water, and energy to produce. The real climate win? Buy less. Swap, borrow and repair! <a href=\"https://youtu.be/xGF3ObOBbac?si=U2a0ewtimaA6Ao3X\" target=\"_blank\">Watch →</a>",
+  "author": ""
+}
