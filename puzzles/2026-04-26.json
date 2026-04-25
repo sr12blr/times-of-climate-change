@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-26",
+  "categories": [
+    {
+      "name": "Ways to reduce air pollution",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Protect trees", "Public transport", "Cover construction sites", "Renewable energy"]
+    },
+    {
+      "name": "Cause indoor air pollution",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Incense sticks", "Kerosene stoves", "Oil lamps", "Cigarettes"]
+    },
+    {
+      "name": "Drivers of outdoor air pollution",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Stubble burning", "Vehicle exhaust", "Construction dust", "Firecrackers"]
+    },
+    {
+      "name": "Common air pollutants",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["PM2.5", "Ozone", "CO", "NO₂"]
+    }
+  ],
+  "fun_fact": "India was home to 5 of the world's 10 most polluted cities in 2025, with some having PM2.5 levels 22 times the WHO safe limit. Breathing this air isn't just uncomfortable — it's deadly, cutting life expectancy by years. Want to find out exactly how bad the air in your city is? <a href=\"https://oaq.notf.in\" target=\"_blank\">Check out this great open source site →</a>",
+  "author": ""
+}
