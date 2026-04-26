@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-27",
+  "categories": [
+    {
+      "name": "BABY SHARK",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "Children's songs",
+      "items": ["Shark", "Baby", "Doo", "Doo"]
+    },
+    {
+      "name": "BAA BAA BLACK SHEEP",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "Children's songs",
+      "items": ["Sheep", "Baa", "Baa", "Black"]
+    },
+    {
+      "name": "ITSY BITSY SPIDER",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "Children's songs",
+      "items": ["Spider", "Itsy", "Bitsy", "The"]
+    },
+    {
+      "name": "MARY HAD A LITTLE LAMB",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "Children's songs",
+      "items": ["Lamb", "Mary", "Had", "A little"]
+    }
+  ],
+  "fun_fact": "Every child grows up singing about sharks, sheep, spiders, and lambs — but climate change is putting the real animals behind these songs at risk. If we want future children to encounter these creatures beyond the pages of a nursery rhyme, we need to act now to protect the wild places they call home.",
+  "author": ""
+}
