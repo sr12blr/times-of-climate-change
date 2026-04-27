@@ -7,7 +7,7 @@
       "text": "#ffffff",
       "difficulty": 1,
       "description": "Children's songs",
-      "items": ["Shark", "Baby", "Doo", "Doo"]
+      "items": ["Shark", "Baby", "Doo", "Doo "]
     },
     {
       "name": "BAA BAA BLACK SHEEP",
@@ -15,7 +15,7 @@
       "text": "#ffffff",
       "difficulty": 2,
       "description": "Children's songs",
-      "items": ["Sheep", "Baa", "Baa", "Black"]
+      "items": ["Sheep", "Baa", "Baa ", "Black"]
     },
     {
       "name": "ITSY BITSY SPIDER",
