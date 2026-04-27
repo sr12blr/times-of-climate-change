@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | April 11, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | April 27, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 11, 2026</div>
+    <div class="game-date">April 27, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -762,7 +762,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#C8602A", "description": "", "difficulty": 1, "emoji": "\ud83d\ude86", "items": ["Shatabdi", "Duronto", "Rajdhani", "Vande bharat"], "name": "Express trains \u2014 Great alternatives to flying!", "text": "#ffffff"}, {"bg": "#2C5F4A", "description": "", "difficulty": 2, "emoji": "\ud83c\udfab", "items": ["Waiting", "Confirmed", "Cancelled", "RAC"], "name": "Ticket status", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 3, "emoji": "\ud83d\ude82", "items": ["Sleeper", "General", "Pantry", "AC 3 tier"], "name": "Types of coaches in a train", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 4, "emoji": "\ud83d\udccb", "items": ["PNR", "Name", "Status", "Train name"], "name": "Fields on a train ticket", "text": "#ffffff"}], "date": "2026-04-11", "fun_fact": "According to the IEA, rail travel emits about 80% less CO\u2082 per passenger-km than flying. \u003ca href=\"https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "Children\u0027s songs", "difficulty": 1, "items": ["Shark", "Baby", "Doo", "Doo "], "name": "BABY SHARK", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "Children\u0027s songs", "difficulty": 2, "items": ["Sheep", "Baa", "Baa ", "Black"], "name": "BAA BAA BLACK SHEEP", "text": "#ffffff"}, {"bg": "#C8602A", "description": "Children\u0027s songs", "difficulty": 3, "items": ["Spider", "Itsy", "Bitsy", "The"], "name": "ITSY BITSY SPIDER", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "Children\u0027s songs", "difficulty": 4, "items": ["Lamb", "Mary", "Had", "A little"], "name": "MARY HAD A LITTLE LAMB", "text": "#ffffff"}], "date": "2026-04-27", "fun_fact": "Every child grows up singing about sharks, sheep, spiders, and lambs \u2014 but climate change is putting the real animals behind these songs at risk. If we want future children to encounter these creatures beyond the pages of a nursery rhyme, we need to act now to protect the wild places they call home."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1099,7 +1099,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-11'
+      'puzzle_date': '2026-04-27'
     });
   }
 
@@ -1208,13 +1208,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-11' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-27' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-11' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-27' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1232,7 +1232,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-11' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-27' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1310,11 +1310,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `According to the IEA, rail travel emits about 80% less CO₂ per passenger-km than flying. <a href="https://www.iea.org/data-and-statistics/charts/co2-emissions-from-rail-in-the-net-zero-scenario-2010-2030" target="_blank" rel="noopener">Read more →</a>`;
+document.getElementById('funFactText').innerHTML = `Every child grows up singing about sharks, sheep, spiders, and lambs — but climate change is putting the real animals behind these songs at risk. If we want future children to encounter these creatures beyond the pages of a nursery rhyme, we need to act now to protect the wild places they call home.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-04-11'
+    'puzzle_date': '2026-04-27'
   });
   renderGrid();
 }
