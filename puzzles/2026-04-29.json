@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-29",
+  "categories": [
+    {
+      "name": "___ Insurance",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Life", "Health", "Travel", "Term"]
+    },
+    {
+      "name": "Events that trigger an insurance claim",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Death", "Illness", "Theft", "Accident"]
+    },
+    {
+      "name": "Synonyms for protection",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Safety net", "Safeguard", "Warranty", "Insurance"]
+    },
+    {
+      "name": "Terms on an insurance policy",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Premium", "Sum insured", "Exclusions", "Riders"]
+    }
+  ],
+  "fun_fact": "Most of us are familiar with Life and Health insurance, but have you heard of Heat Insurance? While you might not need it for an office job, it is becoming a critical safety net for millions of outdoor workers—from construction crews to street vendors. In extreme heat, working isn't just uncomfortable; it's life-threatening. Heat insurance acts as a financial buffer: if the temperature hits a specific \"trigger\" (like 45°C for three consecutive days), the policy automatically pays out cash to the worker. <a href=\"https://www.youtube.com/watch?v=agt1gMRwWHg\" target=\"_blank\">See this video</a>",
+  "author": ""
+}
