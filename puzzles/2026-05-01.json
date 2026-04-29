@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-01",
+  "categories": [
+    {
+      "name": "Easy plants to grow in a balcony garden",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Aloe Vera", "Chillies", "Tomato", "Mint"]
+    },
+    {
+      "name": "Balcony Garden Essentials",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Soil", "Seeds", "Watering Can", "Grow Bag"]
+    },
+    {
+      "name": "Benefits of Home Gardening",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Fresh Produce", "Natural Cooling", "Stress Relief", "Clean Air"]
+    },
+    {
+      "name": "Kitchen scraps to use in the garden",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Eggshells", "Vegetable Peels", "Coffee Grounds", "Used tea leaves"]
+    }
+  ],
+  "fun_fact": "Growing even a small balcony or terrace garden can reduce kitchen waste through composting, cool your home naturally and give you the unparalleled joy of growing your own food! [Read one gardener's story](https://sunnyclimatestormyclimate.substack.com/p/growing-a-terrace-garden-a-photo)",
+  "author": ""
+}
