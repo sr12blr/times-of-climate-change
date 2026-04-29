@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-30",
+  "categories": [
+    {
+      "name": "Indian Nuclear Power Plants",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Kalpakkam", "Tarapur", "Rawatbhata", "Kundankulum"]
+    },
+    {
+      "name": "Parts of a Nuclear Reactor",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Control rods", "Fuel rods", "Coolant", "Reactor vessel"]
+    },
+    {
+      "name": "Pros of Nuclear Power",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Low carbon footprint", "Energy security", "Reliability", "High energy density"]
+    },
+    {
+      "name": "Concerns around Nuclear Power",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Accident risk", "Upfront cost", "Takes years to build", "Radioactive waste"]
+    }
+  ],
+  "fun_fact": "Nuclear power is one of the cleanest energy sources available — it emits almost no greenhouse gases during operation. India currently generates about 8 GW of nuclear power, but has set an ambitious target of **100 GW by 2047**, including at least 5 Small Modular Reactors (SMRs). That's a 12x leap, aimed at powering a clean and reliable energy future as the country grows. [Read more](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2249783&reg=3&lang=2#:~:text=SMR%20Target%3A%20At%20least%20five,clean%20and%20reliable%20energy%20roadmap.)",
+  "author": ""
+}
