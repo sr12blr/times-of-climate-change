@@ -17,6 +17,17 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, pass_context
 
 BASE_DIR = Path(__file__).parent
+
+
+def markdown_to_html(text):
+    """Convert a subset of markdown to HTML (bold and links)."""
+    if not text:
+        return text
+    # **bold** → <strong>bold</strong>
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # [label](url) → <a href="url" target="_blank" rel="noopener">label</a>
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', text)
+    return text
 STORIES_DIR = BASE_DIR / "stories"
 PUZZLES_DIR = BASE_DIR / "puzzles"
 SITE_DIR = BASE_DIR / "docs"
@@ -317,10 +328,11 @@ def generate(full_rebuild=False):
             (p for p in puzzles if datetime.strptime(p["date"], "%Y-%m-%d").date() <= today),
             puzzles[0]
         )
+        today_puzzle["fun_fact"] = markdown_to_html(today_puzzle.get("fun_fact", ""))
         puzzle_json = {
             "date": today_puzzle["date"],
             "categories": today_puzzle["categories"],
-            "fun_fact": today_puzzle.get("fun_fact", ""),
+            "fun_fact": today_puzzle["fun_fact"],
             "author": today_puzzle.get("author", "")
         }
         template = env.get_template("torchlight.html")
@@ -353,10 +365,11 @@ def generate(full_rebuild=False):
         for puzzle in past_puzzles[1:]:  # Skip today's puzzle, it's already generated
             puzzle_dir = SITE_DIR / "torchlight" / "archive" / puzzle["slug"]
             puzzle_dir.mkdir(parents=True, exist_ok=True)
+            puzzle["fun_fact"] = markdown_to_html(puzzle.get("fun_fact", ""))
             puzzle_json = {
                 "date": puzzle["date"],
                 "categories": puzzle["categories"],
-                "fun_fact": puzzle.get("fun_fact", ""),
+                "fun_fact": puzzle["fun_fact"],
                 "author": puzzle.get("author", "")
             }
             template = env.get_template("torchlight.html")
