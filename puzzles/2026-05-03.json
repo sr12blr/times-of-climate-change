@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-03",
+  "categories": [
+    {
+      "name": "Summer coolers",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Buttermilk", "Nimbu pani", "Aam panna", "Coconut water"]
+    },
+    {
+      "name": "What to wear in summer",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Hat", "Swimsuit", "Sunglasses", "Shorts"]
+    },
+    {
+      "name": "Places you would go to in summer",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Beach", "Water park", "Hill stations", "Swimming pool"]
+    },
+    {
+      "name": "Foods made in summer",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Pickle", "Dried fish", "Aam papad", "Papad"]
+    }
+  ],
+  "fun_fact": "Summer in India once meant mango pickles drying on rooftops, aam panna cooling in clay pots, and family trips to hill stations. Today, it increasingly means heatwave warnings, wet bulb temperatures, and advisories to stay indoors. Why are our summers getting so hot that it feels deadly? [Read more →](https://sunnyclimatestormyclimate.substack.com/p/why-this-summer-is-so-hot-an-explainer?utm_source=publication-search)",
+  "author": ""
+}
