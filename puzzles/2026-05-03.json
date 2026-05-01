@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-03",
+  "categories": [
+    {
+      "name": "Natural sources of red",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Madder", "Lac", "Hibiscus", "Red ochre"]
+    },
+    {
+      "name": "Natural sources of yellow",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Turmeric", "Saffron", "Marigold", "Pomegranate peels"]
+    },
+    {
+      "name": "Natural sources of white",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Limestone", "Conch shell", "Rice paste", "Chalk"]
+    },
+    {
+      "name": "Natural sources of blue",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Indigo", "Lapis Lazuli", "Azurite", "Butterfly pea / Aparajita"]
+    }
+  ],
+  "fun_fact": "Before synthetic dyes took over in the 19th century, every colour humans used came from the natural world — plants, minerals, insects, and shells. India was a global hub for natural dyes, with indigo and lac traded across continents for centuries. Today, as synthetic dyes pollute rivers and harm ecosystems, natural dyes are making a quiet comeback in sustainable fashion and traditional crafts.",
+  "author": ""
+}
