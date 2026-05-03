@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | April 17, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | May 02, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 17, 2026</div>
+    <div class="game-date">May 02, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -762,7 +762,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Sumatran", "Bengal", "Siberian", "Malayan"], "name": "Tiger subspecies", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Leopard", "Snow Leopard", "Jaguar", "Lion"], "name": "Big cats", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Radio collar", "DNA", "Camera traps", "Pug marks"], "name": "Wildlife tracking methods", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Watermelon", "Barcode", "Zebra", "Tiger"], "name": "Things with stripes", "text": "#ffffff"}], "date": "2026-04-17", "fun_fact": "India is home to about 75% of the world\u0027s wild tigers \u2014 but they\u0027re increasingly boxed in. Mining, roads and encroachments fragment their habitat into isolated pockets. Without wildlife corridors connecting these patches, tigers can\u0027t roam, hunt or find mates. Tracking methods like camera traps and pug marks help us monitor how many make it through.\u003cbr\u003e\u003cbr\u003eRead: \u003ca href=\"/story/lohardongri-iron-ore-mine-tiger-corridor-chandrapur/\" target=\"_blank\"\u003eWhen a mine threatens a tiger corridor \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Ariel", "Nemo", "Dory", "Spongebob"], "name": "Animated characters from the marine world", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Diving", "Snorkelling", "Glass bottom boat", "Marine safari"], "name": "Ways to see marine life", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Carbon sink", "Climate regulation", "Food", "Medicinal use"], "name": "Ecosystem services of oceans", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Lion", "Horse", "Cucumber", "Snake"], "name": "Sea ________", "text": "#ffffff"}], "date": "2026-05-02", "fun_fact": "Oceans cover 71% of Earth\u0027s surface and are critical to life on land \u2014 absorbing nearly a third of our CO\u2082 emissions, regulating our climate, and feeding over 3 billion people. Yet rising temperatures and pollution are devastating marine ecosystems, with coral reefs \u2014 home to a quarter of all marine species \u2014 among the most threatened."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1099,7 +1099,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-17'
+      'puzzle_date': '2026-05-02'
     });
   }
 
@@ -1208,13 +1208,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-17' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-02' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-17' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-02' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1232,7 +1232,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-17' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-02' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1310,11 +1310,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `India is home to about 75% of the world's wild tigers — but they're increasingly boxed in. Mining, roads and encroachments fragment their habitat into isolated pockets. Without wildlife corridors connecting these patches, tigers can't roam, hunt or find mates. Tracking methods like camera traps and pug marks help us monitor how many make it through.<br><br>Read: <a href="/story/lohardongri-iron-ore-mine-tiger-corridor-chandrapur/" target="_blank">When a mine threatens a tiger corridor →</a>`;
+document.getElementById('funFactText').innerHTML = `Oceans cover 71% of Earth's surface and are critical to life on land — absorbing nearly a third of our CO₂ emissions, regulating our climate, and feeding over 3 billion people. Yet rising temperatures and pollution are devastating marine ecosystems, with coral reefs — home to a quarter of all marine species — among the most threatened.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-04-17'
+    'puzzle_date': '2026-05-02'
   });
   renderGrid();
 }
