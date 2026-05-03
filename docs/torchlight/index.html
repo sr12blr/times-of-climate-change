@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 03, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | May 04, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../static/style.css?v=1777836849">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 03, 2026</div>
+    <div class="game-date">May 04, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -762,7 +762,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Buttermilk", "Nimbu pani", "Aam panna", "Coconut water"], "name": "Summer coolers", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Hat", "Swimsuit", "Sunglasses", "Shorts"], "name": "What to wear in summer", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Beach", "Water park", "Hill stations", "Swimming pool"], "name": "Places you would go to in summer", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Pickle", "Dried fish", "Aam papad", "Papad"], "name": "Foods made in summer", "text": "#ffffff"}], "date": "2026-05-03", "fun_fact": "Summer in India once meant mango pickles drying on rooftops, aam panna cooling in clay pots, and family trips to hill stations. Today, it increasingly means heatwave warnings, wet bulb temperatures, and advisories to stay indoors. Why are our summers getting so hot that it feels deadly? \u003ca href=\"https://sunnyclimatestormyclimate.substack.com/p/why-this-summer-is-so-hot-an-explainer?utm_source=publication-search\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Madder", "Lac", "Hibiscus", "Red ochre"], "name": "Natural sources of red", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Turmeric", "Saffron", "Marigold", "Pomegranate peels"], "name": "Natural sources of yellow", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Limestone", "Conch shell", "Rice paste", "Chalk"], "name": "Natural sources of white", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Indigo", "Lapis Lazuli", "Azurite", "Butterfly pea / Aparajita"], "name": "Natural sources of blue", "text": "#ffffff"}], "date": "2026-05-04", "fun_fact": "Before synthetic dyes took over in the 19th century, every colour humans used came from the natural world \u2014 plants, minerals, insects, and shells. India was a global hub for natural dyes, with indigo and lac traded across continents for centuries. Today, as synthetic dyes pollute rivers and harm ecosystems, natural dyes are making a quiet comeback in sustainable fashion and traditional crafts."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1099,7 +1099,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-03'
+      'puzzle_date': '2026-05-04'
     });
   }
 
@@ -1208,13 +1208,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-03' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-04' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-03' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-04' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1232,7 +1232,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-03' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-04' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1310,11 +1310,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Summer in India once meant mango pickles drying on rooftops, aam panna cooling in clay pots, and family trips to hill stations. Today, it increasingly means heatwave warnings, wet bulb temperatures, and advisories to stay indoors. Why are our summers getting so hot that it feels deadly? <a href="https://sunnyclimatestormyclimate.substack.com/p/why-this-summer-is-so-hot-an-explainer?utm_source=publication-search" target="_blank" rel="noopener">Read more →</a>`;
+document.getElementById('funFactText').innerHTML = `Before synthetic dyes took over in the 19th century, every colour humans used came from the natural world — plants, minerals, insects, and shells. India was a global hub for natural dyes, with indigo and lac traded across continents for centuries. Today, as synthetic dyes pollute rivers and harm ecosystems, natural dyes are making a quiet comeback in sustainable fashion and traditional crafts.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-03'
+    'puzzle_date': '2026-05-04'
   });
   renderGrid();
 }
