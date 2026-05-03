@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-05",
+  "categories": [
+    {
+      "name": "Parts of a bicycle",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Pedal", "Chain", "Handlebar", "Frame"]
+    },
+    {
+      "name": "Benefits of cycling",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Decongestion", "Exercise", "Zero emissions", "Cost saving"]
+    },
+    {
+      "name": "Barriers to cycling",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Accidents", "Poor air", "Theft", "Heat"]
+    },
+    {
+      "name": "___ cycle",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Bi", "Tri", "Motor", "Re"]
+    }
+  ],
+  "fun_fact": "The bicycle is one of the coolest vehicles ever invented — zero emissions, no fuel costs, and good exercise. But you have to be \"rather brave\" to cycle on Indian roads; our cities are designed for cars not cycles. Btw millions in India do cycle daily — not by choice, but because they have no alternative. But what if we reimagined our cities to make cycling a real choice — not just for those who have no option or \"the brave ones\"? [Read more →](https://www.ceew.in/blogs/5-steps-to-a-cycle-friendly-future-for-india)",
+  "author": ""
+}
