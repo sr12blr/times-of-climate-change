@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-06",
+  "categories": [
+    {
+      "name": "Symptoms of Heat Stroke",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Dizziness", "Rapid pulse", "Nausea", "Sweating"]
+    },
+    {
+      "name": "Conditions that increase vulnerability to heat stroke",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Old age", "Infancy", "Pregnancy", "Outdoor work"]
+    },
+    {
+      "name": "What to do in case of a heatstroke",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Loosen clothing", "Ice bath", "Medical help", "Fan/ ventilation"]
+    },
+    {
+      "name": "Triggers of Heat Stroke",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Heat", "Humidity", "Direct sunlight", "Exertion"]
+    }
+  ],
+  "fun_fact": "Heat is called \"the silent killer\" — it claims more lives globally than floods, storms, or earthquakes, yet rarely makes headlines. As India's summers get hotter and longer, heat stroke is a growing risk — especially for those working outdoors or without access to cooling. [Learn what exactly happens to the body in extreme heat →](https://www.youtube.com/watch?v=uuWupBQOms8)",
+  "author": ""
+}
