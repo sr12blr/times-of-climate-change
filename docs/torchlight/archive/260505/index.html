@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | April 29, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | May 05, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">April 29, 2026</div>
+    <div class="game-date">May 05, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -762,7 +762,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Life", "Health", "Travel", "Term"], "name": "___ Insurance", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Death", "Illness", "Theft", "Accident"], "name": "Events that trigger an insurance claim", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Safety net", "Safeguard", "Warranty", "Insurance"], "name": "Synonyms for protection", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Premium", "Sum insured", "Exclusions", "Riders"], "name": "Terms on an insurance policy", "text": "#ffffff"}], "date": "2026-04-29", "fun_fact": "Most of us are familiar with Life and Health insurance, but have you heard of Heat Insurance? While you might not need it for an office job, it is becoming a critical safety net for millions of outdoor workers\u2014from construction crews to street vendors. In extreme heat, working isn\u0027t just uncomfortable; it\u0027s life-threatening. Heat insurance acts as a financial buffer: if the temperature hits a specific \"trigger\" (like 45\u00b0C for three consecutive days), the policy automatically pays out cash to the worker. \u003ca href=\"https://www.youtube.com/watch?v=agt1gMRwWHg\" target=\"_blank\"\u003eSee this video\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Pedal", "Chain", "Handlebar", "Frame"], "name": "Parts of a bicycle", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Decongestion", "Exercise", "Zero emissions", "Cost saving"], "name": "Benefits of cycling", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Accidents", "Poor air", "Theft", "Heat"], "name": "Barriers to cycling", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Bi", "Tri", "Motor", "Re"], "name": "___ cycle", "text": "#ffffff"}], "date": "2026-05-05", "fun_fact": "The bicycle is one of the coolest vehicles ever invented \u2014 zero emissions, no fuel costs, and good exercise. But you have to be \"rather brave\" to cycle on Indian roads; our cities are designed for cars not cycles. Btw millions in India do cycle daily \u2014 not by choice, but because they have no alternative. But what if we reimagined our cities to make cycling a real choice \u2014 not just for those who have no option or \"the brave ones\"? \u003ca href=\"https://www.ceew.in/blogs/5-steps-to-a-cycle-friendly-future-for-india\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1099,7 +1099,7 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-04-29'
+      'puzzle_date': '2026-05-05'
     });
   }
 
@@ -1208,13 +1208,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-04-29' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-05' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-04-29' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-05' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1232,7 +1232,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-04-29' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-05' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1310,11 +1310,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Most of us are familiar with Life and Health insurance, but have you heard of Heat Insurance? While you might not need it for an office job, it is becoming a critical safety net for millions of outdoor workers—from construction crews to street vendors. In extreme heat, working isn't just uncomfortable; it's life-threatening. Heat insurance acts as a financial buffer: if the temperature hits a specific "trigger" (like 45°C for three consecutive days), the policy automatically pays out cash to the worker. <a href="https://www.youtube.com/watch?v=agt1gMRwWHg" target="_blank">See this video</a>`;
+document.getElementById('funFactText').innerHTML = `The bicycle is one of the coolest vehicles ever invented — zero emissions, no fuel costs, and good exercise. But you have to be "rather brave" to cycle on Indian roads; our cities are designed for cars not cycles. Btw millions in India do cycle daily — not by choice, but because they have no alternative. But what if we reimagined our cities to make cycling a real choice — not just for those who have no option or "the brave ones"? <a href="https://www.ceew.in/blogs/5-steps-to-a-cycle-friendly-future-for-india" target="_blank" rel="noopener">Read more →</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-04-29'
+    'puzzle_date': '2026-05-05'
   });
   renderGrid();
 }
