@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-07",
+  "categories": [
+    {
+      "name": "Can be composted",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Banana Peel", "Eggshells", "Food Scraps", "Squeezed Lemon"]
+    },
+    {
+      "name": "Can be recycled",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Plastic Bottle", "Aluminum Can", "Amazon Box", "Glass Jar"]
+    },
+    {
+      "name": "Electronic waste",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Phone", "Circuit Board", "Power Cord", "Used Batteries"]
+    },
+    {
+      "name": "Hazardous/ Biomedical waste",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Syringe", "Expired Medicine", "Mercury Thermometer", "Sanitary Pad"]
+    }
+  ],
+  "fun_fact": "Most of us were never taught which bin is which — and the rules aren't always intuitive. Wet, dry, hazardous, e-waste: the categories can feel overwhelming. But getting it right matters — proper segregation keeps toxins out of our soil and water, helps waste actually get recycled and reduces what ends up at landfills. <a href=\"https://thebetterindia.com/439754/waste-sorting-terms-glossary-guide-india/\">Here's a guide to get you started.</a>",
+  "author": ""
+}
