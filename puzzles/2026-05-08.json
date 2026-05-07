@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-08",
+  "categories": [
+    {
+      "name": "Pollinators",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Bee", "Moth", "Bat", "Wasp"]
+    },
+    {
+      "name": "Parts of a flower",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Petal", "Pollen", "Nectar", "Style"]
+    },
+    {
+      "name": "Threats to pollinators",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Climate change", "Habitat loss", "Pesticide", "Light pollution"]
+    },
+    {
+      "name": "___ Bee",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Spelling", "Bumble", "Honey", "Busy"]
+    }
+  ],
+  "fun_fact": "One in every 3 bites of food you eat exists thanks to pollinators. Without pollinators, crops like mangoes, cotton, and mustard would vanish from Indian farms. But India is losing its wild bee species at an alarming rate due to pesticide use, habitat loss, and climate change.",
+  "author": ""
+}
