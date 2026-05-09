@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-12",
+  "categories": [
+    {
+      "name": "AI Models",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["ChatGPT", "Gemini", "DeepSeek", "Claude"]
+    },
+    {
+      "name": "Things You Can Do With AI",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Write Emails", "Vibe-Code", "Meeting Notes", "Research"]
+    },
+    {
+      "name": "AI Industry Leaders",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Sam", "Dario", "Jensen", "Sundar"]
+    },
+    {
+      "name": "Risks Of AI",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Hallucination", "Amplify Misinformation", "Job Loss", "Energy Usage"]
+    }
+  ],
+  "fun_fact": "A single 100 MW AI data centre drinks 2 million litres of water a day — just to stay cool. India's data centres already use 150 billion litres a year, and that's set to double by 2030. Yet only 5 of 15 states have any sustainability rules for them. In a country with 18% of the world's people but just 4% of its water, the AI boom can't afford to ignore this. <a href=\"https://www.ceew.in/blogs/why-is-water-based-cooling-a-big-issue-for-ai-data-centres-in-india\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
