@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-11",
+  "categories": [
+    {
+      "name": "Water Sources",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Lake", "River", "Well", "Aquifer"]
+    },
+    {
+      "name": "Uses Of Water",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Drinking", "Farming", "Building", "Cooling"]
+    },
+    {
+      "name": "Water Cycle Stages",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Evaporation", "Condensation", "Precipitation", "Collection"]
+    },
+    {
+      "name": "Sources Of Water Pollution",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Chemical Effluents", "Plastic", "Pesticides", "Sewage"]
+    }
+  ],
+  "fun_fact": "We are living in an era of <a href=\"https://news.un.org/en/story/2026/01/1166800\" target=\"_blank\" rel=\"noopener\">global water bankruptcy</a> — demand far outstrips supply. India, home to 18% of the world's population but just 4% of its freshwater, is one of the most water-stressed nations on Earth. Do you know how much water an avg person needs every day? <a href=\"https://sunnyclimatestormyclimate.substack.com/p/wading-through-ignorance-why-we-need?utm_source=publication-search\" target=\"_blank\" rel=\"noopener\">Find out!</a>",
+  "author": ""
+}
