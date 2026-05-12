@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-13",
+  "categories": [
+    {
+      "name": "Words meaning \"to stick/connect\"",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Glue", "Bind", "Join", "Fuse"]
+    },
+    {
+      "name": "Indian cement brands",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Ultratech", "Acc", "Shree", "Ramco"]
+    },
+    {
+      "name": "Raw materials in cement manufacturing",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Limestone", "Clay", "Gypsum", "Sand"]
+    },
+    {
+      "name": "Environmental impacts of cement industry",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Carbon Emissions", "Heat Islands", "High Energy Use", "Particulate Matter"]
+    }
+  ],
+  "fun_fact": "Cement production accounts for ~8% of global CO₂ emissions — more than aviation and shipping combined. India is the world's 2nd largest cement producer, making over 370 million tonnes a year, with plants also releasing fine particulate matter (PM2.5) and nitrogen oxides, making the industry a major source of both climate change and air pollution.",
+  "author": ""
+}
