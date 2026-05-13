@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-14",
+  "categories": [
+    {
+      "name": "Indian Bus Manufacturers",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Tata", "Leyland", "Eicher", "Bharatbenz"]
+    },
+    {
+      "name": "Words for Bus Stop",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Stand", "Depot", "Terminus", "Adda"]
+    },
+    {
+      "name": "Reserved Seat Categories on a Bus",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Ladies", "Seniors", "Disabled", "Pregnant"]
+    },
+    {
+      "name": "Fields on a Bus Ticket",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Fare", "Origin", "Destination", "Route"]
+    }
+  ],
+  "fun_fact": "A single full bus replaces over 40 cars on the road — choosing a bus over a car cuts per-passenger CO₂ emissions by up to 80%. Buses are the world's most underrated climate solution. Curious to know how India's biggest cities are doing on their bus infrastructure? <a href=\"https://www.youtube.com/watch?v=wGFKbzA9QUU\" target=\"_blank\" rel=\"noopener\">See this video</a>",
+  "author": ""
+}
