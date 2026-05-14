@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-15",
+  "categories": [
+    {
+      "name": "Chemical Fertilisers",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Urea", "Di-Ammonium Phosphate", "NPK Complex", "Calcium Ammonium Nitrate"]
+    },
+    {
+      "name": "Natural Fertilisers",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Manure", "Compost", "Vermicompost", "Legume Intercropping"]
+    },
+    {
+      "name": "Harms of Fertiliser Overuse",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["N2O Emissions", "Water Pollution", "Food Toxicity", "Fertility Loss"]
+    },
+    {
+      "name": "Concerns Switching to Natural Farming",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["More Labour", "Market Access", "Yield Decline", "Certification"]
+    }
+  ],
+  "fun_fact": "Over 60% of India's farmland has soil organic carbon below 0.5% — less than a third of the healthy threshold — largely due to decades of synthetic fertiliser overuse. Switching back from chemical to natural farming is not easy, but it's possible. In 2016, Sikkim became the first state in the world to be certified 100% organic. <a href=\"https://www.youtube.com/watch?v=ySgbWcYttaQ\" target=\"_blank\" rel=\"noopener\">Know more</a>",
+  "author": ""
+}
