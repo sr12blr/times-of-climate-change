@@ -1,0 +1,42 @@
+{
+  "date": "2026-04-10",
+  "fun_fact": "",
+  "categories": [
+    {
+      "name": "Millets (climate-resilient grains)",
+      "description": "",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "🌾",
+      "difficulty": 1,
+      "items": ["Jowar", "Sorghum", "Ragi", "Bajra"]
+    },
+    {
+      "name": "Products from sugarcane",
+      "description": "",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "🟫",
+      "difficulty": 2,
+      "items": ["Molasses", "Sugar", "Jaggery", "Ethanol"]
+    },
+    {
+      "name": "Products from coconut",
+      "description": "",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "🥥",
+      "difficulty": 3,
+      "items": ["Coir", "Oil", "Milk", "Water"]
+    },
+    {
+      "name": "Plantation / tree crops",
+      "description": "",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "🌳",
+      "difficulty": 4,
+      "items": ["Olive", "Cocoa", "Coffee", "Mango"]
+    }
+  ]
+}
