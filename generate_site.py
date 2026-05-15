@@ -389,6 +389,32 @@ def generate(full_rebuild=False):
                 f.write(html)
         print(f"  Generated: torchlight/archive/ ({len(puzzles)-1} archive puzzles)")
 
+        # Torchlight curated selection page
+        SELECTED_DATES = ["2026-04-15", "2026-04-22", "2026-04-26", "2026-04-27", "2026-05-01"]
+        # puzzles is sorted newest-first; chronological number counts from oldest
+        n_puzzles = len(puzzles)
+        date_to_index = {p["date"]: i for i, p in enumerate(puzzles)}
+        selected = []
+        for d in SELECTED_DATES:  # chronological: oldest -> newest
+            if d in date_to_index:
+                dt = datetime.strptime(d, "%Y-%m-%d")
+                selected.append({
+                    "number": n_puzzles - date_to_index[d],
+                    "date_label": dt.strftime("%B ") + str(dt.day) + dt.strftime(", %Y"),
+                    "url": f"../archive/{dt.strftime('%y%m%d')}/",
+                })
+        (SITE_DIR / "torchlight" / "selection").mkdir(parents=True, exist_ok=True)
+        template = env.get_template("torchlight_selection.html")
+        html = template.render(
+            selected=selected,
+            active_nav="",
+            root_path="../../",
+            css_path=f"../../static/style.css?v={css_version}",
+        )
+        with open(SITE_DIR / "torchlight" / "selection" / "index.html", "w") as f:
+            f.write(html)
+        print("  Generated: torchlight/selection/")
+
     # 11. Sitemap
     BASE_URL = "https://timesofclimatechange.com"
     today = date.today().isoformat()

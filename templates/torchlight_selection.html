@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Selected Torchlight Puzzles — The Times of Climate Change{% endblock %}
+{% block content %}
+<div class="game-container">
+  <div class="game-header">
+    <div class="game-title">🔦 Torchlight | Selected Puzzles</div>
+  </div>
+  <ul class="selection-list">
+    {% for item in selected %}
+    <li><a href="{{ item.url }}">Torchlight #{{ item.number }} | {{ item.date_label }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
