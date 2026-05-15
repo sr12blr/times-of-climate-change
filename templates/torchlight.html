@@ -1114,7 +1114,9 @@ function showEndScreen(won, isRestore) {
   }
 
   // Flip the solved-categories area to fun fact after 3 seconds
+  {% if puzzle.fun_fact %}
   setTimeout(() => flipToFunFact(), 3000);
+  {% endif %}
 }
 
 function flipToFunFact() {

@@ -1,0 +1,42 @@
+{
+  "date": "2026-04-09",
+  "fun_fact": "",
+  "categories": [
+    {
+      "name": "Fossil fuels",
+      "description": "",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "emoji": "🛢️",
+      "difficulty": 1,
+      "items": ["Diesel", "Kerosene", "Petrol", "LPG"]
+    },
+    {
+      "name": "Types of pollution",
+      "description": "",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "emoji": "🌫️",
+      "difficulty": 2,
+      "items": ["Noise", "Water", "Light", "Air"]
+    },
+    {
+      "name": "Sustainable / public transport",
+      "description": "",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "emoji": "🚌",
+      "difficulty": 3,
+      "items": ["Cycle", "Train", "Bus", "Metro"]
+    },
+    {
+      "name": "Electric car models",
+      "description": "",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "emoji": "🔋",
+      "difficulty": 4,
+      "items": ["Comet", "Nexon", "Ioniq5", "Tigor"]
+    }
+  ]
+}

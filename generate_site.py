@@ -144,12 +144,14 @@ def load_all_puzzles():
             try:
                 dt = datetime.strptime(puzzle["date"], "%Y-%m-%d")
                 puzzle["date_display"] = dt.strftime("%B %d, %Y")
+                puzzle["date_display_long"] = f"{dt.strftime('%B')} {dt.day}, {dt.year}"
                 # Create archive number from date (YYMMDD)
                 puzzle["archive_number"] = dt.strftime("%y%m%d")
                 puzzle["archive_title"] = f"Torchlight - {puzzle['archive_number']}"
                 puzzle["slug"] = puzzle["archive_number"]
             except ValueError:
                 puzzle["date_display"] = puzzle.get("date", "Unknown")
+                puzzle["date_display_long"] = puzzle.get("date", "Unknown")
                 puzzle["archive_title"] = "Unknown"
                 puzzle["slug"] = "unknown"
 
@@ -349,13 +351,16 @@ def generate(full_rebuild=False):
 
         # Torchlight archive page
         past_puzzles = [p for p in puzzles if datetime.strptime(p["date"], "%Y-%m-%d").date() <= today]
+        total_past = len(past_puzzles)
+        for i, p in enumerate(past_puzzles):
+            p["torchlight_number"] = total_past - i
         (SITE_DIR / "torchlight" / "archive").mkdir(parents=True, exist_ok=True)
         template = env.get_template("torchlight_archive.html")
         html = template.render(
-            puzzles=past_puzzles,
-            active_nav="",
-            root_path="../",
-            css_path=f"../static/style.css?v={css_version}",
+            puzzles=past_puzzles[1:],  # exclude today's live puzzle; archive starts from the previous day
+            active_nav="puzzle-archive",
+            root_path="../../",
+            css_path=f"../../static/style.css?v={css_version}",
         )
         with open(SITE_DIR / "torchlight" / "archive" / "index.html", "w") as f:
             f.write(html)
