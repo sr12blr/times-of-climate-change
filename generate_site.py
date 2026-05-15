@@ -358,7 +358,7 @@ def generate(full_rebuild=False):
         template = env.get_template("torchlight_archive.html")
         html = template.render(
             puzzles=past_puzzles[1:],  # exclude today's live puzzle; archive starts from the previous day
-            active_nav="",
+            active_nav="puzzle-archive",
             root_path="../../",
             css_path=f"../../static/style.css?v={css_version}",
         )
