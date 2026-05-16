@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-17",
+  "categories": [
+    {
+      "name": "Common trees in Indian cities",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Neem", "Gulmohar", "Raintree", "Ashoka"]
+    },
+    {
+      "name": "Iconic green spaces",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Aarey", "Aravalli", "Cubbon", "KBR"]
+    },
+    {
+      "name": "Development projects that threaten trees",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Flyover", "Tunnels", "Houses", "Roads"]
+    },
+    {
+      "name": "What urban trees give us",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Cooling", "Clean Air", "Habitat", "Third Space"]
+    }
+  ],
+  "fun_fact": "India's cities are losing their green cover fast — Bengaluru's tree canopy has shrunk to under 3% even as it kept the name \"Garden City,\" with similar declines across Mumbai, Delhi and Hyderabad. Urban trees and forests cool neighbourhoods, clean the air, shelter wildlife and give people a shared \"third space\" to gather — which is exactly why patches like Aarey, Cubbon, KBR and the Aravallis are worth protecting before the next flyover or road takes them.",
+  "author": ""
+}
