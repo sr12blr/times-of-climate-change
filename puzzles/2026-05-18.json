@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-18",
+  "categories": [
+    {
+      "name": "Gadgets that become e-waste",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Laptop", "Router", "Smartphone", "Vape"]
+    },
+    {
+      "name": "Valuable metals recovered from e-waste",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Lithium", "Gold", "Copper", "Palladium"]
+    },
+    {
+      "name": "Ways to extend a device's life",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Right to Repair", "Battery Swap", "Software Updates", "RAM Upgrade"]
+    },
+    {
+      "name": "Hazards of improper e-waste disposal",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Toxic Ash", "Landfill Fire", "Data Theft", "Leaching"]
+    }
+  ],
+  "fun_fact": "The world throws away over 60 million tonnes of electronics every year — and the pile is growing faster than any other waste stream. A big reason is planned obsolescence: devices are designed to slow down, stop getting software updates, or become unrepairable so we buy the next one. Recovering metals from e-waste helps, but it can never keep pace with how fast we discard. That's why Right to Repair and anti-obsolescence laws matter — the greenest device is the one you never had to replace.",
+  "author": ""
+}
