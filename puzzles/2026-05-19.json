@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-19",
+  "categories": [
+    {
+      "name": "Things made from mangoes",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Chutney", "Achar", "Murabba", "Panna"]
+    },
+    {
+      "name": "Mango varieties",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Alphonso", "Safeda", "Kesar", "Langra"]
+    },
+    {
+      "name": "Regions famous for mangoes",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Malihabad", "Ratnagiri", "Devgad", "Junagarh"]
+    },
+    {
+      "name": "MAN + ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Hole", "Grove", "Go", "Date"]
+    }
+  ],
+  "fun_fact": "The mango is probably India's favourite fruit, and the country grows nearly half the world's supply — but the king of fruits is feeling the heat. Erratic rains, untimely heatwaves, and unseasonal flowering are shrinking yields and dulling the flavour of beloved varieties like Alphonso, Chausa, and Langra. <a href=\"https://www.indiatoday.in/science/story/climate-change-impact-mango-production-india-threatens-yields-quality-climate-change-india-chausa-danka-alphonso-2889586-2026-04-01\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
