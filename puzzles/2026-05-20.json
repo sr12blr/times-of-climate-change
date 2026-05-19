@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-20",
+  "categories": [
+    {
+      "name": "Shampoo Brands",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Pantene", "Tresemme", "Head & Shoulder", "Clinic Plus"]
+    },
+    {
+      "name": "Toothpaste Brands",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Colgate", "Pepsodent", "Oral-B", "Closeup"]
+    },
+    {
+      "name": "Laundry Detergent Brands",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Surf excel", "Ariel", "Tide", "Wheel"]
+    },
+    {
+      "name": "Lipstick Brands",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Lakme", "MAC", "Maybelline", "Colorbar"]
+    }
+  ],
+  "fun_fact": "When we think of crude oil, we picture petrol and LPG — but it's hiding in your home too. Shampoos contain petroleum surfactants, toothpaste petrochemical thickeners, detergents synthetic petro-surfactants, and lipstick petroleum jelly and paraffin wax. Our dependence on fossil fuels is deeper than you think!",
+  "author": ""
+}
