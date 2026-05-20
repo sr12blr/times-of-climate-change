@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Round — Torchlight Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared.css">
+<script src="../config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+<div class="lb-wrap">
+  <h1 class="lb-title">🔦 Torchlight</h1>
+  <p class="lb-sub" id="roundLabel">Loading…</p>
+
+  <div class="lb-card" id="nameForm" style="display:none">
+    <label style="display:block;font-weight:700;margin-bottom:8px" for="nameInput">Your name</label>
+    <input id="nameInput" class="lb-input" autocomplete="off" placeholder="e.g. Sailee" maxlength="40">
+    <div id="formError" class="lb-error" style="display:none"></div>
+    <div style="margin-top:16px;display:flex;justify-content:flex-end">
+      <button class="lb-btn" id="startBtn">Start round →</button>
+    </div>
+  </div>
+
+  <div class="lb-card" id="welcomeBack" style="display:none">
+    <p style="margin:0 0 8px;font-size:18px">Welcome back, <strong id="playerName"></strong>!</p>
+    <p class="lb-sub" style="margin:0 0 16px">Ready when you are.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="lb-btn" id="startBtn2">Start round →</button>
+      <button class="lb-btn lb-btn-secondary" id="changeName">Not me? Change name</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var cfg = window.LB_CONFIG;
+  if (!cfg) { document.body.innerHTML = '<p style="padding:40px">LB_CONFIG missing</p>'; return; }
+
+  var params = new URLSearchParams(location.search);
+  var puzzleDate = params.get('p');
+  if (!puzzleDate) { document.body.innerHTML = '<p style="padding:40px">Missing ?p=&lt;date&gt; in URL.</p>'; return; }
+
+  var roundIdx = cfg.puzzles.indexOf(puzzleDate);
+  document.getElementById('roundLabel').textContent =
+    roundIdx >= 0 ? 'Round ' + (roundIdx+1) + ' of ' + cfg.puzzles.length : 'Custom round';
+
+  if (!window.firebase.apps.length) window.firebase.initializeApp(cfg.firebase);
+  var db = window.firebase.firestore();
+
+  function nameSlug(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 40);
+  }
+  function uuid() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random()*16|0, v = c==='x'?r:(r&0x3|0x8);
+      return v.toString(16);
+    });
+  }
+
+  function startPuzzle() {
+    location.href = '../../torchlight/archive/' + encodeURIComponent(puzzleDate)
+      + '/?lb=1&p=' + encodeURIComponent(puzzleDate);
+  }
+
+  var existing = (localStorage.getItem('lb_name') || '').trim();
+  if (existing) {
+    document.getElementById('welcomeBack').style.display = '';
+    document.getElementById('playerName').textContent = existing;
+    document.getElementById('startBtn2').addEventListener('click', startPuzzle);
+    document.getElementById('changeName').addEventListener('click', function() {
+      localStorage.removeItem('lb_name');
+      location.reload();
+    });
+  } else {
+    document.getElementById('nameForm').style.display = '';
+    var input = document.getElementById('nameInput');
+    input.focus();
+    var err = document.getElementById('formError');
+    function submit() {
+      var name = (input.value || '').trim();
+      err.style.display = 'none';
+      if (name.length < 1) { err.textContent = 'Please enter a name.'; err.style.display = ''; return; }
+      var slug = nameSlug(name);
+      if (!slug) { err.textContent = 'Name must contain letters or numbers.'; err.style.display = ''; return; }
+      // Check for collision — Firestore rule will also enforce, but pre-checking gives a friendly message
+      var ref = db.collection('events').doc(cfg.eventId)
+        .collection('puzzles').doc(puzzleDate)
+        .collection('results').doc(slug);
+      ref.get().then(function(snap) {
+        if (snap.exists) {
+          err.textContent = 'That name already submitted a time for this round. Try a different name.';
+          err.style.display = '';
+          return;
+        }
+        localStorage.setItem('lb_name', name);
+        if (!localStorage.getItem('lb_session_id')) {
+          localStorage.setItem('lb_session_id', uuid());
+        }
+        startPuzzle();
+      }).catch(function(e) {
+        // If Firestore is unreachable, allow the player to proceed offline — the runtime will still try to submit
+        console.warn('[lb] name precheck failed, continuing', e);
+        localStorage.setItem('lb_name', name);
+        if (!localStorage.getItem('lb_session_id')) {
+          localStorage.setItem('lb_session_id', uuid());
+        }
+        startPuzzle();
+      });
+    }
+    document.getElementById('startBtn').addEventListener('click', submit);
+    input.addEventListener('keydown', function(e) { if (e.key === 'Enter') submit(); });
+  }
+})();
+</script>
+</body>
+</html>

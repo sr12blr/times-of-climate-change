@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Round Done — Torchlight Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared.css">
+</head>
+<body>
+<div class="lb-wrap" style="text-align:center;padding-top:60px">
+  <h1 class="lb-title">🔦 Round done!</h1>
+  <p class="lb-sub" id="greeting"></p>
+
+  <div class="lb-card">
+    <div id="resultLine" style="font-size:18px;color:var(--lb-muted)">Your time</div>
+    <div class="lb-big-time" id="timeDisplay">—</div>
+    <div id="mistakeLine" class="lb-sub" style="margin:0"></div>
+  </div>
+
+  <p class="lb-sub">Hang tight — the host will start the next round soon.</p>
+</div>
+
+<script>
+(function() {
+  var params = new URLSearchParams(location.search);
+  var ms = parseInt(params.get('ms') || '0', 10);
+  var mistakes = parseInt(params.get('m') || '0', 10);
+  var won = params.get('won') === '1';
+  var name = (localStorage.getItem('lb_name') || '').trim();
+
+  document.getElementById('greeting').textContent = name ? 'Nice work, ' + name + '.' : 'Nice work!';
+  if (!won) {
+    document.getElementById('resultLine').textContent = 'Better luck next round.';
+    document.getElementById('timeDisplay').textContent = '—';
+    document.getElementById('mistakeLine').textContent = '';
+    return;
+  }
+  function fmt(ms) {
+    var s = Math.floor(ms / 1000);
+    var m = Math.floor(s / 60);
+    var rs = s % 60;
+    return m + ':' + (rs < 10 ? '0' : '') + rs;
+  }
+  document.getElementById('timeDisplay').textContent = ms > 0 ? fmt(ms) : '—';
+  document.getElementById('mistakeLine').textContent = mistakes === 0
+    ? 'No mistakes 🌿'
+    : mistakes + ' mistake' + (mistakes === 1 ? '' : 's');
+})();
+</script>
+</body>
+</html>

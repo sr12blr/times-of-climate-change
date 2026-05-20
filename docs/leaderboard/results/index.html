@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard — Torchlight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../_shared.css">
+<script src="../config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+<div class="lb-wrap lb-wide">
+  <div class="lb-row" style="margin-bottom:16px">
+    <h1 class="lb-title" style="margin:0">🔦 Leaderboard</h1>
+    <span class="lb-spacer"></span>
+    <label for="pick" style="font-weight:700">Round:</label>
+    <select id="pick" class="lb-select"></select>
+  </div>
+  <p class="lb-sub" id="roundSub">Live results — fastest first.</p>
+
+  <div class="lb-card" style="padding:0">
+    <table class="lb-board" id="board">
+      <thead>
+        <tr><th>Rank</th><th>Name</th><th>Time</th><th>Mistakes</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="lb-empty" id="empty">Waiting for the first finisher…</div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var cfg = window.LB_CONFIG;
+  if (!cfg) { document.body.innerHTML = '<p style="padding:40px">LB_CONFIG missing</p>'; return; }
+  if (!window.firebase.apps.length) window.firebase.initializeApp(cfg.firebase);
+  var db = window.firebase.firestore();
+
+  var params = new URLSearchParams(location.search);
+  var puzzleDate = params.get('p') || cfg.puzzles[0];
+
+  var pick = document.getElementById('pick');
+  cfg.puzzles.forEach(function(d, i) {
+    var opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = 'Round ' + (i+1) + ' — ' + d;
+    if (d === puzzleDate) opt.selected = true;
+    pick.appendChild(opt);
+  });
+  if (cfg.puzzles.indexOf(puzzleDate) < 0) {
+    var opt = document.createElement('option');
+    opt.value = puzzleDate;
+    opt.textContent = 'Custom — ' + puzzleDate;
+    opt.selected = true;
+    pick.appendChild(opt);
+  }
+  pick.addEventListener('change', function() {
+    var u = new URL(location.href);
+    u.searchParams.set('p', pick.value);
+    location.href = u.toString();
+  });
+
+  function fmt(ms) {
+    var s = Math.floor(ms / 1000);
+    var m = Math.floor(s / 60);
+    var rs = s % 60;
+    return m + ':' + (rs < 10 ? '0' : '') + rs;
+  }
+
+  var rows = document.getElementById('rows');
+  var empty = document.getElementById('empty');
+  var board = document.getElementById('board');
+
+  function render(docs) {
+    var winners = [];
+    var losers = [];
+    docs.forEach(function(d) {
+      var data = d.data();
+      (data.won ? winners : losers).push(data);
+    });
+    winners.sort(function(a, b) { return (a.ms || 0) - (b.ms || 0); });
+    losers.sort(function(a, b) { return (a.name || '').localeCompare(b.name || ''); });
+
+    rows.innerHTML = '';
+    if (winners.length === 0 && losers.length === 0) {
+      empty.style.display = '';
+      board.style.display = 'none';
+      return;
+    }
+    empty.style.display = 'none';
+    board.style.display = '';
+
+    winners.forEach(function(r, i) {
+      var tr = document.createElement('tr');
+      tr.innerHTML = '<td class="rank">' + (i+1) + '</td>'
+        + '<td>' + escapeHtml(r.name || '') + '</td>'
+        + '<td class="time">' + fmt(r.ms || 0) + '</td>'
+        + '<td>' + (r.mistakes || 0) + '</td>';
+      rows.appendChild(tr);
+    });
+    losers.forEach(function(r) {
+      var tr = document.createElement('tr');
+      tr.style.color = 'var(--lb-muted)';
+      tr.innerHTML = '<td class="rank">—</td>'
+        + '<td>' + escapeHtml(r.name || '') + '</td>'
+        + '<td class="time">DNF</td>'
+        + '<td>' + (r.mistakes || 0) + '</td>';
+      rows.appendChild(tr);
+    });
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function(c) {
+      return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+    });
+  }
+
+  db.collection('events').doc(cfg.eventId)
+    .collection('puzzles').doc(puzzleDate)
+    .collection('results')
+    .onSnapshot(function(snap) {
+      var docs = [];
+      snap.forEach(function(d) { docs.push(d); });
+      render(docs);
+    }, function(err) {
+      console.error('[lb] results listen error', err);
+      empty.textContent = 'Error loading results: ' + err.message;
+    });
+})();
+</script>
+</body>
+</html>
