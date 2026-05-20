@@ -6,6 +6,14 @@
 <script>
 (function(){
   if (!new URLSearchParams(location.search).has('lb')) return;
+  // Leaderboard mode: clear any prior play state for this puzzle so the player
+  // can play fresh. Only affects ?lb=1 plays; normal puzzle plays keep their state.
+  try {
+    for (var i = localStorage.length - 1; i >= 0; i--) {
+      var k = localStorage.key(i);
+      if (k && k.indexOf('torchlight_state_') === 0) localStorage.removeItem(k);
+    }
+  } catch (e) {}
   ['https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js',
    'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js',
    '{{ root_path }}leaderboard/config.js',
