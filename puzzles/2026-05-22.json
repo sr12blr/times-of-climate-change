@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-22",
+  "categories": [
+    {
+      "name": "Migratory birds in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Crane", "Falcon", "Flamingo", "Goose"]
+    },
+    {
+      "name": "Things birds do",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Fly", "Perch", "Preen", "Sing"]
+    },
+    {
+      "name": "Bird food",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Fruit", "Seed", "Worm", "Nectar"]
+    },
+    {
+      "name": "Birdwatcher's gear",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Binoculars", "Camera", "Tripod", "Hat"]
+    }
+  ],
+  "fun_fact": "Birding is one of the simplest ways to reconnect with nature. Even in a busy city, having a few plants and a birdbath in your balcony may attract birds you never noticed - bulbuls, sunbirds, sparrows!",
+  "author": ""
+}
