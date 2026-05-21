@@ -10,11 +10,11 @@ window.LB_CONFIG = {
 
   // The puzzle archive dates for this event, in YYMMDD form.
   // These must already exist under docs/torchlight/archive/<date>/index.html
-  // Round 1: Apr 27 (Nursery rhymes) — swap to 260520 (Personal care brands) tomorrow once it's archived
-  // Round 2: Apr 25 (Fast fashion)
+  // Round 1: Apr 27 (Nursery rhymes)
+  // Round 2: May 20 (Personal care brands)
   // Round 3: May 12 (AI)
   // Round 4: Apr 16 (Quick commerce)
-  puzzles: ["260427", "260425", "260512", "260416"],
+  puzzles: ["260427", "260520", "260512", "260416"],
 
   // Paste your Firebase project's web-app config here.
   // Get it from: Firebase console -> Project Settings -> Your apps -> </> Web app
