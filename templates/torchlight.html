@@ -1082,7 +1082,8 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '{{ puzzle.date }}'
+      'puzzle_date': '{{ puzzle.date }}',
+      'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
       try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '{{ puzzle.date }}'); } catch (e) { console.error(e); }
