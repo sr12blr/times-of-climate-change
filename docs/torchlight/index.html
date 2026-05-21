@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 21, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | May 22, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../static/style.css?v=1779394817">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 21, 2026</div>
+    <div class="game-date">May 22, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Bridges", "Ships", "Utensils", "Cars"], "name": "Things made of steel", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Stainless", "Alloy", "Tool", "Carbon"], "name": "Types of steel", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Iron", "Oxygen", "Coal", "Limestone"], "name": "Raw materials for steel", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Melt", "Cast", "Roll", "Blast"], "name": "Steps in steelmaking", "text": "#ffffff"}], "date": "2026-05-21", "fun_fact": "Steel is one of the world\u0027s largest carbon emitters, accounting for roughly 7-8% of global emissions. It\u0027s also among the hardest sectors to decarbonize: steelmaking needs coke (a coal product) not just for heat but as a chemical ingredient to strip oxygen from iron ore. India is the world\u0027s 2nd largest steel producer, but innovations like green hydrogen and electric arc furnaces are now making \"green steel\" possible. \u003ca href=\"https://www.weforum.org/stories/2022/07/green-steel-emissions-net-zero/\" target=\"_blank\" rel=\"noopener\"\u003eRead more\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Crane", "Falcon", "Flamingo", "Goose"], "name": "Migratory birds in India", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Fly", "Perch", "Preen", "Sing"], "name": "Things birds do", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Fruit", "Seed", "Worm", "Nectar"], "name": "Bird food", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Binoculars", "Camera", "Tripod", "Hat"], "name": "Birdwatcher\u0027s gear", "text": "#ffffff"}], "date": "2026-05-22", "fun_fact": "Birding is one of the simplest ways to reconnect with nature. Even in a busy city, having a few plants and a birdbath in your balcony may attract birds you never noticed - bulbuls, sunbirds, sparrows!"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-21',
+      'puzzle_date': '2026-05-22',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-21'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-22'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-21' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-22' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-21' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-22' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-21' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-22' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Steel is one of the world's largest carbon emitters, accounting for roughly 7-8% of global emissions. It's also among the hardest sectors to decarbonize: steelmaking needs coke (a coal product) not just for heat but as a chemical ingredient to strip oxygen from iron ore. India is the world's 2nd largest steel producer, but innovations like green hydrogen and electric arc furnaces are now making "green steel" possible. <a href="https://www.weforum.org/stories/2022/07/green-steel-emissions-net-zero/" target="_blank" rel="noopener">Read more</a>`;
+document.getElementById('funFactText').innerHTML = `Birding is one of the simplest ways to reconnect with nature. Even in a busy city, having a few plants and a birdbath in your balcony may attract birds you never noticed - bulbuls, sunbirds, sparrows!`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-21'
+    'puzzle_date': '2026-05-22'
   });
   renderGrid();
 }
