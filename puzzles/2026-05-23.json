@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-23",
+  "categories": [
+    {
+      "name": "Playground equipment",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Swing", "See-saw", "Slide", "Monkey bar"]
+    },
+    {
+      "name": "Park activities",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Walk", "Yoga", "Exercise", "Picnic"]
+    },
+    {
+      "name": "Natural elements in a park",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Lake", "Trees", "Birds", "Bugs"]
+    },
+    {
+      "name": "_____ Park",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Amusement", "Water", "Jurassic", "National"]
+    }
+  ],
+  "fun_fact": "Parks aren't just pretty — they're a critical 'third space' beyond home and work, and in increasingly brutal summers, a vital respite from the heat. Yet in many Indian cities, parks stay locked through the hottest afternoon hours. Why that needs to change: https://m.youtube.com/watch?v=8l24oZAgXJs",
+  "author": ""
+}
