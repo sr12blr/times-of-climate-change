@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-24",
+  "categories": [
+    {
+      "name": "Top palm oil producing countries",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Indonesia", "Malaysia", "Thailand", "Colombia"]
+    },
+    {
+      "name": "Animals whose habitats are destroyed for palm oil production",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Orangutan", "Tiger", "Rhino", "Elephant"]
+    },
+    {
+      "name": "Everyday products that contain palm oil",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Biscuit", "Soap", "Chocolate", "Lipstick"]
+    },
+    {
+      "name": "Other sources of edible oils",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Sunflower", "Mustard", "Coconut", "Olive"]
+    }
+  ],
+  "fun_fact": "Palm oil is not just the most widely used vegetable oil but also found in roughly half of all packaged products on supermarket shelves — from biscuits and chocolate to soap, shampoo, and lipstick. To meet demand, an area of tropical rainforest the size of 300 football fields is cleared every hour, making palm oil one of the largest drivers of deforestation, and endangering many animals.",
+  "author": ""
+}
