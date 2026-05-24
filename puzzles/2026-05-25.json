@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-25",
+  "categories": [
+    {
+      "name": "Kharif (monsoon) crops",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Rice", "Maize", "Cotton", "Groundnut"]
+    },
+    {
+      "name": "Monsoon rain gear",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Boots", "Poncho", "Umbrella", "Raincoat"]
+    },
+    {
+      "name": "Words for \"rain\" in Indian languages",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Baarish", "Paus", "Varsham", "Barasat"]
+    },
+    {
+      "name": "RAIN + ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Bow", "Check", "Drop", "Forest"]
+    }
+  ],
+  "fun_fact": "Pre-monsoon showers are already lashing Kerala, where the southwest monsoon officially makes landfall around June 1. Over the next four months it brings ~70% of India's annual rainfall — recharging reservoirs, watering kharif crops like rice and groundnut, and shaping the trajectory of India's entire economy: a good monsoon can lift GDP, while a weak one drags growth, food prices and rural incomes with it.",
+  "author": ""
+}
