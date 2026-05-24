@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 24, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | May 25, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../static/style.css?v=1779652000">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 24, 2026</div>
+    <div class="game-date">May 25, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Indonesia", "Malaysia", "Thailand", "Colombia"], "name": "Top palm oil producing countries", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Orangutan", "Tiger", "Rhino", "Elephant"], "name": "Animals whose habitats are destroyed for palm oil production", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Biscuit", "Soap", "Chocolate", "Lipstick"], "name": "Everyday products that contain palm oil", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Sunflower", "Mustard", "Coconut", "Olive"], "name": "Other sources of edible oils", "text": "#ffffff"}], "date": "2026-05-24", "fun_fact": "Palm oil is not just the most widely used vegetable oil but also found in roughly half of all packaged products on supermarket shelves \u2014 from biscuits and chocolate to soap, shampoo, and lipstick. To meet demand, an area of tropical rainforest the size of 300 football fields is cleared every hour, making palm oil one of the largest drivers of deforestation, and endangering many animals."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Rice", "Maize", "Cotton", "Groundnut"], "name": "Kharif (monsoon) crops", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Boots", "Poncho", "Umbrella", "Raincoat"], "name": "Monsoon rain gear", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Baarish", "Paus", "Varsham", "Barasat"], "name": "Words for \"rain\" in Indian languages", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Bow", "Check", "Drop", "Forest"], "name": "RAIN + ___", "text": "#ffffff"}], "date": "2026-05-25", "fun_fact": "Pre-monsoon showers are already lashing Kerala, where the southwest monsoon officially makes landfall around June 1. Over the next four months it brings ~70% of India\u0027s annual rainfall \u2014 recharging reservoirs, watering kharif crops like rice and groundnut, and shaping the trajectory of India\u0027s entire economy: a good monsoon can lift GDP, while a weak one drags growth, food prices and rural incomes with it."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-24',
+      'puzzle_date': '2026-05-25',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-24'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-25'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-24' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-25' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-24' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-25' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-24' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-25' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Palm oil is not just the most widely used vegetable oil but also found in roughly half of all packaged products on supermarket shelves — from biscuits and chocolate to soap, shampoo, and lipstick. To meet demand, an area of tropical rainforest the size of 300 football fields is cleared every hour, making palm oil one of the largest drivers of deforestation, and endangering many animals.`;
+document.getElementById('funFactText').innerHTML = `Pre-monsoon showers are already lashing Kerala, where the southwest monsoon officially makes landfall around June 1. Over the next four months it brings ~70% of India's annual rainfall — recharging reservoirs, watering kharif crops like rice and groundnut, and shaping the trajectory of India's entire economy: a good monsoon can lift GDP, while a weak one drags growth, food prices and rural incomes with it.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-24'
+    'puzzle_date': '2026-05-25'
   });
   renderGrid();
 }
