@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-26",
+  "categories": [
+    {
+      "name": "Things made from wood",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Matchstick", "Chair", "Pencil", "Paper"]
+    },
+    {
+      "name": "Common trees for Timber",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Teak", "Sal", "Shisham", "Deodar"]
+    },
+    {
+      "name": "___wood",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Bolly", "Sandal", "Drift", "Fire"]
+    },
+    {
+      "name": "Challenges with plantations",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Monoculture", "Greenwashing", "Pests", "Drought"]
+    }
+  ],
+  "fun_fact": "Wood is used widely in making many items we use daily. But meeting this demand often means replacing biodiverse forests with single-species plantations of fast-growing trees. These monocultures may look green, but they hold less carbon, support fewer species, and are far more vulnerable to pests, fire, and drought than the wild forests they replace. <a href=\"https://www.downtoearth.org.in/forests/access-open-why-opening-forestlands-to-commercial-plantations-would-prove-disastrous\" target=\"_blank\" rel=\"noopener\">Read more →</a>",
+  "author": ""
+}
