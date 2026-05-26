@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 26, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | May 27, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1779739792">
+    <link rel="stylesheet" href="../static/style.css?v=1775848226">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 26, 2026</div>
+    <div class="game-date">May 27, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Matchstick", "Chair", "Pencil", "Paper"], "name": "Things made from wood", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Teak", "Sal", "Shisham", "Deodar"], "name": "Common trees for Timber", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Bolly", "Sandal", "Drift", "Fire"], "name": "___wood", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Monoculture", "Greenwashing", "Pests", "Drought"], "name": "Challenges with plantations", "text": "#ffffff"}], "date": "2026-05-26", "fun_fact": "Wood is used widely in making many items we use daily. But meeting this demand often means replacing biodiverse forests with single-species plantations of fast-growing trees. These monocultures may look green, but they hold less carbon, support fewer species, and are far more vulnerable to pests, fire, and drought than the wild forests they replace. \u003ca href=\"https://www.downtoearth.org.in/forests/access-open-why-opening-forestlands-to-commercial-plantations-would-prove-disastrous\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Pacific", "Arctic", "Atlantic", "Indian"], "name": "Oceans of the world", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Reef", "Trench", "Iceberg", "Island"], "name": "Ocean features", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Monsoon", "Heat", "Agriculture", "Inflation"], "name": "Things El Ni\u00f1o affects in India", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Salvador", "Clasico", "Dorado", "Ni\u00f1o"], "name": "El ___", "text": "#ffffff"}], "date": "2026-05-27", "fun_fact": "El Ni\u00f1o is a climate pattern where the Pacific Ocean near the equator warms up unusually, shifting rainfall and winds across the globe. Forecasters expect El Ni\u00f1o conditions to return in late 2026 \u2014 and for India, that historically means a weaker monsoon, hotter summers, and reduced agricultural yields."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-26',
+      'puzzle_date': '2026-05-27',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-26'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-27'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-26' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-27' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-26' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-27' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-26' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-27' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Wood is used widely in making many items we use daily. But meeting this demand often means replacing biodiverse forests with single-species plantations of fast-growing trees. These monocultures may look green, but they hold less carbon, support fewer species, and are far more vulnerable to pests, fire, and drought than the wild forests they replace. <a href="https://www.downtoearth.org.in/forests/access-open-why-opening-forestlands-to-commercial-plantations-would-prove-disastrous" target="_blank" rel="noopener">Read more →</a>`;
+document.getElementById('funFactText').innerHTML = `El Niño is a climate pattern where the Pacific Ocean near the equator warms up unusually, shifting rainfall and winds across the globe. Forecasters expect El Niño conditions to return in late 2026 — and for India, that historically means a weaker monsoon, hotter summers, and reduced agricultural yields.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-26'
+    'puzzle_date': '2026-05-27'
   });
   renderGrid();
 }

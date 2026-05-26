@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-27",
+  "categories": [
+    {
+      "name": "Oceans of the world",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Pacific", "Arctic", "Atlantic", "Indian"]
+    },
+    {
+      "name": "Ocean features",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Reef", "Trench", "Iceberg", "Island"]
+    },
+    {
+      "name": "Things El Niño affects in India",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Monsoon", "Heat", "Agriculture", "Inflation"]
+    },
+    {
+      "name": "El ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Salvador", "Clasico", "Dorado", "Niño"]
+    }
+  ],
+  "fun_fact": "El Niño is a climate pattern where the Pacific Ocean near the equator warms up unusually, shifting rainfall and winds across the globe. Forecasters expect El Niño conditions to return in late 2026 — and for India, that historically means a weaker monsoon, hotter summers, and reduced agricultural yields.",
+  "author": ""
+}
