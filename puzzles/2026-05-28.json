@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-28",
+  "categories": [
+    {
+      "name": "Types of grasses in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Bamboo", "Durva", "Lemongrass", "Khas"]
+    },
+    {
+      "name": "What grasslands do for the climate",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Water recharge", "Fire resilience", "Erosion control", "Carbon store"]
+    },
+    {
+      "name": "Indian words for grassland",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Bugyal", "Banni", "Gauchar", "Marg"]
+    },
+    {
+      "name": "Things we call \"grass\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Cannabis", "Wimbledon", "Field", "Lawn"]
+    }
+  ],
+  "fun_fact": "When most people think of India's wildlife, they picture dense tropical jungles or dry deciduous forests. But India's grasslands are unsung ecological powerhouses. Covering roughly 20% of the country's geographical area, they range from freezing alpine meadows in the Himalayas to scorched, semi-arid plains in the west. Far from being just \"empty spaces,\" these ecosystems support some of the rarest wildlife on Earth and sustain millions of pastoral communities. [Read more](https://india.mongabay.com/2025/08/asias-largest-grassland-is-a-surprisingly-effective-carbon-sink-study-finds/)",
+  "author": ""
+}
