@@ -6,7 +6,7 @@
 
 window.LB_CONFIG = {
   // Bump this per event so each event gets a separate set of leaderboards in Firestore.
-  eventId: "event-2026-05-21-live",
+  eventId: "event-2026-05-22-live",
 
   // The puzzle archive dates for this event, in YYMMDD form.
   // These must already exist under docs/torchlight/archive/<date>/index.html
