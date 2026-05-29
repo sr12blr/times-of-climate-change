@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-30",
+  "categories": [
+    {
+      "name": "Cloud types",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Cirrus", "Cumulus", "Nimbus", "Stratus"]
+    },
+    {
+      "name": "Words that describe clouds",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Dark", "Fluffy", "Stormy", "Wispy"]
+    },
+    {
+      "name": "Things that look like clouds",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Foam", "Popcorn", "Whipped Cream", "Cotton Candy"]
+    },
+    {
+      "name": "Cloud ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Kitchen", "Seeding", "Storage", "Burst"]
+    }
+  ],
+  "fun_fact": "The people of the Thar get just forty cloudy days a year — and yet they have forty names for clouds. Dark clouds are Kalaan, dense ones are Kanthi, and the ones that bring rain are Ghataatope. Aarti Kumar Rao describes this beautifully in the first chapter of her book Marginlands; she writes about it briefly <a href=\"https://vikalpsangam.org/article/forty-names-of-clouds/\" target=\"_blank\" rel=\"noopener\">here</a>.",
+  "author": ""
+}
