@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>🔦 Torchlight | May 31, 2026 — The Times of Climate Change</title>
-=======
-    <title>🔦 Torchlight | May 30, 2026 — The Times of Climate Change</title>
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1780087365">
+    <link rel="stylesheet" href="../static/style.css?v=1780170533">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -74,11 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-<<<<<<< HEAD
     <div class="game-date">May 31, 2026</div>
-=======
-    <div class="game-date">May 30, 2026</div>
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -792,11 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-<<<<<<< HEAD
 const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Konkan", "Malabar", "Karavali", "Coromandel"], "name": "Indian Coastlines", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Tourism", "Seaweed cultivation", "Fishing", "Coconut farming"], "name": "Coastal Livelihoods", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Cyclones", "Erosion", "Tidal flooding", "Saltwater ingress"], "name": "Climate Impacts on Coasts", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Line", "Guard", "Er", "Al"], "name": "Goes after \"Coast\"", "text": "#ffffff"}], "date": "2026-05-31", "fun_fact": "India\u0027s ~11,000 km coast hosts 170M+ people. With seas rising ~3 mm/year and cyclones intensifying, millions face flooding, erosion, and lost livelihoods. Try this \u003ca href=\"https://coastal.climatecentral.org/\" target=\"_blank\"\u003etool\u003c/a\u003e to see what parts are vulnerable to sea level rise."};
-=======
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Cirrus", "Cumulus", "Nimbus", "Stratus"], "name": "Cloud types", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Dark", "Fluffy", "Stormy", "Wispy"], "name": "Words that describe clouds", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Foam", "Popcorn", "Whipped Cream", "Cotton Candy"], "name": "Things that look like clouds", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Kitchen", "Seeding", "Storage", "Burst"], "name": "Cloud ___", "text": "#ffffff"}], "date": "2026-05-30", "fun_fact": "The people of the Thar get just forty cloudy days a year \u2014 and yet they have forty names for clouds. Dark clouds are Kalaan, dense ones are Kanthi, and the ones that bring rain are Ghataatope. Aarti Kumar Rao describes this beautifully in the first chapter of her book Marginlands; she writes about it briefly \u003ca href=\"https://vikalpsangam.org/article/forty-names-of-clouds/\" target=\"_blank\" rel=\"noopener\"\u003ehere\u003c/a\u003e."};
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1133,19 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-<<<<<<< HEAD
       'puzzle_date': '2026-05-31',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
       try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-31'); } catch (e) { console.error(e); }
-=======
-      'puzzle_date': '2026-05-30',
-      'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
-    });
-    if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-30'); } catch (e) { console.error(e); }
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
     }
   }
 
@@ -1256,21 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-<<<<<<< HEAD
   gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-31' });
-=======
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-30' });
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-<<<<<<< HEAD
   gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-31' });
-=======
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-30' });
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1288,11 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-<<<<<<< HEAD
   gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-31' });
-=======
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-30' });
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1370,19 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-<<<<<<< HEAD
 document.getElementById('funFactText').innerHTML = `India's ~11,000 km coast hosts 170M+ people. With seas rising ~3 mm/year and cyclones intensifying, millions face flooding, erosion, and lost livelihoods. Try this <a href="https://coastal.climatecentral.org/" target="_blank">tool</a> to see what parts are vulnerable to sea level rise.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
     'puzzle_date': '2026-05-31'
-=======
-document.getElementById('funFactText').innerHTML = `The people of the Thar get just forty cloudy days a year — and yet they have forty names for clouds. Dark clouds are Kalaan, dense ones are Kanthi, and the ones that bring rain are Ghataatope. Aarti Kumar Rao describes this beautifully in the first chapter of her book Marginlands; she writes about it briefly <a href="https://vikalpsangam.org/article/forty-names-of-clouds/" target="_blank" rel="noopener">here</a>.`;
-const wasRestored = restoreState();
-if (!wasRestored) {
-  gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-30'
->>>>>>> 9ff2d0f251efc006f6178f78beed3803ea943b88
   });
   renderGrid();
 }
