@@ -1,0 +1,39 @@
+{
+  "date": "2026-05-31",
+  "categories": [
+    {
+      "name": "Indian Coastlines",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Konkan", "Malabar", "Karavali", "Coromandel"]
+    },
+    {
+      "name": "Coastal Livelihoods",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Tourism", "Seaweed cultivation", "Fishing", "Coconut farming"]
+    },
+    {
+      "name": "Climate Impacts on Coasts",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Cyclones", "Erosion", "Tidal flooding", "Saltwater ingress"]
+    },
+    {
+      "name": "Goes after \"Coast\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Line", "Guard", "Er", "Al"]
+    }
+  ],
+  "fun_fact": "India's ~11,000 km coast hosts 170M+ people. With seas rising ~3 mm/year and cyclones intensifying, millions face flooding, erosion, and lost livelihoods. Try this <a href=\"https://coastal.climatecentral.org/\" target=\"_blank\">tool</a> to see what parts are vulnerable to sea level rise.",
+  "author": ""
+}
