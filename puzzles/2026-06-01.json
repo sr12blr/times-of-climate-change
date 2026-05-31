@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-01",
+  "categories": [
+    {
+      "name": "Tennis scoring terms",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Game", "Point", "Match", "Set"]
+    },
+    {
+      "name": "Winners of the French Open",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Swiatek", "Djokovic", "Alcaraz", "Gauff"]
+    },
+    {
+      "name": "Things Paris is famous for",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Eiffel", "Louvre", "Seine", "Croissant"]
+    },
+    {
+      "name": "French ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Fries", "Toast", "Kiss", "Open"]
+    }
+  ],
+  "fun_fact": "Sports aren't immune to a warming world, and tennis is feeling it too. With Paris in the middle of a week-long heatwave, the French Open has shifted several matches to cooler night sessions. Even that wasn't enough for world No. 1 Jannik Sinner, who crashed out in the second round after what looked like heat cramps. [Read more](https://www.bbc.com/sport/tennis/articles/c70vvyvngy5o).",
+  "author": ""
+}
