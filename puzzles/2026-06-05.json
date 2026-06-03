@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-05",
+  "categories": [
+    {
+      "name": "Climate/environmental icons",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Goodall", "Thunberg", "Attenborough", "Gore"]
+    },
+    {
+      "name": "Places that have environmental protests",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Niyamgiri", "Aravali", "Narmada", "Silent Valley"]
+    },
+    {
+      "name": "Global climate movements & organizations",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Extinction Rebellion", "Fridays for Future", "Greenpeace", "350.org"]
+    },
+    {
+      "name": "What climate activism fights for",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Justice", "Biodiversity", "Forests", "Oceans"]
+    }
+  ],
+  "fun_fact": "June 5 is World Environment Day. Say 'environmentalist', and most imagine someone protesting on a street or hugging a tree. But to be an environmentalist is simply to understand that a healthy, functioning natural environment is the basis of all life on Earth — and to protect it, for today and tomorrow. So what will you say if someone asks you, 'Are you an environmentalist?' [Here's my answer](https://sunnyclimatestormyclimate.substack.com/p/so-youre-an-environmentalist-now).",
+  "author": ""
+}
