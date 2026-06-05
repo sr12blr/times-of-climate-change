@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-06",
+  "categories": [
+    {
+      "name": "Materials that worsen urban heat islands",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Concrete", "Asphalt", "Glass", "Steel"]
+    },
+    {
+      "name": "Traditional Indian flooring that cools houses",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Kota stone", "Athangudi", "Mosaic", "Red oxide"]
+    },
+    {
+      "name": "Cool-roof solutions",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["White paint", "Limestone", "Terracotta", "Garden"]
+    },
+    {
+      "name": "Passive cooling features in Indian architecture",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Jaali", "Courtyard", "Verandah", "Khus"]
+    }
+  ],
+  "fun_fact": "Ever wondered how to beat the summer heat without an AC? Ancient architects had the answer — from building design to the materials used, traditional Indian architecture offers lessons on how to keep buildings cool. [Watch this video to learn how](https://www.youtube.com/watch?v=WBUt-AlyLrw).",
+  "author": ""
+}
