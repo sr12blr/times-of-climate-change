@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | June 05, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 06, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../static/style.css?v=1780691213">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">June 05, 2026</div>
+    <div class="game-date">June 06, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Goodall", "Thunberg", "Attenborough", "Gore"], "name": "Climate/environmental icons", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Niyamgiri", "Aravali", "Narmada", "Silent Valley"], "name": "Places that have environmental protests", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Extinction Rebellion", "Fridays for Future", "Greenpeace", "350.org"], "name": "Global climate movements \u0026 organizations", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Justice", "Biodiversity", "Forests", "Oceans"], "name": "What climate activism fights for", "text": "#ffffff"}], "date": "2026-06-05", "fun_fact": "June 5 is World Environment Day. Say \u0027environmentalist\u0027, and most imagine someone protesting on a street or hugging a tree. But to be an environmentalist is simply to understand that a healthy, functioning natural environment is the basis of all life on Earth \u2014 and to protect it, for today and tomorrow. So what will you say if someone asks you, \u0027Are you an environmentalist?\u0027 \u003ca href=\"https://sunnyclimatestormyclimate.substack.com/p/so-youre-an-environmentalist-now\" target=\"_blank\" rel=\"noopener\"\u003eHere\u0027s my answer\u003c/a\u003e."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Concrete", "Asphalt", "Glass", "Steel"], "name": "Materials that worsen urban heat islands", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Kota stone", "Athangudi", "Mosaic", "Red oxide"], "name": "Traditional Indian flooring that cools houses", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["White paint", "Limestone", "Terracotta", "Garden"], "name": "Cool-roof solutions", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Jaali", "Courtyard", "Verandah", "Khus"], "name": "Passive cooling features in Indian architecture", "text": "#ffffff"}], "date": "2026-06-06", "fun_fact": "Ever wondered how to beat the summer heat without an AC? Ancient architects had the answer \u2014 from building design to the materials used, traditional Indian architecture offers lessons on how to keep buildings cool. \u003ca href=\"https://www.youtube.com/watch?v=WBUt-AlyLrw\" target=\"_blank\" rel=\"noopener\"\u003eWatch this video to learn how\u003c/a\u003e."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-06-05',
+      'puzzle_date': '2026-06-06',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-05'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-06'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-05' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-06' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-05' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-06' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-05' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-06' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `June 5 is World Environment Day. Say 'environmentalist', and most imagine someone protesting on a street or hugging a tree. But to be an environmentalist is simply to understand that a healthy, functioning natural environment is the basis of all life on Earth — and to protect it, for today and tomorrow. So what will you say if someone asks you, 'Are you an environmentalist?' <a href="https://sunnyclimatestormyclimate.substack.com/p/so-youre-an-environmentalist-now" target="_blank" rel="noopener">Here's my answer</a>.`;
+document.getElementById('funFactText').innerHTML = `Ever wondered how to beat the summer heat without an AC? Ancient architects had the answer — from building design to the materials used, traditional Indian architecture offers lessons on how to keep buildings cool. <a href="https://www.youtube.com/watch?v=WBUt-AlyLrw" target="_blank" rel="noopener">Watch this video to learn how</a>.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-06-05'
+    'puzzle_date': '2026-06-06'
   });
   renderGrid();
 }
