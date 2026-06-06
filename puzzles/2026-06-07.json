@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-07",
+  "categories": [
+    {
+      "name": "Instant Noodle Brands",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Maggi", "Yippee", "Wai Wai", "Top Ramen"]
+    },
+    {
+      "name": "Biscuit Brands",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Britannia", "Parle", "Sunfeast", "Unibic"]
+    },
+    {
+      "name": "Chips & Namkeen Brands",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Lay's", "Kurkure", "Bingo!", "Balaji"]
+    },
+    {
+      "name": "Common Ingredients in Ultra-Processed Snacks",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Wheat", "Corn", "Sugar", "Palm Oil"]
+    }
+  ],
+  "fun_fact": "Supermarket shelves can appear highly diverse while being biologically quite uniform underneath. Thousands of products may ultimately trace back to the same 5 crops — Wheat, Corn, Sugar, Soy and Palm oil — just processed and packaged in different ways. This is not good for your health, and the monocultures it promotes are not good for the environment.",
+  "author": ""
+}
