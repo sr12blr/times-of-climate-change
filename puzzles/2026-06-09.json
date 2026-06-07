@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-09",
+  "categories": [
+    {
+      "name": "Words that mean collide",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Crash", "Clash", "Strike", "Hit"]
+    },
+    {
+      "name": "Ways to prevent bird-window collisions",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Frosting", "Etching", "External screen", "Blinds"]
+    },
+    {
+      "name": "Glassware brands",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["La Opala", "Corning", "Saint Gobain", "Borosil"]
+    },
+    {
+      "name": "Glass ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Ceiling", "House", "Eye", "Half-full"]
+    }
+  ],
+  "fun_fact": "Birds can't identify glass. Reflections of trees, clouds, and sky can trick birds into flying straight into glass. As India's cities add more buildings with glass facades, there is an urgent need to include to bird-friendly designs. Just a few dots, lines, or patterns on a window can save countless birds. [Read more](https://avianbliss.com/protecting-birds-from-window-collisions/). Of course, it may be better to avoid glass altogether, but we'll learn about that later!",
+  "author": ""
+}
