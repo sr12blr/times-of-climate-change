@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-08",
+  "categories": [
+    {
+      "name": "Green spaces in Delhi",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Lodhi Garden", "Sunder Nursery", "Nehru Park", "Aravalli Park"]
+    },
+    {
+      "name": "Indian regions where hornbills are found",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Western ghats", "Himalayas", "North East", "Andaman"]
+    },
+    {
+      "name": "Hornbill species",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Indian grey", "Malabar grey", "Oriental pied", "Great"]
+    },
+    {
+      "name": "Things called a \"bill\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Proposed law", "Beak", "Invoice", "Poster"]
+    }
+  ],
+  "fun_fact": "Hornbills are majestic birds. Their large beaks and casque (the hollow structure on top of the bill) make them instantly recognisable. They are rarely seen in cities, but over the last few weeks an interesting episode involving an Indian Grey Hornbill and the Oriental Pied Hornbill has been playing out in Delhi's Lodhi garden, where the female of one species in feeding chicks of the other. Read this fascinating story [here](https://www.newslaundry.com/2026/06/01/a-rare-natural-wonder-is-unfolding-in-delhis-lodhi-garden).",
+  "author": ""
+}
