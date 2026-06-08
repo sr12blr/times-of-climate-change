@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-11",
+  "categories": [
+    {
+      "name": "AI Companies",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["OpenAI", "Anthropic", "Google", "Nvidia"]
+    },
+    {
+      "name": "AI Jargon",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Prompt", "Agent", "Token", "Hallucination"]
+    },
+    {
+      "name": "AI's Physical Infrastructure",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Datacenter", "Server", "Cable", "Chip"]
+    },
+    {
+      "name": "Environmental Costs of AI",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Water", "Emissions", "Energy", "Heat"]
+    }
+  ],
+  "fun_fact": "AI may seem weightless, but every chatbot response and every app you vibe-code relies on a very physical network of chips, cables, and data centres. And they run on electricity, and often water for cooling. And these costs are disproportionately borne by the places where the physical infrastructure is built. No wonder that there are increasing instances of locals protesting against data centers. <a href=\"https://www.datacenterwatch.org/report\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
