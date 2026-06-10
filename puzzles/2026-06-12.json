@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-12",
+  "categories": [
+    {
+      "name": "___ Beans",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["French", "Kidney", "Broad", "Cluster"]
+    },
+    {
+      "name": "Indian Dal varieties",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Toor", "Moong", "Masoor", "Urad"]
+    },
+    {
+      "name": "Umbrella terms for pulses",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Dals", "Beans", "Peas", "Grams"]
+    },
+    {
+      "name": "Legume superpowers",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Protein powerhouse", "Soil healer", "Nitrogen fixer", "Drought resistant"]
+    }
+  ],
+  "fun_fact": "Legumes are heroes on two fronts: they fix atmospheric nitrogen into the soil (50–200 kg of nitrogen per Ha per crop/season), cutting the need for synthetic fertilizers, while also being a rich source of plant-based protein. Growing more dals and beans is good for your plate and for the earth.",
+  "author": ""
+}
