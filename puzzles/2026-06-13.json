@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-13",
+  "categories": [
+    {
+      "name": "Common trees in Indian cities",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Mango", "Neem", "Peepal", "Banyan"]
+    },
+    {
+      "name": "Parts of a Tree",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Trunk", "Canopy", "Roots", "Fruits"]
+    },
+    {
+      "name": "Ecosystem Services of Trees",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Oxygen", "Carbon storage", "Cooling", "Water absorption"]
+    },
+    {
+      "name": "Urban Tree Mapping Technologies",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["GIS", "Drone", "Satellite", "Mobile"]
+    }
+  ],
+  "fun_fact": "Urban trees do more than just look pretty - their canopy acts as a natural air conditioner, lowering city temperatures by up to 8°C, while their roots create massive subterranean networks that keep our cities resilient during heavy rainfalls. But most data about them is old, locked in static PDFs, and inaccessible to the people it affects. But now you could be a part of mapping this data. Check out [ROOTS](https://treefolio-website.vercel.app/) - a new initiative that lets you map your neighbourhood trees with just your phone.",
+  "author": "Ritika Gupta"
+}
