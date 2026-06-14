@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-15",
+  "categories": [
+    {
+      "name": "Modes of Public Transport",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Metro", "Monorail", "Train", "Bus"]
+    },
+    {
+      "name": "Mumbai Transit Authorities",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["WR", "CR", "BEST", "MMRDA"]
+    },
+    {
+      "name": "Benefits of Public Transport",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Cheap", "Fast", "Eco-friendly", "Traffic-Free"]
+    },
+    {
+      "name": "Public Transit Pain Points",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Last Mile", "Frequency", "Overcrowding", "Safety"]
+    }
+  ],
+  "fun_fact": "On June 12, 2026, BKC held India's first Public Transport Day — over 70 organizations participated. While private vehicle use dropped by 5–7%, the day exposed a stubborn gap: even when trains and Metro are accessible, the last mile to the office remains the hardest part of the commute. That said, our constantly growing cities desperately need to increase the share of public transport, and initiatives like these are much needed. <a href=\"https://www.freepressjournal.in/mumbai/bkc-public-transport-day-exposes-poor-last-mile-connectivity-as-commuters-struggle-for-autos-and-face-long-walks\" target=\"_blank\" rel=\"noopener\">Read more →</a>",
+  "author": ""
+}
