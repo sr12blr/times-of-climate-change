@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-14",
+  "categories": [
+    {
+      "name": "Parts of a snake's anatomy",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["HOOD", "TONGUE", "SCALE", "FANG"]
+    },
+    {
+      "name": "India's venomous snakes",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["COBRA", "KRAIT", "RUSSELL'S VIPER", "PIT VIPER"]
+    },
+    {
+      "name": "Types of snakes based on habitat",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["WATER", "TREE", "BURROWING", "DESERT"]
+    },
+    {
+      "name": "___ Snake (common non-venomous Indian snakes)",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["CAT", "RAT", "WOLF", "VINE"]
+    }
+  ],
+  "fun_fact": "India is home to over 300 species of snakes, but only a handful pose a real danger to humans. Most snakes play a vital role in controlling rodent populations. Snake Speek, a youth-led initiative from Andhra Pradesh by wildlife enthusiast Sampath Kantimahanti, is changing that narrative — their video 'Learning to Coexist with Snakes' was recognised among the top 50 entries globally at the 2026 National Geographic Slingshot Challenge. <a href=\"https://www.thehindu.com/sci-tech/energy-and-environment/snake-speek-project-from-andhra-pradesh-among-top-50-at-national-geographic-slingshot-challenge/article71032001.ece\" target=\"_blank\">Read more</a>",
+  "author": ""
+}

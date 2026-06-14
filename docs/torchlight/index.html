@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | June 13, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 14, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1781380937">
+    <link rel="stylesheet" href="../static/style.css?v=1775848226">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">June 13, 2026</div>
+    <div class="game-date">June 14, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -147,8 +147,6 @@
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
 
-  
-  <div class="game-author">Puzzle by Ritika Gupta</div>
   
 
   <div style="text-align: center; font-size: 12px; color: #888; margin-top: 8px; padding: 0 12px;">
@@ -786,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "Ritika Gupta", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Mango", "Neem", "Peepal", "Banyan"], "name": "Common trees in Indian cities", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Trunk", "Canopy", "Roots", "Fruits"], "name": "Parts of a Tree", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Oxygen", "Carbon storage", "Cooling", "Water absorption"], "name": "Ecosystem Services of Trees", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["GIS", "Drone", "Satellite", "Mobile"], "name": "Urban Tree Mapping Technologies", "text": "#ffffff"}], "date": "2026-06-13", "fun_fact": "Urban trees do more than just look pretty - their canopy acts as a natural air conditioner, lowering city temperatures by up to 8\u00b0C, while their roots create massive subterranean networks that keep our cities resilient during heavy rainfalls. But most data about them is old, locked in static PDFs, and inaccessible to the people it affects. But now you could be a part of mapping this data. Check out \u003ca href=\"https://treefolio-website.vercel.app/\" target=\"_blank\" rel=\"noopener\"\u003eROOTS\u003c/a\u003e - a new initiative that lets you map your neighbourhood trees with just your phone."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["HOOD", "TONGUE", "SCALE", "FANG"], "name": "Parts of a snake\u0027s anatomy", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["COBRA", "KRAIT", "RUSSELL\u0027S VIPER", "PIT VIPER"], "name": "India\u0027s venomous snakes", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["WATER", "TREE", "BURROWING", "DESERT"], "name": "Types of snakes based on habitat", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["CAT", "RAT", "WOLF", "VINE"], "name": "___ Snake (common non-venomous Indian snakes)", "text": "#ffffff"}], "date": "2026-06-14", "fun_fact": "India is home to over 300 species of snakes, but only a handful pose a real danger to humans. Most snakes play a vital role in controlling rodent populations. Snake Speek, a youth-led initiative from Andhra Pradesh by wildlife enthusiast Sampath Kantimahanti, is changing that narrative \u2014 their video \u0027Learning to Coexist with Snakes\u0027 was recognised among the top 50 entries globally at the 2026 National Geographic Slingshot Challenge. \u003ca href=\"https://www.thehindu.com/sci-tech/energy-and-environment/snake-speek-project-from-andhra-pradesh-among-top-50-at-national-geographic-slingshot-challenge/article71032001.ece\" target=\"_blank\"\u003eRead more\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1123,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-06-13',
+      'puzzle_date': '2026-06-14',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-13'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-14'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1238,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-13' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-14' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-13' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-14' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1262,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-13' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-14' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1340,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Urban trees do more than just look pretty - their canopy acts as a natural air conditioner, lowering city temperatures by up to 8°C, while their roots create massive subterranean networks that keep our cities resilient during heavy rainfalls. But most data about them is old, locked in static PDFs, and inaccessible to the people it affects. But now you could be a part of mapping this data. Check out <a href="https://treefolio-website.vercel.app/" target="_blank" rel="noopener">ROOTS</a> - a new initiative that lets you map your neighbourhood trees with just your phone.`;
+document.getElementById('funFactText').innerHTML = `India is home to over 300 species of snakes, but only a handful pose a real danger to humans. Most snakes play a vital role in controlling rodent populations. Snake Speek, a youth-led initiative from Andhra Pradesh by wildlife enthusiast Sampath Kantimahanti, is changing that narrative — their video 'Learning to Coexist with Snakes' was recognised among the top 50 entries globally at the 2026 National Geographic Slingshot Challenge. <a href="https://www.thehindu.com/sci-tech/energy-and-environment/snake-speek-project-from-andhra-pradesh-among-top-50-at-national-geographic-slingshot-challenge/article71032001.ece" target="_blank">Read more</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-06-13'
+    'puzzle_date': '2026-06-14'
   });
   renderGrid();
 }
