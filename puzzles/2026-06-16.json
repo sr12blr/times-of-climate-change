@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-16",
+  "categories": [
+    {
+      "name": "Synonyms for Garbage",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Trash", "Garbage", "Rubbish", "Junk"]
+    },
+    {
+      "name": "The 4 Rs of Waste Management",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Reduce", "Reuse", "Recycle", "Repair"]
+    },
+    {
+      "name": "India's Waste Segregation Categories",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Dry", "Wet", "E-waste", "Hazardous"]
+    },
+    {
+      "name": "Waste Infrastructure",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Tipper", "MRF", "Landfill", "Dustbin"]
+    }
+  ],
+  "fun_fact": "Keeping a city clean takes a huge hidden fleet — Bengaluru needs hundreds of auto tippers every day just to collect its waste. Currently, nearly 300 are not turning up for duty daily, leaving tonnes of garbage uncollected on its streets. <a href='https://www.deccanherald.com/india/karnataka/bengaluru/why-bengalurus-garbage-crisis-is-getting-worse-nearly-300-vehicles-missing-daily-4034593'>Read more</a>",
+  "author": ""
+}
