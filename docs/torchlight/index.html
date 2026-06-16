@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | June 16, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 17, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../static/style.css?v=1781645218">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">June 16, 2026</div>
+    <div class="game-date">June 17, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Trash", "Garbage", "Rubbish", "Junk"], "name": "Synonyms for Garbage", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Reduce", "Reuse", "Recycle", "Repair"], "name": "The 4 Rs of Waste Management", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Dry", "Wet", "E-waste", "Hazardous"], "name": "India\u0027s Waste Segregation Categories", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Tipper", "MRF", "Landfill", "Dustbin"], "name": "Waste Infrastructure", "text": "#ffffff"}], "date": "2026-06-16", "fun_fact": "Keeping a city clean takes a huge hidden fleet \u2014 Bengaluru needs hundreds of auto tippers every day just to collect its waste. Currently, nearly 300 are not turning up for duty daily, leaving tonnes of garbage uncollected on its streets. \u003ca href=\u0027https://www.deccanherald.com/india/karnataka/bengaluru/why-bengalurus-garbage-crisis-is-getting-worse-nearly-300-vehicles-missing-daily-4034593\u0027\u003eRead more\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Natural Gas", "Oil", "Fertilizer", "Petrochemicals"], "name": "Biggest Exports Passing Through Hormuz", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Iran", "Iraq", "Saudi Arabia", "UAE"], "name": "Biggest Exporters From Hormuz", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["India", "China", "Japan", "South Korea"], "name": "Highly Reliant on Imports From Hormuz", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Hormuz", "Bering", "Malacca", "Gibraltar"], "name": "Strategic Shipping Straits", "text": "#ffffff"}], "date": "2026-06-17", "fun_fact": "A deal has been cracked, the strait is open, and Trump has said \u0027Let the oil flow.\u0027 But I hope this crisis serves as a wake-up call to move away from petrochemicals \u2014 not just for energy, but for other industries as well. Here\u0027s an IEA factsheet on who and what got impacted due to the Strait of Hormuz closure: \u003ca href=\u0027https://www.iea.org/about/oil-security-and-emergency-response/strait-of-hormuz?ftag=YHF4eb9d17\u0026utm_source=chatgpt.com\u0027\u003eRead more\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-06-16',
+      'puzzle_date': '2026-06-17',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-16'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-17'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-16' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-17' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-16' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-17' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-16' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-17' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Keeping a city clean takes a huge hidden fleet — Bengaluru needs hundreds of auto tippers every day just to collect its waste. Currently, nearly 300 are not turning up for duty daily, leaving tonnes of garbage uncollected on its streets. <a href='https://www.deccanherald.com/india/karnataka/bengaluru/why-bengalurus-garbage-crisis-is-getting-worse-nearly-300-vehicles-missing-daily-4034593'>Read more</a>`;
+document.getElementById('funFactText').innerHTML = `A deal has been cracked, the strait is open, and Trump has said 'Let the oil flow.' But I hope this crisis serves as a wake-up call to move away from petrochemicals — not just for energy, but for other industries as well. Here's an IEA factsheet on who and what got impacted due to the Strait of Hormuz closure: <a href='https://www.iea.org/about/oil-security-and-emergency-response/strait-of-hormuz?ftag=YHF4eb9d17&utm_source=chatgpt.com'>Read more</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-06-16'
+    'puzzle_date': '2026-06-17'
   });
   renderGrid();
 }

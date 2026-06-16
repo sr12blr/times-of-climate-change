@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 23, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 16, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 23, 2026</div>
+    <div class="game-date">June 16, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Swing", "See-saw", "Slide", "Monkey bar"], "name": "Playground equipment", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Walk", "Yoga", "Exercise", "Picnic"], "name": "Park activities", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Lake", "Trees", "Birds", "Bugs"], "name": "Natural elements in a park", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Amusement", "Water", "Jurassic", "National"], "name": "_____ Park", "text": "#ffffff"}], "date": "2026-05-23", "fun_fact": "Parks aren\u0027t just pretty \u2014 they\u0027re a critical \u0027third space\u0027 beyond home and work, and in increasingly brutal summers, a vital respite from the heat. Yet in many Indian cities, parks stay locked through the hottest afternoon hours. Why that needs to change: https://m.youtube.com/watch?v=8l24oZAgXJs"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Trash", "Garbage", "Rubbish", "Junk"], "name": "Synonyms for Garbage", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Reduce", "Reuse", "Recycle", "Repair"], "name": "The 4 Rs of Waste Management", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Dry", "Wet", "E-waste", "Hazardous"], "name": "India\u0027s Waste Segregation Categories", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Tipper", "MRF", "Landfill", "Dustbin"], "name": "Waste Infrastructure", "text": "#ffffff"}], "date": "2026-06-16", "fun_fact": "Keeping a city clean takes a huge hidden fleet \u2014 Bengaluru needs hundreds of auto tippers every day just to collect its waste. Currently, nearly 300 are not turning up for duty daily, leaving tonnes of garbage uncollected on its streets. \u003ca href=\u0027https://www.deccanherald.com/india/karnataka/bengaluru/why-bengalurus-garbage-crisis-is-getting-worse-nearly-300-vehicles-missing-daily-4034593\u0027\u003eRead more\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-23',
+      'puzzle_date': '2026-06-16',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-23'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-16'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-23' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-16' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-23' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-16' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-23' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-16' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Parks aren't just pretty — they're a critical 'third space' beyond home and work, and in increasingly brutal summers, a vital respite from the heat. Yet in many Indian cities, parks stay locked through the hottest afternoon hours. Why that needs to change: https://m.youtube.com/watch?v=8l24oZAgXJs`;
+document.getElementById('funFactText').innerHTML = `Keeping a city clean takes a huge hidden fleet — Bengaluru needs hundreds of auto tippers every day just to collect its waste. Currently, nearly 300 are not turning up for duty daily, leaving tonnes of garbage uncollected on its streets. <a href='https://www.deccanherald.com/india/karnataka/bengaluru/why-bengalurus-garbage-crisis-is-getting-worse-nearly-300-vehicles-missing-daily-4034593'>Read more</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-23'
+    'puzzle_date': '2026-06-16'
   });
   renderGrid();
 }
