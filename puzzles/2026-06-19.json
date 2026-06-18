@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-19",
+  "categories": [
+    {
+      "name": "Modes of Public Transport in Mumbai",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Bus", "Train", "Metro", "Monorail"]
+    },
+    {
+      "name": "Mumbai Local Train Lines",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Western", "Central", "Harbour", "Trans harbour"]
+    },
+    {
+      "name": "Coaches in Mumbai Locals",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["First class", "Second class", "Ladies", "Luggage"]
+    },
+    {
+      "name": "Abbreviated as \"PT\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Pacific time", "Public Transport", "Physical Training", "Physiotherapy"]
+    }
+  ],
+  "fun_fact": "BCK saw its first ever public transport day last Friday (June 12). It's a great initiative to promote public transport, but what also came up was the need for better last mile connectivity. Even if people took the train or metro, how do they get from there to their office? In response, BEST has announced additional services in that area. Hope this will be the beginning of a new way to imagine how BKC Moves! [Read more](https://www.instagram.com/bkcmoves/)",
+  "author": ""
+}
