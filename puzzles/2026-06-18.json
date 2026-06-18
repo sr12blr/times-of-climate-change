@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-18",
+  "categories": [
+    {
+      "name": "Monsoon Rain Gear",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Umbrella", "Poncho", "Raincoat", "Gumboots"]
+    },
+    {
+      "name": "Classic Monsoon Snacks & Drinks",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Chai", "Pakora", "Bhutta", "Soup"]
+    },
+    {
+      "name": "IMD Seasonal Rainfall Classifications",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Excess", "Normal", "Below Normal", "Deficient"]
+    },
+    {
+      "name": "MON + ___ = New Word",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Soon", "Key", "Day", "Arch"]
+    }
+  ],
+  "fun_fact": "Monsoon is India's lifeline — it shapes agriculture, fills reservoirs, and runs deep in our culture (think chai-pakora and bhutta on a rainy day). But this June, India is staring at a 35% rainfall deficit — a possible sign of El Niño returning. [Read more](https://www.thehindu.com/sci-tech/energy-and-environment/india-stares-at-35-monsoon-deficit/article71109891.ece)",
+  "author": ""
+}
