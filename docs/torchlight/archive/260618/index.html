@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | June 04, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 18, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">June 04, 2026</div>
+    <div class="game-date">June 18, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Soy", "Almond", "Oat", "Coconut"], "name": "Plant-based milks", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Cow", "Buffalo", "Goat", "Camel"], "name": "Animals that give milk", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Cheese", "Curd", "Cream", "Lassi"], "name": "Dairy products", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Disease risk", "Low milk yield", "Eat less", "Premature births"], "name": "Impacts of extreme heat on livestock", "text": "#ffffff"}], "date": "2026-06-04", "fun_fact": "India is the world\u0027s largest milk producer \u2014 but extreme summer heat is now testing that record, pushing dairy animals to eat less, fall sick more often, and even deliver calves prematurely. \u003ca href=\"https://www.deccanherald.com/india/extreme-heat-tests-indias-record-milk-production-4024636\" target=\"_blank\" rel=\"noopener\"\u003eRead more\u003c/a\u003e."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Umbrella", "Poncho", "Raincoat", "Gumboots"], "name": "Monsoon Rain Gear", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Chai", "Pakora", "Bhutta", "Soup"], "name": "Classic Monsoon Snacks \u0026 Drinks", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Excess", "Normal", "Below Normal", "Deficient"], "name": "IMD Seasonal Rainfall Classifications", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Soon", "Key", "Day", "Arch"], "name": "MON + ___ = New Word", "text": "#ffffff"}], "date": "2026-06-18", "fun_fact": "Monsoon is India\u0027s lifeline \u2014 it shapes agriculture, fills reservoirs, and runs deep in our culture (think chai-pakora and bhutta on a rainy day). But this June, India is staring at a 35% rainfall deficit \u2014 a possible sign of El Ni\u00f1o returning. \u003ca href=\"https://www.thehindu.com/sci-tech/energy-and-environment/india-stares-at-35-monsoon-deficit/article71109891.ece\" target=\"_blank\" rel=\"noopener\"\u003eRead more\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-06-04',
+      'puzzle_date': '2026-06-18',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-04'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-18'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-04' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-18' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-04' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-18' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-04' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-18' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `India is the world's largest milk producer — but extreme summer heat is now testing that record, pushing dairy animals to eat less, fall sick more often, and even deliver calves prematurely. <a href="https://www.deccanherald.com/india/extreme-heat-tests-indias-record-milk-production-4024636" target="_blank" rel="noopener">Read more</a>.`;
+document.getElementById('funFactText').innerHTML = `Monsoon is India's lifeline — it shapes agriculture, fills reservoirs, and runs deep in our culture (think chai-pakora and bhutta on a rainy day). But this June, India is staring at a 35% rainfall deficit — a possible sign of El Niño returning. <a href="https://www.thehindu.com/sci-tech/energy-and-environment/india-stares-at-35-monsoon-deficit/article71109891.ece" target="_blank" rel="noopener">Read more</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-06-04'
+    'puzzle_date': '2026-06-18'
   });
   renderGrid();
 }
