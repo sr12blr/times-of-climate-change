@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-20",
+  "categories": [
+    {
+      "name": "Things to book for a wedding",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Venue", "Catering", "Decor", "Photography"]
+    },
+    {
+      "name": "Exchanged at a wedding",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Rings", "Vows", "Garlands", "Gifts"]
+    },
+    {
+      "name": "Synonyms for \"marriage\"",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Matrimony", "Wedlock", "Nuptials", "Alliance"]
+    },
+    {
+      "name": "Indian wedding ceremonies",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Sangeet", "Mehendi", "Pheras", "Nikah"]
+    }
+  ],
+  "fun_fact": "In India, weddings are an emotion, but also an industry. And it's an industry that has a huge environmental footprint - food waste, single use plastic, decor, hundreds of guests flying and clothes that get used just once. Have you ever thought about <a href=\"https://m.youtube.com/watch?v=DXw2hGYfkv4&ra=m\" target=\"_blank\" rel=\"noopener\">'The climate cost of a big fat Indian wedding'</a>?",
+  "author": ""
+}
