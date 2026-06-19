@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-21",
+  "categories": [
+    {
+      "name": "Words meaning \"stripes\"",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Lines", "Streaks", "Bands", "Bars"]
+    },
+    {
+      "name": "Striped animals",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Tiger", "Zebra", "Skunk", "Indian squirrel"]
+    },
+    {
+      "name": "Vegetables/fruits with stripes",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Ridge gourd", "Pumpkin", "Watermelon", "Cucumber"]
+    },
+    {
+      "name": "Everyday striped objects",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Zebra crossing", "Beach towel", "Barcode", "Candy cane"]
+    }
+  ],
+  "fun_fact": "June 21 is Show Your Stripes Day — a global moment to share the warming stripes. Climate scientist Ed Hawkins created these deceptively simple stripes in 2018: each stripe is one year, blue for cooler, red for warmer. The stripes turned a century of temperature data into something anyone could easily see. You can find the stripes for your country or city: <a href=\"https://showyourstripes.info/\" target=\"_blank\" rel=\"noopener\">Show your stripes</a>",
+  "author": ""
+}
