@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | June 21, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 22, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1781985867">
+    <link rel="stylesheet" href="../static/style.css?v=1775848226">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">June 21, 2026</div>
+    <div class="game-date">June 22, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Lines", "Streaks", "Bands", "Bars"], "name": "Words meaning \"stripes\"", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Tiger", "Zebra", "Skunk", "Indian squirrel"], "name": "Striped animals", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Ridge gourd", "Pumpkin", "Watermelon", "Cucumber"], "name": "Vegetables/fruits with stripes", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Zebra crossing", "Beach towel", "Barcode", "Candy cane"], "name": "Everyday striped objects", "text": "#ffffff"}], "date": "2026-06-21", "fun_fact": "June 21 is Show Your Stripes Day \u2014 a global moment to share the warming stripes. Climate scientist Ed Hawkins created these deceptively simple stripes in 2018: each stripe is one year, blue for cooler, red for warmer. The stripes turned a century of temperature data into something anyone could easily see. You can find the stripes for your country or city: \u003ca href=\"https://showyourstripes.info/\" target=\"_blank\" rel=\"noopener\"\u003eShow your stripes\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Frog", "Toad", "Salamander", "Newt"], "name": "Amphibians", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Flies", "Beetle", "Mosquitoes", "Spider"], "name": "What frogs eat", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Sticky tongue", "Bulging eyes", "Moist skin", "Cold blooded"], "name": "Physical traits of frogs", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Terrestrial", "Burrowing", "Tree-dwelling", "Flying"], "name": "Types of frogs", "text": "#ffffff"}], "date": "2026-06-22", "fun_fact": "Frogs are tiny guardians of ecosystems! They help control insect populations, provide food for other animals, and act as indicators of environmental health. But frogs are among the most threatened groups of animals on Earth. \u003ca href=\"https://india.mongabay.com/2026/06/study-finds-urbanisation-is-reshaping-frog-communities-in-the-western-ghats/\" target=\"_blank\" rel=\"noopener\"\u003eA recent study\u003c/a\u003e showed that urbanisation is reshaping frog communities in the Western Ghats."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-06-21',
+      'puzzle_date': '2026-06-22',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-21'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-22'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-21' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-22' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-21' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-22' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-21' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-22' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `June 21 is Show Your Stripes Day — a global moment to share the warming stripes. Climate scientist Ed Hawkins created these deceptively simple stripes in 2018: each stripe is one year, blue for cooler, red for warmer. The stripes turned a century of temperature data into something anyone could easily see. You can find the stripes for your country or city: <a href="https://showyourstripes.info/" target="_blank" rel="noopener">Show your stripes</a>`;
+document.getElementById('funFactText').innerHTML = `Frogs are tiny guardians of ecosystems! They help control insect populations, provide food for other animals, and act as indicators of environmental health. But frogs are among the most threatened groups of animals on Earth. <a href="https://india.mongabay.com/2026/06/study-finds-urbanisation-is-reshaping-frog-communities-in-the-western-ghats/" target="_blank" rel="noopener">A recent study</a> showed that urbanisation is reshaping frog communities in the Western Ghats.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-06-21'
+    'puzzle_date': '2026-06-22'
   });
   renderGrid();
 }

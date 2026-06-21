@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-22",
+  "categories": [
+    {
+      "name": "Amphibians",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Frog", "Toad", "Salamander", "Newt"]
+    },
+    {
+      "name": "What frogs eat",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Flies", "Beetle", "Mosquitoes", "Spider"]
+    },
+    {
+      "name": "Physical traits of frogs",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Sticky tongue", "Bulging eyes", "Moist skin", "Cold blooded"]
+    },
+    {
+      "name": "Types of frogs",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Terrestrial", "Burrowing", "Tree-dwelling", "Flying"]
+    }
+  ],
+  "fun_fact": "Frogs are tiny guardians of ecosystems! They help control insect populations, provide food for other animals, and act as indicators of environmental health. But frogs are among the most threatened groups of animals on Earth. [A recent study](https://india.mongabay.com/2026/06/study-finds-urbanisation-is-reshaping-frog-communities-in-the-western-ghats/) showed that urbanisation is reshaping frog communities in the Western Ghats.",
+  "author": ""
+}
