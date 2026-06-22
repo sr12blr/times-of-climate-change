@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sailee Rane - Flipbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at 50% 30%, #34302a, #1c1a16);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      padding: 24px;
+    }
+
+    .flipbook-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      max-width: 820px;
+    }
+
+    .flipbook-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .nav-btn {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .nav-btn:hover { background: rgba(255,255,255,0.22); }
+    .nav-btn:disabled { opacity: 0.3; cursor: default; }
+
+    .book {
+      flex: 1;
+      min-width: 0;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slide {
+      min-width: 100%;
+    }
+
+    /* ── Page indicators ── */
+    .page-indicators {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .page-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .page-dot.active { background: #fff; }
+    .page-counter {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: .08em;
+      margin-left: 8px;
+    }
+
+    /* ── Image placeholder ── */
+    .img-slot {
+      background: #e8e4dc;
+      border: 1.5px dashed #b5b0a6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #999;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .08em;
+      width: 100%;
+      object-fit: cover;
+    }
+    img.img-slot { background: #e8e4dc; }
+
+    /* ── COVER ── */
+    .slide-cover {
+      background: #d33f1c;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+    }
+    .cover-left {
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .cover-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .15em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+    .cover-name {
+      font-size: clamp(52px, 8vw, 80px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+    }
+    .cover-tagline {
+      font-size: 18px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+      margin-top: 20px;
+    }
+    .cover-tagline em { font-style: normal; font-weight: 700; }
+    .cover-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      margin-top: 14px;
+    }
+    .cover-footer {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .turn-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .15em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+    .linkedin-link {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 2px;
+    }
+    .linkedin-link:hover { color: #fff; }
+    .cover-photo-wrap {
+      background: rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .cover-photo-wrap img, .cover-photo-wrap .img-slot {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── CONTENT PAGES (shared) ── */
+    .slide-content {
+      background: #f6f4ee;
+      padding: 48px 44px 40px;
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .project-number {
+      font-size: 40px;
+      font-weight: 700;
+      color: #d33f1c;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .project-title {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 700;
+      color: #1f1d19;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .project-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: .12em;
+      color: #117b72;
+      text-transform: uppercase;
+      margin-top: -8px;
+    }
+    .project-desc {
+      font-size: 15px;
+      color: #46433c;
+      line-height: 1.65;
+      max-width: 560px;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: #d33f1c;
+      color: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 4px;
+      text-decoration: none;
+      align-self: flex-start;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #b83518; }
+    .divider {
+      border: none;
+      border-top: 1px solid #ddd9d0;
+      margin: 0;
+    }
+
+    /* ── INKTOBER images ── */
+    .ink-grid {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .ink-grid .img-slot, .ink-grid img {
+      flex: 1 1 120px;
+      height: 200px;
+      border-radius: 2px;
+      object-fit: cover;
+    }
+    .ink-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      color: #46433c;
+      letter-spacing: .06em;
+      text-align: center;
+      margin-top: 4px;
+    }
+    .ink-item { display: flex; flex-direction: column; flex: 1 1 120px; }
+    .ink-item .img-slot, .ink-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    /* ── SKY images ── */
+    .sky-banner .img-slot, .sky-banner img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .sky-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+    }
+    .sky-grid .img-slot, .sky-grid img {
+      height: 100px;
+      border-radius: 2px;
+      object-fit: cover;
+    }
+
+    /* ── BRIEF images ── */
+    .brief-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      flex: 1;
+    }
+    .brief-banner { grid-column: 1; }
+    .brief-banner .img-slot, .brief-banner img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .brief-stills {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .brief-stills .img-slot, .brief-stills img {
+      flex: 1;
+      width: 100%;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    /* ── ESSAY images ── */
+    .essay-grid {
+      display: flex;
+      gap: 12px;
+      flex: 1;
+    }
+    .essay-grid .img-slot, .essay-grid img {
+      flex: 1;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    /* ── TORCHLIGHT ── */
+    .torch-layout {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      flex: 1;
+    }
+    .torch-left { display: flex; flex-direction: column; gap: 20px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: auto;
+    }
+    .stat-val {
+      font-size: 32px;
+      font-weight: 700;
+      color: #d33f1c;
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      color: #46433c;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .torch-img .img-slot, .torch-img img {
+      width: 320px;
+      height: 384px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="flipbook-wrap">
+  <div class="flipbook-nav">
+    <button class="nav-btn" id="prevBtn" aria-label="Previous page" disabled>←</button>
+    <div class="book">
+      <div class="slides" id="slides">
+
+        <!-- COVER -->
+        <div class="slide">
+          <div class="slide-cover">
+            <div class="cover-left">
+              <div>
+                <p class="cover-label">Portfolio · Climate &amp; Environment</p>
+                <h1 class="cover-name">SAILEE<br>RANE</h1>
+                <p class="cover-tagline">Trying to figure out how we talk about <em>climate change.</em></p>
+                <p class="cover-sub">Work across drawing, photography, video, writing and games — each one a different way to ask questions and spark alternate imaginations.</p>
+              </div>
+              <div class="cover-footer">
+                <span class="turn-label">Turn the page</span>
+                <a href="https://www.linkedin.com/in/sailee-rane-14750217/" class="linkedin-link" target="_blank">LinkedIn ↗</a>
+              </div>
+            </div>
+            <div class="cover-photo-wrap">
+              <img class="img-slot" id="cover-photo" src="" alt="Cover photo" style="height:100%;min-height:560px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 2: Inktober -->
+        <div class="slide">
+          <div class="slide-content">
+            <div style="display:flex;align-items:baseline;gap:16px;">
+              <span class="project-number">01</span>
+              <h2 class="project-title">Inktober × Climate Change</h2>
+            </div>
+            <p class="project-meta">31 Ink Drawings · 2024</p>
+            <p class="project-desc">A climate lens applied to the Inktober 2024 prompts — thirty-one prompts, thirty-one sketches.</p>
+            <a href="https://www.timesofclimatechange.com/explore/" class="cta-btn">Read the series →</a>
+            <hr class="divider">
+            <div class="ink-grid">
+              <div class="ink-item"><img class="img-slot" id="ink-1" src="" alt="Binoculars"><p class="ink-label">Binoculars</p></div>
+              <div class="ink-item"><img class="img-slot" id="ink-2" src="" alt="Sun"><p class="ink-label">Sun</p></div>
+              <div class="ink-item"><img class="img-slot" id="ink-3" src="" alt="Camera"><p class="ink-label">Camera</p></div>
+              <div class="ink-item"><img class="img-slot" id="ink-4" src="" alt="Discover"><p class="ink-label">Discover</p></div>
+              <div class="ink-item"><img class="img-slot" id="ink-5" src="" alt="Snacks"><p class="ink-label">Snacks</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 3: 100 Days of Blue Skies -->
+        <div class="slide">
+          <div class="slide-content">
+            <div style="display:flex;align-items:baseline;gap:16px;">
+              <span class="project-number">02</span>
+              <h2 class="project-title">100 Days of Blue Skies</h2>
+            </div>
+            <p class="project-meta">100 Photographs</p>
+            <p class="project-desc">This started as a Twitter series — 'Daily reminder to be grateful for blue skies' — to remind myself and others that blue skies are wonderful and we need to save them.</p>
+            <a href="#" class="cta-btn">View the album →</a>
+            <hr class="divider">
+            <div class="sky-banner">
+              <img class="img-slot" id="banner-sky" src="" alt="Blue skies banner">
+            </div>
+            <div class="sky-grid">
+              <img class="img-slot" id="sky-1" src="" alt="Sky 1">
+              <img class="img-slot" id="sky-2" src="" alt="Sky 2">
+              <img class="img-slot" id="sky-3" src="" alt="Sky 3">
+              <img class="img-slot" id="sky-4" src="" alt="Sky 4">
+              <img class="img-slot" id="sky-5" src="" alt="Sky 5">
+              <img class="img-slot" id="sky-6" src="" alt="Sky 6">
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 4: The Climate Brief -->
+        <div class="slide">
+          <div class="slide-content">
+            <div style="display:flex;align-items:baseline;gap:16px;">
+              <span class="project-number">03</span>
+              <h2 class="project-title">The Climate Brief</h2>
+            </div>
+            <p class="project-meta">YouTube · Short Videos</p>
+            <p class="project-desc">I am the creator and chief editor of the channel that makes short explainers on climate allied topics like public transport, buildings, conservation, foods, heat etc.</p>
+            <a href="#" class="cta-btn">Visit the channel →</a>
+            <hr class="divider">
+            <div class="brief-layout">
+              <div class="brief-banner">
+                <img class="img-slot" id="banner-brief" src="" alt="The Climate Brief banner">
+              </div>
+              <div class="brief-stills">
+                <img class="img-slot" id="brief-1" src="" alt="Video still 1">
+                <img class="img-slot" id="brief-2" src="" alt="Video still 2">
+                <img class="img-slot" id="brief-3" src="" alt="Video still 3">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 5: Sunny Climate, Stormy Climate -->
+        <div class="slide">
+          <div class="slide-content">
+            <div style="display:flex;align-items:baseline;gap:16px;">
+              <span class="project-number">04</span>
+              <h2 class="project-title">Sunny Climate, Stormy Climate</h2>
+            </div>
+            <p class="project-meta">Substack · Essays</p>
+            <p class="project-desc">Long form writing on climate allied themes that balances information and insight with imagination and hope.</p>
+            <a href="#" class="cta-btn">Read on Substack →</a>
+            <hr class="divider">
+            <div class="essay-grid">
+              <img class="img-slot" id="essay-1" src="" alt="Essay image 1">
+              <img class="img-slot" id="essay-2" src="" alt="Essay image 2">
+              <img class="img-slot" id="essay-3" src="" alt="Essay image 3">
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE 6: Torchlight -->
+        <div class="slide">
+          <div class="slide-content">
+            <div style="display:flex;align-items:baseline;gap:16px;">
+              <span class="project-number">05</span>
+              <h2 class="project-title">Torchlight</h2>
+            </div>
+            <p class="project-meta">A Daily Puzzle</p>
+            <p class="project-desc">A daily Connections-style game themed on climate and environment. Bite-sized learning through fun and play, because a little bit of play never hurt anyone.</p>
+            <a href="https://www.timesofclimatechange.com/torchlight/" class="cta-btn">Play today's puzzle →</a>
+            <hr class="divider">
+            <div class="torch-layout">
+              <div class="torch-left">
+                <div class="stats-grid">
+                  <div><div class="stat-val">75</div><div class="stat-label">Editions Published</div></div>
+                  <div><div class="stat-val">8000+</div><div class="stat-label">Games Completed</div></div>
+                  <div><div class="stat-val">70%</div><div class="stat-label">Win Rate</div></div>
+                  <div><div class="stat-val">380+</div><div class="stat-label">Shared</div></div>
+                </div>
+              </div>
+              <div class="torch-img">
+                <img class="img-slot" id="torch-1" src="" alt="Torchlight puzzle screenshot">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /slides -->
+    </div><!-- /book -->
+    <button class="nav-btn" id="nextBtn" aria-label="Next page">→</button>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:8px;">
+    <div class="page-indicators" id="dots"></div>
+    <span class="page-counter" id="counter">01 / 06</span>
+  </div>
+</div>
+
+<script>
+(function() {
+  const slides = document.getElementById('slides');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const dotsEl = document.getElementById('dots');
+  const counter = document.getElementById('counter');
+  const total = document.querySelectorAll('.slide').length;
+  let current = 0;
+
+  // Build dots
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('div');
+    d.className = 'page-dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(d);
+  }
+
+  function goTo(n) {
+    current = Math.max(0, Math.min(total - 1, n));
+    slides.style.transform = 'translateX(-' + (current * 100) + '%)';
+    document.querySelectorAll('.page-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') goTo(current + 1);
+    if (e.key === 'ArrowLeft') goTo(current - 1);
+  });
+
+  goTo(0);
+})();
+</script>
+</body>
+</html>
