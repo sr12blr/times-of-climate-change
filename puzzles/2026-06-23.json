@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-23",
+  "categories": [
+    {
+      "name": "Job Portals",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["LinkedIn", "Indeed", "Naukri", "Glassdoor"]
+    },
+    {
+      "name": "Things on a Resume",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Experience", "Education", "Certification", "References"]
+    },
+    {
+      "name": "Details in a Job Posting",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Compensation", "Location", "Designation", "Company"]
+    },
+    {
+      "name": "Synonyms for \"Career\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Job", "Vocation", "Profession", "Occupation"]
+    }
+  ],
+  "fun_fact": "Today (June 23) is exactly 10 years since my first day at my first full time job. So couldn't help but think about careers and transitioning into climate work. If you're curious about what careers in climate can look like, do check out this 3 part series on [Climate Action Live](https://www.climateaction.live/the-climate-career-map-no-one-shows-you/)",
+  "author": ""
+}
