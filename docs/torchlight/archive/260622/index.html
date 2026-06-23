@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 11, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 22, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 11, 2026</div>
+    <div class="game-date">June 22, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Lake", "River", "Well", "Aquifer"], "name": "Water Sources", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Drinking", "Farming", "Building", "Cooling"], "name": "Uses Of Water", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Evaporation", "Condensation", "Precipitation", "Collection"], "name": "Water Cycle Stages", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Chemical Effluents", "Plastic", "Pesticides", "Sewage"], "name": "Sources Of Water Pollution", "text": "#ffffff"}], "date": "2026-05-11", "fun_fact": "We are living in an era of \u003ca href=\"https://news.un.org/en/story/2026/01/1166800\" target=\"_blank\" rel=\"noopener\"\u003eglobal water bankruptcy\u003c/a\u003e \u2014 demand far outstrips supply. India, home to 18% of the world\u0027s population but just 4% of its freshwater, is one of the most water-stressed nations on Earth. Do you know how much water an avg person needs every day? \u003ca href=\"https://sunnyclimatestormyclimate.substack.com/p/wading-through-ignorance-why-we-need?utm_source=publication-search\" target=\"_blank\" rel=\"noopener\"\u003eFind out!\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Frog", "Toad", "Salamander", "Newt"], "name": "Amphibians", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Flies", "Beetle", "Mosquitoes", "Spider"], "name": "What frogs eat", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Sticky tongue", "Bulging eyes", "Moist skin", "Cold blooded"], "name": "Physical traits of frogs", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Terrestrial", "Burrowing", "Tree-dwelling", "Flying"], "name": "Types of frogs", "text": "#ffffff"}], "date": "2026-06-22", "fun_fact": "Frogs are tiny guardians of ecosystems! They help control insect populations, provide food for other animals, and act as indicators of environmental health. But frogs are among the most threatened groups of animals on Earth. \u003ca href=\"https://india.mongabay.com/2026/06/study-finds-urbanisation-is-reshaping-frog-communities-in-the-western-ghats/\" target=\"_blank\" rel=\"noopener\"\u003eA recent study\u003c/a\u003e showed that urbanisation is reshaping frog communities in the Western Ghats."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-11',
+      'puzzle_date': '2026-06-22',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-11'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-22'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-11' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-22' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-11' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-22' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-11' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-22' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `We are living in an era of <a href="https://news.un.org/en/story/2026/01/1166800" target="_blank" rel="noopener">global water bankruptcy</a> — demand far outstrips supply. India, home to 18% of the world's population but just 4% of its freshwater, is one of the most water-stressed nations on Earth. Do you know how much water an avg person needs every day? <a href="https://sunnyclimatestormyclimate.substack.com/p/wading-through-ignorance-why-we-need?utm_source=publication-search" target="_blank" rel="noopener">Find out!</a>`;
+document.getElementById('funFactText').innerHTML = `Frogs are tiny guardians of ecosystems! They help control insect populations, provide food for other animals, and act as indicators of environmental health. But frogs are among the most threatened groups of animals on Earth. <a href="https://india.mongabay.com/2026/06/study-finds-urbanisation-is-reshaping-frog-communities-in-the-western-ghats/" target="_blank" rel="noopener">A recent study</a> showed that urbanisation is reshaping frog communities in the Western Ghats.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-11'
+    'puzzle_date': '2026-06-22'
   });
   renderGrid();
 }
