@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-26",
+  "categories": [
+    {
+      "name": "Words That Mean Ship",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Liner", "Steamer", "Vessel", "Boat"]
+    },
+    {
+      "name": "Ship Crew Roles",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Captain", "Officer", "Seaman", "Engineer"]
+    },
+    {
+      "name": "Parts of a Ship",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Hull", "Deck", "Anchor", "Bow"]
+    },
+    {
+      "name": "SEA + ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Sick", "Shore", "Horse", "Weed"]
+    }
+  ],
+  "fun_fact": "On World Seafarers Day (June 25), we celebrate the people who operate the ships that carry everything from oil and grain to cars, clothes, and electronics across the world. But these floating highways come with a carbon footprint — international shipping contributes about 3% of global greenhouse gas emissions.",
+  "author": ""
+}
