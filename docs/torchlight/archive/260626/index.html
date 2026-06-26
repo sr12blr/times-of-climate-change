@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 10, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | June 26, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 10, 2026</div>
+    <div class="game-date">June 26, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Palak", "Sarson", "Methi", "Gongura"], "name": "Indian Leafy Greens", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Iron", "Fiber", "Antioxidants", "Micro-Nutrients"], "name": "Nutrients In Leafy Greens", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Smoothie", "Stir-Fry", "Curry", "Soup"], "name": "Ways To Cook Leafy Greens", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Sow", "Water", "Harvest", "Eat"], "name": "Farm To Fork Journey", "text": "#ffffff"}], "date": "2026-05-10", "fun_fact": "India is home to hundreds of edible leafy greens \u2014 many, like Gongura and Amaranth, grow wild and are often mistaken for weeds. They\u0027re packed with iron, fibre, and antioxidants. Learning what grows around you \u2014 and growing some at home \u2014 is one of the easiest ways to eat local and eat well!"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Liner", "Steamer", "Vessel", "Boat"], "name": "Words That Mean Ship", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Captain", "Officer", "Seaman", "Engineer"], "name": "Ship Crew Roles", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Hull", "Deck", "Anchor", "Bow"], "name": "Parts of a Ship", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Sick", "Shore", "Horse", "Weed"], "name": "SEA + ___", "text": "#ffffff"}], "date": "2026-06-26", "fun_fact": "On World Seafarers Day (June 25), we celebrate the people who operate the ships that carry everything from oil and grain to cars, clothes, and electronics across the world. But these floating highways come with a carbon footprint \u2014 international shipping contributes about 3% of global greenhouse gas emissions."};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-10',
+      'puzzle_date': '2026-06-26',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-10'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-26'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-10' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-06-26' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-10' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-06-26' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-10' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-06-26' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `India is home to hundreds of edible leafy greens — many, like Gongura and Amaranth, grow wild and are often mistaken for weeds. They're packed with iron, fibre, and antioxidants. Learning what grows around you — and growing some at home — is one of the easiest ways to eat local and eat well!`;
+document.getElementById('funFactText').innerHTML = `On World Seafarers Day (June 25), we celebrate the people who operate the ships that carry everything from oil and grain to cars, clothes, and electronics across the world. But these floating highways come with a carbon footprint — international shipping contributes about 3% of global greenhouse gas emissions.`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-10'
+    'puzzle_date': '2026-06-26'
   });
   renderGrid();
 }
