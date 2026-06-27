@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-28",
+  "categories": [
+    {
+      "name": "AC Brands in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Daikin", "Bluestar", "Voltas", "Carrier"]
+    },
+    {
+      "name": "AC Components",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Refrigerant", "Coil", "Compressor", "Filter"]
+    },
+    {
+      "name": "Things on an AC Remote",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Temperature", "Mode", "Power", "Timer"]
+    },
+    {
+      "name": "Air ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Conditioner", "Purifier", "Pollution", "Craft"]
+    }
+  ],
+  "fun_fact": "Europe is experiencing one of its worst heatwaves on record — but most buildings there weren't built for it. Without ACs or even fans, temperatures inside homes and offices have become unbearable. The result: a massive scramble to buy cooling equipment, with stores selling out across France and beyond. Meanwhile, the heatwave is disrupting schools, nuclear reactors, and daily life. <a href=\"https://www.msn.com/en-in/news/India/people-scramble-to-buy-acs-and-cooling-fans-in-france-as-record-europe-heatwave-disrupts-schools-nuclear-reactors/ar-AA26zOcN\" target=\"_blank\">Read more</a>",
+  "author": ""
+}
