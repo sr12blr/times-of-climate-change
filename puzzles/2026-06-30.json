@@ -1,0 +1,39 @@
+{
+  "date": "2026-06-30",
+  "categories": [
+    {
+      "name": "Indian String Instruments Using Gourds",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Tanpura", "Veena", "Sitar", "Ektara"]
+    },
+    {
+      "name": "Types of Gourds",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Bitter", "Ridge", "Bottle", "Snake"]
+    },
+    {
+      "name": "Steps in Crafting a Gourd Instrument",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Selecting", "Drying", "Hollowing", "Carving"]
+    },
+    {
+      "name": "What to Check When Picking a Gourd",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Shape", "Size", "Weight", "Thickness"]
+    }
+  ],
+  "fun_fact": "Did you know the drone of a tanpura, sitar and veena — sounds that anchor Indian classical music — comes from a gourd? But climate change is shrinking and weakening these gourds. Excessive heat, unseasonal rain, pests and disease are damaging harvests, threatening a craft held together by specialised knowledge, fragile supply chains and deep emotional ties. <a href=\"https://india.mongabay.com/video/2026/06/the-changing-gourd-behind-indian-classical-music/\" target=\"_blank\">Read more</a>",
+  "author": ""
+}
