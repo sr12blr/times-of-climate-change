@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-01",
+  "categories": [
+    {
+      "name": "Ways to Say \"Miss\"",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Maiden", "Senorita", "Miss", "Mademoiselle"]
+    },
+    {
+      "name": "Roles Played by Women",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Farm worker", "Unpaid caregiver", "Sanitation worker", "Street seller"]
+    },
+    {
+      "name": "Health Effects of Extreme Heat",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Dehydration", "Kidney stones", "Premature births", "Mental Stress"]
+    },
+    {
+      "name": "___ Wave",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Heat", "Micro", "Brain", "Shock"]
+    }
+  ],
+  "fun_fact": "India is rapidly getting hotter, but not all at once. A hidden reality that most people don't see: women carry a disproportionate and highly gendered burden of heat stress. Hormonal fluctuations, body composition, and metabolic rates all affect thermoregulation, making women more susceptible to dehydration, fatigue, and heat-related illness. And pregnant women face even greater risks due. <a href=\"https://www.downtoearth.org.in/climate-change/indias-future-climate-resilience-will-depend-on-its-ability-to-build-a-public-healthcare-system-that-recognises-heat-as-a-highly-gendered-disaster\" target=\"_blank\">Read more</a>",
+  "author": ""
+}
