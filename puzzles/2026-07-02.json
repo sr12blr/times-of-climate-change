@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-02",
+  "categories": [
+    {
+      "name": "Rain Gear",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Poncho", "Windcheater", "Umbrella", "Gumboots"]
+    },
+    {
+      "name": "Words Used to Describe Rain",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Drizzle", "Shower", "Sprinkle", "Downpour"]
+    },
+    {
+      "name": "Sights, Sounds & Smells of Monsoon",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Lightening", "Rainbow", "Thunder", "Petrichor"]
+    },
+    {
+      "name": "Rain + ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Bow", "Fall", "Coat", "Forest"]
+    }
+  ],
+  "fun_fact": "Rainfall is a feeling — it evokes some of our happiest memories, from childhood puddle-jumping to the first cool breeze after weeks of heat. But it's also critical, sustaining agriculture, drinking water, and the rhythms of daily life across India. This year, though, the celebration feels muted: June has seen a nearly 40% rainfall deficit and July doesn't look good — a worrying sign for crops, reservoirs, and food prices in the months ahead. <a href=\"https://www.downtoearth.org.in/climate-change/imprint-of-el-nino-other-weather-patterns-on-indias-deficit-june-2026-rainfall\" target=\"_blank\">Read more</a>",
+  "author": ""
+}
