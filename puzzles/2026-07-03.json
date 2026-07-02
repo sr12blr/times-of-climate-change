@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-03",
+  "categories": [
+    {
+      "name": "Ride-Hailing Apps in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Uber", "Rapido", "Ola", "Meru"]
+    },
+    {
+      "name": "Ways to Say \"Trip\"",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Journey", "Transit", "Commute", "Travel"]
+    },
+    {
+      "name": "Low-Carbon Ways to Get Around",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Walking", "Cycling", "Carpooling", "Metro"]
+    },
+    {
+      "name": "What Makes a Street Walkable",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Footpath", "Zebra crossing", "Streetlight", "Shade"]
+    }
+  ],
+  "fun_fact": "Every Friday, thousands of employees across Mumbai's Bandra Kurla Complex (BKC) are encouraged to ditch their cars for buses, metro, and carpools as part of the 'Fridays for Public Transport' initiative — MMRDA backed push to ease congestion and cut emissions in one of the city's densest business districts. This Friday, there are free shuttles from the metro station to offices! <a href=\"https://x.com/MMRDAOfficial/status/2072693455403512115\" target=\"_blank\">Read more</a>",
+  "author": ""
+}
