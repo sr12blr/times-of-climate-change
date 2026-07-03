@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-04",
+  "categories": [
+    {
+      "name": "Electricity Bill Terms",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Tariff", "Units", "Consumer Number", "Meter Reading"]
+    },
+    {
+      "name": "Solar System Components",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Panel", "Battery", "Inverter", "Mount"]
+    },
+    {
+      "name": "Where Solar Panels Get Installed",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Rooftop", "Balcony", "Canal", "Farm"]
+    },
+    {
+      "name": "Sun + ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Light", "Rise", "Set", "Screen"]
+    }
+  ],
+  "fun_fact": "Rooftop solar is a powerful solution that solves for both energy independence and reducing carbon emissions. And it's going mainstream — look who's joining the bandwagon: the <a href=\"https://www.youtube.com/watch?v=ORhiTfyUrHk\" target=\"_blank\">Mishra parivaar from Gullak</a>!",
+  "author": ""
+}
