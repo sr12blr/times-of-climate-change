@@ -454,6 +454,92 @@
       background: rgba(246,244,238,0.25);
     }
     .pager-dots span.active { background: #d33f1c; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .stage {
+        padding: 14px 10px 22px;
+        gap: 14px;
+      }
+
+      .book-row {
+        position: relative;
+        width: 100%;
+        gap: 0;
+      }
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        margin-top: -22px;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+      }
+      #prev-btn { left: 2px; }
+      #next-btn { right: 2px; }
+
+      .book-perspective { flex: none; width: 100%; }
+      .book {
+        width: 100%;
+        height: min(760px, 80vh);
+      }
+
+      .fb-page { padding: 30px 22px; }
+
+      /* Cover stacks vertically */
+      .cover { flex-direction: column; }
+      .cover-text {
+        flex: none;
+        padding: 34px 26px 10px;
+      }
+      .cover-title { font-size: 52px; }
+      .cover-subhead { font-size: 18px; margin-top: 20px; }
+      .cover-body { font-size: 12px; }
+      .cover-turn { margin-top: 24px; }
+      .cover-photo-col {
+        flex: 1;
+        min-height: 0;
+        padding: 18px 26px 26px;
+      }
+
+      /* Project pages */
+      .page-header { gap: 12px; }
+      .page-num { font-size: 28px; }
+      .page-header h2,
+      .page-header h2.h2-36,
+      .page-header h2.h2-38 { font-size: 24px; }
+      .eyebrow { margin-top: 6px; }
+      .page-body,
+      .page-body.body-16 { font-size: 14px; margin-top: 14px; }
+      .btn { font-size: 13px; padding: 10px 16px; }
+
+      /* Two-column layouts stack */
+      .two-col { flex-direction: column; gap: 18px; }
+      .two-col .col-text .btn { margin-top: 16px; }
+      .two-col .col-hero img { min-height: 0; height: 180px; }
+
+      .ink-row { flex-wrap: wrap; }
+      .ink-item { flex: 1 1 30%; }
+      .ink-item img { height: 110px; }
+
+      .sky-strip { flex-wrap: wrap; }
+      .sky-strip img { flex: 1 1 30%; height: 90px; }
+
+      .video-row { flex-direction: column; gap: 14px; }
+
+      .essay-row { flex-direction: column; gap: 16px; }
+      .essay-row img { height: 200px; }
+
+      .torch-layout { flex-direction: column; gap: 20px; }
+      .torch-shot {
+        flex: none;
+        width: 100%;
+        max-width: 300px;
+        align-self: center;
+      }
+      .stat-cell { padding: 12px 14px; }
+      .stat-num { font-size: 24px; }
+    }
   </style>
 </head>
 <body>
@@ -716,6 +802,23 @@
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); next(); }
     else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prev(); }
   });
+
+  var book = document.getElementById('book');
+  var touchStartX = null;
+  var touchStartY = null;
+  book.addEventListener('touchstart', function (e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  book.addEventListener('touchend', function (e) {
+    if (touchStartX === null) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    touchStartX = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) { next(); } else { prev(); }
+    }
+  }, { passive: true });
 
   apply();
 })();
