@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-06",
+  "categories": [
+    {
+      "name": "Traditional light sources",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Lantern", "Candle", "Lamp", "Torch"]
+    },
+    {
+      "name": "Nocturnal sights",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Owl", "Moon", "Stars", "Bat"]
+    },
+    {
+      "name": "Bioluminescent organisms",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Jellyfish", "Plankton", "Glowworm", "Firefly"]
+    },
+    {
+      "name": "___ + fly",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Butter", "Dragon", "House", "Fire"]
+    }
+  ],
+  "fun_fact": "Did you know India has 92 documented species of Fireflies and that 60% of them are endemic to India! <a href=\"https://greenhumour.substack.com/p/fireflies-lighting-india-up\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
