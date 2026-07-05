@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-05",
+  "categories": [
+    {
+      "name": "People Who Can Predict the Future",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Astrologer", "Pundit", "Clairvoyant", "Oracle"]
+    },
+    {
+      "name": "Ways of Fortune Telling",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Tarot", "Palm reading", "Crystal ball", "Numerology"]
+    },
+    {
+      "name": "Terms for a Birth Astrology Record",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Birth chart", "Kundli", "Horoscope", "Janam Patri"]
+    },
+    {
+      "name": "Zodiac Signs",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Taurus", "Cancer", "Gemini", "Scorpio"]
+    }
+  ],
+  "fun_fact": "Somewhere between your first breath and today, the planets have aligned themselves in a way that has changed the air, the water, and the soil around you. Curious to know what is your personal horoscope for a planet in transition? Check out your <a href=\"https://klimatekundli.com/\" target=\"_blank\">Klimate Kundli</a>!",
+  "author": ""
+}
