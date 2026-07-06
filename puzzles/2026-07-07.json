@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-07",
+  "categories": [
+    {
+      "name": "Goan dishes",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Bebinca", "Vindaloo", "Cafreal", "Xacuti"]
+    },
+    {
+      "name": "Beaches in Goa",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Baga", "Calangute", "Anjuna", "Miramar"]
+    },
+    {
+      "name": "Coastal getaways in India",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Goa", "Gokarna", "Pondicherry", "Varkala"]
+    },
+    {
+      "name": "Sights of a Goa holiday",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Beach", "Church", "Shack", "Fort"]
+    }
+  ],
+  "fun_fact": "You probably know Goa for its beaches, but did you know Panjim, Goa's capital, became a landfill-free city a few years back and has one of the coolest waste management systems in the country! <a href=\"https://www.youtube.com/watch?v=prYi6jbaiLs&t=203s\" target=\"_blank\" rel=\"noopener\">How Goa's Capital is Solving the Garbage Crisis</a>",
+  "author": ""
+}
