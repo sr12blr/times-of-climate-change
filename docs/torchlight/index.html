@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | July 08, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | July 09, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1775848226">
+    <link rel="stylesheet" href="../static/style.css?v=1783541048">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">July 08, 2026</div>
+    <div class="game-date">July 09, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Liter", "Gallon", "Cubic meter", "Glass"], "name": "Units to measure water", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Crop production", "Animal rearing", "Food processing", "Packaging"], "name": "Where the water footprint of food comes from", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Impression", "Sign", "Mark", "Trace"], "name": "Synonyms for footprint", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Thumb", "Finger", "Foot", "Paw"], "name": "___ + \"print\"", "text": "#ffffff"}], "date": "2026-07-08", "fun_fact": "Ever heard of the \"water footprint of your food\"? It\u0027s not just the water you drink \u2014 it\u0027s hidden in everything you eat. Producing just 1 kg of rice takes about 2,500 litres of water, and 100 gm of chocolate may need as much as 2000 litres of water! \u003ca href=\"https://watercalculator.org/water-footprint-of-food-guide/\" target=\"_blank\" rel=\"noopener\"\u003eThe Water Footprint of Food\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Loo", "WC", "Lavatory", "Bathroom"], "name": "Synonyms for toilet", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Pee", "Poop", "Puke", "Fart"], "name": "Things you might do in a toilet", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Men", "Women", "Accessible", "Unisex"], "name": "Public toilet signs", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Flush", "Dry", "Vacuum", "Smart"], "name": "Types of toilets", "text": "#ffffff"}], "date": "2026-07-09", "fun_fact": "You wouldn\u0027t expect to find the words Toilet and Climate change in 1 sentence, but sanitation facilities are often the first to be impacted by extreme weather and a good toilet can be a climate solution! \u003ca href=\"https://www.youtube.com/watch?v=RqeZstKDbvY\u0026t=198s\" target=\"_blank\" rel=\"noopener\"\u003eLearn more about this toilet in Dharavi to know how!\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-07-08',
+      'puzzle_date': '2026-07-09',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-08'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-09'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-08' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-09' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-08' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-09' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-08' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-09' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `Ever heard of the "water footprint of your food"? It's not just the water you drink — it's hidden in everything you eat. Producing just 1 kg of rice takes about 2,500 litres of water, and 100 gm of chocolate may need as much as 2000 litres of water! <a href="https://watercalculator.org/water-footprint-of-food-guide/" target="_blank" rel="noopener">The Water Footprint of Food</a>`;
+document.getElementById('funFactText').innerHTML = `You wouldn't expect to find the words Toilet and Climate change in 1 sentence, but sanitation facilities are often the first to be impacted by extreme weather and a good toilet can be a climate solution! <a href="https://www.youtube.com/watch?v=RqeZstKDbvY&t=198s" target="_blank" rel="noopener">Learn more about this toilet in Dharavi to know how!</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-07-08'
+    'puzzle_date': '2026-07-09'
   });
   renderGrid();
 }
