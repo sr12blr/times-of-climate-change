@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-08",
+  "categories": [
+    {
+      "name": "Units to measure water",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Liter", "Gallon", "Cubic meter", "Glass"]
+    },
+    {
+      "name": "Where the water footprint of food comes from",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Crop production", "Animal rearing", "Food processing", "Packaging"]
+    },
+    {
+      "name": "Synonyms for footprint",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Impression", "Sign", "Mark", "Trace"]
+    },
+    {
+      "name": "___ + \"print\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Thumb", "Finger", "Foot", "Paw"]
+    }
+  ],
+  "fun_fact": "Ever heard of the \"water footprint of your food\"? It's not just the water you drink — it's hidden in everything you eat. Producing just 1 kg of rice takes about 2,500 litres of water, and 100 gm of chocolate may need as much as 2000 litres of water! <a href=\"https://watercalculator.org/water-footprint-of-food-guide/\" target=\"_blank\" rel=\"noopener\">The Water Footprint of Food</a>",
+  "author": ""
+}
