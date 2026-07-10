@@ -26,7 +26,7 @@
       "items": ["Timer", "Motion sensor", "Dimmer", "Daylight"]
     },
     {
-      "name": "Add \"light\" to make a word",
+      "name": "_____ Light",
       "bg": "#6B1C2A",
       "text": "#ffffff",
       "difficulty": 4,
