@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | July 10, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | July 11, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/style.css?v=1783628445">
+    <link rel="stylesheet" href="../static/style.css?v=1783713513">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLBR3CY28D"></script>
     <script>
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">July 10, 2026</div>
+    <div class="game-date">July 11, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Swing", "Seesaw", "Merry-go-round", "Slide"], "name": "Playground equipment", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Rainfall", "Deforestation", "Mining", "Construction"], "name": "Causes of landslides", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["PowerPoint", "Microscope", "Water park", "Playground"], "name": "Things that have \"slides\"", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Fin", "Thai", "Ice", "Ire"], "name": "Add \"LAND\" to make a country", "text": "#ffffff"}], "date": "2026-07-10", "fun_fact": "This has been a week of landslides. Excessive rainfall has triggered devastating slides across the Western Ghats \u2014 like the one in \u003ca href=\"https://www.deccanherald.com/india/kerala/wayanad-tunnel-site-landslide-man-made-caused-by-unscientific-dumping-of-earth-kerala-minister-4064932\" target=\"_blank\" rel=\"noopener\"\u003eWayanad\u003c/a\u003e, where a tunnel was being constructed. But it\u0027s not just real mountains \u2014 mountains of waste are falling too, like \u003ca href=\"https://www.newindianexpress.com/states/maharashtra/2026/Jul/08/at-least-16-feared-trapped-after-waste-mound-crashes-onto-building-causing-it-to-collapse-amid-heavy-rain-in-pune\" target=\"_blank\" rel=\"noopener\"\u003ethis waste-mound collapse in Pune\u003c/a\u003e."};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Smoke", "Ash", "Soot", "Flames"], "name": "Things you see in a wildfire", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Drought", "Strong winds", "Extreme heat", "Dry vegetation"], "name": "Conditions that fuel wildfires", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Bulldozer", "Airtanker", "Water tender", "Helicopter"], "name": "Wildfire-fighting apparatus", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Card", "Flower", "Fire", "Life"], "name": "Wild____", "text": "#ffffff"}], "date": "2026-07-11", "fun_fact": "Right now, southern Spain is fighting one of its deadliest wildfires in years \u2014 over 3,200 hectares of Almer\u00eda scorched, hundreds evacuated, and at least 12 lives lost. Weeks of extreme heat and drought turned the land into a tinderbox, exactly the conditions in today\u0027s puzzle. As the planet warms, these \u201cwild\u201d fires are growing longer, hotter and harder to fight. \u003ca href=\"https://www.bbc.com/news/live/cx2vz8lyql1t\" target=\"_blank\" rel=\"noopener\"\u003eFollow the latest here.\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-07-10',
+      'puzzle_date': '2026-07-11',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-10'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-11'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-10' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-11' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-10' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-11' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-10' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-11' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `This has been a week of landslides. Excessive rainfall has triggered devastating slides across the Western Ghats — like the one in <a href="https://www.deccanherald.com/india/kerala/wayanad-tunnel-site-landslide-man-made-caused-by-unscientific-dumping-of-earth-kerala-minister-4064932" target="_blank" rel="noopener">Wayanad</a>, where a tunnel was being constructed. But it's not just real mountains — mountains of waste are falling too, like <a href="https://www.newindianexpress.com/states/maharashtra/2026/Jul/08/at-least-16-feared-trapped-after-waste-mound-crashes-onto-building-causing-it-to-collapse-amid-heavy-rain-in-pune" target="_blank" rel="noopener">this waste-mound collapse in Pune</a>.`;
+document.getElementById('funFactText').innerHTML = `Right now, southern Spain is fighting one of its deadliest wildfires in years — over 3,200 hectares of Almería scorched, hundreds evacuated, and at least 12 lives lost. Weeks of extreme heat and drought turned the land into a tinderbox, exactly the conditions in today's puzzle. As the planet warms, these “wild” fires are growing longer, hotter and harder to fight. <a href="https://www.bbc.com/news/live/cx2vz8lyql1t" target="_blank" rel="noopener">Follow the latest here.</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-07-10'
+    'puzzle_date': '2026-07-11'
   });
   renderGrid();
 }
