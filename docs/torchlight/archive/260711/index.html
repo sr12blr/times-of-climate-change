@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | May 19, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | July 11, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">May 19, 2026</div>
+    <div class="game-date">July 11, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Chutney", "Achar", "Murabba", "Panna"], "name": "Things made from mangoes", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Alphonso", "Safeda", "Kesar", "Langra"], "name": "Mango varieties", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Malihabad", "Ratnagiri", "Devgad", "Junagarh"], "name": "Regions famous for mangoes", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Hole", "Grove", "Go", "Date"], "name": "MAN + ___", "text": "#ffffff"}], "date": "2026-05-19", "fun_fact": "The mango is probably India\u0027s favourite fruit, and the country grows nearly half the world\u0027s supply \u2014 but the king of fruits is feeling the heat. Erratic rains, untimely heatwaves, and unseasonal flowering are shrinking yields and dulling the flavour of beloved varieties like Alphonso, Chausa, and Langra. \u003ca href=\"https://www.indiatoday.in/science/story/climate-change-impact-mango-production-india-threatens-yields-quality-climate-change-india-chausa-danka-alphonso-2889586-2026-04-01\" target=\"_blank\" rel=\"noopener\"\u003eRead more\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Smoke", "Ash", "Soot", "Flames"], "name": "Things you see in a wildfire", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Drought", "Strong winds", "Extreme heat", "Dry vegetation"], "name": "Conditions that fuel wildfires", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Bulldozer", "Airtanker", "Water tender", "Helicopter"], "name": "Wildfire-fighting apparatus", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Card", "Flower", "Fire", "Life"], "name": "Wild____", "text": "#ffffff"}], "date": "2026-07-11", "fun_fact": "Right now, southern Spain is fighting one of its deadliest wildfires in years \u2014 over 3,200 hectares of Almer\u00eda scorched, hundreds evacuated, and at least 12 lives lost. Weeks of extreme heat and drought turned the land into a tinderbox, exactly the conditions in today\u0027s puzzle. As the planet warms, these \u201cwild\u201d fires are growing longer, hotter and harder to fight. \u003ca href=\"https://www.bbc.com/news/live/cx2vz8lyql1t\" target=\"_blank\" rel=\"noopener\"\u003eFollow the latest here.\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-05-19',
+      'puzzle_date': '2026-07-11',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-05-19'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-11'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-05-19' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-11' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-05-19' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-11' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-05-19' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-11' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `The mango is probably India's favourite fruit, and the country grows nearly half the world's supply — but the king of fruits is feeling the heat. Erratic rains, untimely heatwaves, and unseasonal flowering are shrinking yields and dulling the flavour of beloved varieties like Alphonso, Chausa, and Langra. <a href="https://www.indiatoday.in/science/story/climate-change-impact-mango-production-india-threatens-yields-quality-climate-change-india-chausa-danka-alphonso-2889586-2026-04-01" target="_blank" rel="noopener">Read more</a>`;
+document.getElementById('funFactText').innerHTML = `Right now, southern Spain is fighting one of its deadliest wildfires in years — over 3,200 hectares of Almería scorched, hundreds evacuated, and at least 12 lives lost. Weeks of extreme heat and drought turned the land into a tinderbox, exactly the conditions in today's puzzle. As the planet warms, these “wild” fires are growing longer, hotter and harder to fight. <a href="https://www.bbc.com/news/live/cx2vz8lyql1t" target="_blank" rel="noopener">Follow the latest here.</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-05-19'
+    'puzzle_date': '2026-07-11'
   });
   renderGrid();
 }
