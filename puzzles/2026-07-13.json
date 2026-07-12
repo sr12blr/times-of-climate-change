@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-13",
+  "categories": [
+    {
+      "name": "Tennis court surfaces",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Grass", "Clay", "Hard", "Synthetic"]
+    },
+    {
+      "name": "Men's Wimbledon champions",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Sinner", "Alcaraz", "Djokovic", "Federer"]
+    },
+    {
+      "name": "Women's Wimbledon champions",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Nosková", "Świątek", "Krejčíková", "Vondroušová"]
+    },
+    {
+      "name": "Associated with Wimbledon",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["White", "Strawberries", "Rolex", "Royal"]
+    }
+  ],
+  "fun_fact": "Even the most traditional tournament in sport is adapting to a warming world. The 2025 Championships opened as the hottest on record at 34°C — hot enough to trigger Wimbledon's 'heat rule', which lets players take a 10-minute break once the heat-stress index climbs past 30.1°C. The famous grass courts now need extra watering to survive hotter, drier summers, and the roughly 2 million strawberries served each year are grown under ever more careful climate control to keep them ripening on schedule.",
+  "author": ""
+}
