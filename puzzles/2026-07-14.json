@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-14",
+  "categories": [
+    {
+      "name": "Ways to travel on foot",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Walking", "Running", "Jogging", "Strolling"]
+    },
+    {
+      "name": "What footpaths are paved with",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Stones", "Tiles", "Pavers", "Concrete"]
+    },
+    {
+      "name": "Marks of a good footpath",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Continuous", "Well-lit", "Clean", "Level"]
+    },
+    {
+      "name": "What blocks Indian footpaths",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Vehicles", "Street vendors", "Waste", "Construction material"]
+    }
+  ],
+  "fun_fact": "Walking is one of the most natural things humans do — yet in most Indian cities it has become nearly impossible. Broken, blocked or missing footpaths push pedestrians into traffic, a problem so severe that India's Supreme Court observed the right to walk safely should be treated as a fundamental right. [Why has walking become impossible in India?](https://www.youtube.com/watch?v=2k_7wrxyRqI&t=19s)",
+  "author": ""
+}
