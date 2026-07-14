@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-15",
+  "categories": [
+    {
+      "name": "Coal-belt states of India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Jharkhand", "Chattisgarh", "Odisha", "Madhya Pradesh"]
+    },
+    {
+      "name": "Coal-plant pollutants",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["CO₂", "NOₓ", "SO₂", "Mercury"]
+    },
+    {
+      "name": "What coal is burned to make",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Steel", "Cooking", "Electricity", "Cement"]
+    },
+    {
+      "name": "Coal's selling points",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Cheap", "Abundant", "Reliable", "Energy dense"]
+    }
+  ],
+  "fun_fact": "Coal is one of the dirtiest ways to make electricity. In July 2025 India exempted 78% of its coal plants from installing SO₂ scrubbers (FGD). SO₂ is associated with respiratory diseases, cardiovascular illnesses, stroke and premature deaths. A recent study found that the largest SO₂ emitters around Delhi-NCR are the very plants that have been given the relaxation, raising concerns about worsening air quality. <a href=\"https://www.downtoearth.org.in/energy/most-sulphur-dioxide-around-delhi-comes-from-coal-plants-exempted-from-pollution-rules-crea\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
