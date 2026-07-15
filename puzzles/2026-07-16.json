@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-16",
+  "categories": [
+    {
+      "name": "Canadian Cities",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Toronto", "Montreal", "Vancouver", "Ottawa"]
+    },
+    {
+      "name": "Canadian Companies / Brands",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Tim Hortons", "Blackberry", "Lululemon", "Shopify"]
+    },
+    {
+      "name": "Famous Canadians",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Ryan Gosling", "Sandra Oh", "Jim Carrey", "Joni Mitchell"]
+    },
+    {
+      "name": "Canadian Icons / Symbols",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Maple", "Niagara", "Hockey", "Beaver"]
+    }
+  ],
+  "fun_fact": "Canada conjures maple syrup, hockey and postcard-perfect wilderness — but this week, wildfires tearing across Ontario pushed **Toronto to the worst air quality in the world**. Climate change spares no landscape, however iconic. [Read more](https://www.theguardian.com/world/2026/jul/15/wildfires-in-ontario-make-toronto-canada-air-quality-worst-in-world)",
+  "author": ""
+}
