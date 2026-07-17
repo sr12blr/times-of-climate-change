@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-17",
+  "categories": [
+    {
+      "name": "Climate Movies",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Don't Look Up", "An Inconvenient Truth", "Day after tomorrow", "Snowpiercer"]
+    },
+    {
+      "name": "Climate Jargon",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Net zero", "1.5 deg C", "COP", "GHG"]
+    },
+    {
+      "name": "Causes of Climate Change",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Deforestation", "Industrial production", "Fossil fuels", "Over-consumption"]
+    },
+    {
+      "name": "Symbols of Climate Change",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Cracked earth", "Sinking coastlines", "Polar bears", "Wildfires"]
+    }
+  ],
+  "fun_fact": "Climate change may seem like a problem for polar bears, small island nations or people exposed to forest fires - a problem for someone else, somewhere else and at some other time. But it's here, it's now and it's happening to all of us. It affects our food, our homes, and so much more. Torchlight is an attempt to surface some of these invisible impacts. Today we celebrate **Torchlight #100**. Thank you for playing along! Keep playing and share it with a friend who may like it!",
+  "author": ""
+}
