@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-18",
+  "categories": [
+    {
+      "name": "Ethanol Blend Grades",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["E5", "E10", "E15", "E20"]
+    },
+    {
+      "name": "Major Ethanol-Producing Countries",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["India", "Brazil", "US", "Thailand"]
+    },
+    {
+      "name": "Ethanol Feedstocks",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Corn", "Sugarcane", "Agri-waste", "Molasses"]
+    },
+    {
+      "name": "Concerns with Ethanol Blending",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Reduced mileage", "Engine corrosion", "Water intensive agriculture", "Long term maintenance"]
+    }
+  ],
+  "fun_fact": "E20 — petrol blended with 20% ethanol — recently became a mandate in India. The idea of biofuels to reduce fossil-fuel dependency isn't wrong, but *how* it's done matters. Current concerns: reduced mileage and engine corrosion in engines not designed for E20, the massive amount of water needed to grow the sugarcane used to make ethanol in India, and the hurried rollout — E20 was mandated in 2025 instead of the planned 2030. [Watch this to learn more](https://www.youtube.com/watch?v=RqBep9QHVHI)",
+  "author": ""
+}
