@@ -7,6 +7,7 @@ Usage:
     python3 generate_site.py --full       # Full rebuild
 """
 
+import hashlib
 import json
 import re
 import sys
@@ -179,7 +180,15 @@ def generate(full_rebuild=False):
 
     # CSS cache-busting
     css_file = SITE_DIR / "static" / "style.css"
-    css_version = int(css_file.stat().st_mtime) if css_file.exists() else 0
+    # Hash the contents, not the mtime: git does not preserve mtimes, so an
+    # mtime-based stamp differs between a local checkout and the CI runner and
+    # churns every docs/ page on each rebuild. A content hash is identical
+    # everywhere and changes only when the CSS actually changes.
+    css_version = (
+        hashlib.sha256(css_file.read_bytes()).hexdigest()[:8]
+        if css_file.exists()
+        else "0"
+    )
 
     impact_map = group_by_impact(stories)
     categories = [impact_map[cat["slug"]] for cat in IMPACT_CATEGORIES]
