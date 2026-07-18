@@ -13,6 +13,7 @@ import re
 import sys
 from collections import defaultdict
 from datetime import date, datetime
+from functools import lru_cache
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, pass_context
@@ -52,6 +53,19 @@ def slugify(text):
     text = re.sub(r"[\s_]+", "-", text)
     text = re.sub(r"-+", "-", text)
     return text[:60].rstrip("-")
+
+
+@lru_cache(maxsize=None)
+def asset_version(rel_path):
+    """Content hash of a docs/ asset, for cache-busting.
+
+    Content-based rather than mtime- or random-based so the stamp is identical
+    across machines and changes only when the asset itself changes.
+    """
+    asset = SITE_DIR / rel_path
+    if not asset.exists():
+        return "0"
+    return hashlib.sha256(asset.read_bytes()).hexdigest()[:8]
 
 
 def load_all_stories():
@@ -173,6 +187,7 @@ def generate(full_rebuild=False):
 
     slug_index = build_slug_index(stories)
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
+    env.filters["asset_version"] = asset_version
 
     # Ensure output directories
     for d in ["story", "today", "archive", "about", "explore", "why", "pass", "static", "torchlight"]:
