@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-19",
+  "categories": [
+    {
+      "name": "What You Make With Apples",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Juice", "Jam", "Sauce", "Crumble"]
+    },
+    {
+      "name": "Indian Apple-Growing Regions",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Himachal", "Uttarakhand", "Arunachal", "Kashmir"]
+    },
+    {
+      "name": "Apple Varieties in Indian Markets",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Royal gala", "Fuji", "Red Delicious", "Washington"]
+    },
+    {
+      "name": "Things Associated With Apple",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["iPhone", "Eve", "Beatles", "Newton"]
+    }
+  ],
+  "fun_fact": "Kashmir grows most of India's apples — and its orchards are being hit by hail far more often than they used to be. Studies show a sharp rise in hailstorm events, now clustering between April and June, exactly when the trees are in flower. Hailstorms can cause losses of 30 per cent to 70 per cent in affected orchards, and in some cases near-total damage. <a href=\"https://www.downtoearth.org.in/climate-change/half-hour-hailstorms-season-long-losses-how-climate-change-is-reshaping-kashmirs-apple-orchards\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}

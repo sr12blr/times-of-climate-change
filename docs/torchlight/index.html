@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔦 Torchlight | July 18, 2026 — The Times of Climate Change</title>
+    <title>🔦 Torchlight | July 19, 2026 — The Times of Climate Change</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -70,7 +70,7 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">July 18, 2026</div>
+    <div class="game-date">July 19, 2026</div>
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -784,7 +784,7 @@
 
 <script>
 // Puzzle data loaded from JSON
-const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["E5", "E10", "E15", "E20"], "name": "Ethanol Blend Grades", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["India", "Brazil", "US", "Thailand"], "name": "Major Ethanol-Producing Countries", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Corn", "Sugarcane", "Agri-waste", "Molasses"], "name": "Ethanol Feedstocks", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Reduced mileage", "Engine corrosion", "Water intensive agriculture", "Long term maintenance"], "name": "Concerns with Ethanol Blending", "text": "#ffffff"}], "date": "2026-07-18", "fun_fact": "E20 \u2014 petrol blended with 20% ethanol \u2014 recently became a mandate in India. The idea of biofuels to reduce fossil-fuel dependency isn\u0027t wrong, but *how* it\u0027s done matters. Current concerns: reduced mileage and engine corrosion in engines not designed for E20, the massive amount of water needed to grow the sugarcane used to make ethanol in India, and the hurried rollout \u2014 E20 was mandated in 2025 instead of the planned 2030. \u003ca href=\"https://www.youtube.com/watch?v=RqBep9QHVHI\" target=\"_blank\" rel=\"noopener\"\u003eWatch this to learn more\u003c/a\u003e"};
+const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Juice", "Jam", "Sauce", "Crumble"], "name": "What You Make With Apples", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Himachal", "Uttarakhand", "Arunachal", "Kashmir"], "name": "Indian Apple-Growing Regions", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Royal gala", "Fuji", "Red Delicious", "Washington"], "name": "Apple Varieties in Indian Markets", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["iPhone", "Eve", "Beatles", "Newton"], "name": "Things Associated With Apple", "text": "#ffffff"}], "date": "2026-07-19", "fun_fact": "Kashmir grows most of India\u0027s apples \u2014 and its orchards are being hit by hail far more often than they used to be. Studies show a sharp rise in hailstorm events, now clustering between April and June, exactly when the trees are in flower. Hailstorms can cause losses of 30 per cent to 70 per cent in affected orchards, and in some cases near-total damage. \u003ca href=\"https://www.downtoearth.org.in/climate-change/half-hour-hailstorms-season-long-losses-how-climate-change-is-reshaping-kashmirs-apple-orchards\" target=\"_blank\" rel=\"noopener\"\u003eRead more\u003c/a\u003e"};
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1121,11 +1121,11 @@ function showEndScreen(won, isRestore) {
     gtag('event', 'torchlight_complete', {
       'won': won,
       'mistakes': mistakes,
-      'puzzle_date': '2026-07-18',
+      'puzzle_date': '2026-07-19',
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-18'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-07-19'); } catch (e) { console.error(e); }
     }
   }
 
@@ -1236,13 +1236,13 @@ function getShareText() {
 }
 
 function shareOnWhatsApp() {
-  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-18' });
+  gtag('event', 'torchlight_share', { 'platform': 'whatsapp', 'puzzle_date': '2026-07-19' });
   const text = getShareText();
   window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
 }
 
 function shareOnLinkedIn() {
-  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-18' });
+  gtag('event', 'torchlight_share', { 'platform': 'linkedin', 'puzzle_date': '2026-07-19' });
   const text = getShareText();
   navigator.clipboard.writeText(text).then(() => {
     const toast = document.getElementById('toast');
@@ -1260,7 +1260,7 @@ function shareOnLinkedIn() {
 }
 
 function shareOnTwitter() {
-  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-18' });
+  gtag('event', 'torchlight_share', { 'platform': 'twitter', 'puzzle_date': '2026-07-19' });
   const text = getShareText();
   window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(text), '_blank');
 }
@@ -1338,11 +1338,11 @@ function startDemo() {
 })();
 
 // Init
-document.getElementById('funFactText').innerHTML = `E20 — petrol blended with 20% ethanol — recently became a mandate in India. The idea of biofuels to reduce fossil-fuel dependency isn't wrong, but *how* it's done matters. Current concerns: reduced mileage and engine corrosion in engines not designed for E20, the massive amount of water needed to grow the sugarcane used to make ethanol in India, and the hurried rollout — E20 was mandated in 2025 instead of the planned 2030. <a href="https://www.youtube.com/watch?v=RqBep9QHVHI" target="_blank" rel="noopener">Watch this to learn more</a>`;
+document.getElementById('funFactText').innerHTML = `Kashmir grows most of India's apples — and its orchards are being hit by hail far more often than they used to be. Studies show a sharp rise in hailstorm events, now clustering between April and June, exactly when the trees are in flower. Hailstorms can cause losses of 30 per cent to 70 per cent in affected orchards, and in some cases near-total damage. <a href="https://www.downtoearth.org.in/climate-change/half-hour-hailstorms-season-long-losses-how-climate-change-is-reshaping-kashmirs-apple-orchards" target="_blank" rel="noopener">Read more</a>`;
 const wasRestored = restoreState();
 if (!wasRestored) {
   gtag('event', 'torchlight_start', {
-    'puzzle_date': '2026-07-18'
+    'puzzle_date': '2026-07-19'
   });
   renderGrid();
 }
