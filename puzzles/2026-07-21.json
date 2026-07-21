@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-21",
+  "categories": [
+    {
+      "name": "Spices native to Indian subcontinent",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Black pepper", "Turmeric", "Cardamom", "Curry leaves"]
+    },
+    {
+      "name": "Foods on which pepper is commonly sprinkled",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Eggs", "Soup", "Salad", "Sweet Corn"]
+    },
+    {
+      "name": "Spice Girls",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Posh", "Baby", "Scary", "Sporty"]
+    },
+    {
+      "name": "Pepper___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Spray", "Corn", "Mint", "Oni"]
+    }
+  ],
+  "fun_fact": "Black pepper — the \"black gold\" whose lure drove European powers to launch their colonial voyages — is now seeing reduced harvest in key producing regions, like India, due to dry flowering seasons and heavy rainfall afterwards, triggered by climate change.",
+  "author": ""
+}
