@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-22",
+  "categories": [
+    {
+      "name": "Food grains grown in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Ragi", "Bajra", "Jowar", "Rice"]
+    },
+    {
+      "name": "Cash crops of Karnataka",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Coffee", "Tobacco", "Black pepper", "Areca nut"]
+    },
+    {
+      "name": "Words meaning a shortage",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Deficit", "Dearth", "Squeeze", "Crunch"]
+    },
+    {
+      "name": "Regions of Karnataka",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Malnad", "Karavali", "Bayaluseeme", "Udupi"]
+    }
+  ],
+  "fun_fact": "Karnataka is staring at a deficient monsoon this year, and the shortfall is already showing. Sowing of kharif food grains like ragi, jowar and bajra has slipped across the state's rain-fed districts, and if the dry spell holds, the cash crops of the Malnad belt — coffee, black pepper and areca — could feel the squeeze later in the year. <a href=\"https://www.thehindu.com/news/national/karnataka/karnataka-asks-centre-to-declare-drought-situation-as-calamity-of-national-significance/article71230911.ece\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
