@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-24",
+  "categories": [
+    {
+      "name": "Ways of staying informed",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Newspapers", "TV", "WA groups", "Social Media"]
+    },
+    {
+      "name": "Freedom, in other words",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Autonomy", "Liberty", "Independence", "Sovereignty"]
+    },
+    {
+      "name": "Popular protest slogans",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Azaadi", "Vande Mataram", "We shall Overcome", "Inqalab Zindabad"]
+    },
+    {
+      "name": "Pro____",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Test", "Tein", "Duct", "Pose"]
+    }
+  ],
+  "fun_fact": "The Gen Z protests demanding accountability for the gross mismanagement of exams have continued, but the state's attempt to squash them has only gotten worse. Why are we talking about it in a climate puzzle? Because there is no Ecological justice without Social justice — and what's happening right now, violating the citizen's right to protest, is a gross violation of Social justice. If you'd rather learn with memes, <a href=\"https://www.bbc.com/news/articles/c3ek3l9gp7go\" target=\"_blank\" rel=\"noopener\">see this</a>",
+  "author": ""
+}
