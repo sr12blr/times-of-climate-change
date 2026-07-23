@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-23",
+  "categories": [
+    {
+      "name": "Things protesters carry",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Placard", "Banner", "Flag", "Megaphone"]
+    },
+    {
+      "name": "Forms of protest",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Sit-in", "Rally", "Demonstration", "Hunger-strike"]
+    },
+    {
+      "name": "How the state cracks down",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Lathi charge", "Tear gas", "Barricades", "Internet blockade"]
+    },
+    {
+      "name": "Sites of the current CJP led student protests",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Connaught Place", "Freedom Park", "Jantar Mantar", "Shivaji Park"]
+    }
+  ],
+  "fun_fact": "Over the last few days, protests have erupted across India, demanding accountability for the gross mismanagement of exams in the country's education system. And they are being violently squashed by the police. Why are we talking about it in a climate puzzle? Because there is no Ecological justice without Social justice — and what's happening right now, violating the citizen's right to protest, is a gross violation of Social justice. <a href=\"https://www.thehindu.com/news/national/cjp-jantar-mantar-protest-live-updates-rahul-gandhi-news-abhijeet-dipke-sonam-wangchuk-saurav-das-parliament-session/article71251952.ece\" target=\"_blank\" rel=\"noopener\">Read more</a>",
+  "author": ""
+}
