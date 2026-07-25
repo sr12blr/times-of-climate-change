@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-25",
+  "categories": [
+    {
+      "name": "Competitive exams in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["NEET", "UPSC", "JEE", "CAT"]
+    },
+    {
+      "name": "Issues with competitive exams",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Coaching dependency", "Paper leaks", "Cheating", "Anxiety"]
+    },
+    {
+      "name": "Words meaning \"to reform\"",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Transform", "Revamp", "Overhaul", "Restructure"]
+    },
+    {
+      "name": "Synonyms for exam",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Test", "Evaluation", "Assessment", "Appraisal"]
+    }
+  ],
+  "fun_fact": "The protests demanding the resignation of India's education minister continue. But why is Gen Z so angry? <a href=\"https://www.newslaundry.com/2026/07/24/gen-z-is-protesting-here-is-the-economics-behind-the-rage\" target=\"_blank\" rel=\"noopener\">This article</a> looks at the economics behind Gen Z's rage.<br><br>Why are we talking about it in a climate puzzle? Because there is no Ecological justice without Social justice",
+  "author": ""
+}
