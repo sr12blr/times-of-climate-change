@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-26",
+  "categories": [
+    {
+      "name": "Indian rivers",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Ken", "Betwa", "Narmada", "Chambal"]
+    },
+    {
+      "name": "Promised benefits of river-linking",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Development", "Hydropower", "Irrigation", "Drinking water"]
+    },
+    {
+      "name": "Environmental & social costs",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Village displacement", "Biodiversity loss", "Tree cutting", "Altered river ecology"]
+    },
+    {
+      "name": "Synonyms for \"to link\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Join", "Connect", "Tie", "Couple"]
+    }
+  ],
+  "fun_fact": "India's flagship river-interlinking scheme, the Ken-Betwa Link Project, promises to move surplus water from the Ken to the water-scarce Betwa basin — but critics warn it will submerge large tracts of the Panna Tiger Reserve and uproot thousands of villagers. Earlier this week, a 15-day protest against the project in Madhya Pradesh ended abruptly as police cleared the agitation site. <a href=\"https://timesofindia.indiatimes.com/india/15-day-protest-against-ken-betwa-project-in-mp-ends-abruptly-as-police-clear-agitation-site/articleshow/132490235.cms\" target=\"_blank\" rel=\"noopener\">Read more</a>.<br><br>Why are we talking about it in a climate puzzle? Because there is no Ecological justice without Social justice.",
+  "author": ""
+}
