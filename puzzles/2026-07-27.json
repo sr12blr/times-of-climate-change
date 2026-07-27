@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-27",
+  "categories": [
+    {
+      "name": "Words for shortage",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Scarcity", "Lack", "Deficit", "Dearth"]
+    },
+    {
+      "name": "Rivers of Pune",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Mula", "Mutha", "Pavana", "Ramnadi"]
+    },
+    {
+      "name": "Threats to river health",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Industrial Effluents", "Encroachment", "Sewage", "Sand Mining"]
+    },
+    {
+      "name": "Dams supplying Pune",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Khadakwasla", "Varasgaon", "Panshet", "Temghar"]
+    }
+  ],
+  "fun_fact": "Pune faces a dual water crisis: it runs short every summer, yet an intense spell of rainfall brings severe flooding. A lot of this is linked to what's happening to its rivers — floodplains getting encroached and indiscriminate pollution.<br><br>Watch: <a href=\"https://www.youtube.com/watch?v=39GgfJ8FrDs\" target=\"_blank\" rel=\"noopener\">Pune's water crisis →</a>",
+  "author": ""
+}
