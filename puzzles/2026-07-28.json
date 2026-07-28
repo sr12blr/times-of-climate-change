@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-28",
+  "categories": [
+    {
+      "name": "Indian mangrove sites",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Bhitarkanika", "Goa", "Mumbai", "Sundarbans"]
+    },
+    {
+      "name": "Species found in Mangroves",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Bengal Tiger", "Crab", "Crocodile", "Mudskipper"]
+    },
+    {
+      "name": "What mangroves do for us",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Air Purifier", "Carbon Sink", "Sediment Trapper", "Wave Breaker"]
+    },
+    {
+      "name": "Add \"MAN\" to the front",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Date", "Grove", "Handle", "Child"]
+    }
+  ],
+  "fun_fact": "Mangroves are Rockstars! They absorb more carbon than regular trees, protect against floods, are nurseries for fish, and much needed air purifiers for our increasingly polluted air. July 26 is celebrated as The International Day for the Conservation of the Mangrove Ecosystems.",
+  "author": ""
+}
