@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-30",
+  "categories": [
+    {
+      "name": "European countries hit by wildfires",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Portugal", "France", "Greece", "Spain"]
+    },
+    {
+      "name": "Firefighting equipment",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Helmet", "Fire suit", "Fire hose", "Drone"]
+    },
+    {
+      "name": "Immediate human impacts",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Evacuations", "Deaths", "Power outages", "Property damage"]
+    },
+    {
+      "name": "Climate & environmental losses",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Forest loss", "Carbon emissions", "Air pollution", "Biodiversity loss"]
+    }
+  ],
+  "fun_fact": "Europe has spent the last couple of weeks battling severe wildfires across Spain, France, Portugal and Greece — and it is now bracing for its fourth heatwave of the season. It is no coincidence: Europe is the fastest-warming continent, heating at twice the global average, which dries out the land and turns each new heat spell into fresh fire risk. [Read more](https://www.theguardian.com/world/live/2026/jul/29/france-spain-wildfires-heatwave-extreme-heat-europe-latest-news-updates)",
+  "author": ""
+}
