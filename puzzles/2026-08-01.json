@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-01",
+  "categories": [
+    {
+      "name": "Digital commons",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Linux", "Internet Archive", "Wikipedia", "OpenStreetMap"]
+    },
+    {
+      "name": "Physical Commons",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["River", "Wetland", "Forest", "Pasture"]
+    },
+    {
+      "name": "Social Commons",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Park", "Public Library", "Footpath", "Playground"]
+    },
+    {
+      "name": "Common ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Ground", "Law", "Sense", "Noun"]
+    }
+  ],
+  "fun_fact": "India's commons — its village forests, grazing pastures, wetlands and ponds — sustain hundreds of millions of people and are pillars of climate resilience, yet they are among the first casualties of unchecked development and a warming climate. We can't protect what we don't understand. Land Conflict Watch is documenting 100 Stories of Commons from across India. [Read more](https://www.landconflictwatch.org/storiesofcommons)",
+  "author": ""
+}
