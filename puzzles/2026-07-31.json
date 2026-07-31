@@ -1,0 +1,39 @@
+{
+  "date": "2026-07-31",
+  "categories": [
+    {
+      "name": "Big cats (non-tiger)",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Puma", "Lion", "Leopard", "Cheetah"]
+    },
+    {
+      "name": "Tiger reserves in India",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Pench", "Kanha", "Tadoba", "Bandhavgarh"]
+    },
+    {
+      "name": "Tiger subspecies",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Siberian", "Bengal", "Malayan", "Sumatran"]
+    },
+    {
+      "name": "Countries other than India with wild tigers",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Nepal", "Indonesia", "Russia", "Bhutan"]
+    }
+  ],
+  "fun_fact": "Earlier this week we celebrated Global Tiger Day. India's Project Tiger, launched in the 1970s, is a huge conservation success story — the country today has more than 3,000 tigers in the wild, the highest of any nation. But their habitat remains under threat: right now the Panna Tiger Reserve, home to around 70 tigers, is endangered by the proposed Ken-Betwa river-linking project. [Read more](https://www.newslaundry.com/2026/06/16/ken-betwa-project-drying-a-river-sacrificing-a-tiger-reserve-interview-with-amit-bhatnagar)",
+  "author": ""
+}
