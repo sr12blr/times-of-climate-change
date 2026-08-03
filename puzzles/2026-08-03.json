@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-03",
+  "categories": [
+    {
+      "name": "K-pop Groups",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["BTS", "BLACKPINK", "EXO", "TWICE"]
+    },
+    {
+      "name": "Korean Dishes",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Kimchi", "Bibimbap", "Japchae", "Bulgogi"]
+    },
+    {
+      "name": "South Korean Cities",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Seoul", "Busan", "Daegu", "Incheon"]
+    },
+    {
+      "name": "South Korean Companies",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Samsung", "Hyundai", "LG", "Kia"]
+    }
+  ],
+  "fun_fact": "From K-dramas to K-pop to kimchi, South Korean culture has swept the globe — but did you know the country is right now enduring its worst heatwave on record? [Read more](https://www.theguardian.com/world/2026/aug/03/south-korea-highest-temperature)",
+  "author": ""
+}
