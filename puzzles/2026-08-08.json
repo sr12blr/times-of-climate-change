@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-08",
+  "categories": [
+    {
+      "name": "Characteristics of Owls",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Nocturnal", "Silent flyers", "Flexible neck", "Sharp eyes"]
+    },
+    {
+      "name": "Brands with Owl Mascots/Logos",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Trip Advisor", "Sleepy Owl", "Chumbak", "Duolingo"]
+    },
+    {
+      "name": "Indian Owl Species",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Indian Scops", "Dusky Eagle", "Common Barn", "Indian Eagle"]
+    },
+    {
+      "name": "'Owl' in Indian Languages",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Ullu", "Guba", "Goobe", "Ghubad"]
+    }
+  ],
+  "fun_fact": "Earlier this week, we celebrated Owl Awareness Day. Did you know India has almost 35 species of owls? They provide a pivotal ecological service by controlling agricultural pests — feeding on rodents, shrews, and small insects — and sit at the apex of trophic levels in terrestrial and aquatic ecosystems. Learn more about owls in India [here](https://www.pugdundeesafaris.com/blog/owls-in-india/).",
+  "author": ""
+}
