@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-09",
+  "categories": [
+    {
+      "name": "Major European Rivers",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Rhine", "Danube", "Elbe", "Po"]
+    },
+    {
+      "name": "Uses of a Reservoir/Lake",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Agriculture", "Power generation", "Tourism", "Animal rearing"]
+    },
+    {
+      "name": "Meanings of \"Dry\"",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Arid", "No alcohol", "Deadpan", "Dull"]
+    },
+    {
+      "name": "Lakes in Europe",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Brenet", "Constance", "Ercek", "Valence"]
+    }
+  ],
+  "fun_fact": "The summer of 2026 has left much of Europe parched — the Rhine, Danube, and Po have fallen to near-record low levels, exposing dry riverbeds and cracked earth. When these rivers and the lakes they feed run low, everything downstream takes a hit: farms lose irrigation, hydropower and power-plant cooling falter, cargo barges run aground, and lakeside tourism dries up. See Europe's scorched rivers and lakes [here](https://www.theguardian.com/world/gallery/2026/aug/07/europe-dry-riverbeds-scorched-earth-hot-weather-in-pictures).",
+  "author": ""
+}
