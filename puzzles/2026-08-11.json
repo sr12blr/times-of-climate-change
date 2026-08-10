@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-11",
+  "categories": [
+    {
+      "name": "Types of solar eclipse",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Annular", "Partial", "Total", "Hybrid"]
+    },
+    {
+      "name": "Cultural rituals during an eclipse",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Bathing", "Chanting", "Fasting", "Praying"]
+    },
+    {
+      "name": "Words meaning 'to eclipse'",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Dwarf", "Obscure", "Outshine", "Overshadow"]
+    },
+    {
+      "name": "Events based on the Sun's position",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Eclipse", "Equinox", "Solstice", "Transit"]
+    }
+  ],
+  "fun_fact": "Tomorrow, August 12, brings a total solar eclipse — best viewed from northern Spain, where an estimated 450,000 people are expected to travel. But authorities have warned of a heightened wildfire risk as hundreds of thousands head into the hills and beaches for a better view. Read more [here](https://www.theguardian.com/science/2026/aug/10/spain-tourists-solar-eclipse-increased-wildfires-risk).",
+  "author": ""
+}
