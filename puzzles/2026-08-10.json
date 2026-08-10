@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-10",
+  "categories": [
+    {
+      "name": "Meteorological Agencies",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["IMD", "NOAA", "Skymet", "WMO"]
+    },
+    {
+      "name": "Something you can't explain",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Enigma", "Mystery", "Puzzle", "Riddle"]
+    },
+    {
+      "name": "Synonyms for Shortage",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Dearth", "Lack", "Scarcity", "Shortage"]
+    },
+    {
+      "name": "\"RAIN ___\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Check", "Coat", "Fall", "Water"]
+    }
+  ],
+  "fun_fact": "India's monsoon has a 13% deficit. On the other hand, Assam is seeing one of their worst floods. It may seem like the facts are not adding up, but in fact they are exactly what we should expect with the double whammy of rising temperatures and a Super El Niño. See this video to understand why [here](https://www.youtube.com/watch?v=m6WUB_jD-wY).",
+  "author": ""
+}
