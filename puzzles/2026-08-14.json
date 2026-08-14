@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-14",
+  "categories": [
+    {
+      "name": "Found on a construction site",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Crane", "Cement", "Bricks", "Scaffold"]
+    },
+    {
+      "name": "Found in an ambulance",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Stretcher", "First-aid kit", "Defibrillator", "Syringe"]
+    },
+    {
+      "name": "Found in a bakery",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Oven", "Whisk", "Mixer", "Tray"]
+    },
+    {
+      "name": "Found in a public bus",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Luggage rack", "Bell", "Handrail", "Seat"]
+    }
+  ],
+  "fun_fact": "The UK is facing a severe heatwave, and among the worst affected are people whose jobs keep them in places that get dangerously hot — builders, bakers, construction workers, drivers and paramedics. A campaign for a legal maximum working temperature, to bring England into line with other European countries, is gathering pace. Read more [here](https://www.theguardian.com/environment/2026/aug/14/uk-workers-struggling-in-extreme-heat).",
+  "author": "Anjana & Sailee"
+}
