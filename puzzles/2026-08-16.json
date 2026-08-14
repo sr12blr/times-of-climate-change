@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-16",
+  "categories": [
+    {
+      "name": "Types of soil",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Alluvial", "Red", "Black", "Desert"]
+    },
+    {
+      "name": "Soil nutrients / elements",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Carbon", "Potassium", "Nitrogen", "Phosphorus"]
+    },
+    {
+      "name": "Soil degradation processes",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Erosion", "Acidification", "Salinization", "Contamination"]
+    },
+    {
+      "name": "Soil conservation practices",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Crop rotation", "Mulching", "Multi-cropping", "Organic farming"]
+    }
+  ],
+  "fun_fact": "Healthy soil is the foundation of everything we eat — yet a recent CSE assessment found Indian soils to be severely deficient in key nutrients, running low on nitrogen, organic carbon and essential micronutrients. Decades of intensive farming and imbalanced fertiliser use have quietly drained the ground our crops depend on. Read more [here](https://www.downtoearth.org.in/food/cse-assessment-finds-indian-soils-severely-deficient-in-key-nutrients).",
+  "author": "Roshni"
+}
