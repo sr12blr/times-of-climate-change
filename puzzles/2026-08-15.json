@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-15",
+  "categories": [
+    {
+      "name": "Words meaning \"Independence\"",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Freedom", "Liberty", "Sovereignty", "Azaadi"]
+    },
+    {
+      "name": "Leaders in India's freedom struggle",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Nehru", "Gandhi", "Bose", "Jinnah"]
+    },
+    {
+      "name": "Prominent British administrators",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Mountbatten", "Curzon", "Dyer", "Hastings"]
+    },
+    {
+      "name": "National ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Anthem", "Flag", "Geographic", "Interest"]
+    }
+  ],
+  "fun_fact": "This Independence Day, as we think about our dreams and aspirations for India, let's also remember that India is one of the countries most vulnerable to climate change — more than 80% of India's population lives in highly vulnerable districts. Let's think about how we build a future that is climate-resilient and makes sure India is a thriving place not just for a few but for all, including those living on the margins. Read more [here](https://thediplomat.com/2026/08/as-world-bank-retreats-from-climate-targets-indias-most-vulnerable-could-pay-the-price/).",
+  "author": "Sailee"
+}
