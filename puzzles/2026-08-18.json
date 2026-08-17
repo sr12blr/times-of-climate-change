@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-18",
+  "categories": [
+    {
+      "name": "Names for India's native street dog",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Pariah", "Pye Dog", "INDog", "Indie"]
+    },
+    {
+      "name": "Climate extremes",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Extreme heat", "Flooding", "Drought", "Harsh Winters"]
+    },
+    {
+      "name": "How communities help street dogs",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Shaded shelters", "Water bowls", "Community feeding", "Veterinary help"]
+    },
+    {
+      "name": "Things that can be 'Indie'",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Dog", "Music", "Films", "Bookstores"]
+    }
+  ],
+  "fun_fact": "India's street dogs — affectionately called **Indies** — are remarkably adaptive survivors, shaped by thousands of years on the subcontinent. But that resilience has limits: record-breaking heat waves leave them battling **dehydration and heatstroke** with little water or shade. Simple acts — [water bowls, shaded spots and community feeding](https://www.dw.com/en/indias-forgotten-stray-animals-suffer-under-record-heat-waves/a-62233286) — can be the difference between life and death.",
+  "author": "Divya P"
+}
