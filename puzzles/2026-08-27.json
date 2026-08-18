@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-27",
+  "categories": [
+    {
+      "name": "Cities famous for their lakes",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Bhopal", "Udaipur", "Bangalore", "Nainital"]
+    },
+    {
+      "name": "Regional words for a lake/pond",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Talab", "Kere", "Sarovar", "Kund"]
+    },
+    {
+      "name": "What we use lakes for",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Irrigation", "Flood buffer", "Fishing", "Boating"]
+    },
+    {
+      "name": "Citizen action to save lakes",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Lake audits", "Clean up drive", "Tree Census", "Advocacy"]
+    }
+  ],
+  "fun_fact": "Today (Aug 27) is celebrated as World Lakes Day. India's cities were built around lakes — talabs, keres, sarovars and kunds that stored monsoon rain, recharged wells, and cooled the air. As they're encroached and filled in, cities lose their natural flood buffers — which is why places like Bengaluru now swing between floods and water shortages in a warming climate. The good news: lakes can be revived, and citizens are leading the way. [Here's what you could do as a citizen to preserve lakes in your city →](https://citizenmatters.in/bengaluru-lakes-system-functions-sustainability/)",
+  "author": "Ishwarya and Sailee"
+}
