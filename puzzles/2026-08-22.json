@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-22",
+  "categories": [
+    {
+      "name": "Animals we milk",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Cow", "Buffalo", "Goat", "Camel"]
+    },
+    {
+      "name": "Plant based milk sources",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Oat", "Almond", "Soy", "Coconut"]
+    },
+    {
+      "name": "Reasons people switch to plant milk",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Intolerance", "Health", "Climate", "Animal welfare"]
+    },
+    {
+      "name": "Plant-milk brands",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Oatly", "Sofit!", "Alt Co", "Good Mylk"]
+    }
+  ],
+  "fun_fact": "Dairy is a big source of emissions, but milk-bearing animals are also getting impacted by climate change. A recent study showed that global warming acutely affects dairy production across the Global South, especially the high milk production tract of Haryana. [Read more →](https://www.ceew.in/publications/what-is-the-impact-of-climate-change-on-india-milk-production)",
+  "author": ""
+}
