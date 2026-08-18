@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-19",
+  "categories": [
+    {
+      "name": "Adivasi communities",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Naga", "Bhil", "Gond", "Bodo"]
+    },
+    {
+      "name": "Minor forest produce",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Mahua", "Honey", "Tendu leaves", "Tamarind"]
+    },
+    {
+      "name": "Forest-dweller rights (FRA)",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Inhabit", "Collect forest produce", "Grazing", "Water use"]
+    },
+    {
+      "name": "Sacred groves of India",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Oran", "Devrai", "Devarakadu", "Sarpa Kavu"]
+    }
+  ],
+  "fun_fact": "Long before \"protected areas\" existed, India's forest communities guarded **sacred groves** — from Rajasthan's *Orans* to Kerala's *Sarpa Kavus* — an estimated 100,000+ patches of forest preserved through faith and tradition. This year, the **Forest Rights Act completes 20 years**: landmark legislation recognising the rights of Adivasis and forest dwellers to inhabit, use and protect the forests they've long called home. <a href=\"https://www.hindustantimes.com/ht-insight/governance/forests-rights-resilience-20-years-of-the-fra-101775384340232.html\" target=\"_blank\" rel=\"noopener\">Know more →</a>",
+  "author": ""
+}
