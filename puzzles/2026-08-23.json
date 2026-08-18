@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-23",
+  "categories": [
+    {
+      "name": "Fitness trackers",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Garmin", "Apple Watch", "Fitbit", "Ultrahuman"]
+    },
+    {
+      "name": "Ways to walk",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Stride", "Tiptoe", "Strut", "Stroll"]
+    },
+    {
+      "name": "What makes a street walkable",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Trees", "Even surface", "Zebra crossing", "Streetlights"]
+    },
+    {
+      "name": "Walk ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["on eggshells", "a tightrope", "the talk", "in the park"]
+    }
+  ],
+  "fun_fact": "Aug 17 was World Pedestrian Day — a good moment to ask how walkable Indian cities really are. Walking accounts for more than 60% of trips in urban India, yet most cities are hostile to people on foot. Decades of car-centric planning have resulted in cities that move cars and not people, and climate change makes it worse — extreme heatwaves and monsoon flooding hit pedestrians hardest. The way out isn't complicated: shaded, tree-lined streets with even footpaths, safe crossings and lighting. [Know more →](https://www.youtube.com/watch?v=2k_7wrxyRqI&t=11s)",
+  "author": "Ishwarya"
+}
