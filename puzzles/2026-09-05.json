@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-05",
+  "categories": [
+    {
+      "name": "Birds of prey",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Falcon", "Kite", "Eagle", "Vulture"]
+    },
+    {
+      "name": "Physical features of a vulture",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Blunt Talons", "Massive Wingspan", "Hooked Beak", "Bald Head"]
+    },
+    {
+      "name": "Vulture species (found in India)",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["White Rumped", "Himalayan Griffon", "Red Headed", "Slender Billed"]
+    },
+    {
+      "name": "Threats to vultures",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Habitat Loss", "Poisoning", "Food shortage", "Electrocution"]
+    }
+  ],
+  "fun_fact": "India was once home to more than 50 mn vultures — until the 1990s, when Diclofenac, a common painkiller for cattle, but poisonous for vultures who ate the carcass, wiped out more than 99% of their population. Vultures are nature's clean-up crew, stripping carcasses before they rot. Without them, feral dog and rat populations surged and disease spread. [A BBC report](https://www.bbc.com/news/articles/c28e2pvzn3lo) says ~5 lac human deaths can be linked to the decline of the vulture.",
+  "author": "Anjana"
+}
