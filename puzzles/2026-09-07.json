@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-07",
+  "categories": [
+    {
+      "name": "Shades of blue",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Cobalt", "Indigo", "Prussian", "Turquoise"]
+    },
+    {
+      "name": "Things that are blue",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Sky", "Swimming Pool", "Blueberries", "Jeans"]
+    },
+    {
+      "name": "Blue ___",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Chip", "Blooded", "Moon", "Collar"]
+    },
+    {
+      "name": "Things that dim the blue sky",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Clouds", "Night time", "Pollution", "Dust"]
+    }
+  ],
+  "fun_fact": "Blue skies are beautiful. They make everything better. But increasingly, polluted air has meant that our skies now look like a hazy shade of grey rather than an azure blue. Today (Sept 7) is celebrated as the International Day of Blue Skies. Hope this makes you smile: [100 days of blue skies](https://photos.google.com/share/AF1QipPyYubIyF__2vAi7NAcoD3eQVTmgs7w-2GXA8XZd6QkkWjqY04BVLAOSmqexqgqZA?key=TzFDV2NMTXBmM2dmc0JaQnJtZGZzcGRwNjJURzhB) and reminds you of what we stand to lose if we don't fix our air pollution soon!",
+  "author": "Sailee"
+}
