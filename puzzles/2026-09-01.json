@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-01",
+  "categories": [
+    {
+      "name": "Triggers of sweating",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Anxiety", "Hot weather", "Exercise", "Spicy food"]
+    },
+    {
+      "name": "Body parts involved in sweating",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Sweat glands", "Skin", "Hypothalamus", "Sympathetic nerves"]
+    },
+    {
+      "name": "Functions of sweat",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Waste removal", "Thermoregulation", "Electrolyte balance", "Response to stress"]
+    },
+    {
+      "name": "What 'sweat' can mean",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Work hard", "Worry", "Feel hot", "Perspire"]
+    }
+  ],
+  "fun_fact": "Mumbai, the City of Dreams is now also the City of Sweat. See this brilliantly written piece and photo essay: [City of Sweat →](https://www.equator.org/articles/city-of-sweat-mumbai-heat)",
+  "author": "Sailee"
+}
