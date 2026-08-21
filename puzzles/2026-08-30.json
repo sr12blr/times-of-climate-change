@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-30",
+  "categories": [
+    {
+      "name": "Famous Indian monuments",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Taj Mahal", "Humayun's tomb", "Konark temple", "Red fort"]
+    },
+    {
+      "name": "Building materials",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Granite", "Bricks", "Sandstone", "Marble"]
+    },
+    {
+      "name": "Threats to monuments",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Acid rain", "Thunderstorm", "Neglect", "Erosion"]
+    },
+    {
+      "name": "Types of structures",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Tombstones", "Forts", "Palaces", "Gates"]
+    }
+  ],
+  "fun_fact": "India's great monuments are weathering a modern threat: pollution and climate change. Acid rain and airborne soot have slowly been yellowing the Taj Mahal's white marble, while erosion and neglect chip away at forts, tombs and temples across the country. As climate change brings harsher heat, storms and dirtier air, protecting these buildings that have stood for 1000s of years is becoming a race against time. [Read more →](https://www.channelnewsasia.com/asia/india-ancient-monuments-climate-change-pollution-red-fort-taj-mahal-5482191)",
+  "author": "Pragya"
+}
