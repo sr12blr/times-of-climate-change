@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-26",
+  "categories": [
+    {
+      "name": "Signs of poor sleep",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Poor Focus", "Fatigue", "Headache", "Yawning"]
+    },
+    {
+      "name": "Things that help you sleep",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Eye mask", "Blackout curtains", "Weighted blankets", "Ear plug"]
+    },
+    {
+      "name": "Mattress brands",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["SleepyCat", "Sleepwell", "Curlon", "Duroflex"]
+    },
+    {
+      "name": "Sleeping ___",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Beauty", "Pills", "Bag", "Partner"]
+    }
+  ],
+  "fun_fact": "A global study analysing more than 7 mn sleep records from 68 countries found that warmer nights shorten sleep, mainly because people fall asleep later. If warming continues, higher temperatures could cost each person approximately 50–58 hours of sleep every year by 2099. Older adults, women and people in lower-income countries are affected more. [Read more →](https://www.ndtv.com/world-news/hotter-nights-stealing-sleep-across-world-india-among-hardest-hit-11784982)",
+  "author": "Vedika"
+}
