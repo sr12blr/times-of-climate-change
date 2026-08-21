@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-03",
+  "categories": [
+    {
+      "name": "Music genres",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Rock", "Pop", "Country", "Rap"]
+    },
+    {
+      "name": "Rappers",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Jay Z", "Eminem", "Kendrick Lamar", "Nas"]
+    },
+    {
+      "name": "Rap artist fashion",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Chains", "Baggy pants", "Sneakers", "Hoodies"]
+    },
+    {
+      "name": "Elements of rap songs",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Bars", "Flow", "Verse", "Beat"]
+    }
+  ],
+  "fun_fact": "Rap music has had a history of talking about issues like power, money or rebellion. So it's no surprise that climate has found its way to rap. Check out the first 2 songs of the Climate Emergency Mixtape: [Neer Kodu](https://www.youtube.com/watch?v=-2-7k_aTVkg&list=RD-2-7k_aTVkg&start_radio=1) and [Nisargacha Kaayda](https://www.youtube.com/watch?v=iRI_nHD2Zs4). They are lit!",
+  "author": "Roshni"
+}
