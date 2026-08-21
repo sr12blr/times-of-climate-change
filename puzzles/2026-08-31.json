@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-31",
+  "categories": [
+    {
+      "name": "Types of development projects",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Dams", "Factories", "Mining projects", "Highways"]
+    },
+    {
+      "name": "Forms of protest",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Hugging trees", "Marching", "Hunger strike", "Staged Funeral pyre"]
+    },
+    {
+      "name": "Indian environmental movements",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Chipko", "Narmada Bachao Andolan", "Appiko", "Jungle Bachao Andolan"]
+    },
+    {
+      "name": "Current sites of environmental protests",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Visakhapatnam data center", "Ken-Betwa", "Great Nicobar island", "Aravallis"]
+    }
+  ],
+  "fun_fact": "From hugging trees in the Himalayas to sitting before bulldozers, India has a long history of grassroots environmental movements. The Chipko movement of the 1970s — where villagers, many of them women, hugged trees to stop them being felled — sparked a wave of people-led struggles like Appiko and the Narmada Bachao Andolan. That spirit lives on today in protests over the Aravallis, Great Nicobar and Ken-Betwa, where ordinary people still stand up for forests, rivers and coasts.",
+  "author": "Simran"
+}
