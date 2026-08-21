@@ -1,0 +1,39 @@
+{
+  "date": "2026-08-28",
+  "categories": [
+    {
+      "name": "Green projects climate finance funds",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Green buildings", "Regenerative farming", "Solar plants", "Electric buses"]
+    },
+    {
+      "name": "India's financial regulators",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Ministry of Finance", "IRDAI", "RBI", "SEBI"]
+    },
+    {
+      "name": "Carbon ___",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Credit", "Footprint", "Offset", "Tax"]
+    },
+    {
+      "name": "Green finance instruments",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Bond", "Equity", "Insurance", "Venture Capital"]
+    }
+  ],
+  "fun_fact": "Green finance helps direct money to fund environmental projects and decarbonisation goals. India has been financing its green transition, but a massive funding gap remains. [Read more →](https://www.businesstoday.in/magazine/deep-dive/story/sustainable-finance-why-indias-average-climate-finance-flows-have-been-low-537886-2026-06-18)",
+  "author": "Anjana"
+}
