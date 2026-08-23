@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-06",
+  "categories": [
+    {
+      "name": "Himalayan peaks",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Kanchenjunga", "Everest", "Nanga Parbat", "Annapurna"]
+    },
+    {
+      "name": "Mountain landforms",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Glacier", "Lake", "Valley", "Pass"]
+    },
+    {
+      "name": "Countries the Himalayas span",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["India", "Pakistan", "Nepal", "Bhutan"]
+    },
+    {
+      "name": "Indian Himalayan states",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Jammu and Kashmir", "Uttarakhand", "Sikkim", "Himachal"]
+    }
+  ],
+  "fun_fact": "The western Himalaya, spanning across Ladakh, Jammu and Kashmir and Himachal Pradesh, is warming faster than the central and eastern stretches of the range, according to a new study. It also found that winters are warming faster than springs in the western Himalayas. [Read more →](https://theprint.in/india/western-himalaya-warming-faster-than-central-eastern-stretches-study/3018266/)",
+  "author": "Sailee"
+}

@@ -2,38 +2,38 @@
   "date": "2026-08-29",
   "categories": [
     {
-      "name": "Himalayan peaks",
+      "name": "Types of mushroom",
       "bg": "#2C5F4A",
       "text": "#ffffff",
       "difficulty": 1,
       "description": "",
-      "items": ["Kanchenjunga", "Everest", "Nanga Parbat", "Annapurna"]
+      "items": ["Button", "Truffle", "Oyster", "Shiitake"]
     },
     {
-      "name": "Mountain landforms",
+      "name": "Parts of a mushroom",
       "bg": "#1A5F7A",
       "text": "#ffffff",
       "difficulty": 2,
       "description": "",
-      "items": ["Glacier", "Lake", "Valley", "Pass"]
+      "items": ["Cap", "Gills", "Spores", "Mycelium"]
     },
     {
-      "name": "Countries the Himalayas span",
+      "name": "What mushrooms need to grow",
       "bg": "#C8602A",
       "text": "#ffffff",
       "difficulty": 3,
       "description": "",
-      "items": ["India", "Pakistan", "Nepal", "Bhutan"]
+      "items": ["Right temperature", "Moisture", "Darkness", "Organic matter"]
     },
     {
-      "name": "Indian Himalayan states",
+      "name": "Dishes you'd add mushrooms to",
       "bg": "#6B1C2A",
       "text": "#ffffff",
       "difficulty": 4,
       "description": "",
-      "items": ["Jammu and Kashmir", "Uttarakhand", "Sikkim", "Himachal"]
+      "items": ["Sandwich", "Soup", "Pizza", "Pasta"]
     }
   ],
-  "fun_fact": "The western Himalaya, spanning across Ladakh, Jammu and Kashmir and Himachal Pradesh, is warming faster than the central and eastern stretches of the range, according to a new study. It also found that winters are warming faster than springs in the western Himalayas. [Read more →](https://theprint.in/india/western-himalaya-warming-faster-than-central-eastern-stretches-study/3018266/)",
+  "fun_fact": "Mushrooms are quiet climate champions — they grow on agricultural waste, need very little water or land, and their vast underground mycelium networks recycle nutrients and help lock carbon into the soil. Want to fall down the fungal rabbit hole? Shroom Sabha, a festival dedicated entirely to mushrooms, runs Sep 4–6. [Explore it →](https://shroomsabha.com/)",
   "author": "Sailee"
 }
