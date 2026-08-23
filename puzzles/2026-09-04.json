@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-04",
+  "categories": [
+    {
+      "name": "Minerals mined in the Aravallis",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Marble", "Limestone", "Zinc", "Copper"]
+    },
+    {
+      "name": "Benefits of the Aravalis",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Groundwater recharge", "Desert barrier", "Wildlife habitat", "Pollution filter"]
+    },
+    {
+      "name": "Cities on/along the Aravallis",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Delhi", "Jaipur", "Gurgaon", "Mt Abu"]
+    },
+    {
+      "name": "Rivers rising in the Aravallis",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Luni", "Sabarmati", "Berach", "Banas"]
+    }
+  ],
+  "fun_fact": "The Aravallis are the oldest mountain range in India — and one of the hardest-working. They recharge groundwater, shelter wildlife, and act as a green wall that keeps the Thar desert from swallowing the Indo-Gangetic plain, which would be a desert without them. Yet they're under threat: unrestrained mining is eating into the range, and a new ruling that only hills above 100 metres qualify for protection puts the range at even greater risk. [Know more →](https://www.youtube.com/watch?v=jNLPeruGIWA&t=387s)",
+  "author": "Nagaswetha"
+}
