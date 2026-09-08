@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-10",
+  "categories": [
+    {
+      "name": "Indian tea-growing regions",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Assam", "Darjeeling", "Nilgiri", "Munnar"]
+    },
+    {
+      "name": "Masala chai spices",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Clove", "Saffron", "Ginger", "Cardamom"]
+    },
+    {
+      "name": "_____ Tea",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Boba", "Iced", "Green", "Oolong"]
+    },
+    {
+      "name": "Tea-processing steps",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Pluck", "Wither", "Roll", "Sort"]
+    }
+  ],
+  "fun_fact": "India's famous tea belts are feeling the heat. In Assam, which grows more than half the country's tea, erratic rainfall, longer dry spells and rising temperatures are shrinking yields and pushing pests into the gardens — squeezing an industry that employs millions of workers. Darjeeling and the Nilgiris face similar stress, threatening the flavour and future of your daily cup. <a href=\"https://www.dw.com/en/india-assam-tea-industry-faces-climate-driven-labor-crisis/a-78506414\" target=\"_blank\" rel=\"noopener\">Read: Assam's tea industry faces a climate-driven labour crisis →</a>",
+  "author": "Vedika"
+}
