@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-09",
+  "categories": [
+    {
+      "name": "Faiths that hold Mount Kailash sacred",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Hinduism", "Buddhism", "Jainism", "Bon"]
+    },
+    {
+      "name": "What caused the floods in Nepal",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Flash flood", "Ice avalanche", "Debris flow", "Glacier collapse"]
+    },
+    {
+      "name": "Districts of Nepal",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Dhading", "Rasuwa", "Chitwan", "Nuwakot"]
+    },
+    {
+      "name": "Names for Mount Kailash",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Kang Rinpoche", "Ashtapada", "Kailasa", "Tise"]
+    }
+  ],
+  "fun_fact": "Nepal saw its most devastating floods in history on Aug 27. At least 1287 people are dead and more than 5000 are still missing. The flash floods were triggered by a glacial collapse and the destructive path of the floods destroyed several towns, villages, hydro electric projects etc. It also completely destroyed Gyirong Port, the border crossing that is the main gateway for pilgrims heading to Mount Kailash. [Read more](https://www.bbc.com/news/articles/cd68vpjv21do)",
+  "author": "Sangeetha"
+}
