@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-13",
+  "categories": [
+    {
+      "name": "Beer brands",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Heineken", "Bira", "Kingfisher", "Budweiser"]
+    },
+    {
+      "name": "Types of wine",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Red", "Rose", "White", "Sparkling"]
+    },
+    {
+      "name": "How beer is served",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Bottled", "Draft", "Canned", "Cask ale"]
+    },
+    {
+      "name": "Wine brands",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Sula", "Fratelli", "Grover Zampa", "Jacob's Creek"]
+    }
+  ],
+  "fun_fact": "After the UK's hottest summer on record, English winemakers are celebrating their earliest grape harvest in decades and hailing a 'vintage year'. But the same warming that is turning England into sparkling-wine country has led to a gloomier outlook for beermakers, as drought diminishes barley harvest. <a href=\"https://www.theguardian.com/uk-news/2026/sep/10/english-winemakers-vintage-grapes-harvest-heatwave\" target=\"_blank\" rel=\"noopener\">Read more →</a>",
+  "author": "Sailee"
+}
