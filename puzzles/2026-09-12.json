@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-12",
+  "categories": [
+    {
+      "name": "Trafficked animals",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Rhinoceros", "Elephants", "Pangolin", "Tigers"]
+    },
+    {
+      "name": "Words that mean animal trafficking",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Poaching", "Trafficking", "Hunting", "Smuggling"]
+    },
+    {
+      "name": "Wildlife products sold",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Bushmeat", "Ivory tusks", "Turtle eggs", "Rhino horn"]
+    },
+    {
+      "name": "Why they're trafficked",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Traditional medicine", "Exotic pets", "Delicacies", "Luxury goods"]
+    }
+  ],
+  "fun_fact": "In September 2026, five critically endangered baby orangutans — a species not native to India — were found abandoned in a forest near Balasore, Odisha, triggering an investigation into an international wildlife-smuggling network. The illegal wildlife trade is pushing species toward extinction and eroding the biodiversity that keeps ecosystems — and our climate — in balance. <a href=\"https://www.theguardian.com/world/2026/sep/10/baby-orangutans-found-india-trafficking-investigation\" target=\"_blank\" rel=\"noopener\">Read more →</a>",
+  "author": "Sangeetha"
+}
