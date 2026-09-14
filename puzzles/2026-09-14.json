@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-14",
+  "categories": [
+    {
+      "name": "The Great Wave off Kanagawa",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["The Great", "Wave", "Off", "Kanagawa"]
+    },
+    {
+      "name": "Wanderer above the Sea of Fog",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Wanderer", "Above", "The sea", "Of fog"]
+    },
+    {
+      "name": "Tiger in a Tropical Storm",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Tiger", "In a", "Tropical", "Storm"]
+    },
+    {
+      "name": "Red Hills and White Flowers",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Red", "Hills", "And", "White flowers"]
+    }
+  ],
+  "fun_fact": "For centuries, art has been a powerful way to depict nature and its power — and to make you feel it too. Have you seen these paintings? <a href=\"https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa\" target=\"_blank\" rel=\"noopener\">The Great Wave off Kanagawa</a>, <a href=\"https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog\" target=\"_blank\" rel=\"noopener\">Wanderer above the Sea of Fog</a>, <a href=\"https://en.wikipedia.org/wiki/Tiger_in_a_Tropical_Storm\" target=\"_blank\" rel=\"noopener\">Tiger in a Tropical Storm</a>, and <a href=\"https://access-ok.okeeffemuseum.org/object/83/\" target=\"_blank\" rel=\"noopener\">Red Hills and White Flowers</a>.",
+  "author": "Simran"
+}
