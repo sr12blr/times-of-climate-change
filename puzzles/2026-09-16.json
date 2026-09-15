@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-16",
+  "categories": [
+    {
+      "name": "Shades of blue",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Teal", "Azure", "Cyan", "Aquamarine"]
+    },
+    {
+      "name": "Types of electromagnetic radiation",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["X-rays", "Infrared", "Ultraviolet", "Microwaves"]
+    },
+    {
+      "name": "Properties of a wave",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Wavelength", "Amplitude", "Frequency", "Velocity"]
+    },
+    {
+      "name": "Parameters that determine how blue the sky looks",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Humidity", "Altitude", "Pollution", "Temperature"]
+    }
+  ],
+  "fun_fact": "Have you ever wondered WHY the sky is blue? And why that blue looks so different from one city to another? Is it JUST pollution? Or is there something more that determines the colour? <a href=\"https://www.youtube.com/watch?v=wxXbSNWNJao&t=4s\" target=\"_blank\" rel=\"noopener\">Watch the full video to find out!</a>",
+  "author": "Sailee"
+}
