@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-17",
+  "categories": [
+    {
+      "name": "Climate hazards",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Heat stress", "Wildfire", "Drought", "Flooding"]
+    },
+    {
+      "name": "Climate adaptation measures",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Flood barriers", "Insurance", "Cooling centers", "Early warning systems"]
+    },
+    {
+      "name": "Words for resilience / toughness",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Grit", "Tenacity", "Hardiness", "Endurance"]
+    },
+    {
+      "name": "Words for danger",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Peril", "Danger", "Menace", "Threat"]
+    }
+  ],
+  "fun_fact": "In a 2025 AlphaGeo ranking of 72 of the world's biggest cities on climate resilience, Ahmedabad came dead last — with Kolkata, Chennai, Delhi and Mumbai also near the bottom. The problem isn't just the hazards (floods, heat stress, drought) but the adaptation gap: flood barriers, cooling centres and early-warning systems that haven't kept pace with the danger.",
+  "author": "Sailee"
+}
