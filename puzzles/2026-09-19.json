@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-19",
+  "categories": [
+    {
+      "name": "Properties of bamboo",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Fast-growing", "Regenerative", "Strong", "Hollow stems"]
+    },
+    {
+      "name": "Things made from bamboo",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Fabric", "Construction", "Furniture", "Food"]
+    },
+    {
+      "name": "Who eats bamboo",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Deer", "Elephants", "Humans", "Pandas"]
+    },
+    {
+      "name": "Rhymes with \"bamboo\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Voodoo", "Taboo", "Kung-Fu", "Tattoo"]
+    }
+  ],
+  "fun_fact": "Fun fact: We often think of Bamboo only as a material, but it's much more than that! It's shelter for some animals and food for others, including humans - have you tried a Bamboo shoots curry? :)\nAnd it's a fascinating plant indeed. Know more (hyperlink: https://onetreeplanted.org/blogs/stories/bamboo) on the occasion of World Bamboo Day (Sept 19).",
+  "author": "Sailee"
+}
