@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-22",
+  "categories": [
+    {
+      "name": "Natural building materials",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Stone", "Wood", "Thatch", "Mud"]
+    },
+    {
+      "name": "Architectural features",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Courtyard", "Veranda", "Jali", "Baoli"]
+    },
+    {
+      "name": "Traditional Indian house types",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Haveli", "Bhunga", "Nalukettu", "Chong ghar"]
+    },
+    {
+      "name": "Why vernacular design is sustainable",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Local materials", "Low energy", "Climate responsive", "Cultural"]
+    }
+  ],
+  "fun_fact": "India's traditional homes stay cool without air-conditioning: a mud house can be 5–6°C cooler inside than outside, and one study found modern houses run 7–10% hotter than traditional ones. Built from local materials and shaped by each region's climate — from Kerala's courtyards to Kutch's bhungas — vernacular architecture is a low-carbon answer to India's rising heat. [Read more](https://www.weforum.org/stories/climate-action/india-vernacular-architecture-cities-adapt-climate-change/)",
+  "author": "Sangeetha"
+}
