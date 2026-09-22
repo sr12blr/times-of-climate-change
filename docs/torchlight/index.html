@@ -74,6 +74,9 @@
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
+    
+    <button class="leaderboard-link" onclick="openLeaderboard()">🏆 Leaderboard</button>
+    
   </div>
 
   <!-- How to Play modal -->
@@ -85,7 +88,7 @@
       <p class="modal-rule">The 16 words you can see can be divided into 4 groups of 4 words each.</p>
       <p class="modal-rule">All puzzles are themed on climate change and environment.</p>
       <p class="modal-rule">Select four items that belong to the same group/category and tap <strong>Submit</strong> to check your answer.</p>
-      <p class="modal-rule">You can click on hint to see what the category is.</p>
+      <p class="modal-rule">You can click on hint to see what the category is. <strong>On the leaderboard, each hint adds 30 seconds to your time.</strong></p>
       <p class="modal-rule">You can make up to 4 mistakes!</p>
 
       <hr class="modal-divider">
@@ -111,6 +114,22 @@
       </div>
     </div>
   </div>
+
+  
+  <!-- Leaderboard modal -->
+  <div class="modal-overlay" id="leaderboardModalOverlay" onclick="handleLeaderboardOverlayClick(event)">
+    <div class="modal" id="leaderboardModal">
+      <button class="modal-close" onclick="closeLeaderboard()">×</button>
+      <div class="modal-title">🏆 Today's Leaderboard</div>
+      <div id="leaderboardModalBody"></div>
+    </div>
+  </div>
+  
+
+  
+  <!-- Daily leaderboard: mounted on the end screen, shown above the solved card / fun fact -->
+  <div id="dailyLeaderboard" style="margin-bottom: 20px;"></div>
+  
 
   <!-- Solved categories with Fun Fact flip card -->
   <div class="solved-flipper">
@@ -142,7 +161,7 @@
   </div>
 
   <div class="controls-row" id="btnRow">
-    <button class="btn btn-hint" id="hintBtn" onclick="getHint()">💡 Hint</button>
+    <button class="btn btn-hint" id="hintBtn" onclick="getHint()">💡 Hint (+0:30)</button>
     <button class="btn btn-deselect" onclick="deselectAll()">Deselect All</button>
     <button class="btn btn-submit" id="submitBtn" disabled onclick="checkGuess()">Submit</button>
   </div>
@@ -251,6 +270,20 @@
   }
 
   .how-to-play-link:hover { color: #0a5f5e; }
+
+  .leaderboard-link {
+    display: block;
+    margin: 6px auto 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: #0E7C7B;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .leaderboard-link:hover { color: #0a5f5e; }
 
   /* Modal */
   .modal-overlay {
@@ -787,6 +820,8 @@
 <script>
 // Puzzle data loaded from JSON
 const PUZZLE_DATA = {"author": "Sangeetha", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["Stone", "Wood", "Thatch", "Mud"], "name": "Natural building materials", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Courtyard", "Veranda", "Jali", "Baoli"], "name": "Architectural features", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Haveli", "Bhunga", "Nalukettu", "Chong ghar"], "name": "Traditional Indian house types", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Local materials", "Low energy", "Climate responsive", "Cultural"], "name": "Why vernacular design is sustainable", "text": "#ffffff"}], "date": "2026-09-22", "fun_fact": "India\u0027s traditional homes stay cool without air-conditioning: a mud house can be 5\u20136\u00b0C cooler inside than outside, and one study found modern houses run 7\u201310% hotter than traditional ones. Built from local materials and shaped by each region\u0027s climate \u2014 from Kerala\u0027s courtyards to Kutch\u0027s bhungas \u2014 vernacular architecture is a low-carbon answer to India\u0027s rising heat. \u003ca href=\"https://www.weforum.org/stories/climate-action/india-vernacular-architecture-cities-adapt-climate-change/\" target=\"_blank\" rel=\"noopener\"\u003eRead more\u003c/a\u003e"};
+const IS_LIVE_PUZZLE = true;
+const HINT_PENALTY_MS = 30000;
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1127,8 +1162,22 @@ function showEndScreen(won, isRestore) {
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-09-22'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-09-22', hintedCategories.length); } catch (e) { console.error(e); }
     }
+  }
+
+  // Always-on daily leaderboard (live puzzle only, not demo, not the QR event flow)
+  if (IS_LIVE_PUZZLE && !isDemo && !new URLSearchParams(location.search).has('lb')) {
+    const lbResult = {
+      date: PUZZLE_DATA.date,
+      ms: timerFinalMs || 0,
+      mistakes: mistakes,
+      hints: hintedCategories.length,
+      won: won
+    };
+    ensureLeaderboardLoaded().then(function () {
+      if (window.TL_DAILY_LB) window.TL_DAILY_LB.mountInline(lbResult);
+    }).catch(function (e) { console.error('[lb] load failed', e); });
   }
 
   // Streak
@@ -1281,7 +1330,8 @@ function getHint() {
   hintedCategories.push(hintCat);
   saveState();
 
-  showHintToast(`💡 ${hintCat.name}`);
+  const penaltyNote = (IS_LIVE_PUZZLE && !isDemo) ? ' — +0:30 added to your time' : '';
+  showHintToast(`💡 ${hintCat.name}${penaltyNote}`);
 
   if (PUZZLE.categories.every(cat => solved.includes(cat) || hintedCategories.includes(cat))) {
     document.getElementById('hintBtn').disabled = true;
@@ -1298,6 +1348,52 @@ function closeModal() {
 
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+// --- Daily leaderboard: lazy-load Firebase + runtime on demand ---
+let _lbLoadPromise = null;
+function ensureLeaderboardLoaded() {
+  if (_lbLoadPromise) return _lbLoadPromise;
+  const srcs = [
+    'https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js',
+    'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js',
+    '../leaderboard/config.js',
+    '../leaderboard/daily.js'
+  ];
+  _lbLoadPromise = srcs.reduce(function (chain, src) {
+    return chain.then(function () {
+      return new Promise(function (resolve, reject) {
+        const s = document.createElement('script');
+        s.src = src;
+        s.async = false;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('failed to load ' + src)); };
+        document.head.appendChild(s);
+      });
+    });
+  }, Promise.resolve());
+  return _lbLoadPromise;
+}
+
+function openLeaderboard() {
+  const overlay = document.getElementById('leaderboardModalOverlay');
+  if (overlay) overlay.classList.add('open');
+  ensureLeaderboardLoaded().then(function () {
+    if (window.TL_DAILY_LB) window.TL_DAILY_LB.openModal(PUZZLE_DATA.date);
+  }).catch(function (e) {
+    const body = document.getElementById('leaderboardModalBody');
+    if (body) body.innerHTML = '<p style="text-align:center;color:#6b6b6b;padding:24px">Leaderboard unavailable right now.</p>';
+    console.error('[lb] load failed', e);
+  });
+}
+
+function closeLeaderboard() {
+  const overlay = document.getElementById('leaderboardModalOverlay');
+  if (overlay) overlay.classList.remove('open');
+}
+
+function handleLeaderboardOverlayClick(e) {
+  if (e.target === document.getElementById('leaderboardModalOverlay')) closeLeaderboard();
 }
 
 function startDemo() {
@@ -1318,6 +1414,11 @@ function startDemo() {
 
   closeModal();
   showToast("🎓 Demo mode! Try to find the 4 groups (easier puzzle)");
+
+  // No leaderboard in demo, so drop the hint-penalty label and re-enable the button.
+  const hintBtn = document.getElementById('hintBtn');
+  hintBtn.textContent = '💡 Hint';
+  hintBtn.disabled = false;
 
   document.getElementById('solvedCategories').innerHTML = '';
   renderGrid();

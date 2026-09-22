@@ -25,7 +25,7 @@
   <div class="lb-card" style="padding:0">
     <table class="lb-board" id="board">
       <thead>
-        <tr><th>Rank</th><th>Name</th><th>Time</th><th>Mistakes</th></tr>
+        <tr><th>Rank</th><th>Name</th><th>Score</th><th>Time</th><th>Hints</th><th>Mistakes</th></tr>
       </thead>
       <tbody id="rows"></tbody>
     </table>
@@ -70,6 +70,10 @@
     var rs = s % 60;
     return m + ':' + (rs < 10 ? '0' : '') + rs;
   }
+  function adjustedOf(d) {
+    if (typeof d.adjustedMs === 'number') return d.adjustedMs;
+    return (d.ms || 0) + (d.hints || 0) * 30000;
+  }
 
   var rows = document.getElementById('rows');
   var empty = document.getElementById('empty');
@@ -82,7 +86,7 @@
       var data = d.data();
       (data.won ? winners : losers).push(data);
     });
-    winners.sort(function(a, b) { return (a.ms || 0) - (b.ms || 0); });
+    winners.sort(function(a, b) { return adjustedOf(a) - adjustedOf(b); });
     losers.sort(function(a, b) { return (a.name || '').localeCompare(b.name || ''); });
 
     rows.innerHTML = '';
@@ -98,7 +102,9 @@
       var tr = document.createElement('tr');
       tr.innerHTML = '<td class="rank">' + (i+1) + '</td>'
         + '<td>' + escapeHtml(r.name || '') + '</td>'
+        + '<td class="time">' + fmt(adjustedOf(r)) + '</td>'
         + '<td class="time">' + fmt(r.ms || 0) + '</td>'
+        + '<td>' + (r.hints || 0) + '</td>'
         + '<td>' + (r.mistakes || 0) + '</td>';
       rows.appendChild(tr);
     });
@@ -108,6 +114,8 @@
       tr.innerHTML = '<td class="rank">—</td>'
         + '<td>' + escapeHtml(r.name || '') + '</td>'
         + '<td class="time">DNF</td>'
+        + '<td class="time">—</td>'
+        + '<td>' + (r.hints || 0) + '</td>'
         + '<td>' + (r.mistakes || 0) + '</td>';
       rows.appendChild(tr);
     });

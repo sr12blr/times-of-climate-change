@@ -74,6 +74,7 @@
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
+    
   </div>
 
   <!-- How to Play modal -->
@@ -111,6 +112,10 @@
       </div>
     </div>
   </div>
+
+  
+
+  
 
   <!-- Solved categories with Fun Fact flip card -->
   <div class="solved-flipper">
@@ -251,6 +256,20 @@
   }
 
   .how-to-play-link:hover { color: #0a5f5e; }
+
+  .leaderboard-link {
+    display: block;
+    margin: 6px auto 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: #0E7C7B;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .leaderboard-link:hover { color: #0a5f5e; }
 
   /* Modal */
   .modal-overlay {
@@ -787,6 +806,8 @@
 <script>
 // Puzzle data loaded from JSON
 const PUZZLE_DATA = {"author": "Sailee", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["National bird", "Krishna\u0027s headgear", "NBC\u0027s logo", "Karthikeya\u0027s vehicle"], "name": "The peacock in culture", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Insects", "Lizards", "Snakes", "Grains"], "name": "What a peacock eats", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Beauty", "Divinity", "Royalty", "Monsoon"], "name": "What the peacock symbolises", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Flaunt", "Show off", "Strut", "Dress-up"], "name": "To peacock", "text": "#ffffff"}], "date": "2026-09-02", "fun_fact": "Once hailed as a symbol of Indian pride and grace, the Indian peacock is now stirring heated debates in the quiet Himalayan foothills, where they are increasingly seen as pests rather than assets. Peacock populations have been increasing and they often end up destroying crops, frustrating farmers. \u003ca href=\"https://india.mongabay.com/2026/08/increasing-numbers-of-the-indian-peafowl-worry-farmers-commentary/\" target=\"_blank\" rel=\"noopener\"\u003eRead more \u2192\u003c/a\u003e"};
+const IS_LIVE_PUZZLE = false;
+const HINT_PENALTY_MS = 30000;
 
 // Puzzle number: April 9, 2026 = #1
 const PUZZLE_ORIGIN = new Date('2026-04-09T00:00:00');
@@ -1127,8 +1148,22 @@ function showEndScreen(won, isRestore) {
       'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
     });
     if (window.LB_RUNTIME) {
-      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-09-02'); } catch (e) { console.error(e); }
+      try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-09-02', hintedCategories.length); } catch (e) { console.error(e); }
     }
+  }
+
+  // Always-on daily leaderboard (live puzzle only, not demo, not the QR event flow)
+  if (IS_LIVE_PUZZLE && !isDemo && !new URLSearchParams(location.search).has('lb')) {
+    const lbResult = {
+      date: PUZZLE_DATA.date,
+      ms: timerFinalMs || 0,
+      mistakes: mistakes,
+      hints: hintedCategories.length,
+      won: won
+    };
+    ensureLeaderboardLoaded().then(function () {
+      if (window.TL_DAILY_LB) window.TL_DAILY_LB.mountInline(lbResult);
+    }).catch(function (e) { console.error('[lb] load failed', e); });
   }
 
   // Streak
@@ -1281,7 +1316,8 @@ function getHint() {
   hintedCategories.push(hintCat);
   saveState();
 
-  showHintToast(`💡 ${hintCat.name}`);
+  const penaltyNote = (IS_LIVE_PUZZLE && !isDemo) ? ' — +0:30 added to your time' : '';
+  showHintToast(`💡 ${hintCat.name}${penaltyNote}`);
 
   if (PUZZLE.categories.every(cat => solved.includes(cat) || hintedCategories.includes(cat))) {
     document.getElementById('hintBtn').disabled = true;
@@ -1298,6 +1334,52 @@ function closeModal() {
 
 function handleOverlayClick(e) {
   if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+// --- Daily leaderboard: lazy-load Firebase + runtime on demand ---
+let _lbLoadPromise = null;
+function ensureLeaderboardLoaded() {
+  if (_lbLoadPromise) return _lbLoadPromise;
+  const srcs = [
+    'https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js',
+    'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js',
+    '../../../leaderboard/config.js',
+    '../../../leaderboard/daily.js'
+  ];
+  _lbLoadPromise = srcs.reduce(function (chain, src) {
+    return chain.then(function () {
+      return new Promise(function (resolve, reject) {
+        const s = document.createElement('script');
+        s.src = src;
+        s.async = false;
+        s.onload = resolve;
+        s.onerror = function () { reject(new Error('failed to load ' + src)); };
+        document.head.appendChild(s);
+      });
+    });
+  }, Promise.resolve());
+  return _lbLoadPromise;
+}
+
+function openLeaderboard() {
+  const overlay = document.getElementById('leaderboardModalOverlay');
+  if (overlay) overlay.classList.add('open');
+  ensureLeaderboardLoaded().then(function () {
+    if (window.TL_DAILY_LB) window.TL_DAILY_LB.openModal(PUZZLE_DATA.date);
+  }).catch(function (e) {
+    const body = document.getElementById('leaderboardModalBody');
+    if (body) body.innerHTML = '<p style="text-align:center;color:#6b6b6b;padding:24px">Leaderboard unavailable right now.</p>';
+    console.error('[lb] load failed', e);
+  });
+}
+
+function closeLeaderboard() {
+  const overlay = document.getElementById('leaderboardModalOverlay');
+  if (overlay) overlay.classList.remove('open');
+}
+
+function handleLeaderboardOverlayClick(e) {
+  if (e.target === document.getElementById('leaderboardModalOverlay')) closeLeaderboard();
 }
 
 function startDemo() {
@@ -1318,6 +1400,11 @@ function startDemo() {
 
   closeModal();
   showToast("🎓 Demo mode! Try to find the 4 groups (easier puzzle)");
+
+  // No leaderboard in demo, so drop the hint-penalty label and re-enable the button.
+  const hintBtn = document.getElementById('hintBtn');
+  hintBtn.textContent = '💡 Hint';
+  hintBtn.disabled = false;
 
   document.getElementById('solvedCategories').innerHTML = '';
   renderGrid();

@@ -44,10 +44,11 @@
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
-  function submit(won, ms, mistakes) {
+  function submit(won, ms, mistakes, hints) {
     initFirebase();
     var db = window.firebase.firestore();
     var slug = nameSlug(name);
+    var h = typeof hints === 'number' ? hints : 0;
     var ref = db
       .collection('events').doc(window.LB_CONFIG.eventId)
       .collection('puzzles').doc(puzzleDate)
@@ -62,6 +63,8 @@
         name: name,
         ms: ms || 0,
         mistakes: typeof mistakes === 'number' ? mistakes : 0,
+        hints: h,
+        adjustedMs: (ms || 0) + h * 30000,
         won: !!won,
         sessionId: sessionId,
         submittedAt: window.firebase.firestore.FieldValue.serverTimestamp()
@@ -72,15 +75,16 @@
   }
 
   window.LB_RUNTIME = {
-    onSolve: function (won, ms, mistakes, date) {
+    onSolve: function (won, ms, mistakes, date, hints) {
       var p = new Promise(function (resolve) {
-        submit(won, ms, mistakes).then(resolve, resolve);
+        submit(won, ms, mistakes, hints).then(resolve, resolve);
       });
       // Give Firestore a beat, then redirect to the done page
       setTimeout(function () {
         p.then(function () {
           var url = rootPath() + 'leaderboard/done/?p=' + encodeURIComponent(puzzleDate)
-            + '&ms=' + (ms || 0) + '&m=' + (mistakes || 0) + '&won=' + (won ? 1 : 0);
+            + '&ms=' + (ms || 0) + '&m=' + (mistakes || 0) + '&won=' + (won ? 1 : 0)
+            + '&h=' + (hints || 0);
           location.href = url;
         });
       }, 1500);

@@ -365,6 +365,7 @@ def generate(full_rebuild=False):
         html = template.render(
             puzzle=today_puzzle,
             puzzle_json=puzzle_json,
+            is_live_puzzle=True,
             active_nav="",
             root_path="../",
             css_path=f"../static/style.css?v={css_version}",
