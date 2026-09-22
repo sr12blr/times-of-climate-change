@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-23",
+  "categories": [
+    {
+      "name": "Fuel types",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["CNG", "Diesel", "Electric", "Petrol"]
+    },
+    {
+      "name": "Car body types",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Convertible", "Sedan", "Hatchback", "SUV"]
+    },
+    {
+      "name": "Indian car manufacturers",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Mahindra", "Tata", "Maruti", "Ashok Leyland"]
+    },
+    {
+      "name": "Foreign car manufacturers",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Volkswagen", "MG", "Mercedes", "Hyundai"]
+    }
+  ],
+  "fun_fact": "Cars may be amazing, but having the option of not having to take one is pretty amazing too! Sept 22 is celebrated as World Car Free Day. So let's ask the question: Can we imagine our cities without cars? [Watch](https://www.youtube.com/watch?v=pL0iuPncF7g&t=373s)",
+  "author": "Sailee"
+}
