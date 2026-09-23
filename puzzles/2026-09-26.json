@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-26",
+  "categories": [
+    {
+      "name": "Travel booking sites",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["MakeMyTrip", "TripAdvisor", "Trivago", "Booking"]
+    },
+    {
+      "name": "Sustainable travel habits",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Reduce travel footprint", "Support local biz", "Eco-friendly stays", "No waste"]
+    },
+    {
+      "name": "Types of tourism",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Historic", "Spiritual", "Wildlife", "Adventure"]
+    },
+    {
+      "name": "Places limiting tourist numbers",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Machu Picchu", "Bhutan", "Venice", "Mount Fuji"]
+    }
+  ],
+  "fun_fact": "Tomorrow (Sept 27) is World Tourism Day. While many of us love to travel, it often comes with a huge footprint - the waste left behind, overconsumption of resources, pollution, unplanned development etc. So how can we all become more sustainable travellers? Start with [this Nat Geo guide](https://www.nationalgeographic.com/travel/article/how-to-travel-better-a-beginners-guide-to-sustainable-travel-in-2023-and-beyond)!",
+  "author": "Nagaswetha"
+}
