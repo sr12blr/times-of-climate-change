@@ -132,7 +132,13 @@
     </div>
   </div>
 
-  <div class="grid" id="grid"></div>
+  <div class="grid-wrap">
+    <div class="grid" id="grid"></div>
+    <div class="start-overlay" id="startOverlay">
+      <button class="start-btn" onclick="startGame()">▶ Start</button>
+      <div class="start-note">Timer starts when you tap</div>
+    </div>
+  </div>
 
   <div class="controls-row" id="mistakeRow">
     <span class="mistakes-label">
@@ -446,6 +452,54 @@
   }
 
   .tile:hover { background: #CCCAC3; }
+
+  /* Start screen: blank tiles under a Start button until the player begins */
+  .grid-wrap { position: relative; }
+
+  .tile.tile-blank,
+  .tile.tile-blank:hover {
+    background: #E0DED8;
+    cursor: default;
+  }
+
+  .start-overlay {
+    display: none;
+    position: absolute;
+    inset: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(250, 250, 248, 0.55);
+    border-radius: 6px;
+  }
+
+  .start-overlay.open { display: flex; }
+
+  .start-btn {
+    background: #1A1A18;
+    color: white;
+    border: none;
+    padding: 14px 44px;
+    border-radius: 28px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .start-btn:hover { background: #0E7C7B; }
+
+  .start-note {
+    font-size: 12px;
+    color: #4A4840;
+  }
+
+  .controls-row.pre-start {
+    opacity: 0.35;
+    pointer-events: none;
+  }
 
   .tile.selected {
     background: #4A4840;
@@ -903,6 +957,7 @@ let hintedCategories = [];
 let timerStartTime = null;  // epoch ms when timer effectively started
 let timerInterval = null;   // setInterval handle
 let timerFinalMs = null;    // frozen elapsed ms once game ends
+let gameStarted = false;    // false until Start is tapped (or a saved game is restored)
 
 function formatTime(ms) {
   const totalSec = Math.floor(ms / 1000);
@@ -931,7 +986,7 @@ function stopTimer() {
 }
 
 function saveState() {
-  if (isDemo) return;
+  if (isDemo || !gameStarted) return;
   try {
     const state = {
       version: 1,
@@ -970,6 +1025,7 @@ function restoreState() {
       if (cat) restoredHinted.push(cat);
     }
 
+    gameStarted = true;
     solved = restoredSolved;
     solveOrder = state.solveOrder || [];
     attempts = state.attempts || [];
@@ -992,7 +1048,7 @@ function restoreState() {
       const won = solved.length === PUZZLE.categories.length;
       showEndScreen(won, true);
     } else {
-      if (savedMs > 0) startTimer(savedMs);
+      startTimer(savedMs);
       renderGrid();
     }
 
@@ -1016,6 +1072,15 @@ function itemSolved(item) {
 function renderGrid() {
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
+  if (!gameStarted) {
+    // Keep the words out of the DOM until Start is tapped.
+    allItems.forEach(() => {
+      const tile = document.createElement('div');
+      tile.className = 'tile tile-blank';
+      grid.appendChild(tile);
+    });
+    return;
+  }
   allItems.forEach(item => {
     if (itemSolved(item)) return;
     const tile = document.createElement('div');
@@ -1027,8 +1092,22 @@ function renderGrid() {
   });
 }
 
+function setStartScreen(show) {
+  document.getElementById('startOverlay').classList.toggle('open', show);
+  document.getElementById('btnRow').classList.toggle('pre-start', show);
+}
+
+function startGame() {
+  gameStarted = true;
+  setStartScreen(false);
+  renderGrid();
+  startTimer();
+  // Save immediately so a reload after Start resumes the clock instead of
+  // showing a fresh Start screen.
+  saveState();
+}
+
 function toggleSelect(item) {
-  if (timerStartTime === null && timerFinalMs === null && !isDemo) startTimer();
   if (selected.includes(item)) {
     selected = selected.filter(i => i !== item);
   } else {
@@ -1303,6 +1382,7 @@ function shareOnTwitter() {
 }
 
 function getHint() {
+  if (!gameStarted) return;
   const unsolvedUnhinted = PUZZLE.categories.filter(cat =>
     !solved.includes(cat) && !hintedCategories.includes(cat)
   );
@@ -1384,6 +1464,8 @@ function handleLeaderboardOverlayClick(e) {
 
 function startDemo() {
   isDemo = true;
+  gameStarted = true;
+  setStartScreen(false);
   PUZZLE = DEMO_PUZZLE;
 
   selected = [];
@@ -1433,8 +1515,19 @@ if (!wasRestored) {
   gtag('event', 'torchlight_start', {
     'puzzle_date': '2026-04-21'
   });
+  setStartScreen(true);
   renderGrid();
 }
+
+// Saved time otherwise only updates on submit/hint, so time since the last
+// action would be lost if the player closes or reloads mid-game.
+function saveIfRunning() {
+  if (timerStartTime !== null) saveState();
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'hidden') saveIfRunning();
+});
+window.addEventListener('pagehide', saveIfRunning);
 </script>
 
     </div>
