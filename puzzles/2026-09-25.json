@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-25",
+  "categories": [
+    {
+      "name": "Desserts",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Ice cream", "Tiramisu", "Gulab Jamun", "Jalebi"]
+    },
+    {
+      "name": "Deserts of the world",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Sahara", "Gobi", "Kalahari", "Thar"]
+    },
+    {
+      "name": "Desert animals",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Sandcats", "Camel", "Sidewinder", "Scorpions"]
+    },
+    {
+      "name": "Desert landforms",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Dunes", "Oasis", "Canyons", "Salt flats"]
+    }
+  ],
+  "fun_fact": "Deserts aren't wastelands. India's Thar is one of the most biodiverse deserts in the world. It's home to the critically endangered Great Indian Bustard, of which fewer than 150 remain, and its grasslands and sand dunes store carbon and recharge groundwater for Rajasthan. Deserts everywhere are biologically rich habitats, full of plants and animals adapted to survive the harsh conditions. Learn more in [this Nat Geo explainer](https://education.nationalgeographic.org/resource/deserts-explained/)!",
+  "author": "Sailee"
+}
