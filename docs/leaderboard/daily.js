@@ -3,18 +3,27 @@
 // template's lazy loader. Depends on: window.LB_CONFIG (config.js) for Firebase creds,
 // and the firebase compat SDK (loaded just before this file).
 //
-// Reuses the same Firestore schema as the QR event flow —
-//   events/{eventId}/puzzles/{date}/results/{nameSlug}
-// but under a dedicated, stable eventId ("daily") that is independent of the per-event
-// LB_CONFIG.eventId, so running an event never touches the daily board and vice-versa.
+// Same Firestore path shape as the QR event flow, under a dedicated eventId ("daily"):
+//   events/daily/puzzles/{date}/results/{uid}
+// Unlike the QR events, posting here requires a Firebase Auth account (email + password).
+// Each account picks a permanent display name once:
+//   users/{uid}             { displayName, nameKey, createdAt }   (private to the owner)
+//   displayNames/{nameKey}  { uid }                                (public; enforces uniqueness)
+// Firestore rules (see SETUP.md) check that a result is posted by its owner under their
+// own display name, once per puzzle. Older results keyed by name slug still render.
 //
 // Scoring: adjusted = raw solve time + 30s per hint. Winners ranked by adjusted time.
 
 (function () {
   var DAILY_EVENT_ID = 'daily';
   var HINT_PENALTY_MS = 30000;
+  var NAME_MIN = 2;
+  var NAME_MAX = 24;
+  var PASSWORD_MIN = 8;
 
   var _dbReady = false;
+  var _authReady = null;   // Promise resolved after Firebase reports the initial sign-in state
+  var _profile = null;     // { displayName } for the signed-in user, or null
   // Remember the current player's result across mountInline() / openModal() calls,
   // and which container currently owns a live snapshot listener (so we can detach it).
   var _lastResult = null;
@@ -41,8 +50,89 @@
       .collection('results');
   }
 
-  function nameSlug(s) {
-    return String(s).toLowerCase().replace(/[^a-z0-9]/g, '').slice(0, 40);
+  // Must match the nameKey check in the Firestore rules.
+  function nameKey(s) {
+    return String(s).toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+
+  function auth() {
+    getDb();
+    return window.firebase.auth();
+  }
+
+  // Resolves once Firebase has restored any saved session (it keeps players signed in
+  // on this browser by default), and loads their profile.
+  function whenAuthReady() {
+    if (_authReady) return _authReady;
+    _authReady = new Promise(function (resolve) {
+      var first = true;
+      auth().onAuthStateChanged(function (user) {
+        loadProfile(user).then(function () {
+          if (first) { first = false; resolve(); }
+        });
+      });
+    });
+    return _authReady;
+  }
+
+  function loadProfile(user) {
+    if (!user) { _profile = null; return Promise.resolve(); }
+    if (_profile && _profile.uid === user.uid) return Promise.resolve();
+    _profile = null;
+    return getDb().collection('users').doc(user.uid).get().then(function (snap) {
+      if (snap.exists) _profile = { uid: user.uid, displayName: snap.data().displayName };
+    }).catch(function (e) {
+      console.error('[lb] profile load failed', e);
+    });
+  }
+
+  function validateName(name) {
+    if (name.length < NAME_MIN || name.length > NAME_MAX) {
+      return 'Display name must be ' + NAME_MIN + '–' + NAME_MAX + ' characters.';
+    }
+    if (nameKey(name).length < NAME_MIN) return 'Display name needs at least 2 letters or numbers.';
+    return '';
+  }
+
+  function nameTaken(name) {
+    return getDb().collection('displayNames').doc(nameKey(name)).get()
+      .then(function (snap) { return snap.exists; });
+  }
+
+  // Claims the display name and creates the profile in one atomic write. The rules
+  // reject it if another account already holds the name.
+  function createProfile(user, name) {
+    var db = getDb();
+    var key = nameKey(name);
+    var batch = db.batch();
+    batch.set(db.collection('displayNames').doc(key), { uid: user.uid });
+    batch.set(db.collection('users').doc(user.uid), {
+      displayName: name,
+      nameKey: key,
+      createdAt: window.firebase.firestore.FieldValue.serverTimestamp()
+    });
+    return batch.commit().then(function () {
+      _profile = { uid: user.uid, displayName: name };
+    });
+  }
+
+  function authErrorMessage(e) {
+    var code = (e && e.code) || '';
+    switch (code) {
+      case 'auth/email-already-in-use': return 'An account with this email already exists. Sign in instead.';
+      case 'auth/invalid-email': return 'That email address doesn’t look right.';
+      case 'auth/weak-password': return 'Password must be at least ' + PASSWORD_MIN + ' characters.';
+      case 'auth/invalid-credential':
+      case 'auth/invalid-login-credentials':
+      case 'auth/wrong-password':
+      case 'auth/user-not-found': return 'Email or password is incorrect.';
+      case 'auth/too-many-requests': return 'Too many attempts. Wait a few minutes and try again.';
+      case 'auth/network-request-failed': return 'No connection. Check your internet and try again.';
+      case 'auth/operation-not-allowed': return 'Accounts aren’t switched on yet. Try again later.';
+      case 'permission-denied': return 'That display name was just taken. Try another.';
+    }
+    console.error('[lb] auth error', e);
+    return 'Something went wrong. Try again.';
   }
 
   function fmt(ms) {
@@ -87,7 +177,13 @@
       + '.tl-lb-table td.num{text-align:center;color:#6b6b6b;width:34px}'
       + '.tl-lb-table tr.me{background:#fff7e6}'
       + '.tl-lb-table tr.me td.r{color:#C8602A}'
-      + '.tl-lb-dnf{color:#9a9a9a}';
+      + '.tl-lb-dnf{color:#9a9a9a}'
+      + '.tl-lb-form .tl-lb-input+.tl-lb-input{margin-top:8px}'
+      + '.tl-lb-form p{font-size:13px;color:#6b6b6b;margin:0 0 10px}'
+      + '.tl-lb-link{background:none;border:0;padding:0;color:#0E7C7B;font-weight:700;font-size:13px;text-decoration:underline;cursor:pointer;font-family:inherit}'
+      + '.tl-lb-alt{margin-top:12px;font-size:13px;color:#6b6b6b;text-align:center}'
+      + '.tl-lb-ok{background:#eef7f4;color:#2C5F4A;padding:9px 11px;border-radius:6px;font-size:13px;margin-top:10px}'
+      + '.tl-lb-acct{font-size:12px;color:#6b6b6b;text-align:center;margin-top:12px}';
     var st = document.createElement('style');
     st.id = 'tl-lb-styles';
     st.textContent = css;
@@ -95,22 +191,26 @@
   }
 
   // ---- submit ----
-  function submitScore(date, name, result) {
+  // Posts the signed-in player's result under their uid. Resolves either way if they
+  // already posted for this puzzle (e.g. from another device).
+  function submitScore(date, result) {
     var db = getDb();
-    if (!db) return Promise.reject(new Error('no db'));
-    var slug = nameSlug(name);
-    var ref = resultsCollection(db, date).doc(slug);
+    var user = auth().currentUser;
+    if (!db || !user || !_profile) return Promise.reject(new Error('not signed in'));
+    var ref = resultsCollection(db, date).doc(user.uid);
     return ref.get().then(function (snap) {
-      if (snap.exists) return { slug: slug, already: true };
+      if (snap.exists) return;
+      var ms = Math.round(result.ms || 0);
+      var hints = result.hints || 0;
       return ref.set({
-        name: name,
-        ms: result.ms || 0,
+        name: _profile.displayName,
+        ms: ms,
         mistakes: result.mistakes || 0,
-        hints: result.hints || 0,
-        adjustedMs: (result.ms || 0) + (result.hints || 0) * HINT_PENALTY_MS,
+        hints: hints,
+        adjustedMs: ms + hints * HINT_PENALTY_MS,
         won: !!result.won,
         submittedAt: window.firebase.firestore.FieldValue.serverTimestamp()
-      }).then(function () { return { slug: slug, already: false }; });
+      });
     });
   }
 
@@ -124,7 +224,7 @@
     }
   }
 
-  function renderRows(tbody, empty, docs, mySlug) {
+  function renderRows(tbody, empty, docs, myId) {
     var winners = [];
     var dnf = [];
     docs.forEach(function (d) {
@@ -143,7 +243,7 @@
     empty.style.display = 'none';
 
     winners.forEach(function (r, i) {
-      var mine = mySlug && r._id === mySlug;
+      var mine = myId && r._id === myId;
       var hints = r.hints || 0;
       var tr = document.createElement('tr');
       if (mine) tr.className = 'me';
@@ -157,7 +257,7 @@
       tbody.appendChild(tr);
     });
     dnf.forEach(function (r) {
-      var mine = mySlug && r._id === mySlug;
+      var mine = myId && r._id === myId;
       var tr = document.createElement('tr');
       tr.className = 'dnf' + (mine ? ' me' : '');
       tr.innerHTML =
@@ -182,14 +282,16 @@
       return;
     }
 
-    var submittedKey = 'lb_submitted_' + date;
-    var alreadySubmitted = false;
-    try { alreadySubmitted = !!localStorage.getItem(submittedKey); } catch (e) {}
-    var mySlug = '';
-    try { mySlug = localStorage.getItem('lb_slug_' + date) || ''; } catch (e) {}
+    el.innerHTML = '<p class="tl-lb-note">Loading…</p>';
+    whenAuthReady().then(function () { buildBoard(el, date, result); });
+  }
 
+  function buildBoard(el, date, result) {
+    var db = getDb();
+    var user = auth().currentUser;
+    var myId = user ? user.uid : '';
     var solvedWon = !!(result && result.won);
-    var canSubmit = solvedWon && !alreadySubmitted;
+    var ctx = { el: el, date: date, result: result };
 
     var wrap = document.createElement('div');
     wrap.className = 'tl-lb';
@@ -212,18 +314,11 @@
       wrap.appendChild(note);
     }
 
-    // Name form
-    if (canSubmit) {
-      var savedName = '';
-      try { savedName = (localStorage.getItem('lb_name') || '').trim(); } catch (e) {}
-      var form = document.createElement('div');
-      form.className = 'tl-lb-form';
-      form.innerHTML =
-        '<label for="tlLbName">Add your name to today’s leaderboard</label>'
-        + '<input id="tlLbName" class="tl-lb-input" autocomplete="off" maxlength="40" placeholder="e.g. Sailee" value="' + escapeHtml(savedName) + '">'
-        + '<div class="tl-lb-err" id="tlLbErr" style="display:none"></div>'
-        + '<button class="tl-lb-btn" id="tlLbSubmit">Add me →</button>';
-      wrap.appendChild(form);
+    // Account / post-your-time panel. Hidden again below once this account's row exists.
+    var panel = document.createElement('div');
+    if (solvedWon) {
+      wrap.appendChild(panel);
+      renderPanel(panel, ctx, defaultMode(user));
     }
 
     // Board table
@@ -235,58 +330,208 @@
       + '<div class="tl-lb-empty" style="display:none">Be the first to finish today!</div>';
     wrap.appendChild(card);
 
+    if (user) {
+      var acct = document.createElement('div');
+      acct.className = 'tl-lb-acct';
+      acct.innerHTML = 'Signed in as ' + escapeHtml(_profile ? _profile.displayName : (user.email || ''))
+        + ' · <button type="button" class="tl-lb-link">Sign out</button>';
+      acct.querySelector('button').addEventListener('click', function () {
+        auth().signOut().then(function () {
+          _profile = null;
+          renderInto(el, date, result);
+        });
+      });
+      wrap.appendChild(acct);
+    }
+
     el.innerHTML = '';
     el.appendChild(wrap);
 
     var tbody = card.querySelector('tbody');
     var empty = card.querySelector('.tl-lb-empty');
 
-    // Wire the form
-    if (canSubmit) {
-      var input = wrap.querySelector('#tlLbName');
-      var err = wrap.querySelector('#tlLbErr');
-      var btn = wrap.querySelector('#tlLbSubmit');
-      var doSubmit = function () {
-        var name = (input.value || '').trim();
-        err.style.display = 'none';
-        if (name.length < 1) { err.textContent = 'Please enter a name.'; err.style.display = ''; return; }
-        var slug = nameSlug(name);
-        if (!slug) { err.textContent = 'Name must contain letters or numbers.'; err.style.display = ''; return; }
-        btn.disabled = true;
-        btn.textContent = 'Adding…';
-        submitScore(date, name, result).then(function (res) {
-          try {
-            localStorage.setItem('lb_name', name);
-            localStorage.setItem(submittedKey, '1');
-            localStorage.setItem('lb_slug_' + date, res.slug);
-          } catch (e) {}
-          // Re-render without the form; the snapshot listener will show the new row.
-          renderInto(el, date, result);
-        }).catch(function (e) {
-          console.error('[lb] submit failed', e);
-          btn.disabled = false;
-          btn.textContent = 'Add me →';
-          err.textContent = 'Could not submit right now. Try again.';
-          err.style.display = '';
-        });
-      };
-      btn.addEventListener('click', doSubmit);
-      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') doSubmit(); });
-    }
-
     // Live results
     var unsub = resultsCollection(db, date).onSnapshot(function (snap) {
       var docs = [];
-      snap.forEach(function (d) { docs.push(d); });
-      var slugNow = mySlug;
-      try { slugNow = localStorage.getItem('lb_slug_' + date) || mySlug; } catch (e) {}
-      renderRows(tbody, empty, docs, slugNow);
+      var posted = false;
+      snap.forEach(function (d) {
+        docs.push(d);
+        if (myId && d.id === myId) posted = true;
+      });
+      if (posted) panel.style.display = 'none';
+      renderRows(tbody, empty, docs, myId);
     }, function (e) {
       console.error('[lb] listen error', e);
       empty.style.display = '';
       empty.textContent = 'Could not load the leaderboard.';
     });
     _listeners.push({ el: el, unsub: unsub });
+  }
+
+  function defaultMode(user) {
+    if (user) return _profile ? 'post' : 'name';
+    var hasAccount = false;
+    try { hasAccount = !!localStorage.getItem('lb_has_account'); } catch (e) {}
+    return hasAccount ? 'signin' : 'signup';
+  }
+
+  // Real <form>s with autocomplete hints so phone password managers offer to save and
+  // fill the email + password.
+  var PANELS = {
+    post: function () {
+      return '<form class="tl-lb-form" action="#" method="post">'
+        + '<label>Add your time to today’s leaderboard</label>'
+        + '<p>Posting as <b>' + escapeHtml(_profile.displayName) + '</b></p>'
+        + '<div class="tl-lb-err" style="display:none"></div>'
+        + '<button type="submit" class="tl-lb-btn">Add my time →</button>'
+        + '</form>';
+    },
+    name: function () {
+      return '<form class="tl-lb-form" action="#" method="post">'
+        + '<label for="tlLbDisplayName">Pick a display name</label>'
+        + '<p>It’s shown on the leaderboard and can’t be changed later.</p>'
+        + '<input id="tlLbDisplayName" name="displayName" class="tl-lb-input" autocomplete="nickname" maxlength="' + NAME_MAX + '" placeholder="Display name">'
+        + '<div class="tl-lb-err" style="display:none"></div>'
+        + '<button type="submit" class="tl-lb-btn">Save and add my time</button>'
+        + '</form>';
+    },
+    signup: function () {
+      return '<form class="tl-lb-form" action="#" method="post">'
+        + '<label>Create an account to add your time</label>'
+        + '<p>You’ll stay signed in on this browser. Your display name is shown on the leaderboard and can’t be changed later.</p>'
+        + '<input name="displayName" class="tl-lb-input" autocomplete="nickname" maxlength="' + NAME_MAX + '" placeholder="Display name" aria-label="Display name">'
+        + '<input name="email" type="email" class="tl-lb-input" autocomplete="username" inputmode="email" autocapitalize="none" placeholder="Email" aria-label="Email">'
+        + '<input name="password" type="password" class="tl-lb-input" autocomplete="new-password" placeholder="Password (' + PASSWORD_MIN + '+ characters)" aria-label="Password">'
+        + '<div class="tl-lb-err" style="display:none"></div>'
+        + '<button type="submit" class="tl-lb-btn">Create account and add my time</button>'
+        + '<div class="tl-lb-alt">Have an account? <button type="button" class="tl-lb-link" data-mode="signin">Sign in</button></div>'
+        + '</form>';
+    },
+    signin: function () {
+      return '<form class="tl-lb-form" action="#" method="post">'
+        + '<label>Sign in to add your time</label>'
+        + '<input name="email" type="email" class="tl-lb-input" autocomplete="username" inputmode="email" autocapitalize="none" placeholder="Email" aria-label="Email">'
+        + '<input name="password" type="password" class="tl-lb-input" autocomplete="current-password" placeholder="Password" aria-label="Password">'
+        + '<div class="tl-lb-err" style="display:none"></div>'
+        + '<button type="submit" class="tl-lb-btn">Sign in and add my time</button>'
+        + '<div class="tl-lb-alt"><button type="button" class="tl-lb-link" data-mode="reset">Forgot password?</button></div>'
+        + '<div class="tl-lb-alt">New here? <button type="button" class="tl-lb-link" data-mode="signup">Create an account</button></div>'
+        + '</form>';
+    },
+    reset: function () {
+      return '<form class="tl-lb-form" action="#" method="post">'
+        + '<label>Reset your password</label>'
+        + '<p>We’ll email you a link to set a new password.</p>'
+        + '<input name="email" type="email" class="tl-lb-input" autocomplete="username" inputmode="email" autocapitalize="none" placeholder="Email" aria-label="Email">'
+        + '<div class="tl-lb-err" style="display:none"></div>'
+        + '<div class="tl-lb-ok" style="display:none"></div>'
+        + '<button type="submit" class="tl-lb-btn">Send reset link</button>'
+        + '<div class="tl-lb-alt"><button type="button" class="tl-lb-link" data-mode="signin">Back to sign in</button></div>'
+        + '</form>';
+    }
+  };
+
+  var BUSY_LABEL = {
+    post: 'Adding…', name: 'Saving…', signup: 'Creating account…',
+    signin: 'Signing in…', reset: 'Sending…'
+  };
+
+  function renderPanel(panel, ctx, mode, errorMsg) {
+    panel.innerHTML = PANELS[mode]();
+    var form = panel.querySelector('form');
+    var err = form.querySelector('.tl-lb-err');
+    var btn = form.querySelector('button[type="submit"]');
+    var idleLabel = btn.textContent;
+
+    function fail(msg) {
+      btn.disabled = false;
+      btn.textContent = idleLabel;
+      err.textContent = msg;
+      err.style.display = '';
+    }
+    if (errorMsg) fail(errorMsg);
+
+    form.querySelectorAll('[data-mode]').forEach(function (b) {
+      b.addEventListener('click', function () { renderPanel(panel, ctx, b.getAttribute('data-mode')); });
+    });
+
+    // Post the time, then redraw the whole board as the signed-in player.
+    function postAndRefresh() {
+      return submitScore(ctx.date, ctx.result).then(function () {
+        renderInto(ctx.el, ctx.date, ctx.result);
+      });
+    }
+
+    function field(n) {
+      var f = form.elements[n];
+      return f ? f.value.trim() : '';
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.style.display = 'none';
+
+      var name = field('displayName');
+      var email = field('email');
+      var password = form.elements.password ? form.elements.password.value : '';
+
+      if (mode === 'name' || mode === 'signup') {
+        var nameErr = validateName(name);
+        if (nameErr) return fail(nameErr);
+      }
+      if (mode === 'signup' || mode === 'signin' || mode === 'reset') {
+        if (!email) return fail('Enter your email.');
+      }
+      if (mode === 'signup' && password.length < PASSWORD_MIN) {
+        return fail('Password must be at least ' + PASSWORD_MIN + ' characters.');
+      }
+      if (mode === 'signin' && !password) return fail('Enter your password.');
+
+      btn.disabled = true;
+      btn.textContent = BUSY_LABEL[mode];
+
+      if (mode === 'post') {
+        postAndRefresh().catch(function (e) {
+          console.error('[lb] submit failed', e);
+          fail('Could not submit right now. Try again.');
+        });
+      } else if (mode === 'name') {
+        nameTaken(name).then(function (taken) {
+          if (taken) return fail('That display name is taken. Try another.');
+          return createProfile(auth().currentUser, name).then(postAndRefresh);
+        }).catch(function (e) { fail(authErrorMessage(e)); });
+      } else if (mode === 'signup') {
+        nameTaken(name).then(function (taken) {
+          if (taken) return fail('That display name is taken. Try another.');
+          return auth().createUserWithEmailAndPassword(email, password).then(function (cred) {
+            try { localStorage.setItem('lb_has_account', '1'); } catch (e) {}
+            return createProfile(cred.user, name).then(postAndRefresh, function (e) {
+              // Account exists but the name was claimed in the meantime: ask for another.
+              renderPanel(panel, ctx, 'name', authErrorMessage(e));
+            });
+          });
+        }).catch(function (e) { fail(authErrorMessage(e)); });
+      } else if (mode === 'signin') {
+        auth().signInWithEmailAndPassword(email, password).then(function (cred) {
+          try { localStorage.setItem('lb_has_account', '1'); } catch (e) {}
+          return loadProfile(cred.user).then(function () {
+            if (_profile) return postAndRefresh();
+            renderInto(ctx.el, ctx.date, ctx.result);
+          });
+        }).catch(function (e) { fail(authErrorMessage(e)); });
+      } else if (mode === 'reset') {
+        auth().sendPasswordResetEmail(email).catch(function (e) {
+          // Don't reveal whether an account exists for this email.
+          if (e && e.code === 'auth/user-not-found') return;
+          throw e;
+        }).then(function () {
+          btn.textContent = idleLabel;
+          var ok = form.querySelector('.tl-lb-ok');
+          ok.textContent = 'If there’s an account for that email, a reset link is on its way. Check your spam folder too.';
+          ok.style.display = '';
+        }).catch(function (e) { fail(authErrorMessage(e)); });
+      }
+    });
   }
 
   window.TL_DAILY_LB = {
