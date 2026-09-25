@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-28",
+  "categories": [
+    {
+      "name": "River Wildlife",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Gharial", "Otters", "Turtle", "River Dolphin"]
+    },
+    {
+      "name": "Parts of a River",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Tributaries", "Delta", "Mouth", "Bank"]
+    },
+    {
+      "name": "Himalayan Rivers",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Ganga", "Yamuna", "Brahmaputra", "Indus"]
+    },
+    {
+      "name": "Peninsular Rivers",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Godavari", "Krishna", "Kaveri", "Narmada"]
+    }
+  ],
+  "fun_fact": "Rivers are lifelines. They recharge groundwater, carry nutrients that keep deltas fertile, and are home to gharials, otters and river dolphins. Yet we keep dumping sewage, garbage and industrial waste into them, and many urban rivers have become open drains. The good news is that rivers can come back. The Kham river in Aurangabad was once written off as dead. Citizens and the city came together to clean it, and it is flowing again. [Watch: How the Kham river was brought back to life →](https://www.youtube.com/watch?v=4hjZYvnIH28)",
+  "author": "Divya P"
+}
