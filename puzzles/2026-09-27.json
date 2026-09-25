@@ -1,0 +1,39 @@
+{
+  "date": "2026-09-27",
+  "categories": [
+    {
+      "name": "Religious festivals in India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Diwali", "Id", "Christmas", "Durga Pujo"]
+    },
+    {
+      "name": "Music festivals",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Coachella", "Lollapalooza", "NH7 Weekender", "Sunburn"]
+    },
+    {
+      "name": "Other words for a festive event",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Mela", "Carnival", "Fete", "Gala"]
+    },
+    {
+      "name": "What festivals bring",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Music", "Food", "Gifts", "Socialising"]
+    }
+  ],
+  "fun_fact": "Festivals are a great way to bring people together. And that's what the next week promises to be for people who care about climate in India: Climate Week India is happening from Sept 27 - Oct 4. Not one summit in one city. Hundreds of gatherings, walks, screenings, clean-ups and conversations, hosted by communities across India, in the languages India speaks. [Check it out!](https://climateweek.in/)",
+  "author": "Sailee"
+}
