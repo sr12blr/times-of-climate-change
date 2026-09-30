@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-01",
+  "categories": [
+    {
+      "name": "Coffee Drinks",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Latte", "Cappuccino", "Americano", "Mocha"]
+    },
+    {
+      "name": "Things You Add to Coffee",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Milk", "Sugar", "Cream", "Cocoa"]
+    },
+    {
+      "name": "India's coffee growing regions",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Coorg", "Chikmagalur", "Araku", "Kodaikanal"]
+    },
+    {
+      "name": "Coffee varieties grown in India",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Arabica", "Robusta", "Liberica", "Excelsa"]
+    }
+  ],
+  "fun_fact": "Oct 1 is International Coffee Day. India occupies a unique place within coffee origins; almost all our coffee is shade-grown i.e. under dense canopies, sans exposure to direct sunlight. This traditional agroforestry practice creates a vital cooling microclimate, protecting the trees from the 30+ extra extreme heat days that climate change now brings to Indian coffee regions annually. India’s coffee hotspots are also crucial carbon sinks, providers of livelihoods to thousands of smallholder farmers, and a case study in biodiversity management. [See more](https://www.youtube.com/watch?v=FXQJrycgam8)",
+  "author": "Saman F Nomani"
+}
