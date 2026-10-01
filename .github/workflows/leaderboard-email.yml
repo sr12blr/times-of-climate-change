@@ -1,0 +1,32 @@
+name: Daily Leaderboard Email
+
+on:
+  schedule:
+    - cron: '15 19 * * *'  # 00:45 IST (UTC+5:30) — ~45 min after the midnight puzzle rollover
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: 'Puzzle date to report (YYYY-MM-DD). Blank = yesterday IST.'
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Send leaderboard email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          MAIL_TO: ${{ vars.MAIL_TO }}
+          LB_START_DATE: ${{ vars.LB_START_DATE }}
+          TARGET_DATE: ${{ github.event.inputs.target_date }}
+        run: python3 leaderboard_mailer.py
