@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-03",
+  "categories": [
+    {
+      "name": "Biodiversity-Rich Landscapes of India",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Western Ghats", "Sundarbans", "Nilgiri Biosphere", "Himalayan Foothills"]
+    },
+    {
+      "name": "Collectives of animals",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Pack", "Pride", "Herd", "Flock"]
+    },
+    {
+      "name": "Words that mean Corridor",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Passage", "Channel", "Route", "Pathway"]
+    },
+    {
+      "name": "Things That Fragment Wildlife Habitats",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Railway lines", "Highways", "Dams", "Plantations"]
+    }
+  ],
+  "fun_fact": "Ecological corridors are narrow strips of natural habitat that connect isolated protected areas, allowing wildlife to move safely. In India, these corridors are centred around umbrella species like Tigers and Elephants whose habitat protection safeguards countless flora and fauna alongside. [Read more](https://india.mongabay.com/2024/04/explainer-what-are-wildlife-corridors/)",
+  "author": "Anjana"
+}
