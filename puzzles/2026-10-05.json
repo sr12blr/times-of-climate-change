@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-05",
+  "categories": [
+    {
+      "name": "Words That Mean Copy",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Copy", "Imitate", "Replicate", "Mirror"]
+    },
+    {
+      "name": "Animal Idioms",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Dark Horse", "Black sheep", "Eager Beaver", "Lion's Share"]
+    },
+    {
+      "name": "Brands Named After Animals",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Jaguar", "Puma", "Red Bull", "Firefox"]
+    },
+    {
+      "name": "Inventions Inspired by Nature",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Velcro", "Airplane", "Bullet Train", "Umbrella"]
+    }
+  ],
+  "fun_fact": "Stuck on a problem? Turn to nature! Biomimicry is the practice of learning from nature's designs and strategies to solve our engineering problems. Click on the link below to take a look at some fascinating examples. [What is Biomimicry](https://www.oneearth.org/what-is-biomimicry/)",
+  "author": "Anjana"
+}
