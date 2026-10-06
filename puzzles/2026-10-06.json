@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-06",
+  "categories": [
+    {
+      "name": "Nature Hobbies",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Camping", "Birdwatching", "Stargazing", "Nature Journaling"]
+    },
+    {
+      "name": "Wildlife Careers",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Ornithologist", "Forest Guard", "Wildlife Biologist", "Wildlife photographer"]
+    },
+    {
+      "name": "Field Gear",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Hiking Boots", "Hat", "Binoculars", "Raincoat"]
+    },
+    {
+      "name": "Tools for Tracking Animals",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["GPS collar", "Sensor", "Drone", "Camera"]
+    }
+  ],
+  "fun_fact": "With mounting environmental crises and an urgent need to conserve biodiversity, careers in wildlife are gaining ground. Click the link to find out what it takes to be a wildlife photographer. [Becoming a wildlife photographer](https://thebetterindia.com/234094/wildlife-photography-animals-conservation-career-mithun-sarosh-viral-cats-how-to-india-gop94/)",
+  "author": "Anjana"
+}
