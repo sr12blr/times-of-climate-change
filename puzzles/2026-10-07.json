@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-07",
+  "categories": [
+    {
+      "name": "Finding Nemo",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Nemo", "Marlin", "Dory", "Pearl"]
+    },
+    {
+      "name": "The Lion King",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Simba", "Mufasa", "Scar", "Timon"]
+    },
+    {
+      "name": "The Jungle Book",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Mowgli", "Baloo", "Bagheera", "Kaa"]
+    },
+    {
+      "name": "Kung Fu Panda",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Po", "Master Shifu", "Oogway", "Tai Lung"]
+    }
+  ],
+  "fun_fact": "These cartoon stars have real-life counterparts that are feeling the heat. Snow leopards like Tai Lung are listed as Vulnerable, and warming is shrinking their high-mountain habitat. Rising sea temperatures are bleaching the coral reefs that clownfish like Nemo call home.",
+  "author": "Divya P"
+}
