@@ -90,6 +90,61 @@ def daterange(start, end):
         d += timedelta(days=1)
 
 
+def ga_funnel(target_iso):
+    """GA start/complete/won/lost for one puzzle_date, across ALL players
+    (not just the opt-in leaderboard). Returns None if GA isn't configured,
+    so the email still sends with just the leaderboard."""
+    cred = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "")
+    if not cred or not os.path.exists(cred):
+        return None
+    try:
+        from google.analytics.data_v1beta import BetaAnalyticsDataClient
+        from google.analytics.data_v1beta.types import (
+            RunReportRequest, Dimension, Metric, DateRange,
+            FilterExpression, Filter)
+    except ImportError:
+        return None
+
+    prop = env("GA_PROPERTY_ID", "530360067")
+    client = BetaAnalyticsDataClient()
+
+    def rows(event, extra_dims=None):
+        dims = ["customEvent:puzzle_date"] + (extra_dims or [])
+        req = RunReportRequest(
+            property=f"properties/{prop}",
+            date_ranges=[DateRange(start_date=target_iso, end_date=target_iso)],
+            dimensions=[Dimension(name=d) for d in dims],
+            metrics=[Metric(name="eventCount")],
+            dimension_filter=FilterExpression(filter=Filter(
+                field_name="eventName",
+                string_filter=Filter.StringFilter(value=event))),
+            limit=200)
+        return client.run_report(req).rows
+
+    def total(event):
+        return sum(int(r.metric_values[0].value) for r in rows(event)
+                   if r.dimension_values[0].value == target_iso)
+
+    started = total("torchlight_start")
+    completed = total("torchlight_complete")
+    won = lost = 0
+    for r in rows("torchlight_complete", ["customEvent:won"]):
+        if r.dimension_values[0].value != target_iso:
+            continue
+        n = int(r.metric_values[0].value)
+        if r.dimension_values[1].value == "true":
+            won += n
+        else:
+            lost += n
+    # Completions GA has recorded but not yet attributed to a puzzle_date
+    # (event-scoped custom dimensions can take up to ~48h to finish processing).
+    pending = sum(int(r.metric_values[0].value)
+                  for r in rows("torchlight_complete")
+                  if r.dimension_values[0].value == "")
+    return {"started": started, "completed": completed,
+            "won": won, "lost": lost, "pending": pending}
+
+
 def board_csv(entries):
     rows = sorted(entries, key=lambda r: (not r["won"], r["adj"]))
     buf = io.StringIO()
@@ -157,14 +212,29 @@ def main():
     days_with_data = sum(1 for v in by_date.values() if v)
     top = board_rows[0] if board_rows else None
 
+    funnel = ga_funnel(target.isoformat())
+
     subject = f"Torchlight leaderboard — {target.isoformat()} ({len(board_rows)} players)"
-    lines = [
-        f"Torchlight daily leaderboard for {target.isoformat()}",
-        "",
-        f"  Players on the board : {len(board_rows)}",
-    ]
+    lines = [f"Torchlight daily leaderboard for {target.isoformat()}", ""]
+    if funnel:
+        comp = funnel["completed"]
+        wl = funnel["won"] + funnel["lost"]
+        cr = f"{comp / funnel['started'] * 100:.0f}%" if funnel["started"] else "-"
+        wr = f"{funnel['won'] / wl * 100:.0f}%" if wl else "-"
+        lines += [
+            "All players (Google Analytics — everyone, not just the leaderboard):",
+            f"  Started   : {funnel['started']}",
+            f"  Completed : {funnel['completed']}  ({cr} of starts)",
+            f"  Won       : {funnel['won']}  ({wr} win rate)",
+            f"  Lost      : {funnel['lost']}",
+        ]
+        if funnel["pending"]:
+            lines.append(f"  (+{funnel['pending']} completions still being attributed by GA; "
+                         f"figures settle over ~24–48h)")
+        lines.append("")
+    lines.append(f"  Players on the leaderboard : {len(board_rows)}")
     if top:
-        lines.append(f"  Fastest              : {top['name']} ({fmt(top['adj'])} adjusted)")
+        lines.append(f"  Fastest                    : {top['name']} ({fmt(top['adj'])} adjusted)")
     lines += [
         "",
         f"Cumulative tally ({start.isoformat()} → {target.isoformat()}):",
