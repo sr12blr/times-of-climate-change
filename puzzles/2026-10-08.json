@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-08",
+  "categories": [
+    {
+      "name": "Ecosystems",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Grasslands", "Marine", "Forests", "Desert"]
+    },
+    {
+      "name": "Indigenous Communities of India",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Gond", "Baiga", "Soliga", "Bishnoi"]
+    },
+    {
+      "name": "Caring for Nature",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Steward", "Respect", "Nurture", "Protect"]
+    },
+    {
+      "name": "Exploiting Nature",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Extract", "Control", "Abuse", "Utilise"]
+    }
+  ],
+  "fun_fact": "The modern man's relationship with nature has largely become extractive and exploitative. If we want life as we know it to sustain, it's time to change that and we don't have to look too far. Indigenous communities have been living in harmony with nature for ages and we'd be so much better if we could learn from them.",
+  "author": "Divya P"
+}
