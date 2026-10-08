@@ -8,8 +8,8 @@ window.LB_CONFIG = {
   // Bump this per event so each event gets a separate set of leaderboards in Firestore.
   // Reuses the same QR/puzzle URLs as the May 2026 event — only the eventId changed,
   // so a fresh, empty set of leaderboards is generated for this run.
-  // Aug 17, 2026 — NLSIU event.
-  eventId: "event-2026-08-17-nlsiu",
+  // Oct 8, 2026 — GaiaLink event.
+  eventId: "event-2026-10-08-gaialink",
 
   // The puzzle archive dates for this event, in YYMMDD form.
   // These must already exist under docs/torchlight/archive/<date>/index.html
