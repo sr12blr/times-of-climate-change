@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-09",
+  "categories": [
+    {
+      "name": "Energy Sources",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Wind", "Solar", "Hydro", "Thermal"]
+    },
+    {
+      "name": "The Power Grid",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Substation", "Transformer", "Utility pole", "High voltage cables"]
+    },
+    {
+      "name": "Another Word for Electricity",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Charge", "Juice", "Power", "Current"]
+    },
+    {
+      "name": "Synonyms for \"Electric\"",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Magnetic", "Intense", "Energetic", "Thrilling"]
+    }
+  ],
+  "fun_fact": "India's peak electricity demand in September hit a high - it was the highest ever for September and only the second highest for the year. The monsoon has been significantly below normal. That means it's hotter than usual and a lot of places ACs are being used as if it were summer. The other consequence of a poor monsoon is much more reliance on other forms of irrigation -> more pumps -> more electricity. [See more](https://www.youtube.com/watch?v=MNAlu0nPMUk)",
+  "author": "Sailee"
+}
