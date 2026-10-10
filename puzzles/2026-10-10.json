@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-10",
+  "categories": [
+    {
+      "name": "Places of worship",
+      "bg": "#2C5F4A",
+      "text": "#ffffff",
+      "difficulty": 1,
+      "description": "",
+      "items": ["Temple", "Church", "Mosque", "Monastery"]
+    },
+    {
+      "name": "Acts of devotion",
+      "bg": "#1A5F7A",
+      "text": "#ffffff",
+      "difficulty": 2,
+      "description": "",
+      "items": ["Pray", "Worship", "Offer", "Sacrifice"]
+    },
+    {
+      "name": "Modern idols we chase",
+      "bg": "#C8602A",
+      "text": "#ffffff",
+      "difficulty": 3,
+      "description": "",
+      "items": ["Money", "Power", "Fame", "Success"]
+    },
+    {
+      "name": "The cult of convenience",
+      "bg": "#6B1C2A",
+      "text": "#ffffff",
+      "difficulty": 4,
+      "description": "",
+      "items": ["Smooth", "Easy", "Friction-less", "Comfortable"]
+    }
+  ],
+  "fun_fact": "In today's age 'Convenience' is the one true Goddess. She brings us comfort, delight and escape — right here, right now! Convenience is not a luxury. It's the oil that keeps it all moving. Have you visited the [Temple of Convenience](https://temple-of-convenience.vercel.app/)?",
+  "author": "Sailee"
+}
