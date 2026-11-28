@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+
+{% block title %}Climate Connections — Torchlight — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="ccl-container">
+  <!-- Sample board, decorative only: four groups of four, shuffled -->
+  <div class="ccl-board" aria-hidden="true">
+    {% for word in board_words %}<span class="ccl-word">{{ word }}</span>{% endfor %}
+  </div>
+
+  <h2 class="ccl-title">Climate Connections</h2>
+  <div class="ccl-kicker">🔦 Torchlight</div>
+  <p class="ccl-intro">16 words. 4 groups. Can you find the hidden connection?</p>
+
+  <div class="ccl-actions">
+    <a class="ccl-btn ccl-btn-primary" href="/climateconnections/grid/">Choose a puzzle</a>
+    <button type="button" class="ccl-btn ccl-btn-secondary" onclick="openHowTo()">How to play</button>
+  </div>
+</div>
+
+<!-- How to Play: same rules as the puzzle pages -->
+<div class="modal-overlay" id="howToOverlay" onclick="if (event.target === this) closeHowTo()">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="howToTitle">
+    <button class="modal-close" onclick="closeHowTo()" aria-label="Close">×</button>
+    <div class="modal-title" id="howToTitle">How to Play</div>
+
+    <p class="modal-rule">The 16 words you can see can be divided into 4 groups of 4 words each.</p>
+    <p class="modal-rule">All puzzles are themed on climate change and environment.</p>
+    <p class="modal-rule">Select four items that belong to the same group/category and tap <strong>Submit</strong> to check your answer.</p>
+    <p class="modal-rule">You can click on hint to see what the category is. <strong>On the leaderboard, each hint adds 30 seconds to your time.</strong></p>
+    <p class="modal-rule">You can make up to 4 mistakes!</p>
+
+    <hr class="modal-divider">
+
+    <div class="modal-section-label">Category Examples</div>
+    <p class="modal-example"><strong>Season:</strong> Summer, Winter, Spring, Autumn</p>
+    <p class="modal-example"><strong>Carbon ____:</strong> Tax, Credit, Sink, Cycle</p>
+    <p class="modal-example" style="margin-top:8px;">Each puzzle has exactly one solution. Watch out for words that seem to fit more than one group!</p>
+
+    <hr class="modal-divider">
+
+    <div class="modal-section-label">Each group is colour-coded, revealed as you solve</div>
+    <div class="modal-colors">
+      <div class="modal-color-chip" style="background:#2C5F4A; color:#fff;">Straightforward</div>
+      <div class="modal-color-chip" style="background:#1A5F7A; color:#fff;">Medium</div>
+      <div class="modal-color-chip" style="background:#C8602A; color:#fff;">Tricky</div>
+      <div class="modal-color-chip" style="background:#6B1C2A; color:#fff;">Devious</div>
+    </div>
+
+    <div class="modal-footer">
+      <a class="modal-start-btn" href="/climateconnections/grid/">Choose a puzzle</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ccl-container {
+    max-width: 520px;
+    margin: 40px auto 64px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  /* Sample board — same look as the Torchlight game tiles */
+  .ccl-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    max-width: 400px;
+    margin: 0 auto 28px;
+  }
+
+  .ccl-word {
+    background: #E0DED8;
+    border-radius: 8px;
+    padding: 16px 4px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #1A1A18;
+    overflow-wrap: anywhere;
+  }
+
+  .ccl-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin: 0 0 6px;
+    line-height: 1.15;
+  }
+
+  .ccl-kicker {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0E7C7B;
+    margin-bottom: 14px;
+  }
+
+  .ccl-intro {
+    font-size: 17px;
+    color: #444;
+    margin: 0 0 28px;
+    line-height: 1.5;
+  }
+
+  .ccl-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ccl-btn {
+    display: inline-block;
+    padding: 13px 26px;
+    border-radius: 999px;
+    border: 1.5px solid #1A1A18;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .ccl-btn-primary { background: #1A1A18; color: #fff; }
+  .ccl-btn-primary:hover { background: #0E7C7B; border-color: #0E7C7B; color: #fff; text-decoration: none; }
+  .ccl-btn-secondary { background: transparent; color: #1A1A18; }
+  .ccl-btn-secondary:hover { background: #1A1A18; color: #fff; }
+
+  /* How to Play modal — matches the puzzle pages */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: #FAFAF8;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px 24px 24px;
+    position: relative;
+    text-align: left;
+  }
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+  }
+  .modal-close:hover { color: #1A1A18; }
+  .modal-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .modal-rule { font-size: 14px; color: #333; margin-bottom: 10px; line-height: 1.55; }
+  .modal-divider { border: none; border-top: 1px solid #E0DED8; margin: 16px 0; }
+  .modal-section-label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  .modal-example { font-size: 13px; color: #333; margin-bottom: 8px; line-height: 1.5; }
+  .modal-example strong { font-weight: 800; color: #1A1A18; }
+  .modal-colors { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .modal-color-chip {
+    flex: 1;
+    min-width: 80px;
+    border-radius: 6px;
+    padding: 8px 6px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .modal-footer { margin-top: 20px; text-align: center; }
+  .modal-start-btn {
+    display: inline-block;
+    background: #1A1A18;
+    color: white;
+    padding: 12px 36px;
+    border-radius: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .modal-start-btn:hover { background: #0E7C7B; color: #fff; text-decoration: none; }
+
+  @media (max-width: 560px) {
+    .ccl-container { margin-top: 28px; }
+    .ccl-word { padding: 13px 2px; font-size: 10.5px; }
+    .ccl-title { font-size: 30px; }
+    .ccl-intro { font-size: 16px; }
+    .ccl-btn { min-width: 190px; }
+  }
+</style>
+
+<script>
+function openHowTo() { document.getElementById('howToOverlay').classList.add('open'); }
+function closeHowTo() { document.getElementById('howToOverlay').classList.remove('open'); }
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeHowTo(); });
+</script>
+{% endblock %}

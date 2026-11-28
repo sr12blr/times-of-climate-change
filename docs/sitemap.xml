@@ -37,6 +37,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://timesofclimatechange.com/climateconnections/grid/</loc>
+    <lastmod>2026-11-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://timesofclimatechange.com/explore/</loc>
     <lastmod>2026-11-28</lastmod>
     <changefreq>weekly</changefreq>

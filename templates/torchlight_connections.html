@@ -18,7 +18,7 @@
       <li class="cc-cell">
         <a class="cc-tile" href="{{ item.url }}" data-date="{{ item.date }}">
           <span class="cc-count" hidden></span>
-          <span class="cc-icon" aria-hidden="true">{{ item.icon }}</span>
+          <span class="cc-icon" aria-hidden="true">{% if item.icon.startswith("/") %}<img src="{{ item.icon }}" alt="">{% else %}{{ item.icon }}{% endif %}</span>
           <span class="cc-name">{{ item.title }}</span>
         </a>
       </li>
@@ -136,6 +136,13 @@
   .cc-icon {
     font-size: 36px;
     line-height: 1;
+  }
+
+  /* Drawn icons (where no emoji fits) are sized to match the emoji */
+  .cc-icon img {
+    display: block;
+    width: 1.1em;
+    height: 1.1em;
   }
 
   /* Live play counter (plays started from this page), top-right corner */

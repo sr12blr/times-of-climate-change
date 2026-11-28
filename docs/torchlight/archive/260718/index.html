@@ -70,7 +70,8 @@
 
   <div class="game-header">
     <div class="game-title">🔦 Torchlight</div>
-    <div class="game-date">July 18, 2026</div>
+    <div class="game-date" id="gameDate">July 18, 2026</div>
+    
     <div class="game-instructions">Make 4 sets of 4 words each</div>
     <div id="gameTimer" class="game-timer" style="display:none">0:00</div>
     <button class="how-to-play-link" onclick="openModal()">How to play</button>
@@ -170,7 +171,7 @@
     <div class="end-message" id="endMessage"></div>
     <div id="endStreak" style="display:none; font-size: 18px; font-weight: 600; margin: 8px 0;"></div>
     <div class="end-squares" id="endSquares"></div>
-    <a href="/climateconnections/" class="cc-back-btn" id="ccBackBtn" style="display: none;">← Back to Climate Connections</a>
+    <a href="/climateconnections/grid/" class="cc-back-btn" id="ccBackBtn" style="display: none;">← Back to Climate Connections</a>
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
       <div class="end-share-row" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
         <button class="btn-share btn-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>

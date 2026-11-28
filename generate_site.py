@@ -56,7 +56,8 @@ def slugify(text):
 
 
 # Climate Connections — 15 curated puzzles in three difficulty groups
-# (grouped by lifetime win rate). Each entry: (date, title, icon emoji).
+# (grouped by lifetime win rate). Each entry: (date, title, icon), where icon is an
+# emoji or an absolute image path (e.g. /static/images/cc-river.svg).
 # These puzzles' archive pages also get a separate leaderboard when opened
 # from the grid (?cc=1).
 CLIMATE_CONNECTIONS = [
@@ -72,7 +73,7 @@ CLIMATE_CONNECTIONS = [
         ("2026-05-17", "Green Spaces", "🌳"),
         ("2026-06-27", "Fungi", "🍄"),
         ("2026-06-03", "Heatwave", "🌡️"),
-        ("2026-09-28", "Rivers", "🏞️"),
+        ("2026-09-28", "Rivers", "/static/images/cc-river.svg"),  # no river emoji, so a drawn icon
     ]),
     ("Hard", "hard", [
         ("2026-04-23", "Solar Energy", "☀️"),
@@ -82,6 +83,15 @@ CLIMATE_CONNECTIONS = [
         ("2026-09-07", "Blue", "💙"),
     ]),
 ]
+# Decorative sample board on the Climate Connections welcome page. Four real groups,
+# shuffled: parts of a river, Carbon ____, renewables, extreme weather.
+CLIMATE_CONNECTIONS_SAMPLE_BOARD = [
+    "DELTA", "TAX", "SOLAR", "FLOOD",
+    "SINK", "WIND", "BASIN", "DROUGHT",
+    "TIDAL", "MOUTH", "CREDIT", "MONSOON",
+    "HEATWAVE", "FOOTPRINT", "HYDRO", "BANK",
+]
+
 CLIMATE_CONNECTIONS_DATES = {d for _, _, entries in CLIMATE_CONNECTIONS for d, _, _ in entries}
 
 
@@ -490,11 +500,25 @@ def generate(full_rebuild=False):
                 else:
                     print(f"  Warning: Climate Connections puzzle {d} not found")
             groups.append({"label": label, "key": key, "tiles": tiles})
-        (SITE_DIR / "climateconnections").mkdir(parents=True, exist_ok=True)
+        # The grid of 15 lives at /climateconnections/grid/ (puzzles' back button goes here)
+        (SITE_DIR / "climateconnections" / "grid").mkdir(parents=True, exist_ok=True)
         template = env.get_template("torchlight_connections.html")
         html = template.render(
             groups=groups,
             config_js_version=asset_version("leaderboard/config.js"),
+            active_nav="",
+            root_path="/",
+            css_path=f"/static/style.css?v={css_version}",
+        )
+        with open(SITE_DIR / "climateconnections" / "grid" / "index.html", "w") as f:
+            f.write(html)
+        print("  Generated: climateconnections/grid/")
+
+        # Welcome page at /climateconnections/: sample board, How to play, Choose a puzzle.
+        # The sample board is decorative: four groups of four, shuffled.
+        template = env.get_template("torchlight_connections_landing.html")
+        html = template.render(
+            board_words=CLIMATE_CONNECTIONS_SAMPLE_BOARD,
             active_nav="",
             root_path="/",
             css_path=f"/static/style.css?v={css_version}",
@@ -513,6 +537,7 @@ def generate(full_rebuild=False):
         ("torchlight/", "daily", "0.9"),
         ("torchlight/archive/", "weekly", "0.8"),
         ("climateconnections/", "weekly", "0.8"),
+        ("climateconnections/grid/", "weekly", "0.7"),
         ("explore/", "weekly", "0.8"),
         ("explore/food/", "weekly", "0.7"),
         ("explore/water/", "weekly", "0.7"),
