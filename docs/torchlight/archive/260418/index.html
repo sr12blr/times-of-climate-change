@@ -171,7 +171,10 @@
     <div class="end-message" id="endMessage"></div>
     <div id="endStreak" style="display:none; font-size: 18px; font-weight: 600; margin: 8px 0;"></div>
     <div class="end-squares" id="endSquares"></div>
-    <a href="/climateconnections/grid/" class="cc-back-btn" id="ccBackBtn" style="display: none;">← Back to Climate Connections</a>
+    <div class="cc-end-actions" id="ccEndActions" style="display: none;">
+      <a href="/climateconnections/grid/" class="cc-back-btn">← Back to Climate Connections</a>
+      <button type="button" class="cc-again-btn" onclick="location.reload()">↻ Play again</button>
+    </div>
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
       <div class="end-share-row" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
         <button class="btn-share btn-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
@@ -730,6 +733,30 @@
     transition: background 0.15s ease;
   }
 
+  .cc-end-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .cc-end-actions .cc-back-btn { margin-top: 0; }
+
+  .cc-again-btn {
+    padding: 11px 20px;
+    border-radius: 999px;
+    border: 1.5px solid #1A1A18;
+    background: transparent;
+    color: #1A1A18;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .cc-again-btn:hover { background: #1A1A18; color: #fff; }
+
   .cc-back-btn:hover {
     background: #0E7C7B;
     color: #fff;
@@ -1018,7 +1045,9 @@ function stopTimer() {
 }
 
 function saveState() {
-  if (isDemo || !gameStarted) return;
+  // Grid plays (?cc=1) are on shared laptops at events: never save progress,
+  // so every visit starts a fresh game for whoever is playing.
+  if (isDemo || !gameStarted || IS_CC_PLAY) return;
   try {
     const state = {
       version: 1,
@@ -1036,6 +1065,7 @@ function saveState() {
 }
 
 function restoreState() {
+  if (IS_CC_PLAY) return false;
   try {
     const raw = localStorage.getItem('torchlight_state_' + PUZZLE_DATA.date);
     if (!raw) return false;
@@ -1141,16 +1171,12 @@ function startGame() {
 }
 
 // Climate Connections: +1 to this puzzle's live play counter (shown on the grid tiles).
-// Counted once per browser per puzzle, when the player presses Start.
+// Counted every time a player presses Start: several people may share one laptop.
 function countConnectionsPlay() {
-  const key = 'cc_play_counted_' + PUZZLE_DATA.date;
-  try { if (localStorage.getItem(key)) return; } catch (e) {}
   ensureLeaderboardLoaded().then(function () {
     if (!window.firebase.apps.length) window.firebase.initializeApp(window.LB_CONFIG.firebase);
     return window.firebase.firestore().collection('ccPlays').doc(PUZZLE_DATA.date)
       .set({ plays: window.firebase.firestore.FieldValue.increment(1) }, { merge: true });
-  }).then(function () {
-    try { localStorage.setItem(key, '1'); } catch (e) {}
   }).catch(function (e) { console.error('[cc] play count failed', e); });
 }
 
@@ -1294,10 +1320,10 @@ function showEndScreen(won, isRestore) {
   }
 
   // Streak
-  if (!isRestore && !isDemo) updateStreak();
+  if (!isRestore && !isDemo && !IS_CC_PLAY) updateStreak();
   const streak = getStreak();
   const streakEl = document.getElementById('endStreak');
-  if (!isDemo && streak > 0) {
+  if (!isDemo && !IS_CC_PLAY && streak > 0) {
     streakEl.textContent = streak === 1 ? '🔥 1-day streak — keep it going!' : `🔥 ${streak}-day streak`;
     streakEl.style.display = '';
   }
@@ -1325,7 +1351,7 @@ function showEndScreen(won, isRestore) {
 
   // Opened from the Climate Connections grid: offer a way back to it
   if (new URLSearchParams(location.search).has('cc')) {
-    document.getElementById('ccBackBtn').style.display = 'inline-block';
+    document.getElementById('ccEndActions').style.display = 'flex';
     if (!won) document.getElementById('endTitle').textContent = 'Better luck next time';
   }
 
@@ -1488,7 +1514,7 @@ function ensureLeaderboardLoaded() {
     'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js',
     'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js',
     '../../../leaderboard/config.js',
-    '../../../leaderboard/daily.js?v=28aa24e4'
+    '../../../leaderboard/daily.js?v=69b658b3'
   ];
   _lbLoadPromise = srcs.reduce(function (chain, src) {
     return chain.then(function () {

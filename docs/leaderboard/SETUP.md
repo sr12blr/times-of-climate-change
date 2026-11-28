@@ -119,7 +119,7 @@ For each of the 3 rounds:
 - `done/index.html` — post-solve "wait for next round" screen.
 - `results/index.html` — host's live leaderboard view.
 - `lb-runtime.js` — injected into puzzle pages when `?lb=1` is present; submits time on solve.
-- `daily.js` — the always-on daily leaderboard on the live puzzle page. Requires an email + password account (Firebase Auth) to post; see the rules above. The same file also runs the Climate Connections leaderboard (`events/climate-connections/puzzles/{date}/results`) on the 15 grid puzzles when they're opened from `/climateconnections/` (URL has `?cc=1`). That board is name-only (no account) with a separate board per puzzle. The grid tiles show live play counts from `ccPlays/{date}`, which goes up by 1 when a player presses Start on a grid puzzle (once per browser).
+- `daily.js` — the always-on daily leaderboard on the live puzzle page. Requires an email + password account (Firebase Auth) to post; see the rules above. The same file also runs the Climate Connections leaderboard (`events/climate-connections/puzzles/{date}/results`) on the 15 grid puzzles when they're opened from `/climateconnections/` (URL has `?cc=1`). That board is name-only (no account) with a separate board per puzzle. The grid tiles show live play counts from `ccPlays/{date}`, which goes up by 1 every time a player presses Start on a grid puzzle. Grid plays save nothing in the browser (no progress, streak or remembered name), so several people can take turns on one laptop.
 
 ## Notes / caveats
 

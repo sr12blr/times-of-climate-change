@@ -27,12 +27,12 @@
   };
   // Name-only boards (Climate Connections): no account. Players type a name and the
   // result is stored under that name's key, first post per name per puzzle only.
+  // These run on shared laptops at events, so nothing is kept in the browser: the
+  // name field starts empty for each player, and "(you)" only marks a post made
+  // from this page load.
   var NAME_ONLY = !!SCOPE.nameOnly;
-  var QUICK_NAME_KEY = 'cc_lb_name';
-  function quickPostedKey(date) { return 'cc_lb_posted_' + date; }
-  function quickPostedId(date) {
-    try { return localStorage.getItem(quickPostedKey(date)) || ''; } catch (e) { return ''; }
-  }
+  var _quickPosted = {}; // date -> name key posted from this page load
+  function quickPostedId(date) { return _quickPosted[date] || ''; }
   var HINT_PENALTY_MS = 30000;
   var NAME_MIN = 2;
   var NAME_MAX = 24;
@@ -249,10 +249,7 @@
         won: !!result.won,
         submittedAt: window.firebase.firestore.FieldValue.serverTimestamp()
       }).then(function () {
-        try {
-          localStorage.setItem(QUICK_NAME_KEY, name);
-          localStorage.setItem(quickPostedKey(date), key);
-        } catch (e) {}
+        _quickPosted[date] = key;
         return true;
       });
     });
@@ -424,11 +421,9 @@
   // fill the email + password.
   var PANELS = {
     quickname: function () {
-      var saved = '';
-      try { saved = localStorage.getItem(QUICK_NAME_KEY) || ''; } catch (e) {}
       return '<form class="tl-lb-form" action="#" method="post">'
         + '<label for="tlLbQuickName">Add your time to ' + escapeHtml(COPY.boardName) + '</label>'
-        + '<input id="tlLbQuickName" name="displayName" class="tl-lb-input" autocomplete="nickname" maxlength="' + NAME_MAX + '" placeholder="Your name" value="' + escapeHtml(saved) + '">'
+        + '<input id="tlLbQuickName" name="displayName" class="tl-lb-input" autocomplete="nickname" maxlength="' + NAME_MAX + '" placeholder="Your name">'
         + '<div class="tl-lb-err" style="display:none"></div>'
         + '<button type="submit" class="tl-lb-btn">Add my time →</button>'
         + '</form>';
