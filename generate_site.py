@@ -55,6 +55,36 @@ def slugify(text):
     return text[:60].rstrip("-")
 
 
+# Climate Connections — 15 curated puzzles in three difficulty groups
+# (grouped by lifetime win rate). Each entry: (date, title, icon emoji).
+# These puzzles' archive pages also get a separate leaderboard when opened
+# from the grid (?cc=1).
+CLIMATE_CONNECTIONS = [
+    ("Easy", "easy", [
+        ("2026-05-20", "Brands", "🛢️"),
+        ("2026-04-24", "Food Waste", "🍲"),
+        ("2026-10-05", "Biomimicry", "🦎"),
+        ("2026-06-07", "Snacks", "🍟"),
+        ("2026-04-26", "Air Quality", "😷"),
+    ]),
+    ("Medium", "medium", [
+        ("2026-05-01", "Gardening", "🪴"),
+        ("2026-05-17", "Green Spaces", "🌳"),
+        ("2026-06-27", "Fungi", "🍄"),
+        ("2026-06-03", "Heatwave", "🌡️"),
+        ("2026-09-28", "Rivers", "🏞️"),
+    ]),
+    ("Hard", "hard", [
+        ("2026-04-23", "Solar Energy", "☀️"),
+        ("2026-09-13", "Cheers!", "🍷"),
+        ("2026-04-21", "Microplastics", "🥤"),
+        ("2026-04-19", "Cars", "🚗"),
+        ("2026-09-07", "Blue", "💙"),
+    ]),
+]
+CLIMATE_CONNECTIONS_DATES = {d for _, _, entries in CLIMATE_CONNECTIONS for d, _, _ in entries}
+
+
 @lru_cache(maxsize=None)
 def asset_version(rel_path):
     """Content hash of a docs/ asset, for cache-busting.
@@ -366,6 +396,7 @@ def generate(full_rebuild=False):
             puzzle=today_puzzle,
             puzzle_json=puzzle_json,
             is_live_puzzle=True,
+            daily_js_version=asset_version("leaderboard/daily.js"),
             active_nav="",
             root_path="../",
             css_path=f"../static/style.css?v={css_version}",
@@ -406,6 +437,8 @@ def generate(full_rebuild=False):
             html = template.render(
                 puzzle=puzzle,
                 puzzle_json=puzzle_json,
+                cc_eligible=puzzle["date"] in CLIMATE_CONNECTIONS_DATES,
+                daily_js_version=asset_version("leaderboard/daily.js"),
                 active_nav="",
                 root_path="../../../",
                 css_path=f"../../../static/style.css?v={css_version}",
@@ -440,6 +473,36 @@ def generate(full_rebuild=False):
             f.write(html)
         print("  Generated: torchlight/selection/")
 
+        groups = []
+        for label, key, entries in CLIMATE_CONNECTIONS:
+            tiles = []
+            for d, title, icon in entries:
+                if d in date_to_index:
+                    dt = datetime.strptime(d, "%Y-%m-%d")
+                    tiles.append({
+                        "number": n_puzzles - date_to_index[d],
+                        "date": d,
+                        "title": title,
+                        "icon": icon,
+                        # ?cc=1 makes the puzzle's end screen show a button back here
+                        "url": f"/torchlight/archive/{dt.strftime('%y%m%d')}/?cc=1",
+                    })
+                else:
+                    print(f"  Warning: Climate Connections puzzle {d} not found")
+            groups.append({"label": label, "key": key, "tiles": tiles})
+        (SITE_DIR / "climateconnections").mkdir(parents=True, exist_ok=True)
+        template = env.get_template("torchlight_connections.html")
+        html = template.render(
+            groups=groups,
+            config_js_version=asset_version("leaderboard/config.js"),
+            active_nav="",
+            root_path="/",
+            css_path=f"/static/style.css?v={css_version}",
+        )
+        with open(SITE_DIR / "climateconnections" / "index.html", "w") as f:
+            f.write(html)
+        print("  Generated: climateconnections/")
+
     # 11. Sitemap
     BASE_URL = "https://timesofclimatechange.com"
     today = date.today().isoformat()
@@ -449,6 +512,7 @@ def generate(full_rebuild=False):
         ("archive/", "daily", "0.9"),
         ("torchlight/", "daily", "0.9"),
         ("torchlight/archive/", "weekly", "0.8"),
+        ("climateconnections/", "weekly", "0.8"),
         ("explore/", "weekly", "0.8"),
         ("explore/food/", "weekly", "0.7"),
         ("explore/water/", "weekly", "0.7"),

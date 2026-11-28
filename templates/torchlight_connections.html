@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}Climate Connections — Torchlight — The Times of Climate Change{% endblock %}
+
+{% block content %}
+<div class="cc-container">
+  <header class="cc-header">
+    <h2 class="cc-title">Climate Connections</h2>
+    <div class="cc-kicker">🔦 Torchlight</div>
+    <p class="cc-intro">Fifteen puzzles across three levels. Warm up with Easy, or jump straight to Hard.</p>
+  </header>
+
+  {% for group in groups %}
+  <section class="cc-group cc-{{ group.key }}" aria-labelledby="cc-{{ group.key }}-label">
+    <h3 class="cc-label" id="cc-{{ group.key }}-label">{{ group.label }}</h3>
+    <ul class="cc-row">
+      {% for item in group.tiles %}
+      <li class="cc-cell">
+        <a class="cc-tile" href="{{ item.url }}" data-date="{{ item.date }}">
+          <span class="cc-count" hidden></span>
+          <span class="cc-icon" aria-hidden="true">{{ item.icon }}</span>
+          <span class="cc-name">{{ item.title }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
+
+<style>
+  .cc-container {
+    max-width: 780px;
+    margin: 40px auto 56px;
+    padding: 0 16px;
+  }
+
+  .cc-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .cc-kicker {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0E7C7B;
+    margin-bottom: 10px;
+  }
+
+  .cc-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1A1A18;
+    margin: 0 0 6px;
+    line-height: 1.15;
+  }
+
+  .cc-intro {
+    font-size: 15px;
+    color: #555;
+    margin: 0;
+  }
+
+  /* Difficulty colours — the Torchlight category palette */
+  .cc-easy   { --cc-accent: #2C5F4A; --cc-tint: #E3ECE7; }
+  .cc-medium { --cc-accent: #1A5F7A; --cc-tint: #E1EBEF; }
+  .cc-hard   { --cc-accent: #C8602A; --cc-tint: #F5E6DD; }
+
+  .cc-group { margin-bottom: 28px; }
+
+  .cc-label {
+    display: inline-block;
+    margin: 0 0 10px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--cc-accent);
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .cc-row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .cc-cell {
+    flex: 0 0 calc((100% - 40px) / 5);
+    min-width: 0;
+    display: flex;
+  }
+
+  .cc-tile {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 8px;
+    background: var(--cc-tint);
+    border-radius: 10px;
+    color: #1A1A18;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+  }
+
+  .cc-tile:hover,
+  .cc-tile:focus-visible {
+    background: var(--cc-accent);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 26, 24, 0.18);
+    outline: none;
+    text-decoration: none;
+  }
+
+  .cc-tile:active { transform: translateY(0) scale(0.98); }
+
+  .cc-icon {
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  /* Live play counter (plays started from this page), top-right corner */
+  .cc-count {
+    position: absolute;
+    top: 7px;
+    right: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.55;
+  }
+
+  .cc-name {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  /* Phones: 3 across, the last two centred */
+  @media (max-width: 600px) {
+    .cc-container { margin-top: 28px; }
+    .cc-title { font-size: 28px; }
+    .cc-label { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+    .cc-row { gap: 8px; }
+    .cc-cell { flex-basis: calc((100% - 16px) / 3); }
+    .cc-tile { aspect-ratio: auto; min-height: 124px; }
+    .cc-icon { font-size: 30px; }
+    .cc-name { font-size: 12px; }
+    .cc-count { top: 6px; right: 7px; font-size: 10px; }
+  }
+</style>
+
+<!-- Live play counters: one Firestore doc per puzzle, ccPlays/{date} = { plays } -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+<script src="/leaderboard/config.js?v={{ config_js_version }}"></script>
+<script>
+(function () {
+  if (!window.firebase || !window.LB_CONFIG) return;
+  try {
+    if (!firebase.apps.length) firebase.initializeApp(window.LB_CONFIG.firebase);
+    firebase.firestore().collection('ccPlays').onSnapshot(function (snap) {
+      var counts = {};
+      snap.forEach(function (d) { counts[d.id] = d.data().plays || 0; });
+      document.querySelectorAll('.cc-tile').forEach(function (tile) {
+        var n = counts[tile.dataset.date] || 0;
+        var el = tile.querySelector('.cc-count');
+        el.textContent = '▶ ' + n.toLocaleString();
+        el.title = n === 1 ? 'Played once' : 'Played ' + n.toLocaleString() + ' times';
+        el.hidden = false;
+      });
+    }, function (e) { console.error('[cc] play counts unavailable', e); });
+  } catch (e) { console.error('[cc] play counts unavailable', e); }
+})();
+</script>
+{% endblock %}

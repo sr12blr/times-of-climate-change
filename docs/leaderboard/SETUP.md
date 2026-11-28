@@ -26,7 +26,7 @@ A QR-driven, live-event leaderboard for Torchlight. Players scan a QR, enter the
        // QR event rounds: open to anyone, keyed by name, first attempt only.
        match /events/{eventId}/puzzles/{p}/results/{playerId} {
          allow read: if true;
-         allow create: if eventId != 'daily'
+         allow create: if !(eventId in ['daily', 'climate-connections'])
            && !exists(/databases/$(database)/documents/events/$(eventId)/puzzles/$(p)/results/$(playerId));
          // no updates, no deletes — first attempt only, enforced server-side
        }
@@ -44,6 +44,35 @@ A QR-driven, live-event leaderboard for Torchlight. Players scan a QR, enter the
            && request.resource.data.adjustedMs == request.resource.data.ms + request.resource.data.hints * 30000
            && request.resource.data.won is bool
            && request.resource.data.submittedAt == request.time;
+       }
+
+       // Climate Connections leaderboard (the 15 grid puzzles opened with ?cc=1):
+       // name only, no account. The doc id is the name's key (lowercase letters and
+       // digits), so each name posts once per puzzle; no updates or deletes.
+       match /events/climate-connections/puzzles/{p}/results/{key} {
+         allow read: if true;
+         allow create: if request.resource.data.keys().hasOnly(['name', 'ms', 'mistakes', 'hints', 'adjustedMs', 'won', 'submittedAt'])
+           && request.resource.data.name is string
+           && request.resource.data.name.size() >= 2
+           && request.resource.data.name.size() <= 24
+           && key == request.resource.data.name.lower().replace('[^a-z0-9]', '')
+           && key.size() >= 2
+           && request.resource.data.ms is int && request.resource.data.ms >= 0
+           && request.resource.data.mistakes is int && request.resource.data.mistakes >= 0
+           && request.resource.data.hints is int && request.resource.data.hints >= 0
+           && request.resource.data.adjustedMs == request.resource.data.ms + request.resource.data.hints * 30000
+           && request.resource.data.won is bool
+           && request.resource.data.submittedAt == request.time;
+       }
+
+       // Climate Connections play counters, shown on the grid tiles: ccPlays/{date} = { plays }.
+       // Anyone can read; writes may only add exactly 1.
+       match /ccPlays/{date} {
+         allow read: if true;
+         allow create: if request.resource.data.keys().hasOnly(['plays'])
+           && request.resource.data.plays == 1;
+         allow update: if request.resource.data.keys().hasOnly(['plays'])
+           && request.resource.data.plays == resource.data.plays + 1;
        }
 
        // Private profile. Display name is permanent (no updates).
@@ -90,7 +119,7 @@ For each of the 3 rounds:
 - `done/index.html` — post-solve "wait for next round" screen.
 - `results/index.html` — host's live leaderboard view.
 - `lb-runtime.js` — injected into puzzle pages when `?lb=1` is present; submits time on solve.
-- `daily.js` — the always-on daily leaderboard on the live puzzle page. Requires an email + password account (Firebase Auth) to post; see the rules above.
+- `daily.js` — the always-on daily leaderboard on the live puzzle page. Requires an email + password account (Firebase Auth) to post; see the rules above. The same file also runs the Climate Connections leaderboard (`events/climate-connections/puzzles/{date}/results`) on the 15 grid puzzles when they're opened from `/climateconnections/` (URL has `?cc=1`). That board is name-only (no account) with a separate board per puzzle. The grid tiles show live play counts from `ccPlays/{date}`, which goes up by 1 when a player presses Start on a grid puzzle (once per browser).
 
 ## Notes / caveats
 

@@ -170,6 +170,7 @@
     <div class="end-message" id="endMessage"></div>
     <div id="endStreak" style="display:none; font-size: 18px; font-weight: 600; margin: 8px 0;"></div>
     <div class="end-squares" id="endSquares"></div>
+    <a href="/climateconnections/" class="cc-back-btn" id="ccBackBtn" style="display: none;">← Back to Climate Connections</a>
     <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; margin-top: 16px;">
       <div class="end-share-row" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;">
         <button class="btn-share btn-whatsapp" onclick="shareOnWhatsApp()">💬 WhatsApp</button>
@@ -713,6 +714,27 @@
     display: block;
   }
 
+  /* Shown only when the puzzle was opened from Climate Connections (?cc=1) */
+  .cc-back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: #1A1A18;
+    color: #fff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .cc-back-btn:hover {
+    background: #0E7C7B;
+    color: #fff;
+    text-decoration: none;
+  }
+
   .end-title {
     font-family: 'Source Serif 4', serif;
     font-size: 22px;
@@ -859,6 +881,17 @@
 // Puzzle data loaded from JSON
 const PUZZLE_DATA = {"author": "", "categories": [{"bg": "#2C5F4A", "description": "", "difficulty": 1, "items": ["LinkedIn", "Indeed", "Naukri", "Glassdoor"], "name": "Job Portals", "text": "#ffffff"}, {"bg": "#1A5F7A", "description": "", "difficulty": 2, "items": ["Experience", "Education", "Certification", "References"], "name": "Things on a Resume", "text": "#ffffff"}, {"bg": "#C8602A", "description": "", "difficulty": 3, "items": ["Compensation", "Location", "Designation", "Company"], "name": "Details in a Job Posting", "text": "#ffffff"}, {"bg": "#6B1C2A", "description": "", "difficulty": 4, "items": ["Job", "Vocation", "Profession", "Occupation"], "name": "Synonyms for \"Career\"", "text": "#ffffff"}], "date": "2026-06-23", "fun_fact": "Today (June 23) is exactly 10 years since my first day at my first full time job. So couldn\u0027t help but think about careers and transitioning into climate work. If you\u0027re curious about what careers in climate can look like, do check out this 3 part series on \u003ca href=\"https://www.climateaction.live/the-climate-career-map-no-one-shows-you/\" target=\"_blank\" rel=\"noopener\"\u003eClimate Action Live\u003c/a\u003e"};
 const IS_LIVE_PUZZLE = false;
+// Climate Connections: one of the 15 grid puzzles, opened from the grid (?cc=1).
+// These get their own leaderboard, separate from the daily one.
+const IS_CC_PLAY = !IS_LIVE_PUZZLE && false
+  && new URLSearchParams(location.search).has('cc');
+const HAS_LEADERBOARD = (IS_LIVE_PUZZLE || IS_CC_PLAY) && !new URLSearchParams(location.search).has('lb');
+if (IS_CC_PLAY) {
+  document.getElementById('ccLeaderboardBtn').style.display = '';
+  document.getElementById('ccHintRule').style.display = '';
+  document.getElementById('leaderboardModalTitle').textContent = '🏆 Climate Connections Leaderboard';
+  document.getElementById('hintBtn').textContent = '💡 Hint (+0:30)';
+}
 const HINT_PENALTY_MS = 30000;
 
 // Puzzle number: April 9, 2026 = #1
@@ -1103,6 +1136,21 @@ function startGame() {
   // Save immediately so a reload after Start resumes the clock instead of
   // showing a fresh Start screen.
   saveState();
+  if (IS_CC_PLAY && !isDemo) countConnectionsPlay();
+}
+
+// Climate Connections: +1 to this puzzle's live play counter (shown on the grid tiles).
+// Counted once per browser per puzzle, when the player presses Start.
+function countConnectionsPlay() {
+  const key = 'cc_play_counted_' + PUZZLE_DATA.date;
+  try { if (localStorage.getItem(key)) return; } catch (e) {}
+  ensureLeaderboardLoaded().then(function () {
+    if (!window.firebase.apps.length) window.firebase.initializeApp(window.LB_CONFIG.firebase);
+    return window.firebase.firestore().collection('ccPlays').doc(PUZZLE_DATA.date)
+      .set({ plays: window.firebase.firestore.FieldValue.increment(1) }, { merge: true });
+  }).then(function () {
+    try { localStorage.setItem(key, '1'); } catch (e) {}
+  }).catch(function (e) { console.error('[cc] play count failed', e); });
 }
 
 function toggleSelect(item) {
@@ -1222,15 +1270,16 @@ function showEndScreen(won, isRestore) {
       'won': won,
       'mistakes': mistakes,
       'puzzle_date': '2026-06-23',
-      'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : 'normal'
+      'mode': new URLSearchParams(location.search).has('lb') ? 'leaderboard' : (IS_CC_PLAY ? 'connections' : 'normal')
     });
     if (window.LB_RUNTIME) {
       try { window.LB_RUNTIME.onSolve(won, timerFinalMs, mistakes, '2026-06-23', hintedCategories.length); } catch (e) { console.error(e); }
     }
   }
 
-  // Always-on daily leaderboard (live puzzle only, not demo, not the QR event flow)
-  if (IS_LIVE_PUZZLE && !isDemo && !new URLSearchParams(location.search).has('lb')) {
+  // Leaderboard: daily board on the live puzzle, Climate Connections board on ?cc=1 plays
+  // (never in demo or the QR event flow)
+  if (HAS_LEADERBOARD && !isDemo) {
     const lbResult = {
       date: PUZZLE_DATA.date,
       ms: timerFinalMs || 0,
@@ -1271,6 +1320,12 @@ function showEndScreen(won, isRestore) {
   } else {
     document.getElementById('endTitle').textContent = 'Better luck tomorrow';
     document.getElementById('endMessage').textContent = '';
+  }
+
+  // Opened from the Climate Connections grid: offer a way back to it
+  if (new URLSearchParams(location.search).has('cc')) {
+    document.getElementById('ccBackBtn').style.display = 'inline-block';
+    if (!won) document.getElementById('endTitle').textContent = 'Better luck next time';
   }
 
   // Create colored dots from all attempts (including wrong guesses marked with ❌)
@@ -1394,7 +1449,7 @@ function getHint() {
   hintedCategories.push(hintCat);
   saveState();
 
-  const penaltyNote = (IS_LIVE_PUZZLE && !isDemo) ? ' — +0:30 added to your time' : '';
+  const penaltyNote = (HAS_LEADERBOARD && !isDemo) ? ' — +0:30 added to your time' : '';
   showHintToast(`💡 ${hintCat.name}${penaltyNote}`);
 
   if (PUZZLE.categories.every(cat => solved.includes(cat) || hintedCategories.includes(cat))) {
@@ -1418,12 +1473,21 @@ function handleOverlayClick(e) {
 let _lbLoadPromise = null;
 function ensureLeaderboardLoaded() {
   if (_lbLoadPromise) return _lbLoadPromise;
+  if (IS_CC_PLAY) {
+    window.TL_LB_SCOPE = {
+      eventId: 'climate-connections',
+      boardName: 'the Climate Connections leaderboard',
+      solvePrompt: 'Solve this puzzle to add your time.',
+      emptyBoard: 'Be the first to finish!',
+      nameOnly: true
+    };
+  }
   const srcs = [
     'https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js',
     'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js',
     'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js',
     '../../../leaderboard/config.js',
-    '../../../leaderboard/daily.js'
+    '../../../leaderboard/daily.js?v=28aa24e4'
   ];
   _lbLoadPromise = srcs.reduce(function (chain, src) {
     return chain.then(function () {

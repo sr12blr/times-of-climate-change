@@ -15,7 +15,24 @@
 // Scoring: adjusted = raw solve time + 30s per hint. Winners ranked by adjusted time.
 
 (function () {
-  var DAILY_EVENT_ID = 'daily';
+  // Which board this page writes to. The live puzzle uses the default 'daily' board;
+  // Climate Connections puzzles (?cc=1) set window.TL_LB_SCOPE before this file loads
+  // so they get their own per-puzzle board, with wording to match.
+  var SCOPE = window.TL_LB_SCOPE || {};
+  var DAILY_EVENT_ID = SCOPE.eventId || 'daily';
+  var COPY = {
+    boardName: SCOPE.boardName || 'today’s leaderboard',
+    solvePrompt: SCOPE.solvePrompt || 'Solve today’s puzzle to add your time.',
+    emptyBoard: SCOPE.emptyBoard || 'Be the first to finish today!'
+  };
+  // Name-only boards (Climate Connections): no account. Players type a name and the
+  // result is stored under that name's key, first post per name per puzzle only.
+  var NAME_ONLY = !!SCOPE.nameOnly;
+  var QUICK_NAME_KEY = 'cc_lb_name';
+  function quickPostedKey(date) { return 'cc_lb_posted_' + date; }
+  function quickPostedId(date) {
+    try { return localStorage.getItem(quickPostedKey(date)) || ''; } catch (e) { return ''; }
+  }
   var HINT_PENALTY_MS = 30000;
   var NAME_MIN = 2;
   var NAME_MAX = 24;
@@ -88,9 +105,9 @@
 
   function validateName(name) {
     if (name.length < NAME_MIN || name.length > NAME_MAX) {
-      return 'Display name must be ' + NAME_MIN + '–' + NAME_MAX + ' characters.';
+      return (NAME_ONLY ? 'Name' : 'Display name') + ' must be ' + NAME_MIN + '–' + NAME_MAX + ' characters.';
     }
-    if (nameKey(name).length < NAME_MIN) return 'Display name needs at least 2 letters or numbers.';
+    if (nameKey(name).length < NAME_MIN) return (NAME_ONLY ? 'Name' : 'Display name') + ' needs at least 2 letters or numbers.';
     return '';
   }
 
@@ -214,6 +231,33 @@
     });
   }
 
+  // Name-only post: one result per name key per puzzle. Resolves false if that
+  // name already has a result on this puzzle.
+  function submitQuick(date, result, name) {
+    var key = nameKey(name);
+    var ref = resultsCollection(getDb(), date).doc(key);
+    return ref.get().then(function (snap) {
+      if (snap.exists) return false;
+      var ms = Math.round(result.ms || 0);
+      var hints = result.hints || 0;
+      return ref.set({
+        name: name,
+        ms: ms,
+        mistakes: result.mistakes || 0,
+        hints: hints,
+        adjustedMs: ms + hints * HINT_PENALTY_MS,
+        won: !!result.won,
+        submittedAt: window.firebase.firestore.FieldValue.serverTimestamp()
+      }).then(function () {
+        try {
+          localStorage.setItem(QUICK_NAME_KEY, name);
+          localStorage.setItem(quickPostedKey(date), key);
+        } catch (e) {}
+        return true;
+      });
+    });
+  }
+
   // ---- board rendering ----
   function detachListener(el) {
     for (var i = _listeners.length - 1; i >= 0; i--) {
@@ -282,14 +326,15 @@
       return;
     }
 
+    if (NAME_ONLY) { buildBoard(el, date, result); return; }
     el.innerHTML = '<p class="tl-lb-note">Loading…</p>';
     whenAuthReady().then(function () { buildBoard(el, date, result); });
   }
 
   function buildBoard(el, date, result) {
     var db = getDb();
-    var user = auth().currentUser;
-    var myId = user ? user.uid : '';
+    var user = NAME_ONLY ? null : auth().currentUser;
+    var myId = NAME_ONLY ? quickPostedId(date) : (user ? user.uid : '');
     var solvedWon = !!(result && result.won);
     var ctx = { el: el, date: date, result: result };
 
@@ -310,7 +355,7 @@
     } else if (!result) {
       var note = document.createElement('p');
       note.className = 'tl-lb-note';
-      note.textContent = 'Solve today’s puzzle to add your time.';
+      note.textContent = COPY.solvePrompt;
       wrap.appendChild(note);
     }
 
@@ -318,7 +363,7 @@
     var panel = document.createElement('div');
     if (solvedWon) {
       wrap.appendChild(panel);
-      renderPanel(panel, ctx, defaultMode(user));
+      renderPanel(panel, ctx, NAME_ONLY ? 'quickname' : defaultMode(user));
     }
 
     // Board table
@@ -327,7 +372,7 @@
       '<table class="tl-lb-table"><thead><tr>'
       + '<th>#</th><th>Name</th><th>Score</th><th>Time</th><th>💡</th><th>✗</th>'
       + '</tr></thead><tbody></tbody></table>'
-      + '<div class="tl-lb-empty" style="display:none">Be the first to finish today!</div>';
+      + '<div class="tl-lb-empty" style="display:none">' + escapeHtml(COPY.emptyBoard) + '</div>';
     wrap.appendChild(card);
 
     if (user) {
@@ -378,9 +423,19 @@
   // Real <form>s with autocomplete hints so phone password managers offer to save and
   // fill the email + password.
   var PANELS = {
+    quickname: function () {
+      var saved = '';
+      try { saved = localStorage.getItem(QUICK_NAME_KEY) || ''; } catch (e) {}
+      return '<form class="tl-lb-form" action="#" method="post">'
+        + '<label for="tlLbQuickName">Add your time to ' + escapeHtml(COPY.boardName) + '</label>'
+        + '<input id="tlLbQuickName" name="displayName" class="tl-lb-input" autocomplete="nickname" maxlength="' + NAME_MAX + '" placeholder="Your name" value="' + escapeHtml(saved) + '">'
+        + '<div class="tl-lb-err" style="display:none"></div>'
+        + '<button type="submit" class="tl-lb-btn">Add my time →</button>'
+        + '</form>';
+    },
     post: function () {
       return '<form class="tl-lb-form" action="#" method="post">'
-        + '<label>Add your time to today’s leaderboard</label>'
+        + '<label>Add your time to ' + escapeHtml(COPY.boardName) + '</label>'
         + '<p>Posting as <b>' + escapeHtml(_profile.displayName) + '</b></p>'
         + '<div class="tl-lb-err" style="display:none"></div>'
         + '<button type="submit" class="tl-lb-btn">Add my time →</button>'
@@ -432,7 +487,7 @@
   };
 
   var BUSY_LABEL = {
-    post: 'Adding…', name: 'Saving…', signup: 'Creating account…',
+    quickname: 'Adding…', post: 'Adding…', name: 'Saving…', signup: 'Creating account…',
     signin: 'Signing in…', reset: 'Sending…'
   };
 
@@ -475,7 +530,7 @@
       var email = field('email');
       var password = form.elements.password ? form.elements.password.value : '';
 
-      if (mode === 'name' || mode === 'signup') {
+      if (mode === 'name' || mode === 'signup' || mode === 'quickname') {
         var nameErr = validateName(name);
         if (nameErr) return fail(nameErr);
       }
@@ -490,7 +545,15 @@
       btn.disabled = true;
       btn.textContent = BUSY_LABEL[mode];
 
-      if (mode === 'post') {
+      if (mode === 'quickname') {
+        submitQuick(ctx.date, ctx.result, name).then(function (ok) {
+          if (!ok) return fail('Someone has already used that name on this puzzle. Try another.');
+          renderInto(ctx.el, ctx.date, ctx.result);
+        }).catch(function (e) {
+          console.error('[lb] submit failed', e);
+          fail('Could not submit right now. Try again.');
+        });
+      } else if (mode === 'post') {
         postAndRefresh().catch(function (e) {
           console.error('[lb] submit failed', e);
           fail('Could not submit right now. Try again.');
