@@ -83,9 +83,16 @@ CLIMATE_CONNECTIONS = [
         ("2026-09-07", "Blue", "💙"),
     ]),
 ]
-# Decorative sample board on the Climate Connections welcome page. Four real groups,
-# shuffled: parts of a river, Carbon ____, renewables, extreme weather.
-CLIMATE_CONNECTIONS_SAMPLE_BOARD = [
+# Sample board on the Climate Connections welcome page. It animates: each group's
+# words light up and collapse into a coloured bar, then the board resets.
+# Four real groups (easy -> devious); the board shows the words in SAMPLE_ORDER.
+CLIMATE_CONNECTIONS_SAMPLE_GROUPS = [
+    {"name": "Parts of a river", "level": 1, "words": ["DELTA", "BASIN", "MOUTH", "BANK"]},
+    {"name": "Carbon ____", "level": 2, "words": ["TAX", "SINK", "CREDIT", "FOOTPRINT"]},
+    {"name": "Renewables", "level": 3, "words": ["SOLAR", "WIND", "TIDAL", "HYDRO"]},
+    {"name": "Extreme weather", "level": 4, "words": ["FLOOD", "DROUGHT", "MONSOON", "HEATWAVE"]},
+]
+CLIMATE_CONNECTIONS_SAMPLE_ORDER = [
     "DELTA", "TAX", "SOLAR", "FLOOD",
     "SINK", "WIND", "BASIN", "DROUGHT",
     "TIDAL", "MOUTH", "CREDIT", "MONSOON",
@@ -518,7 +525,9 @@ def generate(full_rebuild=False):
         # The sample board is decorative: four groups of four, shuffled.
         template = env.get_template("torchlight_connections_landing.html")
         html = template.render(
-            board_words=CLIMATE_CONNECTIONS_SAMPLE_BOARD,
+            sample_groups=CLIMATE_CONNECTIONS_SAMPLE_GROUPS,
+            sample_order=CLIMATE_CONNECTIONS_SAMPLE_ORDER,
+            puzzle_count=len(CLIMATE_CONNECTIONS_DATES),
             active_nav="",
             root_path="/",
             css_path=f"/static/style.css?v={css_version}",

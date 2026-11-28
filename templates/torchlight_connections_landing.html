@@ -3,21 +3,25 @@
 {% block title %}Climate Connections — Torchlight — The Times of Climate Change{% endblock %}
 
 {% block content %}
-<div class="ccl-container">
-  <!-- Sample board, decorative only: four groups of four, shuffled -->
-  <div class="ccl-board" aria-hidden="true">
-    {% for word in board_words %}<span class="ccl-word">{{ word }}</span>{% endfor %}
-  </div>
-
-  <h2 class="ccl-title">Climate Connections</h2>
-  <div class="ccl-kicker">🔦 Torchlight</div>
+<section class="ccl-hero">
+  <div class="ccl-kicker">🔦 Torchlight presents</div>
+  <h2 class="ccl-title">Climate<br><em>Connections</em></h2>
   <p class="ccl-intro">16 words. 4 groups. Can you find the hidden connection?</p>
+
+  <!-- Sample board, decorative: solves itself one group at a time, then resets -->
+  <div class="ccl-board" id="cclBoard" aria-hidden="true">
+    {% for word in sample_order %}<span class="ccl-word">{{ word }}</span>{% endfor %}
+  </div>
 
   <div class="ccl-actions">
     <a class="ccl-btn ccl-btn-primary" href="/climateconnections/grid/">Choose a puzzle</a>
     <button type="button" class="ccl-btn ccl-btn-secondary" onclick="openHowTo()">How to play</button>
   </div>
-</div>
+
+  <div class="ccl-facts">
+    <span>{{ puzzle_count }} puzzles</span><span aria-hidden="true">·</span><span>Easy to hard</span><span aria-hidden="true">·</span><span>Live leaderboards</span>
+  </div>
+</section>
 
 <!-- How to Play: same rules as the puzzle pages -->
 <div class="modal-overlay" id="howToOverlay" onclick="if (event.target === this) closeHowTo()">
@@ -55,58 +59,103 @@
 </div>
 
 <style>
-  .ccl-container {
-    max-width: 520px;
-    margin: 40px auto 64px;
-    padding: 0 16px;
+  /* Green hero card (Torchlight "Straightforward" green) */
+  .ccl-hero {
+    max-width: 640px;
+    margin: 32px auto 56px;
+    padding: 40px 28px 30px;
+    background: #2C5F4A;
+    border-radius: 20px;
     text-align: center;
-  }
-
-  /* Sample board — same look as the Torchlight game tiles */
-  .ccl-board {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
-    max-width: 400px;
-    margin: 0 auto 28px;
-  }
-
-  .ccl-word {
-    background: #E0DED8;
-    border-radius: 8px;
-    padding: 16px 4px;
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: #1A1A18;
-    overflow-wrap: anywhere;
-  }
-
-  .ccl-title {
-    font-family: 'Source Serif 4', serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: #1A1A18;
-    margin: 0 0 6px;
-    line-height: 1.15;
+    color: #FAFAF8;
   }
 
   .ccl-kicker {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-weight: 800;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #0E7C7B;
-    margin-bottom: 14px;
+    color: #A8D5C2;
+    margin-bottom: 10px;
   }
+
+  .ccl-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #FAFAF8;
+    margin: 0 0 14px;
+  }
+
+  .ccl-title em { font-style: italic; }
 
   .ccl-intro {
     font-size: 17px;
-    color: #444;
-    margin: 0 0 28px;
+    color: #D8EBE2;
+    margin: 0 0 24px;
     line-height: 1.5;
+  }
+
+  /* Sample board: 4 rows of fixed height, so solving never shifts the layout */
+  .ccl-board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 46px;
+    gap: 6px;
+    max-width: 400px;
+    margin: 0 auto 26px;
+    transition: opacity 0.4s ease;
+  }
+
+  .ccl-board.fading { opacity: 0; }
+
+  .ccl-word {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FAFAF8;
+    color: #1A1A18;
+    border-radius: 8px;
+    padding: 0 3px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    overflow-wrap: anywhere;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .ccl-word.sel {
+    background: #1A1A18;
+    color: #FAFAF8;
+    transform: scale(0.95);
+  }
+
+  /* Solved group: light tints of the four Torchlight group colours */
+  .ccl-solved {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.25;
+    animation: ccl-pop 0.35s ease;
+  }
+
+  .ccl-solved b { font-size: 13px; font-weight: 800; }
+  .ccl-solved span { font-size: 11px; font-weight: 600; opacity: 0.8; }
+  .ccl-level-1 { background: #CFE3D8; color: #1E4535; }
+  .ccl-level-2 { background: #C5DCE6; color: #123F52; }
+  .ccl-level-3 { background: #F2C9A8; color: #6B3415; }
+  .ccl-level-4 { background: #E6C3C9; color: #5A1622; }
+
+  @keyframes ccl-pop {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
   }
 
   .ccl-actions {
@@ -120,20 +169,32 @@
     display: inline-block;
     padding: 13px 26px;
     border-radius: 999px;
-    border: 1.5px solid #1A1A18;
+    border: 1.5px solid transparent;
     font-family: 'Nunito Sans', sans-serif;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.2;
     cursor: pointer;
     text-decoration: none;
     transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
 
-  .ccl-btn-primary { background: #1A1A18; color: #fff; }
-  .ccl-btn-primary:hover { background: #0E7C7B; border-color: #0E7C7B; color: #fff; text-decoration: none; }
-  .ccl-btn-secondary { background: transparent; color: #1A1A18; }
-  .ccl-btn-secondary:hover { background: #1A1A18; color: #fff; }
+  .ccl-btn-primary { background: #F4B860; color: #1A1A18; }
+  .ccl-btn-primary:hover { background: #FAFAF8; color: #1A1A18; text-decoration: none; }
+  .ccl-btn-secondary { background: transparent; color: #FAFAF8; border-color: #FAFAF8; }
+  .ccl-btn-secondary:hover { background: #FAFAF8; color: #2C5F4A; }
+
+  .ccl-facts {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    margin-top: 24px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #D8EBE2;
+  }
 
   /* How to Play modal — matches the puzzle pages */
   .modal-overlay {
@@ -216,11 +277,15 @@
   .modal-start-btn:hover { background: #0E7C7B; color: #fff; text-decoration: none; }
 
   @media (max-width: 560px) {
-    .ccl-container { margin-top: 28px; }
-    .ccl-word { padding: 13px 2px; font-size: 10.5px; }
-    .ccl-title { font-size: 30px; }
+    .ccl-hero { margin: 20px auto 40px; padding: 30px 14px 24px; border-radius: 16px; }
+    .ccl-title { font-size: 38px; }
     .ccl-intro { font-size: 16px; }
+    .ccl-board { grid-auto-rows: 42px; gap: 5px; }
+    .ccl-word { font-size: 10.5px; }
+    .ccl-solved b { font-size: 12px; }
+    .ccl-solved span { font-size: 10.5px; }
     .ccl-btn { min-width: 190px; }
+    .ccl-facts { font-size: 12px; gap: 6px 8px; }
   }
 </style>
 
@@ -228,5 +293,71 @@
 function openHowTo() { document.getElementById('howToOverlay').classList.add('open'); }
 function closeHowTo() { document.getElementById('howToOverlay').classList.remove('open'); }
 document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeHowTo(); });
+
+// Sample board animation: select a group's four words, collapse them into a
+// coloured bar, repeat for all four groups, hold, fade, start again.
+// Stays still for people who've asked their device to reduce motion.
+(function () {
+  var GROUPS = {{ sample_groups | tojson }};
+  var ORDER = {{ sample_order | tojson }};
+  var board = document.getElementById('cclBoard');
+  if (!board || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function wait(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function whenVisible() {
+    if (!document.hidden) return Promise.resolve();
+    return new Promise(function (r) {
+      document.addEventListener('visibilitychange', function on() {
+        if (!document.hidden) { document.removeEventListener('visibilitychange', on); r(); }
+      });
+    });
+  }
+
+  function render(solved, left) {
+    board.innerHTML = '';
+    solved.forEach(function (g) {
+      var bar = document.createElement('div');
+      bar.className = 'ccl-solved ccl-level-' + g.level;
+      var b = document.createElement('b'); b.textContent = g.name;
+      var sp = document.createElement('span'); sp.textContent = g.words.join(', ');
+      bar.appendChild(b); bar.appendChild(sp);
+      board.appendChild(bar);
+    });
+    left.forEach(function (w) {
+      var t = document.createElement('span');
+      t.className = 'ccl-word';
+      t.textContent = w;
+      t.dataset.w = w;
+      board.appendChild(t);
+    });
+  }
+
+  async function run() {
+    while (true) {
+      var solved = [], left = ORDER.slice();
+      render(solved, left);
+      board.classList.remove('fading');
+      await wait(1400);
+      for (var i = 0; i < GROUPS.length; i++) {
+        var g = GROUPS[i];
+        await whenVisible();
+        for (var j = 0; j < g.words.length; j++) {
+          var el = board.querySelector('[data-w="' + g.words[j] + '"]');
+          if (el) el.classList.add('sel');
+          await wait(300);
+        }
+        await wait(450);
+        solved.push(g);
+        left = left.filter(function (w) { return g.words.indexOf(w) === -1; });
+        render(solved, left);
+        await wait(800);
+      }
+      await wait(2800);
+      board.classList.add('fading');
+      await wait(450);
+    }
+  }
+  run();
+})();
 </script>
 {% endblock %}
